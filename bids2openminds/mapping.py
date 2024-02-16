@@ -1,4 +1,4 @@
-experimental_approach={
+experimental_approaches={
   "func": "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
   "dwi": [
     "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
@@ -92,4 +92,23 @@ techniques={
   "uCT": "Micro-CT",
   "nirs": "Near-Infrared Spectroscopy ",
   "motion": "Motion"
+},
+
+sex={
+  "male", "m", "M", "MALE", "Male",
+  "female", "f", "F", "FEMALE", "Female",
+  "other", "o", "O", "OTHER", "Other"
 }
+
+handedness={
+  "left", "l", "L", "LEFT", "Left",
+  "right", "r", "R", "RIGHT", "Right",
+  "ambidextrous", "a", "A", "AMBIDEXTROUS", "Ambidextrous"
+}
+
+species={
+  "homo sapiens", "mus musculus", "rattus norvegicus"
+}
+
+sample_types={"cell line", "in vitro differentiated cells", "primary cell", "cell-free sample", "cloning host", "tissue", "whole organisms", "organoid", "technical sample"
+             }
