@@ -1,4 +1,4 @@
-experimental_approaches={
+MAP_2_EXPERIMENTAL_APPROACHES={
   "func": "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
   "dwi": [
     "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
@@ -20,7 +20,7 @@ experimental_approaches={
   "nirs": "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"
 }
 
-techniques={
+MAP_2_TECHNIQUES={
   "angio": "Angiogram",
   "M0map": "Equilibrium magnetization (M0) map",
   "FLASH": "Fast-Low-Angle-Shot image",
