@@ -52,3 +52,17 @@ def table_filter (dataframe:pd.DataFrame,filter_str:str,column:str="suffix"):
   except KeyError:
       # Handle the case where the specified column is not present in the DataFrame
       KeyError(f"Error: Column '{column}' not found in the DataFrame.")
+
+
+def data_frame_value(data_frame,column_name):
+    match column_name:
+        case "sex":
+            from .mapping import MAP_2_SEX
+            from openminds.latest.controlled_terms import BiologicalSex 
+            return getattr(BiologicalSex,MAP_2_SEX(data_frame[column_name].iat[0]),None)
+        case ""
+            MAP_2_EXPERIMENTAL_APPROACHES
+    if column_name in data_frame.columns:
+        return data_frame[column_name].iat[0]
+    else:
+        return None
