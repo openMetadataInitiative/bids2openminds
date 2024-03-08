@@ -17,8 +17,7 @@ MAP_2_EXPERIMENTAL_APPROACHES={
   "micr": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/microscopy",
            "@id: https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
            "@id: https://openminds.ebrains.eu/instances/experimentalApproach/histology"],
-  "nirs": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"],
-
+  "nirs": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"]
 }
 
 MAP_2_TECHNIQUES={
@@ -109,21 +108,28 @@ MAP_2_SEX={
   "f":["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"], 
   "F":["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"], 
   "FEMALE":["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"], 
-  "Female":["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"],
-  "other":["@id: https://openminds.ebrains.eu/instances/biologicalSex/notDetectable"], 
-  "o":["@id: https://openminds.ebrains.eu/instances/biologicalSex/notDetectable"], 
-  "O":["@id: https://openminds.ebrains.eu/instances/biologicalSex/notDetectable"], 
-  "OTHER":["@id: https://openminds.ebrains.eu/instances/biologicalSex/notDetectable"], 
-  "Other":["@id: https://openminds.ebrains.eu/instances/biologicalSex/notDetectable"]
+  "Female":["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"]
 }
 
-handedness={
-  "left", "l", "L", "LEFT", "Left",
-  "right", "r", "R", "RIGHT", "Right",
-  "ambidextrous", "a", "A", "AMBIDEXTROUS", "Ambidextrous"
+MAP_2_HANDEDNESS={
+  "left":["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
+  "l":["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
+  "L":["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
+  "LEFT":["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
+  "Left":["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
+  "right":["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
+  "r":["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
+  "R":["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
+  "RIGHT":["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
+  "Right":["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
+  "ambidextrous":["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
+  "a":["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
+  "A":["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
+  "AMBIDEXTROUS":["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
+  "Ambidextrous":["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"]
 }
 
-MAP_2_species={
+MAP_2_SPECIES={
   "homo sapiens":["@id: https://openminds.ebrains.eu/instances/species/homoSapiens"],
   "mus musculus":["@id: https://openminds.ebrains.eu/instances/species/musMusculus"],
   "rattus norvegicus":["@id: https://openminds.ebrains.eu/instances/species/rattusNorvegicus"]
@@ -131,3 +137,14 @@ MAP_2_species={
 
 sample_types={"cell line", "in vitro differentiated cells", "primary cell", "cell-free sample", "cloning host", "tissue", "whole organisms", "organoid", "technical sample"
              }
+
+def bids2openminds_instance(bids_instance,dictionary):
+  if bids_instance is None: return None
+  from .utility import openminds_instance
+  try:
+    instance=openminds_instance(eval(dictionary)[bids_instance])
+    #TODO if warning warn(f"{item}is not a proper openMINDS instance") should say that this instance is not yet in openminds
+    return instance
+  except KeyError:
+    # Handle the case where the specified bids instance is not present in the dictionary
+    KeyError(f"Error: the bids instance '{bids_instance}' is not present in dictionary.")
