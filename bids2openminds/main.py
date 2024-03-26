@@ -1,7 +1,9 @@
 from openminds.latest import core as omcore
 import pandas as pd
-from .utility import  read_json,table_filter,pd_table_value
-from .mapping import bids2openminds_instance
+from utility import  read_json,table_filter,pd_table_value
+from mapping import bids2openminds_instance
+import globals
+
 
 
 def create_techniques(layout_df):
@@ -76,7 +78,7 @@ def dataset_version_create (bids_layout,dataset_description,layout_df,studied_sp
     techniques=techniques,
     how_to_cite=how_to_cite,
     repository=file_repository,
-    other_contribution=other_contribution
+    other_contributions=other_contribution
     #version_identifier
   )  
 
@@ -124,7 +126,7 @@ def subjects_creation (subject_id,layout_df,layout):
                             handedness=bids2openminds_instance(pd_table_value(data_subject,"handedness"),"MAP_2_HANDEDNESS"),
                             internal_identifier=f"{subject_name}",
                             lookup_label=f"Studied state {subject_name} {sesion}")
-        collection.add(state)
+        globals.collection.add(state)
         state_cash[f"{sesion}"]=state
     subject_state_dict[f"{subject}"]=state_cash
     subject_cash=omcore.Subject(biological_sex=bids2openminds_instance(pd_table_value(data_subject,"sex"),"MAP_2_SEX"),
@@ -132,29 +134,30 @@ def subjects_creation (subject_id,layout_df,layout):
                            internal_identifier=f"{subject_name}",
                            #TODO species should be defulted to homo sapiens
                            species=bids2openminds_instance(pd_table_value(data_subject,"species"),"MAP_2_SPECIES"),
-                           studied_state=state_cash)
+                           studied_states=state_cash)
     subjects_dict[f"{subject}"]=subject_cash
     subjects_list.append(subject_cash)
-    collection.add(subject_cash)
+    globals.collection.add(subject_cash)
 
   return subjects_dict,subject_state_dict,subjects_list
 
 def file_creation(layout_df,BIDS_path):
   import openminds.latest.controlled_terms as controlled_terms
   from openminds import IRI
-  from .utility import file_hash, file_storage_size
+  from utility import file_hash, file_storage_size
   import os
   BIDS_directory_path=os.path.dirname(BIDS_path)
   file_repository=omcore.FileRepository()
-  collection.add(file_repository)
+  globals.collection.add(file_repository)
   files_list=[]
   for index,file in layout_df.iterrows():
+      file_format=None
       content_description=None
       data_types=None
       extention=file['extension']
       path=file['path']
       name=path[path.rfind('/')+1:]
-      iri=IRI(f"file://{path}")
+      iri=IRI(f"http:/{path}")
       hashes=file_hash(path)
       storage_size=file_storage_size(path)
       if pd.isna(file['subject']):
@@ -162,25 +165,25 @@ def file_creation(layout_df,BIDS_path):
               if extention==".json":
                   content_description=f"A JSON metadata file of participants TSV."
                   data_types=controlled_terms.DataType.by_name("associative array")
-                  file_format=controlled_terms.ContentType.by_name("application/json")
+                  file_format=omcore.ContentType.by_name("application/json")
               elif extention==[".tsv"]:
                   content_description=f"A metadata table for participants."
                   data_types=controlled_terms.DataType.by_name("table")
-                  file_format=controlled_terms.ContentType.by_name("text/tab-separated-values")
+                  file_format=omcore.ContentType.by_name("text/tab-separated-values")
       else:
           if extention==".json":
               content_description=f"A JSON metadata file for {file['suffix']} of subject {file['subject']}"
               data_types=controlled_terms.DataType.by_name("associative array")
-              file_format=controlled_terms.ContentType.by_name("application/json")
+              file_format=omcore.ContentType.by_name("application/json")
           elif extention in [".nii",".nii.gz"]:
               content_description=f"Data file for {file['suffix']} of subject {file['subject']}"
-              data_types=controlled_terms.DataType.by_name("voxelData")
-              #file_format=controlled_terms.ContentType.by_name("nifti")
+              data_types=controlled_terms.DataType.by_name("voxel data")
+              #file_format=omcore.ContentType.by_name("nifti")
           elif extention==[".tsv"]:
               if file['suffix']=="events":
                   content_description=f"Event file for {file['suffix']} of subject {file['subject']}"
                   data_types=controlled_terms.DataType.by_name("event sequence")
-                  file_format=controlled_terms.ContentType.by_name("text/tab-separated-values")
+                  file_format=omcore.ContentType.by_name("text/tab-separated-values")
       file=omcore.File(
           iri=iri,
           content_description=content_description,
@@ -192,7 +195,7 @@ def file_creation(layout_df,BIDS_path):
           name=name,
           #special_usage_role
           storage_size=storage_size)
-      collection.add(file)
+      globals.collection.add(file)
       files_list.append(file)
 
   return files_list,file_repository

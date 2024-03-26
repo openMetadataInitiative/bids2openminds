@@ -142,7 +142,7 @@ sample_types={"cell line", "in vitro differentiated cells", "primary cell", "cel
 
 def bids2openminds_instance(bids_instance,dictionary):
   if bids_instance is None: return None
-  from .utility import openminds_instance
+  from utility import openminds_instance
   try:
     instance=openminds_instance(eval(dictionary)[bids_instance])
     #TODO if warning warn(f"{item}is not a proper openMINDS instance") should say that this instance is not yet in openminds
