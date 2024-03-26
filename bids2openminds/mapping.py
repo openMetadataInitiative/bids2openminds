@@ -135,8 +135,10 @@ MAP_2_SPECIES={
   "rattus norvegicus":["@id: https://openminds.ebrains.eu/instances/species/rattusNorvegicus"]
 }
 
+
 sample_types={"cell line", "in vitro differentiated cells", "primary cell", "cell-free sample", "cloning host", "tissue", "whole organisms", "organoid", "technical sample"
              }
+
 
 def bids2openminds_instance(bids_instance,dictionary):
   if bids_instance is None: return None

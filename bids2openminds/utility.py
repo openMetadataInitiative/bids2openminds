@@ -78,8 +78,48 @@ def openminds_instance(list:list, Terminologie :str =None):
       warn(f"{item}is not a proper openMINDS instance")
   return openminds_list
 
-def pd_table_value(data_frame,column_name):
-  if column_name in data_frame.columns:
-    return data_frame[column_name].iat[0]
-  else:
-    return None
+def pd_table_value(data_frame,column_name,not_list:bool=True):
+  try:
+    if column_name in data_frame.columns:
+      value=data_frame[column_name].to_list()
+      if not_list:
+        return value[0]
+      else:
+        return value
+    else:
+      return None
+  except IndexError:
+      from warnings import warn
+      warn(f"The data frame dosen't contain {column_name}")
+      return None
+
+
+
+# def file_hash(file_path:str,hash_type:str="md5"):
+#     import io, hashlib, hmac
+#     with open(hashlib.__file__, file_path) as file:
+#         digest = hashlib.file_digest(file, hash_type)
+#
+#     file.close
+#     return digest.hexdigest()  
+
+
+def file_hash(file_path:str,hash_type:str="md5"):
+    import hashlib
+    file=open(file_path, "rb")
+    file_content=file.read()
+    hash_object=hashlib.new(hash_type)
+    hash_object.update(file_content)
+    #add algorithm to hash return (the name opper case)
+    return hash_object.hexdigest()
+
+def file_storage_size(file_path:str):
+    from openminds.latest.core import QuantitativeValue
+    from openminds.latest.controlled_terms import UnitOfMeasurement
+    import os
+    file_stats = os.stat(file_path)
+    file_size=QuantitativeValue(
+        value=file_stats.st_size,
+        unit=UnitOfMeasurement.by_name("byte")
+    )
+    return file_size
