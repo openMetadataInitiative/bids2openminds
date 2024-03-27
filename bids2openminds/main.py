@@ -40,7 +40,7 @@ def dataset_version_create (bids_layout,dataset_description,layout_df,studied_sp
   #author=person_create(dataset_description["Authors"])
 
   if "Acknowledgements" in dataset_description:
-    other_contribution=dataset_description["Acknowledge"]
+    other_contribution=dataset_description["Acknowledgements"]
   else:
     other_contribution=None
 

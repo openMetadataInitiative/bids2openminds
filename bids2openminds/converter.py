@@ -35,11 +35,4 @@ dataset_version=main.dataset_version_create (bids_layout,dataset_description,lay
 
 dataset=main.dataset_creation(dataset_description,dataset_version)
 
-import pickle
-
-with open(f'{bids_dir}/student_file.pkl', 'wb') as f:
-  pickle.dumps(globals.collection,f)
-f.close()
-print("pickle dumping")
-
 globals.collection.save(f"{bids_dir}/openminds")
