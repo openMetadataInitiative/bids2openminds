@@ -120,16 +120,18 @@ def subjects_creation (subject_id,layout_df,layout):
   for subject in subject_id:
     subject_name=f"sub-{subject}"
     data_subject=table_filter(participants_table,subject_name,"participant_id")
-    state_cash={}
+    state_cash_dict={}
+    state_cash=[]
     for sesion in sessions:
         state=omcore.SubjectState(age=pd_table_value(data_subject,"age"),
                             handedness=bids2openminds_instance(pd_table_value(data_subject,"handedness"),"MAP_2_HANDEDNESS"),
-                            internal_identifier=f"{subject_name}",
+                            internal_identifier=f"Studied state {subject_name} {sesion}",
                             lookup_label=f"Studied state {subject_name} {sesion}")
         globals.collection.add(state)
-        state_cash[f"{sesion}"]=state
-    subject_state_dict[f"{subject}"]=state_cash
-    subject_cash=omcore.Subject(biological_sex=bids2openminds_instance(pd_table_value(data_subject,"sex"),"MAP_2_SEX"),
+        state_cash_dict[f"{sesion}"]=state
+        state_cash.append(state)
+    subject_state_dict[f"{subject}"]=state_cash_dict
+    subject_cash=omcore.Subject(biological_sex=bids2openminds_instance(pd_table_value(data_subject,"sex"),"MAP_2_SEX",is_list=False),
                            lookup_label=f"{subject_name}",
                            internal_identifier=f"{subject_name}",
                            #TODO species should be defulted to homo sapiens
@@ -157,6 +159,7 @@ def file_creation(layout_df,BIDS_path):
       extention=file['extension']
       path=file['path']
       name=path[path.rfind('/')+1:]
+      #TODO this should be iri=IRI(f"file:///{path}") but due to limitiation openMINDS python
       iri=IRI(f"http:/{path}")
       hashes=file_hash(path)
       storage_size=file_storage_size(path)

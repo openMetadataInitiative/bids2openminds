@@ -59,7 +59,7 @@ def table_filter (dataframe:pd.DataFrame,filter_str:str,column:str="suffix"):
     KeyError(f"Error: Column '{column}' not found in the DataFrame.")
 
 
-def openminds_instance(list:list, Terminologie :str =None):
+def openminds_instance(list:list, Terminologie :str =None, is_list :bool =True):
   openminds_list=[]
   import openminds.latest.controlled_terms as controlled_terms
   for item in list:
@@ -76,7 +76,11 @@ def openminds_instance(list:list, Terminologie :str =None):
     else:
       from warnings import warn
       warn(f"{item}is not a proper openMINDS instance")
-  return openminds_list
+  
+  if is_list:
+    return openminds_list
+  else:
+    return openminds_item
 
 def pd_table_value(data_frame,column_name,not_list:bool=True):
   try:
