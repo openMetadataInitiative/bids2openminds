@@ -13,6 +13,7 @@ def create_techniques(layout_df):
   for suffix in suffixs:
     if not(pd.isna(suffix) or (suffix in not_techniques_index)):
       techniques.extend(bids2openminds_instance(suffix,'MAP_2_TECHNIQUES'))
+
   return techniques
 
 def create_approaches(layout_df):
@@ -82,6 +83,8 @@ def dataset_version_create (bids_layout,dataset_description,layout_df,studied_sp
     #version_identifier
   )  
 
+  globals.collection.add(dataset_version)
+
   return dataset_version
 
 
@@ -98,6 +101,8 @@ def dataset_creation (dataset_description,dataset_version):
     digital_identifier=digital_identifier,
     full_name=dataset_description["Name"],
     has_versions=dataset_version)
+
+  globals.collection.add(dataset)
 
   return dataset
 
