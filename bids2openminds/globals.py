@@ -1,4 +1,4 @@
 from openminds import Collection
 
 global collection
-collection=Collection()
+collection = Collection()
