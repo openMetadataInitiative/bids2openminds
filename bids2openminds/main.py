@@ -1,8 +1,14 @@
-from openminds.latest import core as omcore
+import os
+
 import pandas as pd
-from utility import read_json, table_filter, pd_table_value
-from mapping import bids2openminds_instance
-import globals
+
+import openminds.latest.core as omcore
+import openminds.latest.controlled_terms as controlled_terms
+from openminds import IRI
+
+from .utility import table_filter, pd_table_value, file_hash, file_storage_size
+from .mapping import bids2openminds_instance
+from . import globals
 
 
 def create_techniques(layout_df):
@@ -151,10 +157,6 @@ def subjects_creation(subject_id, layout_df, layout):
 
 
 def file_creation(layout_df, BIDS_path):
-    import openminds.latest.controlled_terms as controlled_terms
-    from openminds import IRI
-    from utility import file_hash, file_storage_size
-    import os
 
     BIDS_directory_path = os.path.dirname(BIDS_path)
     file_repository = omcore.FileRepository()
