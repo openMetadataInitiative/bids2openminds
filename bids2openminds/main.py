@@ -17,7 +17,13 @@ def create_techniques(layout_df):
   return techniques
 
 def create_approaches(layout_df):
-   return None
+  datatypes=layout_df['datatype'].unique().tolist()
+  approaches=[]
+  for datatype in datatypes:
+    if not(pd.isna(datatype)):
+      approaches.extend(bids2openminds_instance(datatype,'MAP_2_EXPERIMENTAL_APPROACHES'))
+  
+  return approaches
 
 def dataset_version_create (bids_layout,dataset_description,layout_df,studied_specimens,file_repository):
   
