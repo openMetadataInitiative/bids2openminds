@@ -1,0 +1,27 @@
+[project]
+name = "bids2openminds"
+version = "0.0.0"
+dependencies = [
+  "bids",
+  "openminds",
+  "pandas",
+]
+requires-python = ">=3.9"
+authors = [
+  {name = "Peyman Najafi", email = "peyman.najafi@cnrs.fr"},
+  {name = "Andrew P. Davison", email = "andrew.davison@cnrs.fr"},
+]
+description = "Generates openMINDS metadata from a BIDS dataset"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python"
+]
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 119

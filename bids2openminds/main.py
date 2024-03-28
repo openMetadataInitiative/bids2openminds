@@ -1,8 +1,8 @@
 from openminds.latest import core as omcore
 import pandas as pd
-from utility import read_json, table_filter, pd_table_value
-from mapping import bids2openminds_instance
-import globals
+from .utility import read_json, table_filter, pd_table_value
+from .mapping import bids2openminds_instance
+from . import globals
 
 
 def create_techniques(layout_df):

@@ -1,9 +1,9 @@
 from warnings import warn
 from bids import BIDSLayout, BIDSValidator
 import os
-import main
-import utility
-import globals
+from . import main
+from . import utility
+from . import globals
 
 
 bids_dir = input("Enter the BIDS directory path: ")
