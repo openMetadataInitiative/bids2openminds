@@ -1,3 +1,6 @@
+from .utility import openminds_instance
+
+
 MAP_2_EXPERIMENTAL_APPROACHES = {
     "func": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"],
     "dwi": [
@@ -160,7 +163,6 @@ sample_types = {
 def bids2openminds_instance(bids_instance, dictionary, is_list: bool = True):
     if bids_instance is None:
         return None
-    from utility import openminds_instance
 
     try:
         instance = openminds_instance(eval(dictionary)[bids_instance], is_list=is_list)
