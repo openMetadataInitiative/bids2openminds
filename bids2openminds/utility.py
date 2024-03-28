@@ -99,31 +99,47 @@ def pd_table_value(data_frame,column_name,not_list:bool=True):
 
 
 
-# def file_hash(file_path:str,hash_type:str="md5"):
-#     import io, hashlib, hmac
-#     with open(hashlib.__file__, file_path) as file:
-#         digest = hashlib.file_digest(file, hash_type)
-#
-#     file.close
-#     return digest.hexdigest()  
+def file_hash(file_path: str, algorithm: str = "MD5"):
+  """
+    Compute the hash digest of a file using the specified hashing algorithm an returns an openMINDs object.
 
+    Parameters:
+    - file_path (str): The path to the file for which you want to compute the hash.
+    - algorithm (str, optional): The hashing algorithm to use. Default is "MD5".
 
-def file_hash(file_path:str,hash_type:str="md5"):
-    import hashlib
-    file=open(file_path, "rb")
-    file_content=file.read()
-    hash_object=hashlib.new(hash_type)
+    Returns:
+    - Hash: An openMINDS object representing the computed hash, containing the algorithm and digest.
+  """
+  import hashlib
+  from openminds.latest.core import Hash
+
+  # Open the file in binary mode
+  with open(file_path, "rb") as file:
+    # Read the content of the file
+    file_content = file.read()
+
+    # Create a new hash object using the specified algorithm
+    hash_object = hashlib.new(algorithm)
+
+    # Update the hash object with the content of the file
     hash_object.update(file_content)
-    #add algorithm to hash return (the name opper case)
-    return hash_object.hexdigest()
+
+    # Calculate the hexadecimal digest of the hash
+    hash_value=hash_object.hexdigest()
+
+  # Create a openMINDS Hash object with the algorithm and digest
+  openminds_hash=Hash(algorithm=algorithm,
+                      digest=hash_value)
+  
+  return openminds_hash
 
 def file_storage_size(file_path:str):
-    from openminds.latest.core import QuantitativeValue
-    from openminds.latest.controlled_terms import UnitOfMeasurement
-    import os
-    file_stats = os.stat(file_path)
-    file_size=QuantitativeValue(
-        value=file_stats.st_size,
-        unit=UnitOfMeasurement.by_name("byte")
-    )
-    return file_size
+  from openminds.latest.core import QuantitativeValue
+  from openminds.latest.controlled_terms import UnitOfMeasurement
+  import os
+  file_stats = os.stat(file_path)
+  file_size=QuantitativeValue(
+      value=file_stats.st_size,
+      unit=UnitOfMeasurement.by_name("byte")
+  )
+  return file_size
