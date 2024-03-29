@@ -19,7 +19,7 @@ def create_techniques(layout_df):
         if not (pd.isna(suffix) or (suffix in not_techniques_index)):
             techniques.extend(bids2openminds_instance(suffix, "MAP_2_TECHNIQUES"))
 
-    return techniques
+    return techniques or None
 
 
 def create_approaches(layout_df):
