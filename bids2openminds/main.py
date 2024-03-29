@@ -167,8 +167,7 @@ def file_creation(layout_df, BIDS_path):
         extention = file["extension"]
         path = file["path"]
         name = path[path.rfind("/") + 1 :]
-        # TODO this should be iri=IRI(f"file:///{path}") but due to limitiation openMINDS python
-        iri = IRI(f"http:/{path}")
+        iri=IRI(f"file:///{path}")
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
         if pd.isna(file["subject"]):
