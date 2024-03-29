@@ -24,12 +24,12 @@ def create_techniques(layout_df):
 
 def create_approaches(layout_df):
     datatypes = layout_df["datatype"].unique().tolist()
-    approaches = []
+    approaches = set([])
     for datatype in datatypes:
         if not (pd.isna(datatype)):
-            approaches.extend(bids2openminds_instance(datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
+            approaches.update(bids2openminds_instance(datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
 
-    return approaches
+    return list(approaches) or None
 
 
 def dataset_version_create(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
