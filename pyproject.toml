@@ -3,7 +3,7 @@ name = "bids2openminds"
 version = "0.0.0"
 dependencies = [
   "bids",
-  "openminds",
+  "openminds >= 0.2.1",
   "pandas",
 ]
 requires-python = ">=3.9"
