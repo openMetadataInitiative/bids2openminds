@@ -3,7 +3,7 @@ name = "bids2openminds"
 version = "0.0.0"
 dependencies = [
   "bids",
-  "openminds >= 0.2.1",
+  "openminds >= 0.2.2",
   "pandas",
 ]
 requires-python = ">=3.9"
@@ -22,6 +22,15 @@ classifiers = [
 [build-system]
 requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
+
+
+[project.optional-dependencies]
+
+test = [
+  "pytest",
+  "pytest-cov"
+]
+
 
 [tool.black]
 line-length = 119
