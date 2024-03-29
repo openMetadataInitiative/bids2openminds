@@ -84,7 +84,7 @@ def dataset_version_create(bids_layout, dataset_description, layout_df, studied_
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        other_contributions=other_contribution
+        #other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
 
