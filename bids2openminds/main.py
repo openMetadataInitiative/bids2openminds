@@ -132,7 +132,10 @@ def subjects_creation(subject_id, layout_df, layout):
         state_cash = []
         for sesion in sessions:
             state = omcore.SubjectState(
-                age=pd_table_value(data_subject, "age"),
+                age=omcore.QuantitativeValue(
+                    value=pd_table_value(data_subject, "age"),
+                    unit=controlled_terms.UnitOfMeasurement.year
+                ),
                 handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
                 internal_identifier=f"Studied state {subject_name} {sesion}",
                 lookup_label=f"Studied state {subject_name} {sesion}",
