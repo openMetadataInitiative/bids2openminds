@@ -1,36 +1,33 @@
-from .utility import openminds_instance
-
-
 MAP_2_EXPERIMENTAL_APPROACHES = {
-    "func": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"],
+    "func": ["neuroimaging"],
     "dwi": [
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
+        "neuroimaging",
+        "neural connectivity",
+        "anatomy"
     ],
-    "fmap": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"],
+    "fmap": ["neuroimaging"],
     "anat": [
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
+        "neuroimaging",
+        "anatomy"
     ],
     "perf": [
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
+        "neuroimaging",
+        "anatomy"
     ],
-    "meg": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"],
-    "eeg": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"],
-    "ieeg": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"],
-    "beh": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/behavior"],
+    "meg": ["neuroimaging"],
+    "eeg": ["electrophysiology"],
+    "ieeg": ["electrophysiology"],
+    "beh": ["behavior"],
     "pet": [
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/radiology",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
+        "neuroimaging"
+        "radiology"
     ],
     "micr": [
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/microscopy",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
-        "@id: https://openminds.ebrains.eu/instances/experimentalApproach/histology",
+        "microscopy",
+        "anatomy",
+        "histology"
     ],
-    "nirs": ["@id: https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"],
+    "nirs": ["neuroimaging"],
 }
 
 MAP_2_TECHNIQUES = {
@@ -107,67 +104,56 @@ MAP_2_TECHNIQUES = {
     "motion": ["Motion"],
 }
 
-MAP_2_UNITS = {"year": ["@id:https://openminds.ebrains.eu/instances/unitOfMeasurement/year"]}
+MAP_2_UNITS = {
+    "year": ["year"]
+}
 
-MAP_2_SEX = {
-    "male": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/male"],
-    "m": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/male"],
-    "M": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/male"],
-    "MALE": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/male"],
-    "Male": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/male"],
-    "female": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"],
-    "f": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"],
-    "F": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"],
-    "FEMALE": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"],
-    "Female": ["@id: https://openminds.ebrains.eu/instances/biologicalSex/female"],
+MAP_2_BIOLOGICALSEX = {
+    "male": ["male"],
+    "m": ["male"],
+    "M": ["male"],
+    "MALE": ["male"],
+    "Male": ["male"],
+    "female": ["female"],
+    "f": ["female"],
+    "F": ["female"],
+    "FEMALE": ["female"],
+    "Female": ["female"],
 }
 
 MAP_2_HANDEDNESS = {
-    "left": ["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
-    "l": ["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
-    "L": ["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
-    "LEFT": ["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
-    "Left": ["@id:https://openminds.ebrains.eu/instances/handedness/leftHandedness"],
-    "right": ["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
-    "r": ["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
-    "R": ["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
-    "RIGHT": ["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
-    "Right": ["@id:https://openminds.ebrains.eu/instances/handedness/rightHandedness"],
-    "ambidextrous": ["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
-    "a": ["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
-    "A": ["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
-    "AMBIDEXTROUS": ["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
-    "Ambidextrous": ["@id:https://openminds.ebrains.eu/instances/handedness/ambidextrousHandedness"],
+    "left": ["left handedness"],
+    "l": ["left handedness"],
+    "L": ["left handedness"],
+    "LEFT": ["left handedness"],
+    "Left": ["left handedness"],
+    "right": ["right handedness"],
+    "r": ["right handedness"],
+    "R": ["right handedness"],
+    "RIGHT": ["right handedness"],
+    "Right": ["right handedness"],
+    "ambidextrous": ["ambidextrous handedness"],
+    "a": ["ambidextrous handedness"],
+    "A": ["ambidextrous handedness"],
+    "AMBIDEXTROUS": ["ambidextrous handedness"],
+    "Ambidextrous": ["ambidextrous handedness"],
 }
 
 MAP_2_SPECIES = {
-    "homo sapiens": ["@id: https://openminds.ebrains.eu/instances/species/homoSapiens"],
-    "mus musculus": ["@id: https://openminds.ebrains.eu/instances/species/musMusculus"],
-    "rattus norvegicus": ["@id: https://openminds.ebrains.eu/instances/species/rattusNorvegicus"],
+    "homo sapiens": ["homo sapiens"],
+    "mus musculus": ["mus musculus"],
+    "rattus norvegicus": ["rattus norvegicus"],
 }
 
 
-sample_types = {
-    "cell line",
-    "in vitro differentiated cells",
-    "primary cell",
-    "cell-free sample",
-    "cloning host",
-    "tissue",
-    "whole organisms",
-    "organoid",
-    "technical sample",
-}
-
-
-def bids2openminds_instance(bids_instance, dictionary, is_list: bool = True):
-    if bids_instance is None:
-        return None
-
-    try:
-        instance = openminds_instance(eval(dictionary)[bids_instance], is_list=is_list)
-        # TODO if warning warn(f"{item}is not a proper openMINDS instance") should say that this instance is not yet in openminds
-        return instance
-    except KeyError:
-        # Handle the case where the specified bids instance is not present in the dictionary
-        KeyError(f"Error: the bids instance '{bids_instance}' is not present in dictionary.")
+#sample_types = {
+#    "cell line",
+#    "in vitro differentiated cells",
+#    "primary cell",
+#    "cell-free sample",
+#    "cloning host",
+#    "tissue",
+#    "whole organisms",
+#    "organoid",
+#    "technical sample",
+#}
