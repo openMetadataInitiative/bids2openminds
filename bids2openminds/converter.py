@@ -30,15 +30,15 @@ def convert(bids_dir, output_filename=None):
 
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
 
-    [subjects_dict, subject_state_dict, subjects_list] = main.subjects_creation(subjects_id, layout_df, bids_layout)
+    [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(subjects_id, layout_df, bids_layout)
 
-    [files_list, file_repository] = main.file_creation(layout_df, bids_dir)
+    [files_list, file_repository] = main.create_file(layout_df, bids_dir)
 
-    dataset_version = main.dataset_version_create(
+    dataset_version = main.create_dataset_version(
         bids_layout, dataset_description, layout_df, subjects_list, file_repository
     )
 
-    dataset = main.dataset_creation(dataset_description, dataset_version)
+    dataset = main.create_dataset(dataset_description, dataset_version)
 
     failures = globals.collection.validate(ignore=["required"])
     assert len(failures) == 0
