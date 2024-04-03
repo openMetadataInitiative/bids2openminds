@@ -32,7 +32,7 @@ def create_approaches(layout_df):
     return list(approaches) or None
 
 
-def dataset_version_create(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
 
     # Fetch the dataset type from dataset description file
 
@@ -93,7 +93,7 @@ def dataset_version_create(bids_layout, dataset_description, layout_df, studied_
     return dataset_version
 
 
-def dataset_creation(dataset_description, dataset_version):
+def create_dataset(dataset_description, dataset_version):
 
     if "DatasetDOI" in dataset_description:
         digital_identifier = omcore.DOI(identifier=dataset_description["DatasetDOI"])
@@ -109,7 +109,7 @@ def dataset_creation(dataset_description, dataset_version):
     return dataset
 
 
-def subjects_creation(subject_id, layout_df, layout):
+def create_subjects(subject_id, layout_df, layout):
 
     # Find the participants files in the files table
     participants_paths = table_filter(layout_df, "participants")
@@ -130,18 +130,18 @@ def subjects_creation(subject_id, layout_df, layout):
         data_subject = table_filter(participants_table, subject_name, "participant_id")
         state_cash_dict = {}
         state_cash = []
-        for sesion in sessions:
+        for session in sessions:
             state = omcore.SubjectState(
                 age=omcore.QuantitativeValue(
                     value=pd_table_value(data_subject, "age"),
                     unit=controlled_terms.UnitOfMeasurement.year
                 ),
                 handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
-                internal_identifier=f"Studied state {subject_name} {sesion}",
-                lookup_label=f"Studied state {subject_name} {sesion}",
+                internal_identifier=f"Studied state {subject_name} {session}",
+                lookup_label=f"Studied state {subject_name} {session}",
             )
             globals.collection.add(state)
-            state_cash_dict[f"{sesion}"] = state
+            state_cash_dict[f"{session}"] = state
             state_cash.append(state)
         subject_state_dict[f"{subject}"] = state_cash_dict
         subject_cash = omcore.Subject(
@@ -159,7 +159,7 @@ def subjects_creation(subject_id, layout_df, layout):
     return subjects_dict, subject_state_dict, subjects_list
 
 
-def file_creation(layout_df, BIDS_path):
+def create_file(layout_df, BIDS_path):
 
     BIDS_directory_path = os.path.dirname(BIDS_path)
     file_repository = omcore.FileRepository()
