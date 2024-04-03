@@ -1,8 +1,14 @@
-from openminds.latest import core as omcore
+import os
+
 import pandas as pd
-from utility import read_json, table_filter, pd_table_value
-from mapping import bids2openminds_instance
-import globals
+
+import openminds.latest.core as omcore
+import openminds.latest.controlled_terms as controlled_terms
+from openminds import IRI
+
+from .utility import table_filter, pd_table_value, file_hash, file_storage_size
+from .mapping import bids2openminds_instance
+from . import globals
 
 
 def create_techniques(layout_df):
@@ -13,20 +19,20 @@ def create_techniques(layout_df):
         if not (pd.isna(suffix) or (suffix in not_techniques_index)):
             techniques.extend(bids2openminds_instance(suffix, "MAP_2_TECHNIQUES"))
 
-    return techniques
+    return techniques or None
 
 
 def create_approaches(layout_df):
     datatypes = layout_df["datatype"].unique().tolist()
-    approaches = []
+    approaches = set([])
     for datatype in datatypes:
         if not (pd.isna(datatype)):
-            approaches.extend(bids2openminds_instance(datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
+            approaches.update(bids2openminds_instance(datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
 
-    return approaches
+    return list(approaches) or None
 
 
-def dataset_version_create(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
 
     # Fetch the dataset type from dataset description file
 
@@ -78,7 +84,7 @@ def dataset_version_create(bids_layout, dataset_description, layout_df, studied_
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        other_contributions=other_contribution
+        #other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
 
@@ -87,7 +93,7 @@ def dataset_version_create(bids_layout, dataset_description, layout_df, studied_
     return dataset_version
 
 
-def dataset_creation(dataset_description, dataset_version):
+def create_dataset(dataset_description, dataset_version):
 
     if "DatasetDOI" in dataset_description:
         digital_identifier = omcore.DOI(identifier=dataset_description["DatasetDOI"])
@@ -103,7 +109,7 @@ def dataset_creation(dataset_description, dataset_version):
     return dataset
 
 
-def subjects_creation(subject_id, layout_df, layout):
+def create_subjects(subject_id, layout_df, layout):
 
     # Find the participants files in the files table
     participants_paths = table_filter(layout_df, "participants")
@@ -124,15 +130,18 @@ def subjects_creation(subject_id, layout_df, layout):
         data_subject = table_filter(participants_table, subject_name, "participant_id")
         state_cash_dict = {}
         state_cash = []
-        for sesion in sessions:
+        for session in sessions:
             state = omcore.SubjectState(
-                age=pd_table_value(data_subject, "age"),
+                age=omcore.QuantitativeValue(
+                    value=pd_table_value(data_subject, "age"),
+                    unit=controlled_terms.UnitOfMeasurement.year
+                ),
                 handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
-                internal_identifier=f"Studied state {subject_name} {sesion}",
-                lookup_label=f"Studied state {subject_name} {sesion}",
+                internal_identifier=f"Studied state {subject_name} {session}",
+                lookup_label=f"Studied state {subject_name} {session}",
             )
             globals.collection.add(state)
-            state_cash_dict[f"{sesion}"] = state
+            state_cash_dict[f"{session}"] = state
             state_cash.append(state)
         subject_state_dict[f"{subject}"] = state_cash_dict
         subject_cash = omcore.Subject(
@@ -150,11 +159,7 @@ def subjects_creation(subject_id, layout_df, layout):
     return subjects_dict, subject_state_dict, subjects_list
 
 
-def file_creation(layout_df, BIDS_path):
-    import openminds.latest.controlled_terms as controlled_terms
-    from openminds import IRI
-    from utility import file_hash, file_storage_size
-    import os
+def create_file(layout_df, BIDS_path):
 
     BIDS_directory_path = os.path.dirname(BIDS_path)
     file_repository = omcore.FileRepository()

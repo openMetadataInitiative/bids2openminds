@@ -1,10 +1,18 @@
+import hashlib
 import json
+import os
+import re
+from warnings import warn
+
 import pandas as pd
+
+import openminds.latest.controlled_terms as controlled_terms
+from openminds.latest.core import Hash, QuantitativeValue
+from openminds.latest.controlled_terms import UnitOfMeasurement
+
 
 
 def camel_to_snake(name):
-    import re
-
     name = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", name)
     return re.sub("([a-z0-9])([A-Z])", r"\1_\2", name).lower()
 
@@ -63,7 +71,6 @@ def table_filter(dataframe: pd.DataFrame, filter_str: str, column: str = "suffix
 
 def openminds_instance(list: list, Terminologie: str = None, is_list: bool = True):
     openminds_list = []
-    import openminds.latest.controlled_terms as controlled_terms
 
     for item in list:
         if item.replace(" ", "")[0:32] == "@id:https://openminds.ebrains.eu":
@@ -77,8 +84,6 @@ def openminds_instance(list: list, Terminologie: str = None, is_list: bool = Tru
             openminds_item = getattr(controlled_class, item_name_snake)
             openminds_list.append(openminds_item)
         else:
-            from warnings import warn
-
             warn(f"{item}is not a proper openMINDS instance")
 
     if is_list:
@@ -98,8 +103,6 @@ def pd_table_value(data_frame, column_name, not_list: bool = True):
         else:
             return None
     except IndexError:
-        from warnings import warn
-
         warn(f"The data frame dosen't contain {column_name}")
         return None
 
@@ -115,9 +118,6 @@ def file_hash(file_path: str, algorithm: str = "MD5"):
     Returns:
     - Hash: An openMINDS object representing the computed hash, containing the algorithm and digest.
     """
-    import hashlib
-    from openminds.latest.core import Hash
-
     # Open the file in binary mode
     with open(file_path, "rb") as file:
         # Read the content of the file
@@ -139,10 +139,6 @@ def file_hash(file_path: str, algorithm: str = "MD5"):
 
 
 def file_storage_size(file_path: str):
-    from openminds.latest.core import QuantitativeValue
-    from openminds.latest.controlled_terms import UnitOfMeasurement
-    import os
-
     file_stats = os.stat(file_path)
     file_size = QuantitativeValue(value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
     return file_size

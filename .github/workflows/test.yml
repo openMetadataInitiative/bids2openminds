@@ -1,0 +1,36 @@
+name: bid2openminds_test_pipeline
+
+on:
+  push:
+      branches:
+        - main
+  pull_request:
+      branches:
+        - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Checkout BIDS examples
+      uses: actions/checkout@v4
+      with:
+        repository: bids-standard/bids-examples
+        path: bids-examples
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Install package with test dependencies
+      run: |
+        pip install .[test]
+
+    - name: Test installed package
+      run: |
+        pytest -v
