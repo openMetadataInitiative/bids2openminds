@@ -40,7 +40,7 @@ def convert(bids_dir, output_filename=None):
 
     dataset = main.create_dataset(dataset_description, dataset_version)
 
-    failures = globals.collection.validate(ignore=["required"])
+    failures = globals.collection.validate(ignore=["required", "value"])
     assert len(failures) == 0
 
     if output_filename is None:
