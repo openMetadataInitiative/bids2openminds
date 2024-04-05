@@ -31,18 +31,18 @@ MAP_2_EXPERIMENTAL_APPROACHES = {
 }
 
 MAP_2_TECHNIQUES = {
-    "angio": ["Angiogram"],
-    "M0map": ["Equilibrium magnetization (M0) map"],
-    "FLASH": ["Fast-Low-Angle-Shot image"],
-    "FLAIR": ["Fluid attenuated inversion recovery image"],
-    "UNIT1": ["Homogeneous (flat) T1-weighted MP2RAGE image"],
-    "inplaneT1": ["Inplane T1"],
-    "inplaneT2": ["Inplane T2"],
-    "R1map": ["Longitudinal relaxation rate image"],
-    "T1map": ["Longitudinal relaxation time image"],
-    "MTVmap": ["Macromolecular tissue volume (MTV) image"],
-    "MTRmap": ["Magnetization transfer ratio image"],
-    "MTsat": ["Magnetization transfer saturation image"],
+    "angio": ["angiography"],
+    "M0map": ["equilibrium magnetization mapping"],
+    "FLASH": ["fast-low-angle-shot pulse sequence"], #TODO instance TBD
+    "FLAIR": ["fluid attenuated inversion recovery pulse sequence"], #TODO instance TBD
+    "UNIT1": None, #TODO instance TBD
+    "inplaneT1": None, #TODO instance TBD
+    "inplaneT2": None, #TODO instance TBD
+    "R1map": None, #TODO instance TBD
+    "T1map": None, #TODO instance TBD
+    "MTVmap": None, #TODO instance TBD
+    "MTRmap": ["magnetization transfer imaging"], #TODO instance TBD
+    "MTsat": ["magnetization transfer imaging"], #TODO instance TBD
     "MWFmap": ["Myelin water fraction image"],
     "S0map": ["Observed signal amplitude (S0) image"],
     "R2starmap": ["Observed transverse relaxation rate image"],
