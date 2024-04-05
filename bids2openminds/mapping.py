@@ -55,10 +55,10 @@ MAP_2_TECHNIQUES = {
     "RB1map": ["RF receive sensitivity map"],
     "TB1map": ["RF transmit field image"],
     "T1rho": ["T1 in rotating frame (T1 rho) image"],
-    "T1w": ["T1-weighted image"],
-    "T2w": ["T2-weighted image"],
-    "T2star": ["T2* image"],
-    "T2starw": ["T2star weighted image"],
+    "T1w": ["T1 pulse sequence"],
+    "T2w": ["T2 pulse sequence"],
+    "T2star": ["T2* pulse sequence"], #TODO instance TBD
+    "T2starw": ["T2* pulse sequence"], #TODO instance TBD
     "R2map": ["True transverse relaxation rate image"],
     "T2map": ["True transverse relaxation time image"],
     "bold": ["Blood-Oxygen-Level Dependent image"],
