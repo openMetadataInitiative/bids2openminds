@@ -27,7 +27,7 @@ MAP_2_EXPERIMENTAL_APPROACHES = {
         "anatomy",
         "histology"
     ],
-    "nirs": ["neuroimaging"],
+    "nirs": ["neuroimaging"]
 }
 
 MAP_2_TECHNIQUES = {
@@ -101,7 +101,7 @@ MAP_2_TECHNIQUES = {
     "TEM": ["Transmission electron microscopy"],
     "uCT": ["Micro-CT"],
     "nirs": ["Near-Infrared Spectroscopy"],
-    "motion": ["Motion"],
+    "motion": ["Motion"]
 }
 
 MAP_2_UNITS = {
@@ -118,7 +118,7 @@ MAP_2_BIOLOGICALSEX = {
     "f": ["female"],
     "F": ["female"],
     "FEMALE": ["female"],
-    "Female": ["female"],
+    "Female": ["female"]
 }
 
 MAP_2_HANDEDNESS = {
@@ -136,13 +136,13 @@ MAP_2_HANDEDNESS = {
     "a": ["ambidextrous handedness"],
     "A": ["ambidextrous handedness"],
     "AMBIDEXTROUS": ["ambidextrous handedness"],
-    "Ambidextrous": ["ambidextrous handedness"],
+    "Ambidextrous": ["ambidextrous handedness"]
 }
 
 MAP_2_SPECIES = {
-    "homo sapiens": ["homo sapiens"],
-    "mus musculus": ["mus musculus"],
-    "rattus norvegicus": ["rattus norvegicus"],
+    "homo sapiens": ["Homo sapiens"],
+    "mus musculus": ["Mus musculus"],
+    "rattus norvegicus": ["Rattus norvegicus"]
 }
 
 
@@ -155,5 +155,5 @@ MAP_2_SPECIES = {
 #    "tissue",
 #    "whole organisms",
 #    "organoid",
-#    "technical sample",
+#    "technical sample"
 #}
