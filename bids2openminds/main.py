@@ -135,13 +135,14 @@ def create_subjects(subject_id, layout_df, layout):
             state_cash_dict = {}
             state_cash = []
             for session in sessions:
-                state = omcore.SubjectState(
-                    internal_identifier=f"Studied state {subject_name} {session}".strip(),
-                    lookup_label=f"Studied state {subject_name} {session}".strip()
-                )
-                globals.collection.add(state)
-                state_cash_dict[f"{session}"] = state
-                state_cash.append(state)
+                if not(table_filter(table_filter(layout_df,session,"session"),subject,"subject").empty):
+                    state = omcore.SubjectState(
+                        internal_identifier=f"Studied state {subject_name} {session}".strip(),
+                        lookup_label=f"Studied state {subject_name} {session}".strip()
+                    )
+                    globals.collection.add(state)
+                    state_cash_dict[f"{session}"] = state
+                    state_cash.append(state)
             subject_state_dict[f"{subject}"] = state_cash_dict
             subject_cash = omcore.Subject(
                 lookup_label=f"{subject_name}",
@@ -166,18 +167,19 @@ def create_subjects(subject_id, layout_df, layout):
         state_cash_dict = {}
         state_cash = []
         for session in sessions:
-            state = omcore.SubjectState(
-                age=omcore.QuantitativeValue(
-                    value=pd_table_value(data_subject, "age"),
-                    unit=controlled_terms.UnitOfMeasurement.year
-                ),
-                handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
-                internal_identifier=f"Studied state {subject_name} {session}".strip(),
-                lookup_label=f"Studied state {subject_name} {session}".strip()
-            )
-            globals.collection.add(state)
-            state_cash_dict[f"{session}"] = state
-            state_cash.append(state)
+            if not(table_filter(table_filter(layout_df,session,"session"),subject,"subject").empty):
+                state = omcore.SubjectState(
+                    age=omcore.QuantitativeValue(
+                        value=pd_table_value(data_subject, "age"),
+                        unit=controlled_terms.UnitOfMeasurement.year
+                    ),
+                    handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
+                    internal_identifier=f"Studied state {subject_name} {session}".strip(),
+                    lookup_label=f"Studied state {subject_name} {session}".strip()
+                )
+                globals.collection.add(state)
+                state_cash_dict[f"{session}"] = state
+                state_cash.append(state)
         subject_state_dict[f"{subject}"] = state_cash_dict
         subject_cash = omcore.Subject(
             biological_sex=bids2openminds_instance(pd_table_value(data_subject, "sex"), "MAP_2_SEX", is_list=False),
