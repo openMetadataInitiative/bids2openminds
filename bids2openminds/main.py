@@ -129,8 +129,8 @@ def create_subjects(subject_id, layout_df, layout):
             state_cash = []
             for session in sessions:
                 state = omcore.SubjectState(
-                    internal_identifier=f"Studied state {subject_name} {session}",
-                    lookup_label=f"Studied state {subject_name} {session}"
+                    internal_identifier=f"Studied state {subject_name} {session}".strip(),
+                    lookup_label=f"Studied state {subject_name} {session}".strip()
                 )
                 globals.collection.add(state)
                 state_cash_dict[f"{session}"] = state
@@ -165,8 +165,8 @@ def create_subjects(subject_id, layout_df, layout):
                     unit=controlled_terms.UnitOfMeasurement.year
                 ),
                 handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
-                internal_identifier=f"Studied state {subject_name} {session}",
-                lookup_label=f"Studied state {subject_name} {session}",
+                internal_identifier=f"Studied state {subject_name} {session}".strip(),
+                lookup_label=f"Studied state {subject_name} {session}".strip()
             )
             globals.collection.add(state)
             state_cash_dict[f"{session}"] = state
@@ -178,7 +178,7 @@ def create_subjects(subject_id, layout_df, layout):
             internal_identifier=f"{subject_name}",
             # TODO species should be defulted to homo sapiens
             species=bids2openminds_instance(pd_table_value(data_subject, "species"), "MAP_2_SPECIES"),
-            studied_states=state_cash,
+            studied_states=state_cash
         )
         subjects_dict[f"{subject}"] = subject_cash
         subjects_list.append(subject_cash)
