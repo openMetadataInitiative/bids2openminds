@@ -103,7 +103,7 @@ def pd_table_value(data_frame, column_name, not_list: bool = True):
         else:
             return None
     except IndexError:
-        warn(f"The data frame dosen't contain {column_name}")
+        warn(f"The data frame doesn't contain {column_name}")
         return None
 
 
