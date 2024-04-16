@@ -1,4 +1,5 @@
 import os
+import pathlib
 
 import pandas as pd
 
@@ -172,7 +173,7 @@ def create_file(layout_df, BIDS_path):
         extention = file["extension"]
         path = file["path"]
         name = path[path.rfind("/") + 1 :]
-        iri=IRI(f"file:///{path}")
+        iri=IRI(pathlib.Path(path).as_uri())
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
         if pd.isna(file["subject"]):
