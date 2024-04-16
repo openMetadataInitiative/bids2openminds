@@ -111,21 +111,48 @@ def create_dataset(dataset_description, dataset_version):
 
 
 def create_subjects(subject_id, layout_df, layout):
-
-    # Find the participants files in the files table
-    participants_paths = table_filter(layout_df, "participants")
-    # Select the tsv file of the table
-    participants_path_tsv = pd_table_value(table_filter(participants_paths, ".tsv", "extension"), "path")
-    participants_path_json = pd_table_value(table_filter(participants_paths, ".json", "extension"), "path")
-
-    participants_table = pd.read_csv(participants_path_tsv, sep="\t", header=0)
-
+    
     sessions = layout.get_sessions()
     if not sessions:
         sessions = [""]
     subjects_dict = {}
     subjects_list = []
     subject_state_dict = {}
+
+    # Find the participants files in the files table
+    participants_paths = table_filter(layout_df, "participants")
+    if  participants_paths.empty:
+        #creating emphty subjects just based on file structure
+        for subject in subject_id:
+            subject_name = f"sub-{subject}"
+            state_cash_dict = {}
+            state_cash = []
+            for session in sessions:
+                state = omcore.SubjectState(
+                    internal_identifier=f"Studied state {subject_name} {session}".strip(),
+                    lookup_label=f"Studied state {subject_name} {session}".strip()
+                )
+                globals.collection.add(state)
+                state_cash_dict[f"{session}"] = state
+                state_cash.append(state)
+            subject_state_dict[f"{subject}"] = state_cash_dict
+            subject_cash = omcore.Subject(
+                lookup_label=f"{subject_name}",
+                internal_identifier=f"{subject_name}"
+            )
+            subjects_dict[f"{subject}"] = subject_cash
+            subjects_list.append(subject_cash)
+            globals.collection.add(subject_cash)
+
+
+        return subjects_dict, subject_state_dict, subjects_list
+
+
+    # Select the tsv file of the table
+    participants_path_tsv = pd_table_value(table_filter(participants_paths, ".tsv", "extension"), "path")
+    participants_path_json = pd_table_value(table_filter(participants_paths, ".json", "extension"), "path")
+
+    participants_table = pd.read_csv(participants_path_tsv, sep="\t", header=0)
     for subject in subject_id:
         subject_name = f"sub-{subject}"
         data_subject = table_filter(participants_table, subject_name, "participant_id")
@@ -138,8 +165,8 @@ def create_subjects(subject_id, layout_df, layout):
                     unit=controlled_terms.UnitOfMeasurement.year
                 ),
                 handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
-                internal_identifier=f"Studied state {subject_name} {session}",
-                lookup_label=f"Studied state {subject_name} {session}",
+                internal_identifier=f"Studied state {subject_name} {session}".strip(),
+                lookup_label=f"Studied state {subject_name} {session}".strip()
             )
             globals.collection.add(state)
             state_cash_dict[f"{session}"] = state
@@ -151,7 +178,7 @@ def create_subjects(subject_id, layout_df, layout):
             internal_identifier=f"{subject_name}",
             # TODO species should be defulted to homo sapiens
             species=bids2openminds_instance(pd_table_value(data_subject, "species"), "MAP_2_SPECIES"),
-            studied_states=state_cash,
+            studied_states=state_cash
         )
         subjects_dict[f"{subject}"] = subject_cash
         subjects_list.append(subject_cash)
