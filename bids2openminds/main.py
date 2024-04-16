@@ -181,7 +181,7 @@ def create_subjects(subject_id, layout_df, layout):
                     value=pd_table_value(data_subject, "age"),
                     unit=controlled_terms.UnitOfMeasurement.year
                 ),
-                handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
+                handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
                 internal_identifier=f"Studied state {subject_name}".strip(),
                 lookup_label=f"Studied state {subject_name}".strip()
                 )
@@ -196,7 +196,7 @@ def create_subjects(subject_id, layout_df, layout):
                             value=pd_table_value(data_subject, "age"),
                             unit=controlled_terms.UnitOfMeasurement.year
                         ),
-                        handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS"),
+                        handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
                         internal_identifier=f"Studied state {subject_name} {session}".strip(),
                         lookup_label=f"Studied state {subject_name} {session}".strip()
                     )
@@ -209,7 +209,7 @@ def create_subjects(subject_id, layout_df, layout):
             lookup_label=f"{subject_name}",
             internal_identifier=f"{subject_name}",
             # TODO species should default to homo sapiens
-            species=bids2openminds_instance(pd_table_value(data_subject, "species"), "MAP_2_SPECIES"),
+            species=bids2openminds_instance(pd_table_value(data_subject, "species"), "MAP_2_SPECIES", is_list=False),
             studied_states=state_cache
         )
         subjects_dict[f"{subject}"] = subject_cache
