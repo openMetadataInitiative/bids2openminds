@@ -25,7 +25,7 @@ def convert(bids_dir, output_filename=None):
 
     tasks = bids_layout.get_task()
 
-    # imprting the datset description file containing some of the
+    # imprting the dataset description file containing some of the
     dataset_description_path = utility.table_filter(layout_df, "description")
 
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
