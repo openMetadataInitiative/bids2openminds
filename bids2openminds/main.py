@@ -1,5 +1,6 @@
 import os
 import pathlib
+from warnings import warn
 
 import pandas as pd
 
@@ -17,8 +18,14 @@ def create_techniques(layout_df):
     techniques = []
     not_techniques_index = ["description", "participants", "events"]
     for suffix in suffixs:
+        #excluding the None and non thechnique indexes
         if not (pd.isna(suffix) or (suffix in not_techniques_index)):
-            techniques.extend(bids2openminds_instance(suffix, "MAP_2_TECHNIQUES"))
+            openminds_techniques_cash=bids2openminds_instance(suffix, "MAP_2_TECHNIQUES")
+            #Excluding the suffixs that are not in teh library or flaged as non thechnique suffixes
+            if not pd.isna(openminds_techniques_cash):
+                techniques.extend(openminds_techniques_cash)
+            else:
+                warn(f"The {suffix} suffix is curently considerd axiullary file for already existance techniques or a non technique file.")
 
     return techniques or None
 
