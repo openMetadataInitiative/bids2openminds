@@ -4,6 +4,7 @@ version = "0.0.0"
 dependencies = [
   "bids",
   "openminds >= 0.2.2",
+  "click>=8.1",
   "pandas",
 ]
 requires-python = ">=3.9"
@@ -18,6 +19,9 @@ classifiers = [
   "Development Status :: 3 - Alpha",
   "Programming Language :: Python"
 ]
+
+[project.scripts]
+bids2openminds="bids2openminds:converter"
 
 [build-system]
 requires = ["setuptools >= 61.0"]

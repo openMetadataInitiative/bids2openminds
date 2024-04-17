@@ -1,14 +1,19 @@
 from warnings import warn
 from bids import BIDSLayout, BIDSValidator
 import os
+import click
 from . import main
 from . import utility
 from . import globals
 
 
-
-def convert(bids_dir, output_filename=None):
-
+#@click.command()
+#@click.argument('input_path', type=click.Path(file_okay=False,exists=True))
+#@click.option('-o','--output_path',default=None,type=click.Path(file_okay=True,writable=True),help="The output path for openMINDS directory")
+#@click.option('--collection/--no-collection',default=True)
+def convert(input_path,output_path):
+    #bids_dir, output_filename=None
+    print(input_path)
     if not (os.path.isdir(bids_dir)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {bids_dir} which is not a directory."
@@ -46,6 +51,7 @@ def convert(bids_dir, output_filename=None):
     if output_filename is None:
         output_filename = os.path.join(bids_dir, "openminds.jsonld")
     globals.collection.save(output_filename)
+    print("test")
 
 
 if __name__ == "__main__":
