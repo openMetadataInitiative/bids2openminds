@@ -4,7 +4,7 @@ from openminds import Collection
 
 import bids2openminds.converter
 
-example_dataset_labels = ("ds003", "ds000247", "eeg_cbm", "asl001")
+example_dataset_labels = ("ds003", "ds000247", "eeg_cbm", "asl001", "ds000001-fmriprep")
 
 @pytest.mark.parametrize("dataset_label", example_dataset_labels)
 def test_example_datasets(dataset_label):
