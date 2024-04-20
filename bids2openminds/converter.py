@@ -14,8 +14,7 @@ from . import globals
 @click.option('--multiple-file','output_type',flag_value=True,help="Each node is saved into a separate file within that directory, `output_path` must be a directory.")
 @click.option("--include_empty_properties/--no-include_empty_properties",default=False)
 def convert(input_path,output_path,output_type,include_empty_properties):
-    #bids_dir, output_filename=None
-    print(input_path)
+
     if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {input_path} which is not a directory."
