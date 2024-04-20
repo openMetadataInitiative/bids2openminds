@@ -21,7 +21,7 @@ classifiers = [
 ]
 
 [project.scripts]
-bids2openminds="bids2openminds:converter"
+bids2openminds="bids2openminds.converter:convert"
 
 [build-system]
 requires = ["setuptools >= 61.0"]

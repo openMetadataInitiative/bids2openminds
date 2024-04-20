@@ -7,22 +7,22 @@ from . import utility
 from . import globals
 
 
-#@click.command()
-#@click.argument('input_path', type=click.Path(file_okay=False,exists=True))
-#@click.option('-o','--output_path',default=None,type=click.Path(file_okay=True,writable=True),help="The output path for openMINDS directory")
-#@click.option('--collection/--no-collection',default=True)
-def convert(input_path,output_path):
+@click.command()
+@click.argument('input_path', type=click.Path(file_okay=False,exists=True))
+@click.option('-o','--output_path',default=None,type=click.Path(file_okay=True,writable=True),help="The output path or file name for openMINDS file/files.")
+@click.option('--single-file','output_type',flag_value=True,default=False,help="Save the entire collection into a single file (default)")
+@click.option('--multiple-file','output_type',flag_value=True,help="Each node is saved into a separate file within that directory, `path` must be a directory.")
+def convert(input_path,output_path,output_type):
     #bids_dir, output_filename=None
     print(input_path)
-    if not (os.path.isdir(bids_dir)):
+    if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
-            f"The input directory is not valid, you have specified {bids_dir} which is not a directory."
+            f"The input directory is not valid, you have specified {input_path} which is not a directory."
         )
+    # if not(BIDSValidator().is_bids(input_path)):
+    #  raise NotADirectoryError(f"The input directory is not valid, you have specified {input_path} which is not a BIDS directory.")
 
-    # if not(BIDSValidator().is_bids(bids_dir)):
-    #  raise NotADirectoryError(f"The input directory is not valid, you have specified {bids_dir} which is not a BIDS directory.")
-
-    bids_layout = BIDSLayout(bids_dir)
+    bids_layout = BIDSLayout(input_path)
 
     layout_df = bids_layout.to_df()
 
@@ -37,7 +37,7 @@ def convert(input_path,output_path):
 
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(subjects_id, layout_df, bids_layout)
 
-    [files_list, file_repository] = main.create_file(layout_df, bids_dir)
+    [files_list, file_repository] = main.create_file(layout_df, input_path)
 
     dataset_version = main.create_dataset_version(
         bids_layout, dataset_description, layout_df, subjects_list, file_repository
@@ -48,12 +48,19 @@ def convert(input_path,output_path):
     failures = globals.collection.validate(ignore=["required", "value"])
     assert len(failures) == 0
 
-    if output_filename is None:
-        output_filename = os.path.join(bids_dir, "openminds.jsonld")
-    globals.collection.save(output_filename)
+    if output_path is None:
+        if output_type:
+            output_path=os.path.join(input_path, "openminds")
+        else:
+            output_path = os.path.join(input_path, "openminds.jsonld")
+    else:
+        if output_type:
+            if not(os.path.exists(output_path)):
+                warn("You have chosen single-file option but {output_path} is not ")
+    globals.collection.save(output_path,individual_files=output_type)
     print("test")
 
 
 if __name__ == "__main__":
-    bids_dir = input("Enter the BIDS directory path: ")
-    convert(bids_dir)
+    input_path = input("Enter the BIDS directory path: ")
+    convert(input_path)
