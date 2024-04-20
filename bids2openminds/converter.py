@@ -11,8 +11,9 @@ from . import globals
 @click.argument('input_path', type=click.Path(file_okay=False,exists=True))
 @click.option('-o','--output_path',default=None,type=click.Path(file_okay=True,writable=True),help="The output path or file name for openMINDS file/files.")
 @click.option('--single-file','output_type',flag_value=True,default=False,help="Save the entire collection into a single file (default)")
-@click.option('--multiple-file','output_type',flag_value=True,help="Each node is saved into a separate file within that directory, `path` must be a directory.")
-def convert(input_path,output_path,output_type):
+@click.option('--multiple-file','output_type',flag_value=True,help="Each node is saved into a separate file within that directory, `output_path` must be a directory.")
+@click.option("--include_empty_properties/--no-include_empty_properties",default=False)
+def convert(input_path,output_path,output_type,include_empty_properties):
     #bids_dir, output_filename=None
     print(input_path)
     if not (os.path.isdir(input_path)):
@@ -44,7 +45,7 @@ def convert(input_path,output_path,output_type):
     )
 
     dataset = main.create_dataset(dataset_description, dataset_version)
-
+    
     failures = globals.collection.validate(ignore=["required", "value"])
     assert len(failures) == 0
 
@@ -53,12 +54,10 @@ def convert(input_path,output_path,output_type):
             output_path=os.path.join(input_path, "openminds")
         else:
             output_path = os.path.join(input_path, "openminds.jsonld")
-    else:
-        if output_type:
-            if not(os.path.exists(output_path)):
-                warn("You have chosen single-file option but {output_path} is not ")
-    globals.collection.save(output_path,individual_files=output_type)
-    print("test")
+
+    globals.collection.save(output_path,individual_files=output_type,include_empty_properties=include_empty_properties)
+
+    print(f"Convertion was succesfull, the openMINDS file is in {output_path}")
 
 
 if __name__ == "__main__":
