@@ -8,11 +8,11 @@ from . import globals
 
 
 @click.command()
-@click.argument('input_path', type=click.Path(file_okay=False,exists=True))
-@click.option('-o','--output_path',default=None,type=click.Path(file_okay=True,writable=True),help="The output path or file name for openMINDS file/files.")
-@click.option('--single-file','output_type',flag_value=True,default=False,help="Save the entire collection into a single file (default)")
-@click.option('--multiple-file','output_type',flag_value=True,help="Each node is saved into a separate file within that directory, `output_path` must be a directory.")
-@click.option("--include_empty_properties/--no-include_empty_properties",default=False)
+@click.argument("input_path", type=click.Path(file_okay=False,exists=True))
+@click.option("-o","--output_path",default=None,type=click.Path(file_okay=True,writable=True),help="The output path or filename for OpenMINDS file/files.")
+@click.option("--single-file","output_type",flag_value=True,default=False,help="Save the entire collection into a single file (default).")
+@click.option("--multiple-file","output_type",flag_value=True,help="Each node is saved into a separate file within the specified directory. 'output_path' if specified, must be a directory.")
+@click.option("--include_empty_properties/--no-include_empty_properties",default=False,help="Whether to include empty properties in the final file.")
 def convert(input_path,output_path,output_type,include_empty_properties):
 
     if not (os.path.isdir(input_path)):
