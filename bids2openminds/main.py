@@ -231,8 +231,9 @@ def create_file(layout_df, BIDS_path):
         data_types = None
         extension = file["extension"]
         path = file["path"]
-        name = path[path.rfind("/") + 1 :]
-        iri=IRI(pathlib.Path(path).as_uri())
+        path_iri=pathlib.Path(path).as_uri()
+        iri=IRI(path_iri)
+        name = path_iri[path_iri.rfind("/") + 1 :]
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
         if pd.isna(file["subject"]):
