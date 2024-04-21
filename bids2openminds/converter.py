@@ -56,7 +56,7 @@ def convert(input_path,output_path,output_type,include_empty_properties):
 
     globals.collection.save(output_path,individual_files=output_type,include_empty_properties=include_empty_properties)
 
-    print(f"Convertion was succesfull, the openMINDS file is in {output_path}")
+    print(f"Conversion was successful, the openMINDS file is in {output_path}")
 
 
 if __name__ == "__main__":
