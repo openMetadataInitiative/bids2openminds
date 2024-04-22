@@ -231,8 +231,7 @@ def create_file(layout_df, BIDS_path):
         data_types = None
         extension = file["extension"]
         path = file["path"]
-        path_iri=pathlib.Path(path).as_uri()
-        iri=IRI(path_iri)
+        iri=IRI(pathlib.Path(path).as_uri())
         name=os.path.basename(path)
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
