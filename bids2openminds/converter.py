@@ -6,15 +6,8 @@ from . import main
 from . import utility
 from . import globals
 
-
-@click.command()
-@click.argument("input_path", type=click.Path(file_okay=False,exists=True))
-@click.option("-o","--output_path",default=None,type=click.Path(file_okay=True,writable=True),help="The output path or filename for OpenMINDS file/files.")
-@click.option("--single-file","output_separate_files",flag_value=True,default=False,help="Save the entire collection into a single file (default).")
-@click.option("--multiple-file","output_separate_files",flag_value=True,help="Each node is saved into a separate file within the specified directory. 'output_path' if specified, must be a directory.")
-@click.option("--include_empty_properties/--no-include_empty_properties",default=False,help="Whether to include empty properties in the final file.")
 def convert(input_path, output_path=None, output_separate_files=False, include_empty_properties=False):  
-
+    print(input_path)
     if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {input_path} which is not a directory."
@@ -57,6 +50,18 @@ def convert(input_path, output_path=None, output_separate_files=False, include_e
     globals.collection.save(output_path,individual_files=output_separate_files,include_empty_properties=include_empty_properties)
 
     print(f"Conversion was successful, the openMINDS file is in {output_path}")
+
+
+
+@click.command()
+@click.argument("input_path", type=click.Path(file_okay=False,exists=True))
+@click.option("-o","--output_path",default=None,type=click.Path(file_okay=True,writable=True),help="The output path or filename for OpenMINDS file/files.")
+@click.option("--single-file","output_separate_files",flag_value=True,default=False,help="Save the entire collection into a single file (default).")
+@click.option("--multiple-file","output_separate_files",flag_value=True,help="Each node is saved into a separate file within the specified directory. 'output_path' if specified, must be a directory.")
+@click.option("--include_empty_properties/--no-include_empty_properties",default=False,help="Whether to include empty properties in the final file.")
+def convert_click(input_path, output_path, output_separate_files, include_empty_properties):
+    convert(input_path, output_path, output_separate_files, include_empty_properties)
+
 
 
 if __name__ == "__main__":
