@@ -54,9 +54,9 @@ def create_openminds_age(data_subject):
                 )
     elif age=="89+":
         return omcore.QuantitativeValueRange(
-                    maxValue=None,
+                    max_value=None,
                     min_value=89,
-                    minValueUnit=controlled_terms.UnitOfMeasurement.year
+                    min_value_unit=controlled_terms.UnitOfMeasurement.year
                 )
     else:
         return None
