@@ -7,7 +7,6 @@ from . import utility
 from . import globals
 
 def convert(input_path, output_path=None, output_separate_files=False, include_empty_properties=False):  
-    print(input_path)
     if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {input_path} which is not a directory."
