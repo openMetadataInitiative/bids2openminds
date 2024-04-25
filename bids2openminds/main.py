@@ -10,7 +10,6 @@ from openminds import IRI
 
 from .utility import table_filter, pd_table_value, file_hash, file_storage_size
 from .mapping import bids2openminds_instance
-from . import globals
 
 
 def create_techniques(layout_df):
@@ -40,7 +39,7 @@ def create_approaches(layout_df):
     return list(approaches) or None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository,collection):
 
     # Fetch the dataset type from dataset description file
 
@@ -96,12 +95,12 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         # version_identifier
     )
 
-    globals.collection.add(dataset_version)
+    collection.add(dataset_version)
 
     return dataset_version
 
 
-def create_dataset(dataset_description, dataset_version):
+def create_dataset(dataset_description, dataset_version,collection):
 
     if "DatasetDOI" in dataset_description:
         digital_identifier = omcore.DOI(identifier=dataset_description["DatasetDOI"])
@@ -112,12 +111,12 @@ def create_dataset(dataset_description, dataset_version):
         digital_identifier=digital_identifier, full_name=dataset_description["Name"], has_versions=dataset_version
     )
 
-    globals.collection.add(dataset)
+    collection.add(dataset)
 
     return dataset
 
 
-def create_subjects(subject_id, layout_df, layout):
+def create_subjects(subject_id, layout_df, layout,collection):
 
     sessions = layout.get_sessions()
     subjects_dict = {}
@@ -138,7 +137,7 @@ def create_subjects(subject_id, layout_df, layout):
                     internal_identifier=f"Studied state {subject_name}".strip(),
                     lookup_label=f"Studied state {subject_name}".strip()
                 )
-                globals.collection.add(state)
+                collection.add(state)
                 state_cache_dict[""] = state
                 state_cache.append(state)
             else:
@@ -149,7 +148,7 @@ def create_subjects(subject_id, layout_df, layout):
                             internal_identifier=f"Studied state {subject_name} {session}".strip(),
                             lookup_label=f"Studied state {subject_name} {session}".strip()
                         )
-                        globals.collection.add(state)
+                        collection.add(state)
                         state_cache_dict[f"{session}"] = state
                         state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
@@ -159,7 +158,7 @@ def create_subjects(subject_id, layout_df, layout):
             )
             subjects_dict[f"{subject}"] = subject_cache
             subjects_list.append(subject_cache)
-            globals.collection.add(subject_cache)
+            collection.add(subject_cache)
 
 
         return subjects_dict, subject_state_dict, subjects_list
@@ -185,7 +184,7 @@ def create_subjects(subject_id, layout_df, layout):
                 internal_identifier=f"Studied state {subject_name}".strip(),
                 lookup_label=f"Studied state {subject_name}".strip()
                 )
-            globals.collection.add(state)
+            collection.add(state)
             state_cache_dict[""] = state
             state_cache.append(state)
         else:
@@ -200,7 +199,7 @@ def create_subjects(subject_id, layout_df, layout):
                         internal_identifier=f"Studied state {subject_name} {session}".strip(),
                         lookup_label=f"Studied state {subject_name} {session}".strip()
                     )
-                    globals.collection.add(state)
+                    collection.add(state)
                     state_cache_dict[f"{session}"] = state
                     state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
@@ -214,16 +213,16 @@ def create_subjects(subject_id, layout_df, layout):
         )
         subjects_dict[f"{subject}"] = subject_cache
         subjects_list.append(subject_cache)
-        globals.collection.add(subject_cache)
+        collection.add(subject_cache)
 
     return subjects_dict, subject_state_dict, subjects_list
 
 
-def create_file(layout_df, BIDS_path):
+def create_file(layout_df, BIDS_path,collection):
 
     BIDS_directory_path = os.path.dirname(BIDS_path)
     file_repository = omcore.FileRepository()
-    globals.collection.add(file_repository)
+    collection.add(file_repository)
     files_list = []
     for index, file in layout_df.iterrows():
         file_format = None
@@ -271,7 +270,7 @@ def create_file(layout_df, BIDS_path):
             # special_usage_role
             storage_size=storage_size,
         )
-        globals.collection.add(file)
+        collection.add(file)
         files_list.append(file)
 
     return files_list, file_repository

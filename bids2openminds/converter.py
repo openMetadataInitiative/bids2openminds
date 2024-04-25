@@ -1,9 +1,9 @@
 from warnings import warn
 from bids import BIDSLayout, BIDSValidator
+from openminds import Collection
 import os
 from . import main
 from . import utility
-from . import globals
 
 
 
@@ -16,6 +16,8 @@ def convert(bids_dir, output_filename=None):
 
     # if not(BIDSValidator().is_bids(bids_dir)):
     #  raise NotADirectoryError(f"The input directory is not valid, you have specified {bids_dir} which is not a BIDS directory.")
+
+    collection = Collection()
 
     bids_layout = BIDSLayout(bids_dir)
 
@@ -30,22 +32,22 @@ def convert(bids_dir, output_filename=None):
 
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
 
-    [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(subjects_id, layout_df, bids_layout)
+    [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(subjects_id, layout_df, bids_layout,collection)
 
-    [files_list, file_repository] = main.create_file(layout_df, bids_dir)
+    [files_list, file_repository] = main.create_file(layout_df, bids_dir,collection)
 
     dataset_version = main.create_dataset_version(
-        bids_layout, dataset_description, layout_df, subjects_list, file_repository
+        bids_layout, dataset_description, layout_df, subjects_list, file_repository,collection
     )
 
-    dataset = main.create_dataset(dataset_description, dataset_version)
+    dataset = main.create_dataset(dataset_description, dataset_version,collection)
 
-    failures = globals.collection.validate(ignore=["required", "value"])
+    failures = collection.validate(ignore=["required", "value"])
     assert len(failures) == 0
 
     if output_filename is None:
         output_filename = os.path.join(bids_dir, "openminds.jsonld")
-    globals.collection.save(output_filename)
+    collection.save(output_filename)
 
 
 if __name__ == "__main__":
