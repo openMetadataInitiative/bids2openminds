@@ -42,7 +42,7 @@ def convert(input_path, output_path=None, multiple_files=False, include_empty_pr
 
     dataset = main.create_dataset(dataset_description, dataset_version,collection)
     
-    failures = globals.collection.validate(ignore=["required", "value"])
+    failures = collection.validate(ignore=["required", "value"])
     assert len(failures) == 0
 
     if output_path is None:
@@ -51,7 +51,7 @@ def convert(input_path, output_path=None, multiple_files=False, include_empty_pr
         else:
             output_path = os.path.join(input_path, "openminds.jsonld")
 
-    globals.collection.save(output_path,individual_files=multiple_files,include_empty_properties=include_empty_properties)
+    collection.save(output_path,individual_files=multiple_files,include_empty_properties=include_empty_properties)
 
     print(f"Conversion was successful, the openMINDS file is in {output_path}")
 
