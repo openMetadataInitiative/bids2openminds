@@ -3,6 +3,7 @@ import pathlib
 from warnings import warn
 
 import pandas as pd
+from nameparser import HumanName
 
 import openminds.latest.core as omcore
 import openminds.latest.controlled_terms as controlled_terms
@@ -10,6 +11,53 @@ from openminds import IRI
 
 from .utility import table_filter, pd_table_value, file_hash, file_storage_size
 from .mapping import bids2openminds_instance
+
+
+def create_openminds_person(full_name):
+
+    alternate_names = []
+    person = HumanName(full_name)
+    given_name = person.first
+    family_name = person.last
+
+    if person.middle:
+        alternate_names.append(person.full_name)
+
+    if person.nickname:
+        alternate_names.append(person.nickname)
+
+    if not alternate_names:
+        alternate_names = None
+
+    openminds_person = omcore.Person(
+        alternate_names=alternate_names, given_name=given_name, family_name=family_name)
+
+    return openminds_person
+
+
+def create_persons(dataset_description, collection):
+
+    if "Authors" in dataset_description:
+        person_list = dataset_description["Authors"]
+    else:
+        return None
+
+    if not (isinstance(person_list, list)):
+        # handel's only one name
+        if isinstance(person_list, str):
+            openminds_person = create_openminds_person(person_list)
+            collection.add(openminds_person)
+            return openminds_person
+        else:
+            return None
+
+    openminds_list = []
+    for person in person_list:
+        openminds_person = create_openminds_person(person)
+        openminds_list.append(openminds_person)
+        collection.add(openminds_person)
+
+    return openminds_list
 
 
 def create_techniques(layout_df):
@@ -56,8 +104,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     else:
         digital_identifier = None
 
-    # TODO extract person
-    # author=person_create(dataset_description["Authors"])
+    authors = create_persons(dataset_description, collection)
 
     if "Acknowledgements" in dataset_description:
         other_contribution = dataset_description["Acknowledgements"]
@@ -92,6 +139,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         experimental_approaches=experimental_approaches,
         short_name=dataset_description["Name"],
         studied_specimens=studied_specimens,
+        authors=authors,
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
