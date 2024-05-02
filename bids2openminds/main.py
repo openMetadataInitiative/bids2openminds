@@ -49,7 +49,7 @@ def create_openminds_age(data_subject):
     except:
         return None
 
-    if age is None:
+    if age is None or pd.isna(age):
         return None
     elif isinstance(age, float) or isinstance(age, int) or age.isnumeric():
         return omcore.QuantitativeValue(
