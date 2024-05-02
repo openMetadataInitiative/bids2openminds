@@ -10,7 +10,6 @@ from openminds import IRI
 
 from .utility import table_filter, pd_table_value, file_hash, file_storage_size
 from .mapping import bids2openminds_instance
-from . import globals
 
 
 def create_techniques(layout_df):
@@ -18,14 +17,16 @@ def create_techniques(layout_df):
     techniques = []
     not_techniques_index = ["description", "participants", "events"]
     for suffix in suffixs:
-        #excluding the None and non thechnique indexes
+        # excluding the None and non thechnique indexes
         if not (pd.isna(suffix) or (suffix in not_techniques_index)):
-            openminds_techniques_cache=bids2openminds_instance(suffix, "MAP_2_TECHNIQUES")
-            #Excluding the suffixs that are not in the library or flagged as non technique suffixes
+            openminds_techniques_cache = bids2openminds_instance(
+                suffix, "MAP_2_TECHNIQUES")
+            # Excluding the suffixs that are not in the library or flagged as non technique suffixes
             if not pd.isna(openminds_techniques_cache):
                 techniques.extend(openminds_techniques_cache)
             else:
-                warn(f"The {suffix} suffix is currently considered an auxiliary file for already existing techniques or a non technique file.")
+                warn(
+                    f"The {suffix} suffix is currently considered an auxiliary file for already existing techniques or a non technique file.")
 
     return techniques or None
 
@@ -35,7 +36,8 @@ def create_approaches(layout_df):
     approaches = set([])
     for datatype in datatypes:
         if not (pd.isna(datatype)):
-            approaches.update(bids2openminds_instance(datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
+            approaches.update(bids2openminds_instance(
+                datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
 
     return list(approaches) or None
 
@@ -43,26 +45,28 @@ def create_approaches(layout_df):
 def create_openminds_age(data_subject):
 
     try:
-        age=pd_table_value(data_subject, "age")
+        age = pd_table_value(data_subject, "age")
     except:
         return None
 
-    if isinstance(age,float) or isinstance(age,int) or age.isnumeric():
+    if age is None:
+        return None
+    elif isinstance(age, float) or isinstance(age, int) or age.isnumeric():
         return omcore.QuantitativeValue(
-                    value=age,
-                    unit=controlled_terms.UnitOfMeasurement.year
-                )
-    elif age=="89+":
+            value=age,
+            unit=controlled_terms.UnitOfMeasurement.year
+        )
+    elif age == "89+":
         return omcore.QuantitativeValueRange(
-                    max_value=None,
-                    min_value=89,
-                    min_value_unit=controlled_terms.UnitOfMeasurement.year
-                )
+            max_value=None,
+            min_value=89,
+            min_value_unit=controlled_terms.UnitOfMeasurement.year
+        )
     else:
         return None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, collection):
 
     # Fetch the dataset type from dataset description file
 
@@ -71,7 +75,8 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     # Fetch the digitalIdentifier from dataset description file
 
     if "DatasetDOI" in dataset_description:
-        digital_identifier = omcore.DOI(identifier=dataset_description["DatasetDOI"])
+        digital_identifier = omcore.DOI(
+            identifier=dataset_description["DatasetDOI"])
     else:
         digital_identifier = None
 
@@ -114,32 +119,34 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        #other_contributions=other_contribution  # needs to be a Contribution object
+        # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
 
-    globals.collection.add(dataset_version)
+    collection.add(dataset_version)
 
     return dataset_version
 
 
-def create_dataset(dataset_description, dataset_version):
+def create_dataset(dataset_description, dataset_version, collection):
 
     if "DatasetDOI" in dataset_description:
-        digital_identifier = omcore.DOI(identifier=dataset_description["DatasetDOI"])
+        digital_identifier = omcore.DOI(
+            identifier=dataset_description["DatasetDOI"])
     else:
         digital_identifier = None
 
     dataset = omcore.Dataset(
-        digital_identifier=digital_identifier, full_name=dataset_description["Name"], has_versions=dataset_version
+        digital_identifier=digital_identifier, full_name=dataset_description[
+            "Name"], has_versions=dataset_version
     )
 
-    globals.collection.add(dataset)
+    collection.add(dataset)
 
     return dataset
 
 
-def create_subjects(subject_id, layout_df, layout):
+def create_subjects(subject_id, layout_df, layout, collection):
 
     sessions = layout.get_sessions()
     subjects_dict = {}
@@ -148,30 +155,33 @@ def create_subjects(subject_id, layout_df, layout):
 
     # Find the participants files in the files table
     participants_paths = table_filter(layout_df, "participants")
-    if  participants_paths.empty:
-        #creating emphty subjects just based on file structure
+    if participants_paths.empty:
+        # creating emphty subjects just based on file structure
         for subject in subject_id:
             subject_name = f"sub-{subject}"
             state_cache_dict = {}
             state_cache = []
-            #dealing with condition that have no seasion
+            # dealing with condition that have no seasion
             if not sessions:
                 state = omcore.SubjectState(
-                    internal_identifier=f"Studied state {subject_name}".strip(),
+                    internal_identifier=f"Studied state {subject_name}".strip(
+                    ),
                     lookup_label=f"Studied state {subject_name}".strip()
                 )
-                globals.collection.add(state)
+                collection.add(state)
                 state_cache_dict[""] = state
                 state_cache.append(state)
             else:
-                #create a subject state for each state
+                # create a subject state for each state
                 for session in sessions:
-                    if not(table_filter(table_filter(layout_df,session,"session"),subject,"subject").empty):
+                    if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                         state = omcore.SubjectState(
-                            internal_identifier=f"Studied state {subject_name} {session}".strip(),
-                            lookup_label=f"Studied state {subject_name} {session}".strip()
+                            internal_identifier=f"Studied state {subject_name} {session}".strip(
+                            ),
+                            lookup_label=f"Studied state {subject_name} {session}".strip(
+                            )
                         )
-                        globals.collection.add(state)
+                        collection.add(state)
                         state_cache_dict[f"{session}"] = state
                         state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
@@ -181,65 +191,72 @@ def create_subjects(subject_id, layout_df, layout):
             )
             subjects_dict[f"{subject}"] = subject_cache
             subjects_list.append(subject_cache)
-            globals.collection.add(subject_cache)
-
+            collection.add(subject_cache)
 
         return subjects_dict, subject_state_dict, subjects_list
 
-
     # Select the tsv file of the table
-    participants_path_tsv = pd_table_value(table_filter(participants_paths, ".tsv", "extension"), "path")
-    participants_path_json = pd_table_value(table_filter(participants_paths, ".json", "extension"), "path")
+    participants_path_tsv = pd_table_value(table_filter(
+        participants_paths, ".tsv", "extension"), "path")
+    participants_path_json = pd_table_value(table_filter(
+        participants_paths, ".json", "extension"), "path")
 
     participants_table = pd.read_csv(participants_path_tsv, sep="\t", header=0)
     for subject in subject_id:
         subject_name = f"sub-{subject}"
-        data_subject = table_filter(participants_table, subject_name, "participant_id")
+        data_subject = table_filter(
+            participants_table, subject_name, "participant_id")
         state_cache_dict = {}
         state_cache = []
         if not sessions:
             state = omcore.SubjectState(
                 age=create_openminds_age(data_subject),
-                handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
+                handedness=bids2openminds_instance(pd_table_value(
+                    data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
                 internal_identifier=f"Studied state {subject_name}".strip(),
                 lookup_label=f"Studied state {subject_name}".strip()
-                )
-            globals.collection.add(state)
+            )
+            collection.add(state)
             state_cache_dict[""] = state
             state_cache.append(state)
         else:
             for session in sessions:
-                if not(table_filter(table_filter(layout_df,session,"session"),subject,"subject").empty):
+                if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                     state = omcore.SubjectState(
                         age=create_openminds_age(data_subject),
-                        handedness=bids2openminds_instance(pd_table_value(data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
-                        internal_identifier=f"Studied state {subject_name} {session}".strip(),
-                        lookup_label=f"Studied state {subject_name} {session}".strip()
+                        handedness=bids2openminds_instance(pd_table_value(
+                            data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
+                        internal_identifier=f"Studied state {subject_name} {session}".strip(
+                        ),
+                        lookup_label=f"Studied state {subject_name} {session}".strip(
+                        )
                     )
-                    globals.collection.add(state)
+                    collection.add(state)
                     state_cache_dict[f"{session}"] = state
                     state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
         subject_cache = omcore.Subject(
-            biological_sex=bids2openminds_instance(pd_table_value(data_subject, "sex"), "MAP_2_SEX", is_list=False),
+            biological_sex=bids2openminds_instance(pd_table_value(
+                data_subject, "sex"), "MAP_2_SEX", is_list=False),
             lookup_label=f"{subject_name}",
             internal_identifier=f"{subject_name}",
             # TODO species should default to homo sapiens
-            species=bids2openminds_instance(pd_table_value(data_subject, "species"), "MAP_2_SPECIES", is_list=False),
+            species=bids2openminds_instance(pd_table_value(
+                data_subject, "species"), "MAP_2_SPECIES", is_list=False),
             studied_states=state_cache
         )
         subjects_dict[f"{subject}"] = subject_cache
         subjects_list.append(subject_cache)
-        globals.collection.add(subject_cache)
+        collection.add(subject_cache)
 
     return subjects_dict, subject_state_dict, subjects_list
 
 
-def create_file(layout_df, BIDS_path):
+def create_file(layout_df, BIDS_path, collection):
 
     BIDS_directory_path = os.path.dirname(BIDS_path)
     file_repository = omcore.FileRepository()
-    globals.collection.add(file_repository)
+    collection.add(file_repository)
     files_list = []
     for index, file in layout_df.iterrows():
         file_format = None
@@ -247,24 +264,28 @@ def create_file(layout_df, BIDS_path):
         data_types = None
         extension = file["extension"]
         path = file["path"]
-        iri=IRI(pathlib.Path(path).as_uri())
-        name=os.path.basename(path)
+        iri = IRI(pathlib.Path(path).as_uri())
+        name = os.path.basename(path)
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
         if pd.isna(file["subject"]):
             if file["suffix"] == "participants":
                 if extension == ".json":
                     content_description = f"A JSON metadata file of participants TSV."
-                    data_types = controlled_terms.DataType.by_name("associative array")
-                    file_format = omcore.ContentType.by_name("application/json")
+                    data_types = controlled_terms.DataType.by_name(
+                        "associative array")
+                    file_format = omcore.ContentType.by_name(
+                        "application/json")
                 elif extension == [".tsv"]:
                     content_description = f"A metadata table for participants."
                     data_types = controlled_terms.DataType.by_name("table")
-                    file_format = omcore.ContentType.by_name("text/tab-separated-values")
+                    file_format = omcore.ContentType.by_name(
+                        "text/tab-separated-values")
         else:
             if extension == ".json":
                 content_description = f"A JSON metadata file for {file['suffix']} of subject {file['subject']}"
-                data_types = controlled_terms.DataType.by_name("associative array")
+                data_types = controlled_terms.DataType.by_name(
+                    "associative array")
                 file_format = omcore.ContentType.by_name("application/json")
             elif extension in [".nii", ".nii.gz"]:
                 content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
@@ -273,8 +294,10 @@ def create_file(layout_df, BIDS_path):
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
                     content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
-                    data_types = controlled_terms.DataType.by_name("event sequence")
-                    file_format = omcore.ContentType.by_name("text/tab-separated-values")
+                    data_types = controlled_terms.DataType.by_name(
+                        "event sequence")
+                    file_format = omcore.ContentType.by_name(
+                        "text/tab-separated-values")
         file = omcore.File(
             iri=iri,
             content_description=content_description,
@@ -287,7 +310,7 @@ def create_file(layout_df, BIDS_path):
             # special_usage_role
             storage_size=storage_size,
         )
-        globals.collection.add(file)
+        collection.add(file)
         files_list.append(file)
 
     return files_list, file_repository
