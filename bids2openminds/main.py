@@ -21,7 +21,7 @@ def create_openminds_person(full_name):
     family_name = person.last
 
     if person.middle:
-        alternate_names.append(person.full_name)
+        given_name = f"{given_name} {person.middle}"
 
     if person.nickname:
         alternate_names.append(person.nickname)
