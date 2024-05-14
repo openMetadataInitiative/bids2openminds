@@ -1,3 +1,4 @@
+import re
 import os
 import pathlib
 from warnings import warn
@@ -14,11 +15,21 @@ from .mapping import bids2openminds_instance
 
 
 def create_openminds_person(full_name):
-
+    # Regex for detecting any unwanted characters.
+    name_regex = re.compile(
+        "^[\w'\-, .][^0-9_!¡?÷?¿/\\+=@#$%^&*(){}|~<>;:[\]]{1,}$")
     alternate_names = []
     person = HumanName(full_name)
     given_name = person.first
     family_name = person.last
+
+    # Handle the situation in which there is no given name or the given name consists of unwanted characters.
+    if not (given_name and name_regex.match(given_name)):
+        return None
+
+    # Handle the situation in which the family name consists of unwanted characters.
+    if not (name_regex.match(family_name)):
+        family_name = None
 
     if person.middle:
         given_name = f"{given_name} {person.middle}"
@@ -46,7 +57,8 @@ def create_persons(dataset_description, collection):
         # handel's only one name
         if isinstance(person_list, str):
             openminds_person = create_openminds_person(person_list)
-            collection.add(openminds_person)
+            if openminds_person is not None:
+                collection.add(openminds_person)
             return openminds_person
         else:
             return None
