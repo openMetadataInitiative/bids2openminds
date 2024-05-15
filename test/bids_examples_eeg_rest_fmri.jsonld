@@ -1,0 +1,237 @@
+{
+  "@context": {
+    "@vocab": "https://openminds.ebrains.eu/vocab/"
+  },
+  "@graph": [
+    {
+      "@id": "_:000000",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "age": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
+        }
+      },
+      "internalIdentifier": "Studied state sub-32",
+      "lookupLabel": "Studied state sub-32"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement",
+      "name": "year"
+    },
+    {
+      "@id": "_:000002",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-32",
+      "lookupLabel": "sub-32",
+      "studiedState": [
+        {
+          "@id": "_:000000"
+        }
+      ]
+    },
+    {
+      "@id": "_:000003",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "age": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
+        }
+      },
+      "internalIdentifier": "Studied state sub-35",
+      "lookupLabel": "Studied state sub-35"
+    },
+    {
+      "@id": "_:000004",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-35",
+      "lookupLabel": "sub-35",
+      "studiedState": [
+        {
+          "@id": "_:000003"
+        }
+      ]
+    },
+    {
+      "@id": "_:000005",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "age": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
+        }
+      },
+      "internalIdentifier": "Studied state sub-36",
+      "lookupLabel": "Studied state sub-36"
+    },
+    {
+      "@id": "_:000006",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-36",
+      "lookupLabel": "sub-36",
+      "studiedState": [
+        {
+          "@id": "_:000005"
+        }
+      ]
+    },
+    {
+      "@id": "_:000007",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "Deligianni",
+      "givenName": "F."
+    },
+    {
+      "@id": "_:000008",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "Centeno",
+      "givenName": "M."
+    },
+    {
+      "@id": "_:000009",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "Carmichael",
+      "givenName": "D.W."
+    },
+    {
+      "@id": "_:000010",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "Zhang",
+      "givenName": "G.H."
+    },
+    {
+      "@id": "_:000011",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "Clark",
+      "givenName": "C.A."
+    },
+    {
+      "@id": "_:000012",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "Clayden",
+      "givenName": "J.D."
+    },
+    {
+      "@id": "_:0000013",
+      "@type": "https://openminds.ebrains.eu/core/FileRepository"
+    },
+    {
+      "@id": "_:000014",
+      "@type": "https://openminds.ebrains.eu/core/DatasetVersion",
+      "author": [
+        {
+          "@id": "_:000007"
+        },
+        {
+          "@id": "_:000008"
+        },
+        {
+          "@id": "_:000009"
+        },
+        {
+          "@id": "_:000010"
+        },
+        {
+          "@id": "_:000011"
+        },
+        {
+          "@id": "_:000012"
+        }
+      ],
+      "experimentalApproach": [
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy"
+        },
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"
+        },
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"
+        },
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity"
+        }
+      ],
+      "repository": {
+        "@id": "_:0000013"
+      },
+      "shortName": "EEG, fMRI and NODDI at rest'",
+      "studiedSpecimen": [
+        {
+          "@id": "_:000002"
+        },
+        {
+          "@id": "_:000004"
+        },
+        {
+          "@id": "_:000006"
+        }
+      ],
+      "technique": [
+        {
+          "@id": "https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging"
+        },
+        {
+          "@id": "https://openminds.ebrains.eu/instances/technique/electroencephalography"
+        }
+      ]
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on the bodily structure of living organisms.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739411",
+      "name": "anatomy",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Anatomy",
+      "synonym": [
+        "anatomical approach"
+      ]
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on electrical phenomena associated with living systems, most notably the nervous system, cardiac system, and musculoskeletal system.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741202",
+      "name": "electrophysiology",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Electrophysiology"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on the non-invasive direct or indirect imaging of the structure, function, or pharmacology of the nervous system.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741206",
+      "name": "neuroimaging",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Neuroimaging"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on functional or anatomical connections between single neurons or populations of neurons in defined anatomical regions.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739393",
+      "name": "neural connectivity",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Connectivity"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
+      "name": "diffusion-weighted imaging"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/technique/electroencephalography",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
+      "name": "electroencephalography"
+    },
+    {
+      "@id": "_:000015",
+      "@type": "https://openminds.ebrains.eu/core/Dataset",
+      "fullName": "EEG, fMRI and NODDI at rest'",
+      "hasVersion": [
+        {
+          "@id": "_:000014"
+        }
+      ]
+    }
+  ]
+}
