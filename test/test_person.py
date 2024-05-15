@@ -12,7 +12,7 @@ example_names = [("John Ronald Reuel Tolkien", "John Ronald Reuel", "Tolkien"),
 example_not_names = ["42", "#", "", "A34 hajb"]
 
 
-@pytest.mark.parametrize("full_name,given_name,family_name", example_names)
+@pytest.mark.parametrize("full_name, given_name, family_name", example_names)
 def test_create_openminds_person(full_name, given_name, family_name):
     openminds_person_object = omcore.Person(given_name=given_name,
                                             family_name=family_name)
