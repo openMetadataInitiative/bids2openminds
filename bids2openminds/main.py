@@ -296,8 +296,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
 
 def create_file(layout_df, BIDS_path, collection):
 
-    BIDS_directory_path = os.path.dirname(BIDS_path)
-    file_repository = omcore.FileRepository()
+    file_repository = omcore.FileRepository(
+        iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     collection.add(file_repository)
     files_list = []
     for index, file in layout_df.iterrows():
@@ -306,7 +306,7 @@ def create_file(layout_df, BIDS_path, collection):
         data_types = None
         extension = file["extension"]
         path = file["path"]
-        iri = IRI(pathlib.Path(path).as_uri())
+        iri = IRI(pathlib.Path(path).absolute().as_uri())
         name = os.path.basename(path)
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
