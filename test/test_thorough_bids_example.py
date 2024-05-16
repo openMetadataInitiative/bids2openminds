@@ -5,22 +5,22 @@ import pytest
 
 
 @pytest.fixture
-def test_standard_collection():
+def reference_collection():
     test_standatd_path = os.path.join(
         "test", "bids_examples_eeg_rest_fmri.jsonld")
-    test_standard_collection = Collection()
-    test_standard_collection.load(test_standatd_path)
-    return test_standard_collection
+    reference_collection = Collection()
+    reference_collection.load(test_standatd_path)
+    return reference_collection
 
 
 @pytest.fixture
-def test_dataset_collection():
+def generated_collection():
     test_dataset = os.path.join("bids-examples", "eeg_rest_fmri")
     bids2openminds.converter.convert(test_dataset)
-    test_dataset_collection = Collection()
-    test_dataset_collection.load(
+    generated_collection = Collection()
+    generated_collection.load(
         os.path.join(test_dataset, "openminds.jsonld"))
-    return test_dataset_collection
+    return generated_collection
 
 
 def detect_type(collection, type):
@@ -49,48 +49,48 @@ def find_person(given_name, family_name, list: list):
     return None
 
 
-def test_subject(test_standard_collection, test_dataset_collection):
-    dataset_subjects = detect_type(test_dataset_collection, "Subject")
-    standard_subjects = detect_type(test_standard_collection, "Subject")
-    assert len(dataset_subjects) == len(standard_subjects)
-    for subject in standard_subjects:
-        dataset_subject = find_lookup_label(
-            subject.lookup_label, dataset_subjects)
-        assert dataset_subject is not None
+def test_subject(reference_collection, generated_collection):
+    generated_subjects = detect_type(generated_collection, "Subject")
+    reference_subjects = detect_type(reference_collection, "Subject")
+    assert len(generated_subjects) == len(reference_subjects)
+    for reference_subject in reference_subjects:
+        generated_subject = find_lookup_label(
+            reference_subject.lookup_label, generated_subjects)
+        assert generated_subject is not None
 
 
-def test_subject_state(test_standard_collection, test_dataset_collection):
-    dataset_subjects_state = detect_type(
-        test_dataset_collection, "SubjectState")
-    standard_subjects_state = detect_type(
-        test_standard_collection, "SubjectState")
-    assert len(dataset_subjects_state) == len(standard_subjects_state)
-    for subject_state in standard_subjects_state:
-        dataset_subject_state = find_lookup_label(
-            subject_state.lookup_label, dataset_subjects_state)
-        assert dataset_subject_state is not None
+def test_subject_state(reference_collection, generated_collection):
+    generated_subjects_states = detect_type(
+        generated_collection, "SubjectState")
+    reference_subjects_states = detect_type(
+        reference_collection, "SubjectState")
+    assert len(generated_subjects_states) == len(reference_subjects_states)
+    for reference_subject_state in reference_subjects_states:
+        generated_subject_state = find_lookup_label(
+            reference_subject_state.lookup_label, generated_subjects_states)
+        assert generated_subject_state is not None
 
 
 @pytest.mark.skip(reason="This test should be activated after pull request #36")
-def test_person(test_standard_collection, test_dataset_collection):
-    dataset_persons = detect_type(
-        test_dataset_collection, "Person")
-    standard_persons = detect_type(
-        test_standard_collection, "Person")
-    assert len(dataset_persons) == len(standard_persons)
-    for person in standard_persons:
-        dataset_p = find_person(
-            person.given_name, person.family_name, dataset_persons)
-        assert dataset_p is not None
+def test_person(reference_collection, generated_collection):
+    generated_persons = detect_type(
+        generated_collection, "Person")
+    reference_persons = detect_type(
+        reference_collection, "Person")
+    assert len(generated_persons) == len(reference_persons)
+    for reference_person in reference_persons:
+        generated_person = find_person(
+            reference_person.given_name, reference_person.family_name, generated_persons)
+        assert generated_person is not None
 
 
-def test_dataset_version(test_standard_collection, test_dataset_collection):
-    dataset_version = detect_type(
-        test_dataset_collection, "DatasetVersion")
-    standard_dataset_version = detect_type(
-        test_standard_collection, "DatasetVersion")
-    assert len(dataset_version.experimental_approaches) == len(
-        standard_dataset_version.experimental_approaches)
-    assert dataset_version.short_name == standard_dataset_version.short_name
-    assert len(dataset_version.techniques) == len(
-        standard_dataset_version.techniques)
+def test_dataset_version(reference_collection, generated_collection):
+    generated_dataset_version = detect_type(
+        generated_collection, "DatasetVersion")
+    reference_dataset_version = detect_type(
+        reference_collection, "DatasetVersion")
+    assert len(generated_dataset_version.experimental_approaches) == len(
+        reference_dataset_version.experimental_approaches)
+    assert generated_dataset_version.short_name == reference_dataset_version.short_name
+    assert len(generated_dataset_version.techniques) == len(
+        reference_dataset_version.techniques)
