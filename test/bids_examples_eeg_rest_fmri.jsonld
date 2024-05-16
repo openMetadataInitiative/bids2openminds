@@ -6,19 +6,8 @@
     {
       "@id": "_:000000",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
-      "age": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
-        }
-      },
       "internalIdentifier": "Studied state sub-32",
       "lookupLabel": "Studied state sub-32"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement",
-      "name": "year"
     },
     {
       "@id": "_:000002",
@@ -34,12 +23,6 @@
     {
       "@id": "_:000003",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
-      "age": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
-        }
-      },
       "internalIdentifier": "Studied state sub-35",
       "lookupLabel": "Studied state sub-35"
     },
@@ -57,12 +40,6 @@
     {
       "@id": "_:000005",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
-      "age": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
-        }
-      },
       "internalIdentifier": "Studied state sub-36",
       "lookupLabel": "Studied state sub-36"
     },
