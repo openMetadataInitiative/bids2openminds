@@ -71,7 +71,6 @@ def test_subject_state(reference_collection, generated_collection):
         assert generated_subject_state is not None
 
 
-@pytest.mark.skip(reason="This test should be activated after pull request #36")
 def test_person(reference_collection, generated_collection):
     generated_persons = detect_type(
         generated_collection, "Person")
