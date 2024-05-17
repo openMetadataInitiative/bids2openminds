@@ -10,7 +10,7 @@ example_dataset = [("ds003", 13, 13, 2, 58),
                    # The authors list in 'eeg_cbm' contains non person entities 2 is not correct name (issue raied #43)
                    ("eeg_cbm", 20, 20, 2, 104),
                    ("asl001", 1, 1, 2, 8),
-                   # Number of files in 'eeg_rest_fmri' is not correct as it dosen't contain files in derivated (issue raied #42)
+                   # Number of files in 'eeg_rest_fmri' is not correct as it doesn't contain files in derivated (issue raied #42)
                    ("eeg_rest_fmri", 3, 3, 6, 46)]
 
 
