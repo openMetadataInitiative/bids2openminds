@@ -102,6 +102,30 @@ def create_approaches(layout_df):
     return list(approaches) or None
 
 
+def create_openminds_age(data_subject):
+
+    try:
+        age = pd_table_value(data_subject, "age")
+    except:
+        return None
+
+    if age is None or pd.isna(age):
+        return None
+    elif isinstance(age, float) or isinstance(age, int) or age.isnumeric():
+        return omcore.QuantitativeValue(
+            value=age,
+            unit=controlled_terms.UnitOfMeasurement.year
+        )
+    elif age == "89+":
+        return omcore.QuantitativeValueRange(
+            max_value=None,
+            min_value=89,
+            min_value_unit=controlled_terms.UnitOfMeasurement.year
+        )
+    else:
+        return None
+
+
 def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, collection):
 
     # Fetch the dataset type from dataset description file
@@ -246,10 +270,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
         state_cache = []
         if not sessions:
             state = omcore.SubjectState(
-                age=omcore.QuantitativeValue(
-                    value=pd_table_value(data_subject, "age"),
-                    unit=controlled_terms.UnitOfMeasurement.year
-                ),
+                age=create_openminds_age(data_subject),
                 handedness=bids2openminds_instance(pd_table_value(
                     data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
                 internal_identifier=f"Studied state {subject_name}".strip(),
@@ -262,10 +283,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
             for session in sessions:
                 if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                     state = omcore.SubjectState(
-                        age=omcore.QuantitativeValue(
-                            value=pd_table_value(data_subject, "age"),
-                            unit=controlled_terms.UnitOfMeasurement.year
-                        ),
+                        age=create_openminds_age(data_subject),
                         handedness=bids2openminds_instance(pd_table_value(
                             data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
                         internal_identifier=f"Studied state {subject_name} {session}".strip(
@@ -296,8 +314,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
 
 def create_file(layout_df, BIDS_path, collection):
 
-    BIDS_directory_path = os.path.dirname(BIDS_path)
-    file_repository = omcore.FileRepository()
+    file_repository = omcore.FileRepository(
+        iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     collection.add(file_repository)
     files_list = []
     for index, file in layout_df.iterrows():
@@ -306,7 +324,7 @@ def create_file(layout_df, BIDS_path, collection):
         data_types = None
         extension = file["extension"]
         path = file["path"]
-        iri = IRI(pathlib.Path(path).as_uri())
+        iri = IRI(pathlib.Path(path).absolute().as_uri())
         name = os.path.basename(path)
         hashes = file_hash(path)
         storage_size = file_storage_size(path)
