@@ -2,7 +2,7 @@ import re
 import os
 import pathlib
 from warnings import warn
-
+from bids import BIDSLayout
 import pandas as pd
 from nameparser import HumanName
 
@@ -10,8 +10,56 @@ import openminds.latest.core as omcore
 import openminds.latest.controlled_terms as controlled_terms
 from openminds import IRI
 
-from .utility import table_filter, pd_table_value, file_hash, file_storage_size
+from .utility import table_filter, pd_table_value, file_hash, file_storage_size, read_json
 from .mapping import bids2openminds_instance
+
+
+def read_bids_directory(input_path):
+    """
+    Reads the content of dataset_description.json file and decides based on the contect that teh dataset is raw, derivative or has derivative. Then call BIDSLayout function aporiapleatly.
+    Returns three Python objects.
+
+    Parameters:
+    - input_path : The path to the BIDS folder.
+
+    Returns:
+    - bids_layout: An instance of Layout class of pybids for this dataset. 
+    - layout_df: A pandas data frame containing all the files and coresponding information. 
+    - dataset_description: A Python dictionary containing the content of the dataset_description JSON file.
+    """
+
+    if not (os.path.isdir(input_path)):
+        raise NotADirectoryError(
+            f"The input directory is not valid, you have specified {input_path} which is not a directory.")
+
+    # if not(BIDSValidator().is_bids(input_path)):
+    #  raise NotADirectoryError(f"The input directory is not valid, you have specified {input_path} which is not a BIDS directory.")
+    dataset_description_path = os.path.join(
+        input_path, "dataset_description.json")
+    dataset_description = read_json(dataset_description_path)
+
+    if not dataset_description:
+        bids_layout = BIDSLayout(input_path)
+        layout_df = bids_layout.to_df()
+        dataset_description_path = table_filter(layout_df, "description")
+        dataset_description = read_json(dataset_description_path.iat[0, 0])
+        return bids_layout, layout_df, dataset_description
+
+    if ("DatasetType" in dataset_description) & (dataset_description["DatasetType"] == "derivative"):
+        bids_layout = BIDSLayout(input_path, is_derivative=True)
+        layout_df = bids_layout.to_df()
+        return bids_layout, layout_df, dataset_description
+
+    derivatives_path = os.path.join(
+        input_path, "derivatives")
+    if os.path.isdir(derivatives_path):
+        bids_layout = BIDSLayout(input_path, derivatives=True)
+        layout_df = bids_layout.to_df()
+        return bids_layout, layout_df, dataset_description
+
+    bids_layout = BIDSLayout(input_path)
+    layout_df = bids_layout.to_df()
+    return bids_layout, layout_df, dataset_description
 
 
 def create_openminds_person(full_name):
