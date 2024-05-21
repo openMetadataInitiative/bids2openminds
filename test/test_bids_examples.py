@@ -5,7 +5,8 @@ from openminds import Collection
 import bids2openminds.converter
 
 example_dataset = [("ds003", 13), ("ds000247", 6),
-                   ("eeg_cbm", 20), ("asl001", 1), ("eeg_rest_fmri", 3)]
+                   ("eeg_cbm", 20), ("asl001", 1),
+                   ("eeg_rest_fmri", 3), ("ds000001-fmriprep", 4)]
 
 
 @pytest.mark.parametrize("dataset_label,dataset_number_subject", example_dataset)

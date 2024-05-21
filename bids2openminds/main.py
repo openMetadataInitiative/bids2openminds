@@ -16,21 +16,21 @@ from .mapping import bids2openminds_instance
 
 def read_bids_directory(input_path):
     """
-    Reads the content of dataset_description.json file and decides based on the contect that teh dataset is raw, derivative or has derivative. Then call BIDSLayout function aporiapleatly.
+    Reads the content of the dataset_description.json file and determines whether the dataset is raw, derivative, or contains derivatives. Then, it calls the appropriate BIDSLayout function.
     Returns three Python objects.
 
     Parameters:
-    - input_path : The path to the BIDS folder.
+    - input_path: The path to the BIDS folder.
 
     Returns:
-    - bids_layout: An instance of Layout class of pybids for this dataset. 
-    - layout_df: A pandas data frame containing all the files and coresponding information. 
+    - bids_layout: An instance of the Layout class from pybids for this dataset.
+    - layout_df: A pandas DataFrame containing all the files and corresponding information.
     - dataset_description: A Python dictionary containing the content of the dataset_description JSON file.
     """
 
-    if not (os.path.isdir(input_path)):
+    if not os.path.isdir(input_path):
         raise NotADirectoryError(
-            f"The input directory is not valid, you have specified {input_path} which is not a directory.")
+            f"The input path is not valid. You specified '{input_path}', which is not a directory.")
 
     # if not(BIDSValidator().is_bids(input_path)):
     #  raise NotADirectoryError(f"The input directory is not valid, you have specified {input_path} which is not a BIDS directory.")
@@ -43,9 +43,13 @@ def read_bids_directory(input_path):
         layout_df = bids_layout.to_df()
         dataset_description_path = table_filter(layout_df, "description")
         dataset_description = read_json(dataset_description_path.iat[0, 0])
+        if not dataset_description:
+            raise FileNotFoundError(
+                "There was no dataset_description.json file. Every dataset MUST include this file."
+            )
         return bids_layout, layout_df, dataset_description
 
-    if ("DatasetType" in dataset_description) & (dataset_description["DatasetType"] == "derivative"):
+    if ("DatasetType" in dataset_description) and (dataset_description["DatasetType"] == "derivative"):
         bids_layout = BIDSLayout(input_path, is_derivative=True)
         layout_df = bids_layout.to_df()
         return bids_layout, layout_df, dataset_description
