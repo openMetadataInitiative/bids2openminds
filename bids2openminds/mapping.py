@@ -36,8 +36,14 @@ MAP_2_TECHNIQUES = {
     "FLASH": ["fast-low-angle-shot pulse sequence"], #TODO instance TBD
     "FLAIR": ["fluid attenuated inversion recovery pulse sequence"], #TODO instance TBD
     "UNIT1": None, #TODO instance TBD
-    "inplaneT1": None, #TODO instance TBD
-    "inplaneT2": None, #TODO instance TBD
+    "inplaneT1": [
+        "T1 pulse sequence", 
+        "structural magnetic resonance imaging"
+    ], #TODO sMRI
+    "inplaneT2": [
+        "T2 pulse sequence", 
+        "structural magnetic resonance imaging"
+    ], #TODO sMRI
     "R1map": None, #TODO instance TBD
     "T1map": None, #TODO instance TBD
     "MTVmap": None, #TODO instance TBD
