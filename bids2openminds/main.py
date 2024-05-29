@@ -312,11 +312,51 @@ def create_subjects(subject_id, layout_df, layout, collection):
     return subjects_dict, subject_state_dict, subjects_list
 
 
+def create_file_bundle(path, collection, parent_file_bundle=None):
+    openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {path}",
+                                              name=path,
+                                              is_part_of=parent_file_bundle)
+    files = {}
+    files_size = 0
+    all = os.listdir(path)
+
+    for item in all:
+
+        item_path = str(pathlib.PurePath(path, item).absolute())
+
+        if os.path.isfile(item_path):
+            files[item_path] = [openminds_file_bundle]
+            files_size += os.stat(item_path).st_size
+
+        if os.path.isdir(item_path):
+
+            child_files, child_filesizes = create_file_bundle(
+                item_path, collection, parent_file_bundle=openminds_file_bundle)
+
+            for child_file_path in child_files.keys():
+                if child_file_path not in files:
+                    files[child_file_path] = []
+                files[child_file_path].extend(child_files[child_file_path])
+                files[child_file_path].append(openminds_file_bundle)
+
+            files_size += child_filesizes
+
+    openminds_file_bundle.storage_size = omcore.QuantitativeValue(value=files_size,
+                                                                  unit=controlled_terms.UnitOfMeasurement.by_name(
+                                                                      "byte")
+                                                                  )
+    collection.add(openminds_file_bundle)
+
+    return files, files_size
+
+
 def create_file(layout_df, BIDS_path, collection):
 
     file_repository = omcore.FileRepository(
         iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     collection.add(file_repository)
+
+    file2file_bundle_dic = create_file_bundle(BIDS_path, collection)
     files_list = []
     for index, file in layout_df.iterrows():
         file_format = None
@@ -365,7 +405,8 @@ def create_file(layout_df, BIDS_path, collection):
             file_repository=file_repository,
             format=file_format,
             hashes=hashes,
-            # is_part_of=file_bundels
+            is_part_of=file2file_bundle_dic[str(
+                pathlib.Path(BIDS_path).absolute())],
             name=name,
             # special_usage_role
             storage_size=storage_size,
