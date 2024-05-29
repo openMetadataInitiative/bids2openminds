@@ -313,8 +313,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
 
 
 def create_file_bundle(path, collection, parent_file_bundle=None):
-    openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {path}",
-                                              name=path,
+    openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {str(path)}",
+                                              name=str(path),
                                               is_part_of=parent_file_bundle)
     files = {}
     files_size = 0
@@ -322,7 +322,7 @@ def create_file_bundle(path, collection, parent_file_bundle=None):
 
     for item in all:
 
-        item_path = str(pathlib.PurePath(path, item).absolute())
+        item_path = str(pathlib.PurePath(path, item))
 
         if os.path.isfile(item_path):
             files[item_path] = [openminds_file_bundle]
@@ -352,11 +352,19 @@ def create_file_bundle(path, collection, parent_file_bundle=None):
 
 def create_file(layout_df, BIDS_path, collection):
 
+    BIDS_path_absolute = pathlib.Path(BIDS_path).absolute()
+
+    file2file_bundle_dic, file_repository_storage_size = create_file_bundle(
+        BIDS_path_absolute, collection)
+
     file_repository = omcore.FileRepository(
-        iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
+        iri=IRI(BIDS_path_absolute.as_uri()),
+        storage_size=omcore.QuantitativeValue(value=file_repository_storage_size,
+                                              unit=controlled_terms.UnitOfMeasurement.by_name(
+                                                  "byte")
+                                              ))
     collection.add(file_repository)
 
-    file2file_bundle_dic = create_file_bundle(BIDS_path, collection)
     files_list = []
     for index, file in layout_df.iterrows():
         file_format = None
@@ -398,6 +406,7 @@ def create_file(layout_df, BIDS_path, collection):
                         "event sequence")
                     file_format = omcore.ContentType.by_name(
                         "text/tab-separated-values")
+
         file = omcore.File(
             iri=iri,
             content_description=content_description,
@@ -406,7 +415,7 @@ def create_file(layout_df, BIDS_path, collection):
             format=file_format,
             hashes=hashes,
             is_part_of=file2file_bundle_dic[str(
-                pathlib.Path(BIDS_path).absolute())],
+                pathlib.Path(path))],
             name=name,
             # special_usage_role
             storage_size=storage_size,
