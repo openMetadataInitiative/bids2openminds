@@ -77,6 +77,9 @@ def create_protocol(layout, collection):
     protocols = []
     tasks = layout.get_tasks()
 
+    if not tasks:
+        return None, None
+
     for task in tasks:
 
         protocol = omcore.Protocol(name=task)
