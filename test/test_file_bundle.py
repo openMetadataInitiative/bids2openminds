@@ -33,13 +33,13 @@ def example_file_path(test_dir):
 @pytest.fixture
 def generate_file_bundle_collection(test_dir):
     collection = Collection()
-    file_bundels, _ = create_file_bundle(test_dir, collection)
-    return file_bundels, collection
+    file_bundles, _ = create_file_bundle(test_dir, collection)
+    return file_bundles, collection
 
 
-def test_file_bundels_type(generate_file_bundle_collection):
-    file_bundels, _ = generate_file_bundle_collection
-    assert type(file_bundels) is dict
+def test_file_bundles_type(generate_file_bundle_collection):
+    file_bundles, _ = generate_file_bundle_collection
+    assert type(file_bundles) is dict
 
 
 def test_number_file_bundle(generate_file_bundle_collection):
@@ -52,29 +52,29 @@ def test_number_file_bundle(generate_file_bundle_collection):
 
 
 def test_dataset_description_location(test_dir, path_name, generate_file_bundle_collection):
-    file_bundels, collection = generate_file_bundle_collection
+    file_bundles, collection = generate_file_bundle_collection
     dataset_description_location = os.path.join(
         test_dir, "dataset_description.json")
-    assert len(file_bundels[dataset_description_location]) == 1
+    assert len(file_bundles[dataset_description_location]) == 1
 
     for item in collection:
         if item.type_ == "https://openminds.ebrains.eu/core/FileBundle" and item.name == path_name:
             main_file_boundle = item
 
-    assert file_bundels[dataset_description_location][0].id == main_file_boundle.id
+    assert file_bundles[dataset_description_location][0].id == main_file_boundle.id
 
 
 def test_random_file(test_dir, path_name, generate_file_bundle_collection, example_file_path):
-    file_bundels, _ = generate_file_bundle_collection
+    file_bundles, _ = generate_file_bundle_collection
 
     reference_boundels = []
     for file in example_file_bubdels:
         reference_boundels.append(path_name+"_"+file)
     reference_boundels.append(path_name)
 
-    test_bundels = file_bundels[example_file_path]
+    test_bundles = file_bundles[example_file_path]
 
-    assert len(test_bundels) == len(reference_boundels)
+    assert len(test_bundles) == len(reference_boundels)
 
-    for bundel in test_bundels:
-        assert bundel.name in reference_boundels
+    for bundle in test_bundles:
+        assert bundle.name in reference_boundels
