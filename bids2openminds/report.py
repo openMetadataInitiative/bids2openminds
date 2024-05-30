@@ -26,15 +26,15 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
 #
 #                file_bundle_number += 1
 
-    print("This dataset conatins folowing items:")
+    print("This dataset contains following items:")
     print(f"Number of subjects : {subject_number}")
     print(f"Number of files : {files_number}")
 #    print(f"Number of file bundles : {file_bundle_number}")
 
     if "GeneratedBy" in dataset_description:
-        print("This dataset is derivative. The derivative section of BIDS specification is not final yet, so convertion is not compleate. The generated openMINDS file should be treated carfully.")
+        print("This dataset is derivative. The derivative section of BIDS specification is not final yet, so conversion is not complete. The generated openMINDS file should be treated carefully.")
 
     derivatives_path = os.path.join(
         input_path, "derivatives")
     if os.path.isdir(derivatives_path):
-        print("This dataset contains derivative. The derivative section of BIDS specification is not final yet, so convertion is not compleate. The generated openMINDS file should be treated carfully.")
+        print("This dataset contains derivative. The derivative section of BIDS specification is not final yet, so conversion is not complete. The generated openMINDS file should be treated carefully.")
