@@ -5,7 +5,7 @@ from openminds import Collection
 from bids2openminds.main import create_file_bundle
 
 (test_data_set, number_of_openminds_bundle, example_file, example_file_bubdels) = (
-    "ds007", 61, "sub-04/anat/sub-04_inplaneT2.nii.gz", ["sub-04", "sub-04_anat"])
+    "ds007", 61, ["sub-04", "anat", "sub-04_inplaneT2.nii.gz"], ["sub-04", "sub-04_anat"])
 
 
 @pytest.fixture
@@ -20,6 +20,14 @@ def path_name(test_dir):
     if name[0] == "_":
         name = name[1:]
     return name
+
+
+@pytest.fixture
+def example_file_path(test_dir):
+    path = test_dir
+    for item in example_file:
+        path = os.path.join(path, item)
+    return path
 
 
 @pytest.fixture
@@ -56,7 +64,7 @@ def test_dataset_description_location(test_dir, path_name, generate_file_bundle_
     assert file_bundels[dataset_description_location][0].id == main_file_boundle.id
 
 
-def test_random_file(test_dir, path_name, generate_file_bundle_collection):
+def test_random_file(test_dir, path_name, generate_file_bundle_collection, example_file_path):
     file_bundels, _ = generate_file_bundle_collection
 
     reference_boundels = []
@@ -64,10 +72,7 @@ def test_random_file(test_dir, path_name, generate_file_bundle_collection):
         reference_boundels.append(path_name+"_"+file)
     reference_boundels.append(path_name)
 
-    test_file_path = os.path.join(
-        test_dir, example_file)
-
-    test_bundels = file_bundels[test_file_path]
+    test_bundels = file_bundels[example_file_path]
 
     assert len(test_bundels) == len(reference_boundels)
 
