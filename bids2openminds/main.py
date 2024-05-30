@@ -313,8 +313,12 @@ def create_subjects(subject_id, layout_df, layout, collection):
 
 
 def create_file_bundle(path, collection, parent_file_bundle=None):
+
+    name = str(path).replace("/", "_").replace("\\", "_")
+    if name[0] == "_":
+        name = name[1:]
     openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {str(path)}",
-                                              name=str(path),
+                                              name=name,
                                               is_part_of=parent_file_bundle)
     files = {}
     files_size = 0
