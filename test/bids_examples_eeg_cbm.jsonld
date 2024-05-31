@@ -1,0 +1,498 @@
+{
+  "@context": {
+    "@vocab": "https://openminds.ebrains.eu/vocab/"
+  },
+  "@graph": [
+    {
+      "@id": "_:000000",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "age": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year"
+        },
+        "value": 20.94
+      },
+      "internalIdentifier": "Studied state sub-cbm001",
+      "lookupLabel": "Studied state sub-cbm001"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement",
+      "name": "year"
+    },
+    {
+      "@id": "_:000002",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "biologicalSex": {
+        "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
+      },
+      "internalIdentifier": "sub-cbm001",
+      "lookupLabel": "sub-cbm001",
+      "studiedState": [
+        {
+          "@id": "_:000000"
+        }
+      ]
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/BiologicalSex",
+      "definition": "Biological sex that produces sperm cells (spermatozoa).",
+      "description": "A male organism typically has the capacity to produce relatively small, usually mobile gametes (reproductive cells), called sperm cells (or spermatozoa). In the process of fertilization, these sperm cells fuse with a larger, usually immobile female gamete, called egg cell (or ovum).",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0106489",
+      "name": "male",
+      "preferredOntologyIdentifier": "http://purl.obolibrary.org/obo/PATO_0000384"
+    },
+    {
+      "@id": "_:000003",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm002",
+      "lookupLabel": "Studied state sub-cbm002"
+    },
+    {
+      "@id": "_:000004",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm002",
+      "lookupLabel": "sub-cbm002",
+      "studiedState": [
+        {
+          "@id": "_:000003"
+        }
+      ]
+    },
+    {
+      "@id": "_:000005",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm003",
+      "lookupLabel": "Studied state sub-cbm003"
+    },
+    {
+      "@id": "_:000006",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm003",
+      "lookupLabel": "sub-cbm003",
+      "studiedState": [
+        {
+          "@id": "_:000005"
+        }
+      ]
+    },
+    {
+      "@id": "_:000007",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm004",
+      "lookupLabel": "Studied state sub-cbm004"
+    },
+    {
+      "@id": "_:000008",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm004",
+      "lookupLabel": "sub-cbm004",
+      "studiedState": [
+        {
+          "@id": "_:000007"
+        }
+      ]
+    },
+    {
+      "@id": "_:000009",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm005",
+      "lookupLabel": "Studied state sub-cbm005"
+    },
+    {
+      "@id": "_:000010",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm005",
+      "lookupLabel": "sub-cbm005",
+      "studiedState": [
+        {
+          "@id": "_:000009"
+        }
+      ]
+    },
+    {
+      "@id": "_:000011",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm006",
+      "lookupLabel": "Studied state sub-cbm006"
+    },
+    {
+      "@id": "_:000012",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm006",
+      "lookupLabel": "sub-cbm006",
+      "studiedState": [
+        {
+          "@id": "_:000011"
+        }
+      ]
+    },
+    {
+      "@id": "_:000013",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm007",
+      "lookupLabel": "Studied state sub-cbm007"
+    },
+    {
+      "@id": "_:000014",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm007",
+      "lookupLabel": "sub-cbm007",
+      "studiedState": [
+        {
+          "@id": "_:000013"
+        }
+      ]
+    },
+    {
+      "@id": "_:000015",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm008",
+      "lookupLabel": "Studied state sub-cbm008"
+    },
+    {
+      "@id": "_:000016",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm008",
+      "lookupLabel": "sub-cbm008",
+      "studiedState": [
+        {
+          "@id": "_:000015"
+        }
+      ]
+    },
+    {
+      "@id": "_:000017",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm009",
+      "lookupLabel": "Studied state sub-cbm009"
+    },
+    {
+      "@id": "_:000018",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm009",
+      "lookupLabel": "sub-cbm009",
+      "studiedState": [
+        {
+          "@id": "_:000017"
+        }
+      ]
+    },
+    {
+      "@id": "_:000019",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm010",
+      "lookupLabel": "Studied state sub-cbm010"
+    },
+    {
+      "@id": "_:000020",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm010",
+      "lookupLabel": "sub-cbm010",
+      "studiedState": [
+        {
+          "@id": "_:000019"
+        }
+      ]
+    },
+    {
+      "@id": "_:000021",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm011",
+      "lookupLabel": "Studied state sub-cbm011"
+    },
+    {
+      "@id": "_:000022",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm011",
+      "lookupLabel": "sub-cbm011",
+      "studiedState": [
+        {
+          "@id": "_:000021"
+        }
+      ]
+    },
+    {
+      "@id": "_:000023",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm012",
+      "lookupLabel": "Studied state sub-cbm012"
+    },
+    {
+      "@id": "_:000024",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm012",
+      "lookupLabel": "sub-cbm012",
+      "studiedState": [
+        {
+          "@id": "_:000023"
+        }
+      ]
+    },
+    {
+      "@id": "_:000025",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm013",
+      "lookupLabel": "Studied state sub-cbm013"
+    },
+    {
+      "@id": "_:000026",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm013",
+      "lookupLabel": "sub-cbm013",
+      "studiedState": [
+        {
+          "@id": "_:000025"
+        }
+      ]
+    },
+    {
+      "@id": "_:000027",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm014",
+      "lookupLabel": "Studied state sub-cbm014"
+    },
+    {
+      "@id": "_:000028",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm014",
+      "lookupLabel": "sub-cbm014",
+      "studiedState": [
+        {
+          "@id": "_:000027"
+        }
+      ]
+    },
+    {
+      "@id": "_:000029",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm015",
+      "lookupLabel": "Studied state sub-cbm015"
+    },
+    {
+      "@id": "_:000030",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm015",
+      "lookupLabel": "sub-cbm015",
+      "studiedState": [
+        {
+          "@id": "_:000029"
+        }
+      ]
+    },
+    {
+      "@id": "_:000031",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm016",
+      "lookupLabel": "Studied state sub-cbm016"
+    },
+    {
+      "@id": "_:000032",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm016",
+      "lookupLabel": "sub-cbm016",
+      "studiedState": [
+        {
+          "@id": "_:000031"
+        }
+      ]
+    },
+    {
+      "@id": "_:000033",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm017",
+      "lookupLabel": "Studied state sub-cbm017"
+    },
+    {
+      "@id": "_:000034",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm017",
+      "lookupLabel": "sub-cbm017",
+      "studiedState": [
+        {
+          "@id": "_:000033"
+        }
+      ]
+    },
+    {
+      "@id": "_:000035",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm018",
+      "lookupLabel": "Studied state sub-cbm018"
+    },
+    {
+      "@id": "_:000036",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm018",
+      "lookupLabel": "sub-cbm018",
+      "studiedState": [
+        {
+          "@id": "_:000035"
+        }
+      ]
+    },
+    {
+      "@id": "_:000037",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm019",
+      "lookupLabel": "Studied state sub-cbm019"
+    },
+    {
+      "@id": "_:000038",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm019",
+      "lookupLabel": "sub-cbm019",
+      "studiedState": [
+        {
+          "@id": "_:000037"
+        }
+      ]
+    },
+    {
+      "@id": "_:000039",
+      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "internalIdentifier": "Studied state sub-cbm020",
+      "lookupLabel": "Studied state sub-cbm020"
+    },
+    {
+      "@id": "_:000040",
+      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "internalIdentifier": "sub-cbm020",
+      "lookupLabel": "sub-cbm020",
+      "studiedState": [
+        {
+          "@id": "_:000039"
+        }
+      ]
+    },
+    {
+      "@id": "_:000041",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "",
+      "givenName": "Cuban Neuroscience Center"
+    },
+    {
+      "@id": "_:000042",
+      "@type": "https://openminds.ebrains.eu/core/Person",
+      "familyName": "",
+      "givenName": "Dataset generated by plg2bids (Eduardo Aubert)"
+    },
+    {
+      "@id": "_:0000043",
+      "@type": "https://openminds.ebrains.eu/core/FileRepository"
+    },
+    {
+      "@id": "_:000044",
+      "@type": "https://openminds.ebrains.eu/core/DatasetVersion",
+      "author": [
+        {
+          "@id": "_:000041"
+        },
+        {
+          "@id": "_:000042"
+        }
+      ],
+      "experimentalApproach": [
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"
+        }
+      ],
+      "repository": {
+        "@id": "_:0000043"
+      },
+      "shortName": "Dataset sample of Cuban Brain Mapping database",
+      "studiedSpecimen": [
+        {
+          "@id": "_:000002"
+        },
+        {
+          "@id": "_:000004"
+        },
+        {
+          "@id": "_:000006"
+        },
+        {
+          "@id": "_:000008"
+        },
+        {
+          "@id": "_:000010"
+        },
+        {
+          "@id": "_:000012"
+        },
+        {
+          "@id": "_:000014"
+        },
+        {
+          "@id": "_:000016"
+        },
+        {
+          "@id": "_:000018"
+        },
+        {
+          "@id": "_:000020"
+        },
+        {
+          "@id": "_:000022"
+        },
+        {
+          "@id": "_:000024"
+        },
+        {
+          "@id": "_:000026"
+        },
+        {
+          "@id": "_:000028"
+        },
+        {
+          "@id": "_:000030"
+        },
+        {
+          "@id": "_:000032"
+        },
+        {
+          "@id": "_:000034"
+        },
+        {
+          "@id": "_:000036"
+        },
+        {
+          "@id": "_:000038"
+        },
+        {
+          "@id": "_:000040"
+        }
+      ],
+      "technique": [
+        {
+          "@id": "https://openminds.ebrains.eu/instances/technique/electroencephalography"
+        }
+      ]
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on electrical phenomena associated with living systems, most notably the nervous system, cardiac system, and musculoskeletal system.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741202",
+      "name": "electrophysiology",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Electrophysiology"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/technique/electroencephalography",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
+      "name": "electroencephalography"
+    },
+    {
+      "@id": "_:000045",
+      "@type": "https://openminds.ebrains.eu/core/Dataset",
+      "fullName": "Dataset sample of Cuban Brain Mapping database",
+      "hasVersion": [
+        {
+          "@id": "_:000044"
+        }
+      ]
+    }
+  ]
+}
