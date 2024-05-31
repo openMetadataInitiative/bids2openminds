@@ -46,10 +46,22 @@ MAP_2_TECHNIQUES = {
     ], #TODO sMRI
     "R1map": None, #TODO instance TBD
     "T1map": None, #TODO instance TBD
-    "MTVmap": None, #TODO instance TBD
-    "MTRmap": ["magnetization transfer imaging"], #TODO instance TBD
-    "MTsat": ["magnetization transfer imaging"], #TODO instance TBD
-    "MWFmap": ["Myelin water fraction image"],
+    "MTVmap": ["quantitative magnetic resonance imaging"], #TODO other?
+    "MTRmap": [
+        "magnetization transfer imaging",
+        "magnetization transfer ratio analysis",
+        "magnetization transfer pulse sequence"
+    ], #TODO instances
+    "MTsat": [
+        "magnetization transfer imaging",
+        "magnetization transfer saturation mapping",
+        "magnetization transfer pulse sequence"
+    ], #TODO instances
+    "MWFmap": [
+        "myelin water imaging",
+        "T2 pulse sequence",
+        "myelin water fraction analysis"
+    ], #TODO instances
     "S0map": ["Observed signal amplitude (S0) image"],
     "R2starmap": ["Observed transverse relaxation rate image"],
     "T2starmap": ["Observed transverse relaxation time image"],
