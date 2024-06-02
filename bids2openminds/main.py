@@ -72,9 +72,9 @@ def create_persons(dataset_description, collection):
     return openminds_list
 
 
-def create_protocol(layout, collection):
-    protocols_dict = {}
-    protocols = []
+def create_behavioral_protocol(layout, collection):
+    behavioral_protocols_dict = {}
+    behavioral_protocols = []
     tasks = layout.get_tasks()
 
     if not tasks:
@@ -82,12 +82,13 @@ def create_protocol(layout, collection):
 
     for task in tasks:
 
-        protocol = omcore.Protocol(name=task)
-        protocols.append(protocol)
-        protocols_dict[task] = protocol
-        collection.add(protocol)
+        behavioral_protocol = omcore.BehavioralProtocol(name=task,
+                                                        description="To be defined")
+        behavioral_protocols.append(behavioral_protocol)
+        behavioral_protocols_dict[task] = behavioral_protocol
+        collection.add(behavioral_protocol)
 
-    return protocols, protocols_dict
+    return behavioral_protocols, behavioral_protocols_dict
 
 
 def create_techniques(layout_df):
@@ -144,7 +145,7 @@ def create_openminds_age(data_subject):
         return None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, protocols, collection):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
 
     # Fetch the dataset type from dataset description file
 
@@ -197,7 +198,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        protocols=protocols
+        behavioral_protocols=behavioral_protocols
         # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )

@@ -21,8 +21,6 @@ def convert(input_path, output_path=None, multiple_files=False, include_empty_pr
 
     subjects_id = bids_layout.get_subjects()
 
-    protocols, protocols_dict = main.create_protocol(bids_layout, collection)
-
     # imprting the dataset description file containing some of the
     dataset_description_path = utility.table_filter(layout_df, "description")
 
@@ -31,11 +29,14 @@ def convert(input_path, output_path=None, multiple_files=False, include_empty_pr
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(
         subjects_id, layout_df, bids_layout, collection)
 
+    behavioral_protocols, behavioral_protocols_dict = main.create_behavioral_protocol(
+        bids_layout, collection)
+
     [files_list, file_repository] = main.create_file(
         layout_df, input_path, collection)
 
     dataset_version = main.create_dataset_version(
-        bids_layout, dataset_description, layout_df, subjects_list, file_repository, protocols, collection)
+        bids_layout, dataset_description, layout_df, subjects_list, file_repository, behavioral_protocols, collection)
 
     dataset = main.create_dataset(
         dataset_description, dataset_version, collection)
