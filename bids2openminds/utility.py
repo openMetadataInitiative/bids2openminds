@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 import re
+import gzip
 from warnings import warn
 
 import pandas as pd
@@ -142,26 +143,45 @@ def file_storage_size(file_path: str):
     file_stats = os.stat(file_path)
     file_size = QuantitativeValue(
         value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
-    return file_size
+    return file_size, file_stats.st_size
 
 
-def detect_nifti_verstion(file_name):
+def detect_nifti_verstion(file_name, extension, file_size):
 
     nii1_sizeof_hdr = 348
     nii2_sizeof_hdr = 540
-
-    with open(file_name, 'rb') as fp:
-        byte_data = fp.read(4)
-        sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
-        if sizeof_hdr == 0:
-            return None
-        if sizeof_hdr == nii1_sizeof_hdr:
-            return ContentType.by_name("application/vnd.nifti.1")
-        elif sizeof_hdr == nii2_sizeof_hdr:
-            return ContentType.by_name("application/vnd.nifti.2")
-        else:  # big endian
-            sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+    if file_size < 10:
+        return None
+    if extension == ".nii":
+        with open(file_name, 'rb') as fp:
+            byte_data = fp.read(4)
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+            if sizeof_hdr == 0:
+                return None
             if sizeof_hdr == nii1_sizeof_hdr:
                 return ContentType.by_name("application/vnd.nifti.1")
             elif sizeof_hdr == nii2_sizeof_hdr:
                 return ContentType.by_name("application/vnd.nifti.2")
+            else:  # big endian
+                sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+                if sizeof_hdr == nii1_sizeof_hdr:
+                    return ContentType.by_name("application/vnd.nifti.1")
+                elif sizeof_hdr == nii2_sizeof_hdr:
+                    return ContentType.by_name("application/vnd.nifti.2")
+
+    if extension == ".nii.gz":
+        with gzip.open(file_name, 'rb') as fp:
+            byte_data = fp.read(4)
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+            if sizeof_hdr == 0:
+                return None
+            if sizeof_hdr == nii1_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.1")
+            elif sizeof_hdr == nii2_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.2")
+            else:  # big endian
+                sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+                if sizeof_hdr == nii1_sizeof_hdr:
+                    return ContentType.by_name("application/vnd.nifti.1")
+                elif sizeof_hdr == nii2_sizeof_hdr:
+                    return ContentType.by_name("application/vnd.nifti.2")

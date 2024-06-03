@@ -328,7 +328,7 @@ def create_file(layout_df, BIDS_path, collection):
         iri = IRI(pathlib.Path(path).absolute().as_uri())
         name = os.path.basename(path)
         hashes = file_hash(path)
-        storage_size = file_storage_size(path)
+        storage_size_obj, file_size = file_storage_size(path)
         if pd.isna(file["subject"]):
             if file["suffix"] == "participants":
                 if extension == ".json":
@@ -351,7 +351,7 @@ def create_file(layout_df, BIDS_path, collection):
             elif extension in [".nii", ".nii.gz"]:
                 content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
                 data_types = controlled_terms.DataType.by_name("voxel data")
-                file_format = detect_nifti_verstion(path)
+                file_format = detect_nifti_verstion(path, extension, file_size)
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
                     content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
@@ -369,7 +369,7 @@ def create_file(layout_df, BIDS_path, collection):
             # is_part_of=file_bundels
             name=name,
             # special_usage_role
-            storage_size=storage_size,
+            storage_size=storage_size_obj,
         )
         collection.add(file)
         files_list.append(file)
