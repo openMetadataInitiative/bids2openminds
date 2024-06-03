@@ -7,9 +7,8 @@ from warnings import warn
 import pandas as pd
 
 import openminds.latest.controlled_terms as controlled_terms
-from openminds.latest.core import Hash, QuantitativeValue
+from openminds.latest.core import Hash, QuantitativeValue, ContentType
 from openminds.latest.controlled_terms import UnitOfMeasurement
-
 
 
 def camel_to_snake(name):
@@ -75,10 +74,11 @@ def openminds_instance(list: list, Terminologie: str = None, is_list: bool = Tru
     for item in list:
         if item.replace(" ", "")[0:32] == "@id:https://openminds.ebrains.eu":
             slash_location = item.rfind("/")
-            item_name = item[slash_location + 1 :]
+            item_name = item[slash_location + 1:]
             item_name_snake = camel_to_snake(item_name)
             if not (Terminologie):
-                Terminologie = item[item[:slash_location].rfind("/") + 1 : slash_location]
+                Terminologie = item[item[:slash_location].rfind(
+                    "/") + 1: slash_location]
                 Terminologie = Terminologie[0].upper() + Terminologie[1:]
             controlled_class = getattr(controlled_terms, Terminologie)
             openminds_item = getattr(controlled_class, item_name_snake)
@@ -140,5 +140,28 @@ def file_hash(file_path: str, algorithm: str = "MD5"):
 
 def file_storage_size(file_path: str):
     file_stats = os.stat(file_path)
-    file_size = QuantitativeValue(value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
+    file_size = QuantitativeValue(
+        value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
     return file_size
+
+
+def detect_nifti_verstion(file_name):
+
+    nii1_sizeof_hdr = 348
+    nii2_sizeof_hdr = 540
+
+    with open(file_name, 'rb') as fp:
+        byte_data = fp.read(4)
+        sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+        if sizeof_hdr == 0:
+            return None
+        if sizeof_hdr == nii1_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.1")
+        elif sizeof_hdr == nii2_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.2")
+        else:  # big endian
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+            if sizeof_hdr == nii1_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.1")
+            elif sizeof_hdr == nii2_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.2")
