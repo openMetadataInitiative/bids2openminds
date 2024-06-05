@@ -3,6 +3,7 @@ import os
 
 def create_report(dataset, dataset_version, collection, dataset_description, input_path):
     subject_number = 0
+    subject_state_number = 0
     file_bundle_number = 0
     files_number = 0
 
@@ -12,6 +13,10 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
             case "https://openminds.ebrains.eu/core/Subject":
 
                 subject_number += 1
+
+            case "https://openminds.ebrains.eu/core/SubjectState":
+
+                subject_state_number += 1
 
             case "https://openminds.ebrains.eu/core/File":
 
@@ -30,7 +35,7 @@ Dataset title : {dataset.full_name}
 The following elements were converted:  
 --------------------------------------  
 + number of converted subjects: {subject_number}  
-+ number of state for each subject: XX-YY  
++ number of state for each subject: {subject_state_number}
 + number of files: {files_number} 
 + number of files: {file_bundle_number}
 
