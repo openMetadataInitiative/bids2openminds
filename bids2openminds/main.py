@@ -312,14 +312,20 @@ def create_subjects(subject_id, layout_df, layout, collection):
     return subjects_dict, subject_state_dict, subjects_list
 
 
-def create_file_bundle(path, collection, parent_file_bundle=None):
+def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_file_repository=False):
 
-    name = str(path).replace("/", "_").replace("\\", "_")
-    if name[0] == "_":
-        name = name[1:]
-    openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {str(path)}",
-                                              name=name,
-                                              is_part_of=parent_file_bundle)
+    if is_file_repository:
+        openminds_file_bundle = omcore.FileRepository(format=omcore.ContentType.by_name("application/vnd.bids"),
+                                                      iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
+    else:
+        relative_path = os.path.relpath(path, BIDS_path)
+        name = str(relative_path).replace("/", "_").replace("\\", "_")
+        if name[0] == "_":
+            name = name[1:]
+        openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {relative_path}",
+                                                  name=name,
+                                                  is_part_of=parent_file_bundle)
+
     files = {}
     files_size = 0
     all = os.listdir(path)
@@ -328,20 +334,28 @@ def create_file_bundle(path, collection, parent_file_bundle=None):
 
         item_path = str(pathlib.PurePath(path, item))
 
-        if os.path.isfile(item_path):
-            files[item_path] = [openminds_file_bundle]
+        if os.path.isfile(item_path) and os.path.basename(item_path) != "openminds.jsonld":
+
+            if is_file_repository:
+                files[item_path] = None
+            else:
+                files[item_path] = [openminds_file_bundle]
+
             files_size += os.stat(item_path).st_size
 
-        if os.path.isdir(item_path):
+        if os.path.isdir(item_path) and  os.path.basename(item_path) != "openminds":
 
-            child_files, child_filesizes = create_file_bundle(
-                item_path, collection, parent_file_bundle=openminds_file_bundle)
+            child_files, child_filesizes, _ = create_file_bundle(
+                BIDS_path, item_path, collection, parent_file_bundle=openminds_file_bundle, is_file_repository=False)
 
             for child_file_path in child_files.keys():
                 if child_file_path not in files:
                     files[child_file_path] = []
+
                 files[child_file_path].extend(child_files[child_file_path])
-                files[child_file_path].append(openminds_file_bundle)
+
+                if not is_file_repository:
+                    files[child_file_path].append(openminds_file_bundle)
 
             files_size += child_filesizes
 
@@ -351,23 +365,20 @@ def create_file_bundle(path, collection, parent_file_bundle=None):
                                                                   )
     collection.add(openminds_file_bundle)
 
-    return files, files_size
+    if is_file_repository:
+        openminds_file_repository = openminds_file_bundle
+    else:
+        openminds_file_repository = None
+
+    return files, files_size, openminds_file_repository
 
 
 def create_file(layout_df, BIDS_path, collection):
 
     BIDS_path_absolute = pathlib.Path(BIDS_path).absolute()
 
-    file2file_bundle_dic, file_repository_storage_size = create_file_bundle(
-        BIDS_path_absolute, collection)
-
-    file_repository = omcore.FileRepository(
-        iri=IRI(BIDS_path_absolute.as_uri()),
-        storage_size=omcore.QuantitativeValue(value=file_repository_storage_size,
-                                              unit=controlled_terms.UnitOfMeasurement.by_name(
-                                                  "byte")
-                                              ))
-    collection.add(file_repository)
+    file2file_bundle_dic, _, file_repository = create_file_bundle(
+        BIDS_path_absolute, BIDS_path_absolute, collection, is_file_repository=True)
 
     files_list = []
     for index, file in layout_df.iterrows():
