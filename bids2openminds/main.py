@@ -83,6 +83,7 @@ def create_behavioral_protocol(layout, collection):
     for task in tasks:
 
         behavioral_protocol = omcore.BehavioralProtocol(name=task,
+                                                        internal_identifier=task,
                                                         description="To be defined")
         behavioral_protocols.append(behavioral_protocol)
         behavioral_protocols_dict[task] = behavioral_protocol
