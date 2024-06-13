@@ -14,64 +14,6 @@ from .utility import table_filter, pd_table_value, file_hash, file_storage_size
 from .mapping import bids2openminds_instance
 
 
-def create_openminds_person(full_name):
-    # Regex for detecting any unwanted characters.
-    name_regex = re.compile(
-        "^[\w'\-, .][^0-9_!¡?÷?¿/\\+=@#$%^&*(){}|~<>;:[\]]{1,}$")
-    alternate_names = []
-    person = HumanName(full_name)
-    given_name = person.first
-    family_name = person.last
-
-    # Handle the situation in which there is no given name or the given name consists of unwanted characters.
-    if not (given_name and name_regex.match(given_name)):
-        return None
-
-    # Handle the situation in which the family name consists of unwanted characters.
-    if not (name_regex.match(family_name)):
-        family_name = None
-
-    if person.middle:
-        given_name = f"{given_name} {person.middle}"
-
-    if person.nickname:
-        alternate_names.append(person.nickname)
-
-    if not alternate_names:
-        alternate_names = None
-
-    openminds_person = omcore.Person(
-        alternate_names=alternate_names, given_name=given_name, family_name=family_name)
-
-    return openminds_person
-
-
-def create_persons(dataset_description, collection):
-
-    if "Authors" in dataset_description:
-        person_list = dataset_description["Authors"]
-    else:
-        return None
-
-    if not (isinstance(person_list, list)):
-        # handel's only one name
-        if isinstance(person_list, str):
-            openminds_person = create_openminds_person(person_list)
-            if openminds_person is not None:
-                collection.add(openminds_person)
-            return openminds_person
-        else:
-            return None
-
-    openminds_list = []
-    for person in person_list:
-        openminds_person = create_openminds_person(person)
-        openminds_list.append(openminds_person)
-        collection.add(openminds_person)
-
-    return openminds_list
-
-
 def create_techniques(layout_df):
     suffixs = layout_df["suffix"].unique().tolist()
     techniques = []
@@ -140,8 +82,6 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     else:
         digital_identifier = None
 
-    authors = create_persons(dataset_description, collection)
-
     if "Acknowledgements" in dataset_description:
         other_contribution = dataset_description["Acknowledgements"]
     else:
@@ -175,7 +115,6 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         experimental_approaches=experimental_approaches,
         short_name=dataset_description["Name"],
         studied_specimens=studied_specimens,
-        authors=authors,
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
