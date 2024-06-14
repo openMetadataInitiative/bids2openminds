@@ -7,7 +7,7 @@ from . import main
 from . import utility
 
 
-def convert(input_path, output_path=None, multiple_files=False, include_empty_properties=False):
+def convert(input_path, save_output=False, output_path=None, multiple_files=False, include_empty_properties=False):
     if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {input_path} which is not a directory."
@@ -43,16 +43,21 @@ def convert(input_path, output_path=None, multiple_files=False, include_empty_pr
     failures = collection.validate(ignore=["required", "value"])
     assert len(failures) == 0
 
-    if output_path is None:
-        if multiple_files:
-            output_path = os.path.join(input_path, "openminds")
-        else:
-            output_path = os.path.join(input_path, "openminds.jsonld")
+    if save_output:
+        if output_path is None:
+            if multiple_files:
+                output_path = os.path.join(input_path, "openminds")
+            else:
+                output_path = os.path.join(input_path, "openminds.jsonld")
 
-    collection.save(output_path, individual_files=multiple_files,
-                    include_empty_properties=include_empty_properties)
-
-    print(f"Conversion was successful, the openMINDS file is in {output_path}")
+        collection.save(output_path, individual_files=multiple_files,
+                        include_empty_properties=include_empty_properties)
+        print(
+            f"Conversion was successful, the openMINDS file is in {output_path}")
+        return collection
+    else:
+        print("Conversion was successful")
+        return collection
 
 
 @click.command()
@@ -62,9 +67,10 @@ def convert(input_path, output_path=None, multiple_files=False, include_empty_pr
 @click.option("--multiple-files", "multiple_files", flag_value=True, help="Each node is saved into a separate file within the specified directory. 'output-path' if specified, must be a directory.")
 @click.option("-e", "--include-empty-properties", is_flag=True, default=False, help="Whether to include empty properties in the final file.")
 def convert_click(input_path, output_path, multiple_files, include_empty_properties):
-    convert(input_path, output_path, multiple_files, include_empty_properties)
+    convert(input_path, save_output=True, output_path=output_path,
+            multiple_files=multiple_files, include_empty_properties=include_empty_properties)
 
 
 if __name__ == "__main__":
     input_path = input("Enter the BIDS directory path: ")
-    convert(input_path)
+    convert(input_path, save_output=True)
