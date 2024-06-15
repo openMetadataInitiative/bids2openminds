@@ -344,20 +344,17 @@ def create_file(layout_df, BIDS_path, collection):
                         "text/tab-separated-values")
         else:
             if extension == ".json":
-                content_description = f"A JSON metadata file for {
-                    file['suffix']} of subject {file['subject']}"
+                content_description = f"A JSON metadata file for {file['suffix']} of subject {file['subject']}"
                 data_types = controlled_terms.DataType.by_name(
                     "associative array")
                 file_format = omcore.ContentType.by_name("application/json")
             elif extension in [".nii", ".nii.gz"]:
-                content_description = f"Data file for {
-                    file['suffix']} of subject {file['subject']}"
+                content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
                 data_types = controlled_terms.DataType.by_name("voxel data")
                 file_format = detect_nifti_version(path, extension, file_size)
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
-                    content_description = f"Event file for {
-                        file['suffix']} of subject {file['subject']}"
+                    content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
                     data_types = controlled_terms.DataType.by_name(
                         "event sequence")
                     file_format = omcore.ContentType.by_name(
