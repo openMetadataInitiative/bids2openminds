@@ -146,44 +146,61 @@ def file_storage_size(file_path: str):
     return file_size, file_stats.st_size
 
 
-def detect_nifti_verstion(file_name, extension, file_size):
+def detect_nifti_version(file_name, extension, file_size):
 
     nii1_sizeof_hdr = 348
     nii2_sizeof_hdr = 540
 
-    try:
-        if extension == ".nii":
-            with open(file_name, 'rb') as fp:
-                byte_data = fp.read(4)
-                sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
-                if sizeof_hdr == 0:
-                    return None
-                if sizeof_hdr == nii1_sizeof_hdr:
-                    return ContentType.by_name("application/vnd.nifti.1")
-                elif sizeof_hdr == nii2_sizeof_hdr:
-                    return ContentType.by_name("application/vnd.nifti.2")
-                else:  # big endian
-                    sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
-                    if sizeof_hdr == nii1_sizeof_hdr:
-                        return ContentType.by_name("application/vnd.nifti.1")
-                    elif sizeof_hdr == nii2_sizeof_hdr:
-                        return ContentType.by_name("application/vnd.nifti.2")
+    if extension == ".nii":
 
-        if extension == ".nii.gz":
+        with open(file_name, 'rb') as fp:
+            byte_data = fp.read(4)
+
+        sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+
+        if sizeof_hdr == 0:
+            return None
+
+        if sizeof_hdr == nii1_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.1")
+
+        elif sizeof_hdr == nii2_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.2")
+
+        else:  # big endian
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+
+            if sizeof_hdr == nii1_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.1")
+
+            elif sizeof_hdr == nii2_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.2")
+
+    if extension == ".nii.gz":
+        try:
             with gzip.open(file_name, 'rb') as fp:
                 byte_data = fp.read(4)
-                sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
-                if sizeof_hdr == 0:
-                    return None
-                if sizeof_hdr == nii1_sizeof_hdr:
-                    return ContentType.by_name("application/vnd.nifti.1")
-                elif sizeof_hdr == nii2_sizeof_hdr:
-                    return ContentType.by_name("application/vnd.nifti.2")
-                else:  # big endian
-                    sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
-                    if sizeof_hdr == nii1_sizeof_hdr:
-                        return ContentType.by_name("application/vnd.nifti.1")
-                    elif sizeof_hdr == nii2_sizeof_hdr:
-                        return ContentType.by_name("application/vnd.nifti.2")
-    except:
-        return None
+        except gzip.BadGzipFile:
+            return None
+
+        sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+
+        if sizeof_hdr == 0:
+            return None
+
+        if sizeof_hdr == nii1_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.1")
+
+        elif sizeof_hdr == nii2_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.2")
+
+        else:  # big endian
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+
+            if sizeof_hdr == nii1_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.1")
+
+            elif sizeof_hdr == nii2_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.2")
+
+    return None
