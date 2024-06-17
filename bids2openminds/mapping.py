@@ -19,7 +19,7 @@ MAP_2_EXPERIMENTAL_APPROACHES = {
     "ieeg": ["electrophysiology"],
     "beh": ["behavior"],
     "pet": [
-        "neuroimaging"
+        "neuroimaging",
         "radiology"
     ],
     "micr": [
@@ -68,64 +68,64 @@ MAP_2_TECHNIQUES = {
     "S0map": [
         "functional magnetic resonance imaging",
         "multi-echo pulse sequence"
-    ],
-    "R2starmap": ["Observed transverse relaxation rate image"],
-    "T2starmap": ["Observed transverse relaxation time image"],
-    "PDT2": ["PD and T2 weighted image"],
-    "PDw": ["Proton density (PD) weighted image"],
-    "PD": ["Proton density image"],
-    "PDmap": ["Proton density image"],
-    "Chimap": ["Quantitative susceptibility map (QSM)"],
-    "RB1map": ["RF receive sensitivity map"],
-    "TB1map": ["RF transmit field image"],
-    "T1rho": ["T1 in rotating frame (T1 rho) image"],
-    "T1w": ["T1 pulse sequence"],
-    "T2w": ["T2 pulse sequence"],
-    "T2star": ["T2* pulse sequence"], #TODO instance TBD
-    "T2starw": ["T2* pulse sequence"], #TODO instance TBD
-    "R2map": ["True transverse relaxation rate image"],
-    "T2map": ["True transverse relaxation time image"],
-    "bold": ["Blood-Oxygen-Level Dependent image"],
-    "cbv": ["Cerebral blood volume image"],
-    "phase": ["Phase image"],
-    "defacemask": ["Defacing masks"],
-    "epi": ["EPI"],
-    "fieldmap": ["Fieldmap"],
-    "magnitude": ["Magnitude"],
-    "magnitude1": ["Magnitude"],
-    "magnitude2": ["Magnitude"],
-    "phase1": ["Phase"],
-    "phase2": ["Phase"],
-    "phasediff": ["Phase-difference"],
+    ], #TODO instances
+    "R2starmap": None, #TODO instance TBD
+    "T2starmap": None, #TODO instance TBD
+    "PDT2": None, #TODO instance TBD
+    "PDw": None, #TODO instance TBD
+    "PD": None, #TODO instance TBD
+    "PDmap": None, #TODO instance TBD
+    "Chimap": None, #TODO instance TBD
+    "RB1map": None, #TODO instance TBD
+    "TB1map": None, #TODO instance TBD
+    "T1rho": None, #TODO instance TBD
+    "T1w": None, #TODO instance TBD
+    "T2w": None, #TODO instance TBD
+    "T2star": None, #TODO instance TBD
+    "T2starw": None, #TODO instance TBD
+    "R2map": None, #TODO instance TBD
+    "T2map": None, #TODO instance TBD
+    "bold": None, #TODO instance TBD
+    "cbv": None, #TODO instance TBD
+    "phase": None, #TODO instance TBD
+    "defacemask": None, #TODO instance TBD
+    "epi": None, #TODO instance TBD
+    "fieldmap": None, #TODO instance TBD
+    "magnitude": None, #TODO instance TBD
+    "magnitude1": None, #TODO instance TBD
+    "magnitude2": None, #TODO instance TBD
+    "phase1": None, #TODO instance TBD
+    "phase2": None, #TODO instance TBD
+    "phasediff": None, #TODO instance TBD
     "dwi": ["@id: https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging"],
-    "sbref": ["Single-band reference image"],
-    "asl": ["Arterial Spin Labeling"],
-    "m0scan": ["M0"],
+    "sbref": None, #TODO instance TBD
+    "asl": None, #TODO instance TBD
+    "m0scan": None, #TODO instance TBD
     "eeg": ["@id:https://openminds.ebrains.eu/instances/technique/electroencephalography"],
     "ieeg": ["Intracranial Electroencephalography"],
-    "physio": ["Physiological continuous recordings"],
-    "stim": ["stimulation continuous recordings"],
-    "beh": ["Behavioral experiments"],
+    "physio": None, #TODO instance TBD
+    "stim": None, #TODO instance TBD
+    "beh": None, #TODO instance TBD
     "pet": ["@id:https://openminds.ebrains.eu/instances/technique/positronEmissionTomography"],
     "2PE": ["2-photon excitation microscopy"],
     "BF": ["Bright-field microscopy"],
-    "CARS": ["Coherent anti-Stokes Raman spectroscopy"],
+    "CARS": None, #TODO instance TBD
     "CONF": ["Confocal microscopy"],
-    "DIC": ["Differential interference contrast microscopy"],
+    "DIC": None, #TODO instance TBD
     "DF": ["Dark-field microscopy"],
     "FLUO": ["Fluorescence microscopy"],
-    "MPE": ["Multi-photon excitation microscopy"],
-    "NLO": ["Nonlinear optical microscopy"],
-    "OCT": ["Optical coherence tomography"],
-    "PC": ["Phase-contrast microscopy"],
+    "MPE": None, #TODO instance TBD
+    "NLO": None, #TODO instance TBD
+    "OCT": None, #TODO instance TBD
+    "PC": None, #TODO instance TBD
     "PLI": ["Polarized-light microscopy"],
-    "SEM": ["Scanning electron microscopy"],
-    "SPIM": ["Selective plane illumination microscopy"],
-    "SR": ["Super-resolution microscopy"],
+    "SEM": None, #TODO instance TBD
+    "SPIM": None, #TODO instance TBD
+    "SR": None, #TODO instance TBD
     "TEM": ["Transmission electron microscopy"],
-    "uCT": ["Micro-CT"],
-    "nirs": ["Near-Infrared Spectroscopy"],
-    "motion": ["Motion"]
+    "uCT": None, #TODO instance TBD
+    "nirs": None, #TODO instance TBD
+    "motion": None, #TODO instance TBD
 }
 
 MAP_2_UNITS = {
@@ -171,13 +171,13 @@ MAP_2_SPECIES = {
 
 
 #sample_types = {
-#    "cell line",
-#    "in vitro differentiated cells",
-#    "primary cell",
-#    "cell-free sample",
-#    "cloning host",
-#    "tissue",
-#    "whole organisms",
-#    "organoid",
-#    "technical sample"
+#    "cell line": None, #TODO instance TBD
+#    "in vitro differentiated cells": None, #TODO instance TBD
+#    "primary cell": None, #TODO instance TBD
+#    "cell-free sample": None, #TODO instance TBD
+#    "cloning host": None, #TODO instance TBD
+#    "tissue": None, #TODO instance TBD
+#    "whole organisms": None, #TODO instance TBD
+#    "organoid": None, #TODO instance TBD
+#    "technical sample": None #TODO instance TBD
 #}
