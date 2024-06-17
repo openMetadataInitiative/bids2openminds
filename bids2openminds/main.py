@@ -10,7 +10,7 @@ import openminds.latest.core as omcore
 import openminds.latest.controlled_terms as controlled_terms
 from openminds import IRI
 
-from .utility import table_filter, pd_table_value, file_hash, file_storage_size
+from .utility import table_filter, pd_table_value, file_hash, file_storage_size, detect_nifti_version
 from .mapping import bids2openminds_instance
 
 
@@ -315,6 +315,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
 def create_file(layout_df, BIDS_path, collection):
 
     file_repository = omcore.FileRepository(
+        format=omcore.ContentType.by_name("application/vnd.bids"),
         iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     collection.add(file_repository)
     files_list = []
@@ -327,7 +328,7 @@ def create_file(layout_df, BIDS_path, collection):
         iri = IRI(pathlib.Path(path).absolute().as_uri())
         name = os.path.basename(path)
         hashes = file_hash(path)
-        storage_size = file_storage_size(path)
+        storage_size_obj, file_size = file_storage_size(path)
         if pd.isna(file["subject"]):
             if file["suffix"] == "participants":
                 if extension == ".json":
@@ -350,7 +351,7 @@ def create_file(layout_df, BIDS_path, collection):
             elif extension in [".nii", ".nii.gz"]:
                 content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
                 data_types = controlled_terms.DataType.by_name("voxel data")
-                # file_format=omcore.ContentType.by_name("nifti")
+                file_format = detect_nifti_version(path, extension, file_size)
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
                     content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
@@ -368,7 +369,7 @@ def create_file(layout_df, BIDS_path, collection):
             # is_part_of=file_bundels
             name=name,
             # special_usage_role
-            storage_size=storage_size,
+            storage_size=storage_size_obj,
         )
         collection.add(file)
         files_list.append(file)
