@@ -97,32 +97,32 @@ MAP_2_TECHNIQUES = {
     "phase1": None, #TODO instance TBD
     "phase2": None, #TODO instance TBD
     "phasediff": None, #TODO instance TBD
-    "dwi": ["@id: https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging"],
+    "dwi": ["diffusion-weighted imaging"],
     "sbref": None, #TODO instance TBD
     "asl": None, #TODO instance TBD
     "m0scan": None, #TODO instance TBD
-    "eeg": ["@id:https://openminds.ebrains.eu/instances/technique/electroencephalography"],
-    "ieeg": ["Intracranial Electroencephalography"],
+    "eeg": ["electroencephalography"],
+    "ieeg": ["intracranial electroencephalography"],
     "physio": None, #TODO instance TBD
     "stim": None, #TODO instance TBD
     "beh": None, #TODO instance TBD
-    "pet": ["@id:https://openminds.ebrains.eu/instances/technique/positronEmissionTomography"],
-    "2PE": ["2-photon excitation microscopy"],
-    "BF": ["Bright-field microscopy"],
+    "pet": ["positron emission tomography"],
+    "2PE": ["two-photon fluorescence microscopy"],
+    "BF": None, #TODO instance TBD
     "CARS": None, #TODO instance TBD
-    "CONF": ["Confocal microscopy"],
+    "CONF": ["confocal microscopy"],
     "DIC": None, #TODO instance TBD
-    "DF": ["Dark-field microscopy"],
-    "FLUO": ["Fluorescence microscopy"],
+    "DF": None, #TODO instance TBD
+    "FLUO": None, #TODO instance TBD
     "MPE": None, #TODO instance TBD
     "NLO": None, #TODO instance TBD
     "OCT": None, #TODO instance TBD
     "PC": None, #TODO instance TBD
-    "PLI": ["Polarized-light microscopy"],
+    "PLI": ["polarized light microscopy"],
     "SEM": None, #TODO instance TBD
     "SPIM": None, #TODO instance TBD
     "SR": None, #TODO instance TBD
-    "TEM": ["Transmission electron microscopy"],
+    "TEM": ["transmission electron microscopy"],
     "uCT": None, #TODO instance TBD
     "nirs": None, #TODO instance TBD
     "motion": None, #TODO instance TBD
