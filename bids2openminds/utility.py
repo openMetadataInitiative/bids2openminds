@@ -68,30 +68,6 @@ def table_filter(dataframe: pd.DataFrame, filter_str: str, column: str = "suffix
         # Handle the case where the specified column is not present in the DataFrame
         KeyError(f"Error: Column '{column}' not found in the DataFrame.")
 
-
-def openminds_instance(list: list, Terminologie: str = None, is_list: bool = True):
-    openminds_list = []
-
-    for item in list:
-        if item.replace(" ", "")[0:32] == "@id:https://openminds.ebrains.eu":
-            slash_location = item.rfind("/")
-            item_name = item[slash_location + 1 :]
-            item_name_snake = camel_to_snake(item_name)
-            if not (Terminologie):
-                Terminologie = item[item[:slash_location].rfind("/") + 1 : slash_location]
-                Terminologie = Terminologie[0].upper() + Terminologie[1:]
-            controlled_class = getattr(controlled_terms, Terminologie)
-            openminds_item = getattr(controlled_class, item_name_snake)
-            openminds_list.append(openminds_item)
-        else:
-            warn(f"{item}is not a proper openMINDS instance")
-
-    if is_list:
-        return openminds_list
-    else:
-        return openminds_item
-
-
 def pd_table_value(data_frame, column_name, not_list: bool = True):
     try:
         if column_name in data_frame.columns:
