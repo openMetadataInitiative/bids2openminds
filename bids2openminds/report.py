@@ -32,8 +32,10 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
         for author in dataset_version.authors:
             if author.family_name is not None:
                 author_list += f"  {i}. {author.family_name}, {author.given_name}\n"
+                i += 1
             else:
                 author_list += f"  {i}. ___, {author.given_name}\n"
+                i += 1
 
     min_subject_state_numbers = min(subject_state_numbers)
     max_subject_state_numbers = max(subject_state_numbers)
@@ -67,7 +69,7 @@ Authors:
     The converter may fail in detecting family vs given name.
     The converter will fail in detecting organizations.
 
-States:
+Subject States:
     There are as many subject states as sessions for each subject.
     Please modify to your needs (divide into more or merge into fewer subject states).
 
@@ -75,16 +77,14 @@ Behavioral protocols:
     The conversion of behavioral protocols is incomplete.
     Only the task-label is extracted as name and internal identifier of a behavioral protocol.
     Please adjust to your needs.
-
-The following elements were not converted:  
-------------------------------------------  
+ 
 """
     if "GeneratedBy" in dataset_description:
-        report = report+"\n"+"+ Dataset is derivative, derivative data are ignored for now\n"
+        report = report+"+Dataset is derivative, derivative data are ignored for now\n"
 
     derivatives_path = os.path.join(
         input_path, "derivatives")
     if os.path.isdir(derivatives_path):
-        report = report+"\n"+"+ Dataset contains derivative, derivative data are ignored for now\n"
+        report = report+"+ Dataset contains derivative, derivative data are ignored for now\n"
 
     print(report)
