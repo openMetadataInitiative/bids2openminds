@@ -268,7 +268,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
             subject_state_dict[f"{subject}"] = state_cache_dict
             subject_cache = omcore.Subject(
                 lookup_label=f"{subject_name}",
-                internal_identifier=f"{subject_name}"
+                internal_identifier=f"{subject_name}",
+                studied_states=state_cache
             )
             subjects_dict[f"{subject}"] = subject_cache
             subjects_list.append(subject_cache)
