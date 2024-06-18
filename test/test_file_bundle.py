@@ -10,7 +10,7 @@ from bids2openminds.main import create_file_bundle
 # example_file_filebundle = ([list of the path to this file],[expected file bundle])
 example_file_filebundle = ((["sub-04", "anat", "sub-04_inplaneT2.nii.gz"], ["sub-04/anat"]),
                            (["sub-03", "func", "sub-03_task-stopsignalwithmanualresponse_run-02_events.tsv"], ["sub-03/func"]))
-# example_folder_filebundle= ([list of path to this folder],[expected folder name],[expected parent filebundle (None for highest level file boundels)])
+# example_folder_filebundle= ([list of path to this folder],[expected folder name],[expected parent filebundle (None for highest level file bundles)])
 example_folder_filebundle = ((["sub-04", "anat"], ["sub-04/anat"], ["sub-04"]),
                              (["sub-01"], ["sub-01"], [None]))
 
@@ -55,8 +55,8 @@ def test_number_file_bundle(generate_file_bundle_collection):
     assert m == number_of_openminds_bundle
 
 
-@pytest.mark.parametrize("path_list, boundle", example_file_filebundle)
-def test_random_file(test_dir, path_list, boundle, generate_file_bundle_collection):
+@pytest.mark.parametrize("path_list, bundle", example_file_filebundle)
+def test_random_file(test_dir, path_list, bundle, generate_file_bundle_collection):
 
     file_bundles, _, _ = generate_file_bundle_collection
 
@@ -64,14 +64,14 @@ def test_random_file(test_dir, path_list, boundle, generate_file_bundle_collecti
 
     test_bundles = file_bundles[example_file_path]
 
-    assert len(test_bundles) == len(boundle)
+    assert len(test_bundles) == len(bundle)
 
-    for bundle in test_bundles:
-        assert bundle.name in boundle
+    for test_bundle in test_bundles:
+        assert test_bundle.name in bundle
 
 
-@pytest.mark.parametrize("path_list, boundle, parent_boundle", example_folder_filebundle)
-def test_random_folder(test_dir, path_list, boundle, parent_boundle, generate_file_bundle_collection):
+@pytest.mark.parametrize("path_list, bundle, parent_bundle", example_folder_filebundle)
+def test_random_folder(test_dir, path_list, bundle, parent_bundle, generate_file_bundle_collection):
 
     _, collection, _ = generate_file_bundle_collection
 
@@ -79,20 +79,20 @@ def test_random_folder(test_dir, path_list, boundle, parent_boundle, generate_fi
 
     folder_name = path_name(example_path("", path_list))
 
-    dataset_boundel = None
+    dataset_bundle = None
 
     for item in collection:
         if item.type_ == "https://openminds.ebrains.eu/core/FileBundle" and item.name == folder_name:
-            # detects only one file boundel have this name
-            assert dataset_boundel is None
-            dataset_boundel = item
-    # asserts at least one file boundle have this name
-    assert dataset_boundel is not None
+            # detects only one file bundle have this name
+            assert dataset_bundle is None
+            dataset_bundle = item
+    # asserts at least one file bundle have this name
+    assert dataset_bundle is not None
 
-    assert dataset_boundel.name == boundle[0]
+    assert dataset_bundle.name == bundle[0]
 
-    if parent_boundle is not None:
-        assert dataset_boundel.is_part_of.name == parent_boundle[0]
+    if parent_bundle is not None:
+        assert dataset_bundle.is_part_of.name == parent_bundle[0]
     else:
-        assert dataset_boundel.is_part_of.type_ == "https://openminds.ebrains.eu/core/FileRepository"
-        assert dataset_boundel.is_part_of.iri.value == file_repository_iri
+        assert dataset_bundle.is_part_of.type_ == "https://openminds.ebrains.eu/core/FileRepository"
+        assert dataset_bundle.is_part_of.iri.value == file_repository_iri
