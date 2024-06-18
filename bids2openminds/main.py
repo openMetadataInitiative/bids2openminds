@@ -10,7 +10,7 @@ import openminds.latest.core as omcore
 import openminds.latest.controlled_terms as controlled_terms
 from openminds import IRI
 
-from .utility import table_filter, pd_table_value, file_hash, file_storage_size
+from .utility import table_filter, pd_table_value, file_hash, file_storage_size, detect_nifti_version
 from .mapping import bids2openminds_instance
 
 
@@ -72,6 +72,26 @@ def create_persons(dataset_description, collection):
     return openminds_list
 
 
+def create_behavioral_protocol(layout, collection):
+    behavioral_protocols_dict = {}
+    behavioral_protocols = []
+    tasks = layout.get_tasks()
+
+    if not tasks:
+        return None, None
+
+    for task in tasks:
+
+        behavioral_protocol = omcore.BehavioralProtocol(name=task,
+                                                        internal_identifier=task,
+                                                        description="To be defined")
+        behavioral_protocols.append(behavioral_protocol)
+        behavioral_protocols_dict[task] = behavioral_protocol
+        collection.add(behavioral_protocol)
+
+    return behavioral_protocols, behavioral_protocols_dict
+
+
 def create_techniques(layout_df):
     suffixs = layout_df["suffix"].unique().tolist()
     techniques = []
@@ -126,7 +146,7 @@ def create_openminds_age(data_subject):
         return None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, collection):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
 
     # Fetch the dataset type from dataset description file
 
@@ -179,6 +199,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
+        behavioral_protocols=behavioral_protocols
         # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
@@ -315,6 +336,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
 def create_file(layout_df, BIDS_path, collection):
 
     file_repository = omcore.FileRepository(
+        format=omcore.ContentType.by_name("application/vnd.bids"),
         iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     collection.add(file_repository)
     files_list = []
@@ -327,7 +349,7 @@ def create_file(layout_df, BIDS_path, collection):
         iri = IRI(pathlib.Path(path).absolute().as_uri())
         name = os.path.basename(path)
         hashes = file_hash(path)
-        storage_size = file_storage_size(path)
+        storage_size_obj, file_size = file_storage_size(path)
         if pd.isna(file["subject"]):
             if file["suffix"] == "participants":
                 if extension == ".json":
@@ -350,7 +372,7 @@ def create_file(layout_df, BIDS_path, collection):
             elif extension in [".nii", ".nii.gz"]:
                 content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
                 data_types = controlled_terms.DataType.by_name("voxel data")
-                # file_format=omcore.ContentType.by_name("nifti")
+                file_format = detect_nifti_version(path, extension, file_size)
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
                     content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
@@ -368,7 +390,7 @@ def create_file(layout_df, BIDS_path, collection):
             # is_part_of=file_bundels
             name=name,
             # special_usage_role
-            storage_size=storage_size,
+            storage_size=storage_size_obj,
         )
         collection.add(file)
         files_list.append(file)
