@@ -1,36 +1,39 @@
 import pytest
 import os
-import openminds.latest.core as omcore
+import pathlib
 from openminds import Collection
 from bids2openminds.main import create_file_bundle
 
-(test_data_set, number_of_openminds_bundle, example_file, example_file_bubdels) = (
-    "ds007", 60, ["sub-04", "anat", "sub-04_inplaneT2.nii.gz"], ["sub-04", "sub-04_anat"])
+(test_data_set, number_of_openminds_bundle) = (
+    "ds007", 60)
+
+# example_file_filebundel = ([list of the path to this file],[expected file bundel])
+example_file_filebundel = ((["sub-04", "anat", "sub-04_inplaneT2.nii.gz"], ["sub-04/anat"]),
+                           (["sub-03", "func", "sub-03_task-stopsignalwithmanualresponse_run-02_events.tsv"], ["sub-03/func"]))
+# example_folder_filebundel= ([list of path to this folder],[expected folder name],[expected parent filebundel (None for highest level file boundels)])
+example_folder_filebundel = ((["sub-04", "anat"], ["sub-04/anat"], ["sub-04"]),
+                             (["sub-01"], ["sub-01"], [None]))
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def test_dir():
     test_dir = os.path.join("bids-examples", test_data_set)
     return test_dir
 
 
-@pytest.fixture
-def path_name(test_dir):
-    name = str(test_dir).replace("/", "_").replace("\\", "_")
-    if name[0] == "_":
-        name = name[1:]
+def path_name(path):
+    name = str(path).replace("\\", "/")
     return name
 
 
-@pytest.fixture
-def example_file_path(test_dir):
+def example_path(test_dir, path_list):
     path = test_dir
-    for item in example_file:
+    for item in path_list:
         path = os.path.join(path, item)
     return path
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def generate_file_bundle_collection(test_dir):
     collection = Collection()
     file_bundles, _, file_repository = create_file_bundle(
@@ -52,12 +55,44 @@ def test_number_file_bundle(generate_file_bundle_collection):
     assert m == number_of_openminds_bundle
 
 
-def test_random_file(path_name, generate_file_bundle_collection, example_file_path):
+@pytest.mark.parametrize("path_list, boundle", example_file_filebundel)
+def test_random_file(test_dir, path_list, boundle, generate_file_bundle_collection):
+
     file_bundles, _, _ = generate_file_bundle_collection
+
+    example_file_path = example_path(test_dir, path_list)
 
     test_bundles = file_bundles[example_file_path]
 
-    assert len(test_bundles) == len(example_file_bubdels)
+    assert len(test_bundles) == len(boundle)
 
     for bundle in test_bundles:
-        assert bundle.name in example_file_bubdels
+        assert bundle.name in boundle
+
+
+@pytest.mark.parametrize("path_list, boundle, parent_boundle", example_folder_filebundel)
+def test_random_folder(test_dir, path_list, boundle, parent_boundle, generate_file_bundle_collection):
+
+    _, collection, _ = generate_file_bundle_collection
+
+    file_repository_iri = pathlib.Path(test_dir).absolute().as_uri()
+
+    folder_name = path_name(example_path("", path_list))
+
+    dataset_boundel = None
+
+    for item in collection:
+        if item.type_ == "https://openminds.ebrains.eu/core/FileBundle" and item.name == folder_name:
+            # detects only one file boundel have this name
+            assert dataset_boundel is None
+            dataset_boundel = item
+    # asserts at least one file boundle have this name
+    assert dataset_boundel is not None
+
+    assert dataset_boundel.name == boundle[0]
+
+    if parent_boundle is not None:
+        assert dataset_boundel.is_part_of.name == parent_boundle[0]
+    else:
+        assert dataset_boundel.is_part_of.type_ == "https://openminds.ebrains.eu/core/FileRepository"
+        assert dataset_boundel.is_part_of.iri.value == file_repository_iri

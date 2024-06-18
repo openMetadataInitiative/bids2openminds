@@ -340,7 +340,7 @@ def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_
                                                       iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     else:
         relative_path = os.path.relpath(path, BIDS_path)
-        name = str(relative_path).replace("/", "_").replace("\\", "_")
+        name = str(relative_path).replace("\\", "/")
         if name[0] == "_":
             name = name[1:]
         openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {relative_path}",
@@ -374,9 +374,6 @@ def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_
                     files[child_file_path] = []
 
                 files[child_file_path].extend(child_files[child_file_path])
-
-                if not is_file_repository:
-                    files[child_file_path].append(openminds_file_bundle)
 
             files_size += child_filesizes
 
