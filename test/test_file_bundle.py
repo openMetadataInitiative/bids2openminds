@@ -7,11 +7,11 @@ from bids2openminds.main import create_file_bundle
 (test_data_set, number_of_openminds_bundle) = (
     "ds007", 60)
 
-# example_file_filebundel = ([list of the path to this file],[expected file bundel])
-example_file_filebundel = ((["sub-04", "anat", "sub-04_inplaneT2.nii.gz"], ["sub-04/anat"]),
+# example_file_filebundle = ([list of the path to this file],[expected file bundle])
+example_file_filebundle = ((["sub-04", "anat", "sub-04_inplaneT2.nii.gz"], ["sub-04/anat"]),
                            (["sub-03", "func", "sub-03_task-stopsignalwithmanualresponse_run-02_events.tsv"], ["sub-03/func"]))
-# example_folder_filebundel= ([list of path to this folder],[expected folder name],[expected parent filebundel (None for highest level file boundels)])
-example_folder_filebundel = ((["sub-04", "anat"], ["sub-04/anat"], ["sub-04"]),
+# example_folder_filebundle= ([list of path to this folder],[expected folder name],[expected parent filebundle (None for highest level file boundels)])
+example_folder_filebundle = ((["sub-04", "anat"], ["sub-04/anat"], ["sub-04"]),
                              (["sub-01"], ["sub-01"], [None]))
 
 
@@ -55,7 +55,7 @@ def test_number_file_bundle(generate_file_bundle_collection):
     assert m == number_of_openminds_bundle
 
 
-@pytest.mark.parametrize("path_list, boundle", example_file_filebundel)
+@pytest.mark.parametrize("path_list, boundle", example_file_filebundle)
 def test_random_file(test_dir, path_list, boundle, generate_file_bundle_collection):
 
     file_bundles, _, _ = generate_file_bundle_collection
@@ -70,7 +70,7 @@ def test_random_file(test_dir, path_list, boundle, generate_file_bundle_collecti
         assert bundle.name in boundle
 
 
-@pytest.mark.parametrize("path_list, boundle, parent_boundle", example_folder_filebundel)
+@pytest.mark.parametrize("path_list, boundle, parent_boundle", example_folder_filebundle)
 def test_random_folder(test_dir, path_list, boundle, parent_boundle, generate_file_bundle_collection):
 
     _, collection, _ = generate_file_bundle_collection
