@@ -62,9 +62,8 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
     if not quiet:
         report.create_report(dataset, dataset_version, collection,
-                             dataset_description, input_path)
-        print(
-            f"Conversion was successful, the openMINDS file is in {output_path}")
+                             dataset_description, input_path, output_path)
+
     else:
         print("Conversion was successful")
 

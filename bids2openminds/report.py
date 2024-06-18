@@ -1,43 +1,80 @@
 import os
 
 
-def create_report(dataset, dataset_version, collection, dataset_description, input_path):
+def create_report(dataset, dataset_version, collection, dataset_description, input_path, output_path):
     subject_number = 0
-    subject_state_number = 0
+    subject_state_numbers = []
     file_bundle_number = 0
     files_number = 0
+    behavioral_protocols_numbers = 0
 
     for item in collection:
-        match item.type_:
+        if item.type_ == "https://openminds.ebrains.eu/core/Subject":
 
-            case "https://openminds.ebrains.eu/core/Subject":
+            subject_number += 1
+            subject_state_numbers.append(len(item.studied_states))
 
-                subject_number += 1
+        if item.type_ == "https://openminds.ebrains.eu/core/File":
 
-            case "https://openminds.ebrains.eu/core/SubjectState":
+            files_number += 1
 
-                subject_state_number += 1
+        if item.type_ == "https://openminds.ebrains.eu/core/FileBundle":
 
-            case "https://openminds.ebrains.eu/core/File":
+            file_bundle_number += 1
 
-                files_number += 1
+        if item.type_ == "https://openminds.ebrains.eu/core/BehavioralProtocol":
 
-# TODO to be activated after merging the FileBundle pull request
-#            case "https://openminds.ebrains.eu/core/FileBundle":
-#
-#                file_bundle_number += 1
+            behavioral_protocols_numbers += 1
 
-    report = f"""Conversion Report
+    author_list = ""
+    i = 1
+    if dataset_version.authors is not None:
+        for author in dataset_version.authors:
+            if author.family_name is not None:
+                author_list += f"  {i}. {author.family_name}, {author.given_name}\n"
+            else:
+                author_list += f"  {i}. ___, {author.given_name}\n"
+
+    min_subject_state_numbers = min(subject_state_numbers)
+    max_subject_state_numbers = max(subject_state_numbers)
+    if min_subject_state_numbers == max_subject_state_numbers:
+        text_subject_state_numbers = str(min_subject_state_numbers)
+    else:
+        text_subject_state_numbers = f"min={min_subject_state_numbers}, max={max_subject_state_numbers}"
+    report = f"""
+Conversion Report
 =================  
+Conversion was successful, the openMINDS file is in {output_path}
 
 Dataset title : {dataset.full_name}
 
+The following persons (family name, given name) were converted: 
+{author_list}
+
 The following elements were converted:  
---------------------------------------  
+------------------------------------------   
 + number of converted subjects: {subject_number}  
-+ number of state for each subject: {subject_state_number}
++ number of state for each subject: {text_subject_state_numbers}
 + number of files: {files_number} 
-+ number of files: {file_bundle_number}
++ number of file bundles: {file_bundle_number}
++ number of behavioral protocols: {behavioral_protocols_numbers}
+
+**Important Notes**
+------------------------------------------ 
+
+Authors:
+    The conversion of authors is not reliable due to missing source convention.
+    The converter may fail in detecting family vs given name.
+    The converter will fail in detecting organizations.
+
+States:
+    There are as many subject states as sessions for each subject.
+    Please modify to your needs (divide into more or merge into fewer subject states).
+
+Behavioral protocols:
+    The conversion of behavioral protocols is incomplete.
+    Only the task-label is extracted as name and internal identifier of a behavioral protocol.
+    Please adjust to your needs.
 
 The following elements were not converted:  
 ------------------------------------------  
