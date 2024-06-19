@@ -2,14 +2,14 @@ import hashlib
 import json
 import os
 import re
+import gzip
 from warnings import warn
 
 import pandas as pd
 
 import openminds.latest.controlled_terms as controlled_terms
-from openminds.latest.core import Hash, QuantitativeValue
+from openminds.latest.core import Hash, QuantitativeValue, ContentType
 from openminds.latest.controlled_terms import UnitOfMeasurement
-
 
 
 def camel_to_snake(name):
@@ -68,6 +68,7 @@ def table_filter(dataframe: pd.DataFrame, filter_str: str, column: str = "suffix
         # Handle the case where the specified column is not present in the DataFrame
         KeyError(f"Error: Column '{column}' not found in the DataFrame.")
 
+
 def pd_table_value(data_frame, column_name, not_list: bool = True):
     try:
         if column_name in data_frame.columns:
@@ -79,7 +80,7 @@ def pd_table_value(data_frame, column_name, not_list: bool = True):
         else:
             return None
     except IndexError:
-        warn(f"The data frame dosen't contain {column_name}")
+        warn(f"The data frame doesn't contain {column_name}")
         return None
 
 
@@ -116,5 +117,66 @@ def file_hash(file_path: str, algorithm: str = "MD5"):
 
 def file_storage_size(file_path: str):
     file_stats = os.stat(file_path)
-    file_size = QuantitativeValue(value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
-    return file_size
+    file_size = QuantitativeValue(
+        value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
+    return file_size, file_stats.st_size
+
+
+def detect_nifti_version(file_name, extension, file_size):
+
+    nii1_sizeof_hdr = 348
+    nii2_sizeof_hdr = 540
+
+    if extension == ".nii":
+
+        with open(file_name, 'rb') as fp:
+            byte_data = fp.read(4)
+
+        sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+
+        if sizeof_hdr == 0:
+            return None
+
+        if sizeof_hdr == nii1_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.1")
+
+        elif sizeof_hdr == nii2_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.2")
+
+        else:  # big endian
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+
+            if sizeof_hdr == nii1_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.1")
+
+            elif sizeof_hdr == nii2_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.2")
+
+    if extension == ".nii.gz":
+        try:
+            with gzip.open(file_name, 'rb') as fp:
+                byte_data = fp.read(4)
+        except gzip.BadGzipFile:
+            return None
+
+        sizeof_hdr = int.from_bytes(byte_data, byteorder='little')
+
+        if sizeof_hdr == 0:
+            return None
+
+        if sizeof_hdr == nii1_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.1")
+
+        elif sizeof_hdr == nii2_sizeof_hdr:
+            return ContentType.by_name("application/vnd.nifti.2")
+
+        else:  # big endian
+            sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
+
+            if sizeof_hdr == nii1_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.1")
+
+            elif sizeof_hdr == nii2_sizeof_hdr:
+                return ContentType.by_name("application/vnd.nifti.2")
+
+    return None
