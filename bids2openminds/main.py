@@ -268,7 +268,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
             subject_state_dict[f"{subject}"] = state_cache_dict
             subject_cache = omcore.Subject(
                 lookup_label=f"{subject_name}",
-                internal_identifier=f"{subject_name}"
+                internal_identifier=f"{subject_name}",
+                studied_states=state_cache
             )
             subjects_dict[f"{subject}"] = subject_cache
             subjects_list.append(subject_cache)
@@ -333,12 +334,71 @@ def create_subjects(subject_id, layout_df, layout, collection):
     return subjects_dict, subject_state_dict, subjects_list
 
 
+def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_file_repository=False):
+
+    if is_file_repository:
+        openminds_file_bundle = omcore.FileRepository(format=omcore.ContentType.by_name("application/vnd.bids"),
+                                                      iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
+    else:
+        relative_path = os.path.relpath(path, BIDS_path)
+        name = str(relative_path).replace("\\", "/")
+        if name[0] == "_":
+            name = name[1:]
+        openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {relative_path}",
+                                                  name=name,
+                                                  is_part_of=parent_file_bundle)
+
+    files = {}
+    files_size = 0
+    all = os.listdir(path)
+
+    for item in all:
+
+        item_path = str(pathlib.PurePath(path, item))
+
+        if os.path.isfile(item_path) and os.path.basename(item_path) != "openminds.jsonld":
+
+            if is_file_repository:
+                files[item_path] = None
+            else:
+                files[item_path] = [openminds_file_bundle]
+
+            files_size += os.stat(item_path).st_size
+
+        if os.path.isdir(item_path) and os.path.basename(item_path) != "openminds":
+
+            child_files, child_filesizes, _ = create_file_bundle(
+                BIDS_path, item_path, collection, parent_file_bundle=openminds_file_bundle, is_file_repository=False)
+
+            for child_file_path in child_files.keys():
+                if child_file_path not in files:
+                    files[child_file_path] = []
+
+                files[child_file_path].extend(child_files[child_file_path])
+
+            files_size += child_filesizes
+
+    openminds_file_bundle.storage_size = omcore.QuantitativeValue(value=files_size,
+                                                                  unit=controlled_terms.UnitOfMeasurement.by_name(
+                                                                      "byte")
+                                                                  )
+    collection.add(openminds_file_bundle)
+
+    if is_file_repository:
+        openminds_file_repository = openminds_file_bundle
+    else:
+        openminds_file_repository = None
+
+    return files, files_size, openminds_file_repository
+
+
 def create_file(layout_df, BIDS_path, collection):
 
-    file_repository = omcore.FileRepository(
-        format=omcore.ContentType.by_name("application/vnd.bids"),
-        iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
-    collection.add(file_repository)
+    BIDS_path_absolute = pathlib.Path(BIDS_path).absolute()
+
+    file2file_bundle_dic, _, file_repository = create_file_bundle(
+        BIDS_path_absolute, BIDS_path_absolute, collection, is_file_repository=True)
+
     files_list = []
     for index, file in layout_df.iterrows():
         file_format = None
@@ -380,6 +440,7 @@ def create_file(layout_df, BIDS_path, collection):
                         "event sequence")
                     file_format = omcore.ContentType.by_name(
                         "text/tab-separated-values")
+
         file = omcore.File(
             iri=iri,
             content_description=content_description,
@@ -387,7 +448,8 @@ def create_file(layout_df, BIDS_path, collection):
             file_repository=file_repository,
             format=file_format,
             hashes=hashes,
-            # is_part_of=file_bundels
+            is_part_of=file2file_bundle_dic[str(
+                pathlib.Path(path))],
             name=name,
             # special_usage_role
             storage_size=storage_size_obj,
