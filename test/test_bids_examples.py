@@ -27,10 +27,12 @@ def test_example_datasets(dataset_label, dataset_subject_number, dataset_subject
     files_number = 0
     file_bundles_number = 0
     behavioral_protocol_number = 0
+    subject_state_number_besed_on_subject = 0
 
     for item in c:
         if item.type_ == "https://openminds.ebrains.eu/core/Subject":
             subject_number += 1
+            subject_state_number_besed_on_subject += len(item.studied_states)
         if item.type_ == "https://openminds.ebrains.eu/core/SubjectState":
             subject_state_number += 1
         if item.type_ == "https://openminds.ebrains.eu/core/Person":
@@ -44,6 +46,7 @@ def test_example_datasets(dataset_label, dataset_subject_number, dataset_subject
 
     assert dataset_subject_number == subject_number
     assert dataset_subject_state_number == subject_state_number
+    assert subject_state_number_besed_on_subject == subject_state_number, "There was a discrepancy between the total number of subject states and the subject states attached to subjects."
     assert dataset_person_number == person_number
     assert dataset_files_number == files_number
     assert dataset_file_bundles_number == file_bundles_number
