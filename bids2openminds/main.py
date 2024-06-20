@@ -4,7 +4,6 @@ import pathlib
 from warnings import warn
 
 import pandas as pd
-import numpy as np
 from nameparser import HumanName
 
 import openminds.latest.core as omcore
