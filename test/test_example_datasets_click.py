@@ -4,7 +4,7 @@ from openminds import Collection
 from bids2openminds.converter import convert_click
 from click.testing import CliRunner
 
-(test_data_set, number_of_openminds_files) = ("ds003", 141)
+(test_data_set, number_of_openminds_files) = ("ds003", 143)
 
 
 def test_example_datasets_click():
