@@ -12,11 +12,6 @@ from openminds.latest.core import Hash, QuantitativeValue, ContentType
 from openminds.latest.controlled_terms import UnitOfMeasurement
 
 
-def camel_to_snake(name):
-    name = re.sub("(.)([A-Z][a-z]+)", r"\1_\2", name)
-    return re.sub("([a-z0-9])([A-Z])", r"\1_\2", name).lower()
-
-
 def read_json(file_path: str) -> dict:
     """
     Reads the content of a JSON file and returns it as a Python dictionary.
