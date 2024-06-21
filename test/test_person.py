@@ -8,7 +8,8 @@ example_names = [("John Ronald Reuel Tolkien", "John Ronald Reuel", "Tolkien"),
                  ("Bilbo Baggins", "Bilbo", "Baggins"),
                  ("Xue, G.", "G.", "Xue"),
                  ("Arndís Þórarinsdóttir", "Arndís", "Þórarinsdóttir"),
-                 ("Loïc Le Clézio", "Loïc", "Le Clézio")]
+                 ("Loïc Le Clézio", "Loïc", "Le Clézio"),
+                 ("P Gandolf", "P", "Gandolf")]
 
 example_not_names = ["42", "#", "", "A34 hajb"]
 
