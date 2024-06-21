@@ -18,6 +18,7 @@ def load_collections():
         with open(test_standard_path, "r+") as file:
             undeisred_data = file.read()
             desired_data = undeisred_data.replace("PREFIX", test_dataset)
+            file.seek(0)
             file.write(desired_data)
 
         reference_collection = Collection()
