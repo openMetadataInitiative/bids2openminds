@@ -26,6 +26,11 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
 
             behavioral_protocols_numbers += 1
 
+    experimental_approaches_list = ""
+    if dataset_version.experimental_approaches is not None:
+        for approache in dataset_version.experimental_approaches:
+            experimental_approaches_list += f"{approache.name}\n"
+
     author_list = ""
     i = 1
     if dataset_version.authors is not None:
@@ -43,6 +48,7 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
         text_subject_state_numbers = str(min_subject_state_numbers)
     else:
         text_subject_state_numbers = f"min={min_subject_state_numbers}, max={max_subject_state_numbers}"
+
     report = f"""
 Conversion Report
 =================  
@@ -50,16 +56,23 @@ Conversion was successful, the openMINDS file is in {output_path}
 
 Dataset title : {dataset.full_name}
 
-The following persons (family name, given name) were converted: 
-{author_list}
+
+Experimental approaches detected:
+------------------------------------------ 
+{experimental_approaches_list}
+
 
 The following elements were converted:  
 ------------------------------------------   
++ number of authors : {len(dataset_version.authors or [])}
 + number of converted subjects: {subject_number}  
-+ number of state for each subject: {text_subject_state_numbers}
++ number of states per subject: {text_subject_state_numbers}
 + number of files: {files_number} 
 + number of file bundles: {file_bundle_number}
++ number of techniques: {len(dataset_version.techniques or [])}
 + number of behavioral protocols: {behavioral_protocols_numbers}
+
+
 
 **Important Notes**
 ------------------------------------------ 
@@ -68,6 +81,8 @@ Authors:
     The conversion of authors is not reliable due to missing source convention.
     The converter may fail in detecting family vs given name.
     The converter will fail in detecting organizations.
+    The following persons (family name, given name) were converted, : 
+{author_list}
 
 Subject States:
     There are as many subject states as sessions for each subject.
