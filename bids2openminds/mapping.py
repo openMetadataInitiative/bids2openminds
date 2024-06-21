@@ -65,10 +65,7 @@ MAP_2_TECHNIQUES = {
         "T2 pulse sequence",
         "myelin water fraction image processing"
     ], #TODO instances
-    "S0map": [
-        "functional magnetic resonance imaging",
-        "multi-echo pulse sequence"
-    ], #TODO instances
+    "S0map": None, #TODO instances
     "R2starmap": None, #TODO instance TBD
     "T2starmap": None, #TODO instance TBD
     "PDT2": None, #TODO instance TBD
