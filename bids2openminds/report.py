@@ -33,8 +33,11 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
 
     data_types_list = ""
     if dataset_version.data_types is not None:
-        for data_type in dataset_version.data_types:
-            data_types_list += f"{data_type.name}\n"
+        if isinstance(dataset_version.data_types, list):
+            for data_type in dataset_version.data_types:
+                data_types_list += f"{data_type.name}\n"
+        else:
+            data_types_list = f"{dataset_version.data_types.name}\n"
 
     author_list = ""
     i = 1
