@@ -29,6 +29,9 @@
       },
       "internalIdentifier": "sub-01",
       "lookupLabel": "sub-01",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
           "@id": "_:000000"
@@ -45,7 +48,21 @@
       "preferredOntologyIdentifier": "http://purl.obolibrary.org/obo/PATO_0000384"
     },
     {
-      "@id": "_:000004",
+      "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/Species",
+      "definition": "The species *Homo sapiens* (humans) belongs to the family of *hominidae* (great apes).",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0105114",
+      "knowledgeSpaceLink": "https://knowledge-space.org/wiki/NCBITaxon:9606#human",
+      "name": "Homo sapiens",
+      "preferredOntologyIdentifier": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "synonym": [
+        "homo sapien",
+        "human",
+        "man"
+      ]
+    },
+    {
+      "@id": "_:000005",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -58,16 +75,19 @@
       "lookupLabel": "Studied state sub-02"
     },
     {
-      "@id": "_:000005",
+      "@id": "_:000006",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-02",
       "lookupLabel": "sub-02",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000004"
+          "@id": "_:000005"
         }
       ]
     },
@@ -81,7 +101,7 @@
       "preferredOntologyIdentifier": "http://purl.obolibrary.org/obo/PATO_0000383"
     },
     {
-      "@id": "_:000007",
+      "@id": "_:000008",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -94,21 +114,24 @@
       "lookupLabel": "Studied state sub-03"
     },
     {
-      "@id": "_:000008",
+      "@id": "_:000009",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-03",
       "lookupLabel": "sub-03",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000007"
+          "@id": "_:000008"
         }
       ]
     },
     {
-      "@id": "_:000009",
+      "@id": "_:000010",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -121,21 +144,24 @@
       "lookupLabel": "Studied state sub-04"
     },
     {
-      "@id": "_:000010",
+      "@id": "_:000011",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-04",
       "lookupLabel": "sub-04",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000009"
+          "@id": "_:000010"
         }
       ]
     },
     {
-      "@id": "_:000011",
+      "@id": "_:000012",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -148,21 +174,24 @@
       "lookupLabel": "Studied state sub-05"
     },
     {
-      "@id": "_:000012",
+      "@id": "_:000013",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-05",
       "lookupLabel": "sub-05",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000011"
+          "@id": "_:000012"
         }
       ]
     },
     {
-      "@id": "_:000013",
+      "@id": "_:000014",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -175,21 +204,24 @@
       "lookupLabel": "Studied state sub-06"
     },
     {
-      "@id": "_:000014",
+      "@id": "_:000015",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-06",
       "lookupLabel": "sub-06",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000013"
+          "@id": "_:000014"
         }
       ]
     },
     {
-      "@id": "_:000015",
+      "@id": "_:000016",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -202,21 +234,24 @@
       "lookupLabel": "Studied state sub-07"
     },
     {
-      "@id": "_:000016",
+      "@id": "_:000017",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-07",
       "lookupLabel": "sub-07",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000015"
+          "@id": "_:000016"
         }
       ]
     },
     {
-      "@id": "_:000017",
+      "@id": "_:000018",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -229,21 +264,24 @@
       "lookupLabel": "Studied state sub-08"
     },
     {
-      "@id": "_:000018",
+      "@id": "_:000019",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-08",
       "lookupLabel": "sub-08",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000017"
+          "@id": "_:000018"
         }
       ]
     },
     {
-      "@id": "_:000019",
+      "@id": "_:000020",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -256,21 +294,24 @@
       "lookupLabel": "Studied state sub-09"
     },
     {
-      "@id": "_:000020",
+      "@id": "_:000021",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-09",
       "lookupLabel": "sub-09",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000019"
+          "@id": "_:000020"
         }
       ]
     },
     {
-      "@id": "_:000021",
+      "@id": "_:000022",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -283,21 +324,24 @@
       "lookupLabel": "Studied state sub-10"
     },
     {
-      "@id": "_:000022",
+      "@id": "_:000023",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-10",
       "lookupLabel": "sub-10",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000021"
+          "@id": "_:000022"
         }
       ]
     },
     {
-      "@id": "_:000023",
+      "@id": "_:000024",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -310,21 +354,24 @@
       "lookupLabel": "Studied state sub-11"
     },
     {
-      "@id": "_:000024",
+      "@id": "_:000025",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-11",
       "lookupLabel": "sub-11",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000023"
+          "@id": "_:000024"
         }
       ]
     },
     {
-      "@id": "_:000025",
+      "@id": "_:000026",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -337,21 +384,24 @@
       "lookupLabel": "Studied state sub-12"
     },
     {
-      "@id": "_:000026",
+      "@id": "_:000027",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-12",
       "lookupLabel": "sub-12",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000025"
+          "@id": "_:000026"
         }
       ]
     },
     {
-      "@id": "_:000027",
+      "@id": "_:000028",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -364,21 +414,24 @@
       "lookupLabel": "Studied state sub-13"
     },
     {
-      "@id": "_:000028",
+      "@id": "_:000029",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-13",
       "lookupLabel": "sub-13",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000027"
+          "@id": "_:000028"
         }
       ]
     },
     {
-      "@id": "_:000029",
+      "@id": "_:000030",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -391,21 +444,24 @@
       "lookupLabel": "Studied state sub-14"
     },
     {
-      "@id": "_:000030",
+      "@id": "_:000031",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-14",
       "lookupLabel": "sub-14",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000029"
+          "@id": "_:000030"
         }
       ]
     },
     {
-      "@id": "_:000031",
+      "@id": "_:000032",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -418,21 +474,24 @@
       "lookupLabel": "Studied state sub-15"
     },
     {
-      "@id": "_:000032",
+      "@id": "_:000033",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-15",
       "lookupLabel": "sub-15",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000031"
+          "@id": "_:000032"
         }
       ]
     },
     {
-      "@id": "_:000033",
+      "@id": "_:000034",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "age": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
@@ -445,62 +504,64 @@
       "lookupLabel": "Studied state sub-16"
     },
     {
-      "@id": "_:000034",
+      "@id": "_:000035",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "biologicalSex": {
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-16",
       "lookupLabel": "sub-16",
+      "species": {
+        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+      },
       "studiedState": [
         {
-          "@id": "_:000033"
+          "@id": "_:000034"
         }
       ]
     },
     {
-      "@id": "_:000035",
+      "@id": "_:000036",
       "@type": "https://openminds.ebrains.eu/core/BehavioralProtocol",
       "description": "To be defined",
       "internalIdentifier": "mixedgamblestask",
       "name": "mixedgamblestask"
     },
     {
-      "@id": "_:000036",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-16/func",
-      "isPartOf": {
-        "@id": "_:000037"
-      },
-      "name": "sub-16/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17482
-      }
-    },
-    {
       "@id": "_:000037",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-16",
+      "contentDescription": "File bundle created for sub-12/anat",
       "isPartOf": {
         "@id": "_:000038"
       },
-      "name": "sub-16",
+      "name": "sub-12/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17482
+        }
       }
     },
     {
       "@id": "_:000038",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-12",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-12",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17522
+      }
+    },
+    {
+      "@id": "_:000039",
       "@type": "https://openminds.ebrains.eu/core/FileRepository",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005",
+      "IRI": "file:///home/peyman-user/Desktop/data/bids_test/bids-examples/ds005",
       "format": {
         "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids"
       },
@@ -526,402 +587,11 @@
       "name": "byte"
     },
     {
-      "@id": "_:000041",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-16/anat",
-      "isPartOf": {
-        "@id": "_:000037"
-      },
-      "name": "sub-16/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
       "@id": "_:000042",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-14/func",
-      "isPartOf": {
-        "@id": "_:000043"
-      },
-      "name": "sub-14/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17600
-      }
-    },
-    {
-      "@id": "_:000043",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-14",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-14",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17600
-      }
-    },
-    {
-      "@id": "_:000044",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-14/anat",
-      "isPartOf": {
-        "@id": "_:000043"
-      },
-      "name": "sub-14/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000045",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-04/func",
-      "isPartOf": {
-        "@id": "_:000046"
-      },
-      "name": "sub-04/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17613
-      }
-    },
-    {
-      "@id": "_:000046",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-04",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-04",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17613
-      }
-    },
-    {
-      "@id": "_:000047",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-04/anat",
-      "isPartOf": {
-        "@id": "_:000046"
-      },
-      "name": "sub-04/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000048",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-09/func",
-      "isPartOf": {
-        "@id": "_:000049"
-      },
-      "name": "sub-09/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17560
-      }
-    },
-    {
-      "@id": "_:000049",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-09",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-09",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17560
-      }
-    },
-    {
-      "@id": "_:000050",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-09/anat",
-      "isPartOf": {
-        "@id": "_:000049"
-      },
-      "name": "sub-09/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000051",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-07/func",
-      "isPartOf": {
-        "@id": "_:000052"
-      },
-      "name": "sub-07/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17483
-      }
-    },
-    {
-      "@id": "_:000052",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-07",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-07",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17483
-      }
-    },
-    {
-      "@id": "_:000053",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-07/anat",
-      "isPartOf": {
-        "@id": "_:000052"
-      },
-      "name": "sub-07/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000054",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-03/func",
-      "isPartOf": {
-        "@id": "_:000055"
-      },
-      "name": "sub-03/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17795
-      }
-    },
-    {
-      "@id": "_:000055",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-03",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-03",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17795
-      }
-    },
-    {
-      "@id": "_:000056",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-03/anat",
-      "isPartOf": {
-        "@id": "_:000055"
-      },
-      "name": "sub-03/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000057",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-15/func",
-      "isPartOf": {
-        "@id": "_:000058"
-      },
-      "name": "sub-15/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17520
-      }
-    },
-    {
-      "@id": "_:000058",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-15",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-15",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17520
-      }
-    },
-    {
-      "@id": "_:000059",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-15/anat",
-      "isPartOf": {
-        "@id": "_:000058"
-      },
-      "name": "sub-15/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000060",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-06/func",
-      "isPartOf": {
-        "@id": "_:000061"
-      },
-      "name": "sub-06/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17465
-      }
-    },
-    {
-      "@id": "_:000061",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-06",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-06",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17465
-      }
-    },
-    {
-      "@id": "_:000062",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-06/anat",
-      "isPartOf": {
-        "@id": "_:000061"
-      },
-      "name": "sub-06/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000063",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-11/func",
-      "isPartOf": {
-        "@id": "_:000064"
-      },
-      "name": "sub-11/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17456
-      }
-    },
-    {
-      "@id": "_:000064",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-11",
-      "isPartOf": {
-        "@id": "_:000038"
-      },
-      "name": "sub-11",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17456
-      }
-    },
-    {
-      "@id": "_:000065",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-11/anat",
-      "isPartOf": {
-        "@id": "_:000064"
-      },
-      "name": "sub-11/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000066",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
       "contentDescription": "File bundle created for sub-12/func",
       "isPartOf": {
-        "@id": "_:000067"
+        "@id": "_:000038"
       },
       "name": "sub-12/func",
       "storageSize": {
@@ -933,29 +603,13 @@
       }
     },
     {
-      "@id": "_:000067",
+      "@id": "_:000043",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-12",
+      "contentDescription": "File bundle created for sub-05/anat",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000044"
       },
-      "name": "sub-12",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17522
-      }
-    },
-    {
-      "@id": "_:000068",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-12/anat",
-      "isPartOf": {
-        "@id": "_:000067"
-      },
-      "name": "sub-12/anat",
+      "name": "sub-05/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -964,27 +618,11 @@
       }
     },
     {
-      "@id": "_:000069",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-05/func",
-      "isPartOf": {
-        "@id": "_:000070"
-      },
-      "name": "sub-05/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17626
-      }
-    },
-    {
-      "@id": "_:000070",
+      "@id": "_:000044",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
       "contentDescription": "File bundle created for sub-05",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "name": "sub-05",
       "storageSize": {
@@ -996,13 +634,29 @@
       }
     },
     {
-      "@id": "_:000071",
+      "@id": "_:000045",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-05/anat",
+      "contentDescription": "File bundle created for sub-05/func",
       "isPartOf": {
-        "@id": "_:000070"
+        "@id": "_:000044"
       },
-      "name": "sub-05/anat",
+      "name": "sub-05/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17626
+      }
+    },
+    {
+      "@id": "_:000046",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-16/anat",
+      "isPartOf": {
+        "@id": "_:000047"
+      },
+      "name": "sub-16/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -1011,45 +665,45 @@
       }
     },
     {
-      "@id": "_:000072",
+      "@id": "_:000047",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-13/func",
+      "contentDescription": "File bundle created for sub-16",
       "isPartOf": {
-        "@id": "_:000073"
+        "@id": "_:000039"
       },
-      "name": "sub-13/func",
+      "name": "sub-16",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17512
+        "value": 17482
       }
     },
     {
-      "@id": "_:000073",
+      "@id": "_:000048",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-13",
+      "contentDescription": "File bundle created for sub-16/func",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000047"
       },
-      "name": "sub-13",
+      "name": "sub-16/func",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17512
+        "value": 17482
       }
     },
     {
-      "@id": "_:000074",
+      "@id": "_:000049",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-13/anat",
+      "contentDescription": "File bundle created for sub-06/anat",
       "isPartOf": {
-        "@id": "_:000073"
+        "@id": "_:000050"
       },
-      "name": "sub-13/anat",
+      "name": "sub-06/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -1058,45 +712,45 @@
       }
     },
     {
-      "@id": "_:000075",
+      "@id": "_:000050",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-08/func",
+      "contentDescription": "File bundle created for sub-06",
       "isPartOf": {
-        "@id": "_:000076"
+        "@id": "_:000039"
       },
-      "name": "sub-08/func",
+      "name": "sub-06",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17459
+        "value": 17465
       }
     },
     {
-      "@id": "_:000076",
+      "@id": "_:000051",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-08",
+      "contentDescription": "File bundle created for sub-06/func",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000050"
       },
-      "name": "sub-08",
+      "name": "sub-06/func",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17459
+        "value": 17465
       }
     },
     {
-      "@id": "_:000077",
+      "@id": "_:000052",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-08/anat",
+      "contentDescription": "File bundle created for sub-11/anat",
       "isPartOf": {
-        "@id": "_:000076"
+        "@id": "_:000053"
       },
-      "name": "sub-08/anat",
+      "name": "sub-11/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -1105,45 +759,45 @@
       }
     },
     {
-      "@id": "_:000078",
+      "@id": "_:000053",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-02/func",
+      "contentDescription": "File bundle created for sub-11",
       "isPartOf": {
-        "@id": "_:000079"
+        "@id": "_:000039"
       },
-      "name": "sub-02/func",
+      "name": "sub-11",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17674
+        "value": 17456
       }
     },
     {
-      "@id": "_:000079",
+      "@id": "_:000054",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-02",
+      "contentDescription": "File bundle created for sub-11/func",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000053"
       },
-      "name": "sub-02",
+      "name": "sub-11/func",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17674
+        "value": 17456
       }
     },
     {
-      "@id": "_:000080",
+      "@id": "_:000055",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-02/anat",
+      "contentDescription": "File bundle created for sub-01/anat",
       "isPartOf": {
-        "@id": "_:000079"
+        "@id": "_:000056"
       },
-      "name": "sub-02/anat",
+      "name": "sub-01/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -1152,27 +806,11 @@
       }
     },
     {
-      "@id": "_:000081",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-01/func",
-      "isPartOf": {
-        "@id": "_:000082"
-      },
-      "name": "sub-01/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 17453
-      }
-    },
-    {
-      "@id": "_:000082",
+      "@id": "_:000056",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
       "contentDescription": "File bundle created for sub-01",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "name": "sub-01",
       "storageSize": {
@@ -1184,13 +822,29 @@
       }
     },
     {
-      "@id": "_:000083",
+      "@id": "_:000057",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-01/anat",
+      "contentDescription": "File bundle created for sub-01/func",
       "isPartOf": {
-        "@id": "_:000082"
+        "@id": "_:000056"
       },
-      "name": "sub-01/anat",
+      "name": "sub-01/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17453
+      }
+    },
+    {
+      "@id": "_:000058",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-09/anat",
+      "isPartOf": {
+        "@id": "_:000059"
+      },
+      "name": "sub-09/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -1199,27 +853,199 @@
       }
     },
     {
-      "@id": "_:000084",
+      "@id": "_:000059",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-10/func",
+      "contentDescription": "File bundle created for sub-09",
       "isPartOf": {
-        "@id": "_:000085"
+        "@id": "_:000039"
       },
-      "name": "sub-10/func",
+      "name": "sub-09",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 17455
+        "value": 17560
       }
     },
     {
-      "@id": "_:000085",
+      "@id": "_:000060",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-09/func",
+      "isPartOf": {
+        "@id": "_:000059"
+      },
+      "name": "sub-09/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17560
+      }
+    },
+    {
+      "@id": "_:000061",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-02/anat",
+      "isPartOf": {
+        "@id": "_:000062"
+      },
+      "name": "sub-02/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000062",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-02",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-02",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17674
+      }
+    },
+    {
+      "@id": "_:000063",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-02/func",
+      "isPartOf": {
+        "@id": "_:000062"
+      },
+      "name": "sub-02/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17674
+      }
+    },
+    {
+      "@id": "_:000064",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-14/anat",
+      "isPartOf": {
+        "@id": "_:000065"
+      },
+      "name": "sub-14/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000065",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-14",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-14",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17600
+      }
+    },
+    {
+      "@id": "_:000066",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-14/func",
+      "isPartOf": {
+        "@id": "_:000065"
+      },
+      "name": "sub-14/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17600
+      }
+    },
+    {
+      "@id": "_:000067",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-04/anat",
+      "isPartOf": {
+        "@id": "_:000068"
+      },
+      "name": "sub-04/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000068",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-04",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-04",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17613
+      }
+    },
+    {
+      "@id": "_:000069",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-04/func",
+      "isPartOf": {
+        "@id": "_:000068"
+      },
+      "name": "sub-04/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17613
+      }
+    },
+    {
+      "@id": "_:000070",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-10/anat",
+      "isPartOf": {
+        "@id": "_:000071"
+      },
+      "name": "sub-10/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000071",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
       "contentDescription": "File bundle created for sub-10",
       "isPartOf": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "name": "sub-10",
       "storageSize": {
@@ -1231,13 +1057,29 @@
       }
     },
     {
-      "@id": "_:000086",
+      "@id": "_:000072",
       "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-10/anat",
+      "contentDescription": "File bundle created for sub-10/func",
       "isPartOf": {
-        "@id": "_:000085"
+        "@id": "_:000071"
       },
-      "name": "sub-10/anat",
+      "name": "sub-10/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17455
+      }
+    },
+    {
+      "@id": "_:000073",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-07/anat",
+      "isPartOf": {
+        "@id": "_:000074"
+      },
+      "name": "sub-07/anat",
       "storageSize": {
         "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
         "unit": {
@@ -1246,11 +1088,231 @@
       }
     },
     {
+      "@id": "_:000074",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-07",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-07",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17483
+      }
+    },
+    {
+      "@id": "_:000075",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-07/func",
+      "isPartOf": {
+        "@id": "_:000074"
+      },
+      "name": "sub-07/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17483
+      }
+    },
+    {
+      "@id": "_:000076",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-13/anat",
+      "isPartOf": {
+        "@id": "_:000077"
+      },
+      "name": "sub-13/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000077",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-13",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-13",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17512
+      }
+    },
+    {
+      "@id": "_:000078",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-13/func",
+      "isPartOf": {
+        "@id": "_:000077"
+      },
+      "name": "sub-13/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17512
+      }
+    },
+    {
+      "@id": "_:000079",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-08/anat",
+      "isPartOf": {
+        "@id": "_:000080"
+      },
+      "name": "sub-08/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000080",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-08",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-08",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17459
+      }
+    },
+    {
+      "@id": "_:000081",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-08/func",
+      "isPartOf": {
+        "@id": "_:000080"
+      },
+      "name": "sub-08/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17459
+      }
+    },
+    {
+      "@id": "_:000082",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-03/anat",
+      "isPartOf": {
+        "@id": "_:000083"
+      },
+      "name": "sub-03/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000083",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-03",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-03",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17795
+      }
+    },
+    {
+      "@id": "_:000084",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-03/func",
+      "isPartOf": {
+        "@id": "_:000083"
+      },
+      "name": "sub-03/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17795
+      }
+    },
+    {
+      "@id": "_:000085",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-15/anat",
+      "isPartOf": {
+        "@id": "_:000086"
+      },
+      "name": "sub-15/anat",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000086",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-15",
+      "isPartOf": {
+        "@id": "_:000039"
+      },
+      "name": "sub-15",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17520
+      }
+    },
+    {
       "@id": "_:000087",
+      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "contentDescription": "File bundle created for sub-15/func",
+      "isPartOf": {
+        "@id": "_:000086"
+      },
+      "name": "sub-15/func",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 17520
+      }
+    },
+    {
+      "@id": "_:000088",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXdataset_description.json",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1269,7 +1331,7 @@
       }
     },
     {
-      "@id": "_:000088",
+      "@id": "_:000089",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXparticipants.json",
       "contentDescription": "A JSON metadata file of participants TSV.",
@@ -1279,7 +1341,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "format": {
         "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_json"
@@ -1324,11 +1386,11 @@
       ]
     },
     {
-      "@id": "_:000091",
+      "@id": "_:000092",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXparticipants.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1347,7 +1409,7 @@
       }
     },
     {
-      "@id": "_:000092",
+      "@id": "_:000093",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/anat/sub-01_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 01",
@@ -1357,7 +1419,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1368,7 +1430,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000083"
+          "@id": "_:000055"
         }
       ],
       "name": "sub-01_T1w.nii.gz",
@@ -1386,7 +1448,7 @@
       "name": "voxel data"
     },
     {
-      "@id": "_:000094",
+      "@id": "_:000095",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/anat/sub-01_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 01",
@@ -1396,7 +1458,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1407,7 +1469,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000083"
+          "@id": "_:000055"
         }
       ],
       "name": "sub-01_inplaneT2.nii.gz",
@@ -1419,7 +1481,7 @@
       }
     },
     {
-      "@id": "_:000095",
+      "@id": "_:000096",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 01",
@@ -1429,7 +1491,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1440,7 +1502,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000081"
+          "@id": "_:000057"
         }
       ],
       "name": "sub-01_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -1452,11 +1514,11 @@
       }
     },
     {
-      "@id": "_:000096",
+      "@id": "_:000097",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1467,7 +1529,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000081"
+          "@id": "_:000057"
         }
       ],
       "name": "sub-01_task-mixedgamblestask_run-01_events.tsv",
@@ -1480,7 +1542,7 @@
       }
     },
     {
-      "@id": "_:000097",
+      "@id": "_:000098",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 01",
@@ -1490,7 +1552,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1501,7 +1563,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000081"
+          "@id": "_:000057"
         }
       ],
       "name": "sub-01_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -1513,11 +1575,11 @@
       }
     },
     {
-      "@id": "_:000098",
+      "@id": "_:000099",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1528,7 +1590,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000081"
+          "@id": "_:000057"
         }
       ],
       "name": "sub-01_task-mixedgamblestask_run-02_events.tsv",
@@ -1541,7 +1603,7 @@
       }
     },
     {
-      "@id": "_:000099",
+      "@id": "_:000100",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 01",
@@ -1551,7 +1613,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1562,7 +1624,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000081"
+          "@id": "_:000057"
         }
       ],
       "name": "sub-01_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -1574,11 +1636,11 @@
       }
     },
     {
-      "@id": "_:000100",
+      "@id": "_:000101",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1589,7 +1651,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000081"
+          "@id": "_:000057"
         }
       ],
       "name": "sub-01_task-mixedgamblestask_run-03_events.tsv",
@@ -1602,7 +1664,7 @@
       }
     },
     {
-      "@id": "_:000101",
+      "@id": "_:000102",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/anat/sub-02_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 02",
@@ -1612,7 +1674,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1623,7 +1685,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000080"
+          "@id": "_:000061"
         }
       ],
       "name": "sub-02_T1w.nii.gz",
@@ -1635,7 +1697,7 @@
       }
     },
     {
-      "@id": "_:000102",
+      "@id": "_:000103",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/anat/sub-02_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 02",
@@ -1645,7 +1707,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1656,7 +1718,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000080"
+          "@id": "_:000061"
         }
       ],
       "name": "sub-02_inplaneT2.nii.gz",
@@ -1668,7 +1730,7 @@
       }
     },
     {
-      "@id": "_:000103",
+      "@id": "_:000104",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 02",
@@ -1678,7 +1740,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1689,7 +1751,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000078"
+          "@id": "_:000063"
         }
       ],
       "name": "sub-02_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -1701,11 +1763,11 @@
       }
     },
     {
-      "@id": "_:000104",
+      "@id": "_:000105",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1716,7 +1778,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000078"
+          "@id": "_:000063"
         }
       ],
       "name": "sub-02_task-mixedgamblestask_run-01_events.tsv",
@@ -1729,7 +1791,7 @@
       }
     },
     {
-      "@id": "_:000105",
+      "@id": "_:000106",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 02",
@@ -1739,7 +1801,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1750,7 +1812,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000078"
+          "@id": "_:000063"
         }
       ],
       "name": "sub-02_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -1762,11 +1824,11 @@
       }
     },
     {
-      "@id": "_:000106",
+      "@id": "_:000107",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1777,7 +1839,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000078"
+          "@id": "_:000063"
         }
       ],
       "name": "sub-02_task-mixedgamblestask_run-02_events.tsv",
@@ -1790,7 +1852,7 @@
       }
     },
     {
-      "@id": "_:000107",
+      "@id": "_:000108",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 02",
@@ -1800,7 +1862,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1811,7 +1873,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000078"
+          "@id": "_:000063"
         }
       ],
       "name": "sub-02_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -1823,11 +1885,11 @@
       }
     },
     {
-      "@id": "_:000108",
+      "@id": "_:000109",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1838,7 +1900,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000078"
+          "@id": "_:000063"
         }
       ],
       "name": "sub-02_task-mixedgamblestask_run-03_events.tsv",
@@ -1851,7 +1913,7 @@
       }
     },
     {
-      "@id": "_:000109",
+      "@id": "_:000110",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/anat/sub-03_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 03",
@@ -1861,7 +1923,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1872,7 +1934,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000056"
+          "@id": "_:000082"
         }
       ],
       "name": "sub-03_T1w.nii.gz",
@@ -1884,7 +1946,7 @@
       }
     },
     {
-      "@id": "_:000110",
+      "@id": "_:000111",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/anat/sub-03_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 03",
@@ -1894,7 +1956,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1905,7 +1967,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000056"
+          "@id": "_:000082"
         }
       ],
       "name": "sub-03_inplaneT2.nii.gz",
@@ -1917,7 +1979,7 @@
       }
     },
     {
-      "@id": "_:000111",
+      "@id": "_:000112",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 03",
@@ -1927,7 +1989,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1938,7 +2000,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000054"
+          "@id": "_:000084"
         }
       ],
       "name": "sub-03_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -1950,11 +2012,11 @@
       }
     },
     {
-      "@id": "_:000112",
+      "@id": "_:000113",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1965,7 +2027,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000054"
+          "@id": "_:000084"
         }
       ],
       "name": "sub-03_task-mixedgamblestask_run-01_events.tsv",
@@ -1978,7 +2040,7 @@
       }
     },
     {
-      "@id": "_:000113",
+      "@id": "_:000114",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 03",
@@ -1988,7 +2050,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -1999,7 +2061,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000054"
+          "@id": "_:000084"
         }
       ],
       "name": "sub-03_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -2011,11 +2073,11 @@
       }
     },
     {
-      "@id": "_:000114",
+      "@id": "_:000115",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2026,7 +2088,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000054"
+          "@id": "_:000084"
         }
       ],
       "name": "sub-03_task-mixedgamblestask_run-02_events.tsv",
@@ -2039,7 +2101,7 @@
       }
     },
     {
-      "@id": "_:000115",
+      "@id": "_:000116",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 03",
@@ -2049,7 +2111,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2060,7 +2122,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000054"
+          "@id": "_:000084"
         }
       ],
       "name": "sub-03_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -2072,11 +2134,11 @@
       }
     },
     {
-      "@id": "_:000116",
+      "@id": "_:000117",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2087,7 +2149,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000054"
+          "@id": "_:000084"
         }
       ],
       "name": "sub-03_task-mixedgamblestask_run-03_events.tsv",
@@ -2100,7 +2162,7 @@
       }
     },
     {
-      "@id": "_:000117",
+      "@id": "_:000118",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/anat/sub-04_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 04",
@@ -2110,7 +2172,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2121,7 +2183,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000047"
+          "@id": "_:000067"
         }
       ],
       "name": "sub-04_T1w.nii.gz",
@@ -2133,7 +2195,7 @@
       }
     },
     {
-      "@id": "_:000118",
+      "@id": "_:000119",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/anat/sub-04_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 04",
@@ -2143,7 +2205,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2154,7 +2216,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000047"
+          "@id": "_:000067"
         }
       ],
       "name": "sub-04_inplaneT2.nii.gz",
@@ -2166,7 +2228,7 @@
       }
     },
     {
-      "@id": "_:000119",
+      "@id": "_:000120",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 04",
@@ -2176,7 +2238,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2187,7 +2249,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000045"
+          "@id": "_:000069"
         }
       ],
       "name": "sub-04_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -2199,11 +2261,11 @@
       }
     },
     {
-      "@id": "_:000120",
+      "@id": "_:000121",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2214,7 +2276,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000045"
+          "@id": "_:000069"
         }
       ],
       "name": "sub-04_task-mixedgamblestask_run-01_events.tsv",
@@ -2227,7 +2289,7 @@
       }
     },
     {
-      "@id": "_:000121",
+      "@id": "_:000122",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 04",
@@ -2237,7 +2299,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2248,7 +2310,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000045"
+          "@id": "_:000069"
         }
       ],
       "name": "sub-04_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -2260,11 +2322,11 @@
       }
     },
     {
-      "@id": "_:000122",
+      "@id": "_:000123",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2275,7 +2337,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000045"
+          "@id": "_:000069"
         }
       ],
       "name": "sub-04_task-mixedgamblestask_run-02_events.tsv",
@@ -2288,7 +2350,7 @@
       }
     },
     {
-      "@id": "_:000123",
+      "@id": "_:000124",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 04",
@@ -2298,7 +2360,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2309,7 +2371,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000045"
+          "@id": "_:000069"
         }
       ],
       "name": "sub-04_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -2321,11 +2383,11 @@
       }
     },
     {
-      "@id": "_:000124",
+      "@id": "_:000125",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2336,7 +2398,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000045"
+          "@id": "_:000069"
         }
       ],
       "name": "sub-04_task-mixedgamblestask_run-03_events.tsv",
@@ -2349,7 +2411,7 @@
       }
     },
     {
-      "@id": "_:000125",
+      "@id": "_:000126",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/anat/sub-05_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 05",
@@ -2359,7 +2421,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2370,7 +2432,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000071"
+          "@id": "_:000043"
         }
       ],
       "name": "sub-05_T1w.nii.gz",
@@ -2382,7 +2444,7 @@
       }
     },
     {
-      "@id": "_:000126",
+      "@id": "_:000127",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/anat/sub-05_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 05",
@@ -2392,7 +2454,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2403,7 +2465,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000071"
+          "@id": "_:000043"
         }
       ],
       "name": "sub-05_inplaneT2.nii.gz",
@@ -2415,7 +2477,7 @@
       }
     },
     {
-      "@id": "_:000127",
+      "@id": "_:000128",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 05",
@@ -2425,7 +2487,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2436,7 +2498,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000069"
+          "@id": "_:000045"
         }
       ],
       "name": "sub-05_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -2448,11 +2510,11 @@
       }
     },
     {
-      "@id": "_:000128",
+      "@id": "_:000129",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2463,7 +2525,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000069"
+          "@id": "_:000045"
         }
       ],
       "name": "sub-05_task-mixedgamblestask_run-01_events.tsv",
@@ -2476,7 +2538,7 @@
       }
     },
     {
-      "@id": "_:000129",
+      "@id": "_:000130",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 05",
@@ -2486,7 +2548,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2497,7 +2559,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000069"
+          "@id": "_:000045"
         }
       ],
       "name": "sub-05_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -2509,11 +2571,11 @@
       }
     },
     {
-      "@id": "_:000130",
+      "@id": "_:000131",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2524,7 +2586,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000069"
+          "@id": "_:000045"
         }
       ],
       "name": "sub-05_task-mixedgamblestask_run-02_events.tsv",
@@ -2537,7 +2599,7 @@
       }
     },
     {
-      "@id": "_:000131",
+      "@id": "_:000132",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 05",
@@ -2547,7 +2609,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2558,7 +2620,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000069"
+          "@id": "_:000045"
         }
       ],
       "name": "sub-05_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -2570,11 +2632,11 @@
       }
     },
     {
-      "@id": "_:000132",
+      "@id": "_:000133",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2585,7 +2647,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000069"
+          "@id": "_:000045"
         }
       ],
       "name": "sub-05_task-mixedgamblestask_run-03_events.tsv",
@@ -2598,7 +2660,7 @@
       }
     },
     {
-      "@id": "_:000133",
+      "@id": "_:000134",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/anat/sub-06_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 06",
@@ -2608,7 +2670,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2619,7 +2681,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000062"
+          "@id": "_:000049"
         }
       ],
       "name": "sub-06_T1w.nii.gz",
@@ -2631,7 +2693,7 @@
       }
     },
     {
-      "@id": "_:000134",
+      "@id": "_:000135",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/anat/sub-06_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 06",
@@ -2641,7 +2703,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2652,7 +2714,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000062"
+          "@id": "_:000049"
         }
       ],
       "name": "sub-06_inplaneT2.nii.gz",
@@ -2664,7 +2726,7 @@
       }
     },
     {
-      "@id": "_:000135",
+      "@id": "_:000136",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 06",
@@ -2674,7 +2736,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2685,7 +2747,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000060"
+          "@id": "_:000051"
         }
       ],
       "name": "sub-06_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -2697,11 +2759,11 @@
       }
     },
     {
-      "@id": "_:000136",
+      "@id": "_:000137",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2712,7 +2774,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000060"
+          "@id": "_:000051"
         }
       ],
       "name": "sub-06_task-mixedgamblestask_run-01_events.tsv",
@@ -2725,7 +2787,7 @@
       }
     },
     {
-      "@id": "_:000137",
+      "@id": "_:000138",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 06",
@@ -2735,7 +2797,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2746,7 +2808,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000060"
+          "@id": "_:000051"
         }
       ],
       "name": "sub-06_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -2758,11 +2820,11 @@
       }
     },
     {
-      "@id": "_:000138",
+      "@id": "_:000139",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2773,7 +2835,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000060"
+          "@id": "_:000051"
         }
       ],
       "name": "sub-06_task-mixedgamblestask_run-02_events.tsv",
@@ -2786,7 +2848,7 @@
       }
     },
     {
-      "@id": "_:000139",
+      "@id": "_:000140",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 06",
@@ -2796,7 +2858,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2807,7 +2869,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000060"
+          "@id": "_:000051"
         }
       ],
       "name": "sub-06_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -2819,11 +2881,11 @@
       }
     },
     {
-      "@id": "_:000140",
+      "@id": "_:000141",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2834,7 +2896,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000060"
+          "@id": "_:000051"
         }
       ],
       "name": "sub-06_task-mixedgamblestask_run-03_events.tsv",
@@ -2847,7 +2909,7 @@
       }
     },
     {
-      "@id": "_:000141",
+      "@id": "_:000142",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/anat/sub-07_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 07",
@@ -2857,7 +2919,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2868,7 +2930,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000053"
+          "@id": "_:000073"
         }
       ],
       "name": "sub-07_T1w.nii.gz",
@@ -2880,7 +2942,7 @@
       }
     },
     {
-      "@id": "_:000142",
+      "@id": "_:000143",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/anat/sub-07_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 07",
@@ -2890,7 +2952,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2901,7 +2963,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000053"
+          "@id": "_:000073"
         }
       ],
       "name": "sub-07_inplaneT2.nii.gz",
@@ -2913,7 +2975,7 @@
       }
     },
     {
-      "@id": "_:000143",
+      "@id": "_:000144",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 07",
@@ -2923,7 +2985,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2934,7 +2996,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000051"
+          "@id": "_:000075"
         }
       ],
       "name": "sub-07_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -2946,11 +3008,11 @@
       }
     },
     {
-      "@id": "_:000144",
+      "@id": "_:000145",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2961,7 +3023,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000051"
+          "@id": "_:000075"
         }
       ],
       "name": "sub-07_task-mixedgamblestask_run-01_events.tsv",
@@ -2974,7 +3036,7 @@
       }
     },
     {
-      "@id": "_:000145",
+      "@id": "_:000146",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 07",
@@ -2984,7 +3046,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -2995,7 +3057,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000051"
+          "@id": "_:000075"
         }
       ],
       "name": "sub-07_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -3007,11 +3069,11 @@
       }
     },
     {
-      "@id": "_:000146",
+      "@id": "_:000147",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3022,7 +3084,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000051"
+          "@id": "_:000075"
         }
       ],
       "name": "sub-07_task-mixedgamblestask_run-02_events.tsv",
@@ -3035,7 +3097,7 @@
       }
     },
     {
-      "@id": "_:000147",
+      "@id": "_:000148",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 07",
@@ -3045,7 +3107,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3056,7 +3118,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000051"
+          "@id": "_:000075"
         }
       ],
       "name": "sub-07_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -3068,11 +3130,11 @@
       }
     },
     {
-      "@id": "_:000148",
+      "@id": "_:000149",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3083,7 +3145,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000051"
+          "@id": "_:000075"
         }
       ],
       "name": "sub-07_task-mixedgamblestask_run-03_events.tsv",
@@ -3096,7 +3158,7 @@
       }
     },
     {
-      "@id": "_:000149",
+      "@id": "_:000150",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/anat/sub-08_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 08",
@@ -3106,7 +3168,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3117,7 +3179,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000077"
+          "@id": "_:000079"
         }
       ],
       "name": "sub-08_T1w.nii.gz",
@@ -3129,7 +3191,7 @@
       }
     },
     {
-      "@id": "_:000150",
+      "@id": "_:000151",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/anat/sub-08_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 08",
@@ -3139,7 +3201,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3150,7 +3212,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000077"
+          "@id": "_:000079"
         }
       ],
       "name": "sub-08_inplaneT2.nii.gz",
@@ -3162,7 +3224,7 @@
       }
     },
     {
-      "@id": "_:000151",
+      "@id": "_:000152",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 08",
@@ -3172,7 +3234,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3183,7 +3245,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000075"
+          "@id": "_:000081"
         }
       ],
       "name": "sub-08_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -3195,11 +3257,11 @@
       }
     },
     {
-      "@id": "_:000152",
+      "@id": "_:000153",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3210,7 +3272,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000075"
+          "@id": "_:000081"
         }
       ],
       "name": "sub-08_task-mixedgamblestask_run-01_events.tsv",
@@ -3223,7 +3285,7 @@
       }
     },
     {
-      "@id": "_:000153",
+      "@id": "_:000154",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 08",
@@ -3233,7 +3295,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3244,7 +3306,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000075"
+          "@id": "_:000081"
         }
       ],
       "name": "sub-08_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -3256,11 +3318,11 @@
       }
     },
     {
-      "@id": "_:000154",
+      "@id": "_:000155",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3271,7 +3333,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000075"
+          "@id": "_:000081"
         }
       ],
       "name": "sub-08_task-mixedgamblestask_run-02_events.tsv",
@@ -3284,7 +3346,7 @@
       }
     },
     {
-      "@id": "_:000155",
+      "@id": "_:000156",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 08",
@@ -3294,7 +3356,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3305,7 +3367,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000075"
+          "@id": "_:000081"
         }
       ],
       "name": "sub-08_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -3317,11 +3379,11 @@
       }
     },
     {
-      "@id": "_:000156",
+      "@id": "_:000157",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3332,7 +3394,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000075"
+          "@id": "_:000081"
         }
       ],
       "name": "sub-08_task-mixedgamblestask_run-03_events.tsv",
@@ -3345,7 +3407,7 @@
       }
     },
     {
-      "@id": "_:000157",
+      "@id": "_:000158",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/anat/sub-09_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 09",
@@ -3355,7 +3417,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3366,7 +3428,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000050"
+          "@id": "_:000058"
         }
       ],
       "name": "sub-09_T1w.nii.gz",
@@ -3378,7 +3440,7 @@
       }
     },
     {
-      "@id": "_:000158",
+      "@id": "_:000159",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/anat/sub-09_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 09",
@@ -3388,7 +3450,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3399,7 +3461,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000050"
+          "@id": "_:000058"
         }
       ],
       "name": "sub-09_inplaneT2.nii.gz",
@@ -3411,7 +3473,7 @@
       }
     },
     {
-      "@id": "_:000159",
+      "@id": "_:000160",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 09",
@@ -3421,7 +3483,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3432,7 +3494,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000048"
+          "@id": "_:000060"
         }
       ],
       "name": "sub-09_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -3444,11 +3506,11 @@
       }
     },
     {
-      "@id": "_:000160",
+      "@id": "_:000161",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3459,7 +3521,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000048"
+          "@id": "_:000060"
         }
       ],
       "name": "sub-09_task-mixedgamblestask_run-01_events.tsv",
@@ -3472,7 +3534,7 @@
       }
     },
     {
-      "@id": "_:000161",
+      "@id": "_:000162",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 09",
@@ -3482,7 +3544,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3493,7 +3555,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000048"
+          "@id": "_:000060"
         }
       ],
       "name": "sub-09_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -3505,11 +3567,11 @@
       }
     },
     {
-      "@id": "_:000162",
+      "@id": "_:000163",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3520,7 +3582,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000048"
+          "@id": "_:000060"
         }
       ],
       "name": "sub-09_task-mixedgamblestask_run-02_events.tsv",
@@ -3533,7 +3595,7 @@
       }
     },
     {
-      "@id": "_:000163",
+      "@id": "_:000164",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 09",
@@ -3543,7 +3605,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3554,7 +3616,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000048"
+          "@id": "_:000060"
         }
       ],
       "name": "sub-09_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -3566,11 +3628,11 @@
       }
     },
     {
-      "@id": "_:000164",
+      "@id": "_:000165",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3581,7 +3643,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000048"
+          "@id": "_:000060"
         }
       ],
       "name": "sub-09_task-mixedgamblestask_run-03_events.tsv",
@@ -3594,7 +3656,7 @@
       }
     },
     {
-      "@id": "_:000165",
+      "@id": "_:000166",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/anat/sub-10_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 10",
@@ -3604,7 +3666,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3615,7 +3677,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000086"
+          "@id": "_:000070"
         }
       ],
       "name": "sub-10_T1w.nii.gz",
@@ -3627,7 +3689,7 @@
       }
     },
     {
-      "@id": "_:000166",
+      "@id": "_:000167",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/anat/sub-10_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 10",
@@ -3637,7 +3699,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3648,7 +3710,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000086"
+          "@id": "_:000070"
         }
       ],
       "name": "sub-10_inplaneT2.nii.gz",
@@ -3660,7 +3722,7 @@
       }
     },
     {
-      "@id": "_:000167",
+      "@id": "_:000168",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 10",
@@ -3670,7 +3732,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3681,7 +3743,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000084"
+          "@id": "_:000072"
         }
       ],
       "name": "sub-10_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -3693,11 +3755,11 @@
       }
     },
     {
-      "@id": "_:000168",
+      "@id": "_:000169",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3708,7 +3770,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000084"
+          "@id": "_:000072"
         }
       ],
       "name": "sub-10_task-mixedgamblestask_run-01_events.tsv",
@@ -3721,7 +3783,7 @@
       }
     },
     {
-      "@id": "_:000169",
+      "@id": "_:000170",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 10",
@@ -3731,7 +3793,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3742,7 +3804,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000084"
+          "@id": "_:000072"
         }
       ],
       "name": "sub-10_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -3754,11 +3816,11 @@
       }
     },
     {
-      "@id": "_:000170",
+      "@id": "_:000171",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3769,7 +3831,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000084"
+          "@id": "_:000072"
         }
       ],
       "name": "sub-10_task-mixedgamblestask_run-02_events.tsv",
@@ -3782,7 +3844,7 @@
       }
     },
     {
-      "@id": "_:000171",
+      "@id": "_:000172",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 10",
@@ -3792,7 +3854,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3803,7 +3865,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000084"
+          "@id": "_:000072"
         }
       ],
       "name": "sub-10_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -3815,11 +3877,11 @@
       }
     },
     {
-      "@id": "_:000172",
+      "@id": "_:000173",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3830,7 +3892,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000084"
+          "@id": "_:000072"
         }
       ],
       "name": "sub-10_task-mixedgamblestask_run-03_events.tsv",
@@ -3843,7 +3905,7 @@
       }
     },
     {
-      "@id": "_:000173",
+      "@id": "_:000174",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/anat/sub-11_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 11",
@@ -3853,7 +3915,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3864,7 +3926,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000065"
+          "@id": "_:000052"
         }
       ],
       "name": "sub-11_T1w.nii.gz",
@@ -3876,7 +3938,7 @@
       }
     },
     {
-      "@id": "_:000174",
+      "@id": "_:000175",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/anat/sub-11_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 11",
@@ -3886,7 +3948,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3897,7 +3959,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000065"
+          "@id": "_:000052"
         }
       ],
       "name": "sub-11_inplaneT2.nii.gz",
@@ -3909,7 +3971,7 @@
       }
     },
     {
-      "@id": "_:000175",
+      "@id": "_:000176",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 11",
@@ -3919,7 +3981,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3930,7 +3992,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000063"
+          "@id": "_:000054"
         }
       ],
       "name": "sub-11_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -3942,11 +4004,11 @@
       }
     },
     {
-      "@id": "_:000176",
+      "@id": "_:000177",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3957,7 +4019,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000063"
+          "@id": "_:000054"
         }
       ],
       "name": "sub-11_task-mixedgamblestask_run-01_events.tsv",
@@ -3970,7 +4032,7 @@
       }
     },
     {
-      "@id": "_:000177",
+      "@id": "_:000178",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 11",
@@ -3980,7 +4042,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -3991,7 +4053,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000063"
+          "@id": "_:000054"
         }
       ],
       "name": "sub-11_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -4003,11 +4065,11 @@
       }
     },
     {
-      "@id": "_:000178",
+      "@id": "_:000179",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4018,7 +4080,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000063"
+          "@id": "_:000054"
         }
       ],
       "name": "sub-11_task-mixedgamblestask_run-02_events.tsv",
@@ -4031,7 +4093,7 @@
       }
     },
     {
-      "@id": "_:000179",
+      "@id": "_:000180",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 11",
@@ -4041,7 +4103,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4052,7 +4114,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000063"
+          "@id": "_:000054"
         }
       ],
       "name": "sub-11_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -4064,11 +4126,11 @@
       }
     },
     {
-      "@id": "_:000180",
+      "@id": "_:000181",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4079,7 +4141,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000063"
+          "@id": "_:000054"
         }
       ],
       "name": "sub-11_task-mixedgamblestask_run-03_events.tsv",
@@ -4092,7 +4154,7 @@
       }
     },
     {
-      "@id": "_:000181",
+      "@id": "_:000182",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/anat/sub-12_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 12",
@@ -4102,7 +4164,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4113,7 +4175,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000068"
+          "@id": "_:000037"
         }
       ],
       "name": "sub-12_T1w.nii.gz",
@@ -4125,7 +4187,7 @@
       }
     },
     {
-      "@id": "_:000182",
+      "@id": "_:000183",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/anat/sub-12_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 12",
@@ -4135,7 +4197,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4146,7 +4208,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000068"
+          "@id": "_:000037"
         }
       ],
       "name": "sub-12_inplaneT2.nii.gz",
@@ -4158,7 +4220,7 @@
       }
     },
     {
-      "@id": "_:000183",
+      "@id": "_:000184",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 12",
@@ -4168,7 +4230,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4179,7 +4241,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000066"
+          "@id": "_:000042"
         }
       ],
       "name": "sub-12_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -4191,11 +4253,11 @@
       }
     },
     {
-      "@id": "_:000184",
+      "@id": "_:000185",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4206,7 +4268,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000066"
+          "@id": "_:000042"
         }
       ],
       "name": "sub-12_task-mixedgamblestask_run-01_events.tsv",
@@ -4219,7 +4281,7 @@
       }
     },
     {
-      "@id": "_:000185",
+      "@id": "_:000186",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 12",
@@ -4229,7 +4291,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4240,7 +4302,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000066"
+          "@id": "_:000042"
         }
       ],
       "name": "sub-12_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -4252,11 +4314,11 @@
       }
     },
     {
-      "@id": "_:000186",
+      "@id": "_:000187",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4267,7 +4329,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000066"
+          "@id": "_:000042"
         }
       ],
       "name": "sub-12_task-mixedgamblestask_run-02_events.tsv",
@@ -4280,7 +4342,7 @@
       }
     },
     {
-      "@id": "_:000187",
+      "@id": "_:000188",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 12",
@@ -4290,7 +4352,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4301,7 +4363,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000066"
+          "@id": "_:000042"
         }
       ],
       "name": "sub-12_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -4313,11 +4375,11 @@
       }
     },
     {
-      "@id": "_:000188",
+      "@id": "_:000189",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4328,7 +4390,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000066"
+          "@id": "_:000042"
         }
       ],
       "name": "sub-12_task-mixedgamblestask_run-03_events.tsv",
@@ -4341,7 +4403,7 @@
       }
     },
     {
-      "@id": "_:000189",
+      "@id": "_:000190",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/anat/sub-13_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 13",
@@ -4351,7 +4413,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4362,7 +4424,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000074"
+          "@id": "_:000076"
         }
       ],
       "name": "sub-13_T1w.nii.gz",
@@ -4374,7 +4436,7 @@
       }
     },
     {
-      "@id": "_:000190",
+      "@id": "_:000191",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/anat/sub-13_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 13",
@@ -4384,7 +4446,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4395,7 +4457,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000074"
+          "@id": "_:000076"
         }
       ],
       "name": "sub-13_inplaneT2.nii.gz",
@@ -4407,7 +4469,7 @@
       }
     },
     {
-      "@id": "_:000191",
+      "@id": "_:000192",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 13",
@@ -4417,7 +4479,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4428,7 +4490,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000072"
+          "@id": "_:000078"
         }
       ],
       "name": "sub-13_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -4440,11 +4502,11 @@
       }
     },
     {
-      "@id": "_:000192",
+      "@id": "_:000193",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4455,7 +4517,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000072"
+          "@id": "_:000078"
         }
       ],
       "name": "sub-13_task-mixedgamblestask_run-01_events.tsv",
@@ -4468,7 +4530,7 @@
       }
     },
     {
-      "@id": "_:000193",
+      "@id": "_:000194",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 13",
@@ -4478,7 +4540,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4489,7 +4551,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000072"
+          "@id": "_:000078"
         }
       ],
       "name": "sub-13_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -4501,11 +4563,11 @@
       }
     },
     {
-      "@id": "_:000194",
+      "@id": "_:000195",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4516,7 +4578,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000072"
+          "@id": "_:000078"
         }
       ],
       "name": "sub-13_task-mixedgamblestask_run-02_events.tsv",
@@ -4529,7 +4591,7 @@
       }
     },
     {
-      "@id": "_:000195",
+      "@id": "_:000196",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 13",
@@ -4539,7 +4601,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4550,7 +4612,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000072"
+          "@id": "_:000078"
         }
       ],
       "name": "sub-13_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -4562,11 +4624,11 @@
       }
     },
     {
-      "@id": "_:000196",
+      "@id": "_:000197",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4577,7 +4639,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000072"
+          "@id": "_:000078"
         }
       ],
       "name": "sub-13_task-mixedgamblestask_run-03_events.tsv",
@@ -4590,7 +4652,7 @@
       }
     },
     {
-      "@id": "_:000197",
+      "@id": "_:000198",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/anat/sub-14_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 14",
@@ -4600,7 +4662,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4611,7 +4673,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000044"
+          "@id": "_:000064"
         }
       ],
       "name": "sub-14_T1w.nii.gz",
@@ -4623,7 +4685,7 @@
       }
     },
     {
-      "@id": "_:000198",
+      "@id": "_:000199",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/anat/sub-14_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 14",
@@ -4633,7 +4695,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4644,7 +4706,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000044"
+          "@id": "_:000064"
         }
       ],
       "name": "sub-14_inplaneT2.nii.gz",
@@ -4656,7 +4718,7 @@
       }
     },
     {
-      "@id": "_:000199",
+      "@id": "_:000200",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 14",
@@ -4666,7 +4728,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4677,7 +4739,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000042"
+          "@id": "_:000066"
         }
       ],
       "name": "sub-14_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -4689,11 +4751,11 @@
       }
     },
     {
-      "@id": "_:000200",
+      "@id": "_:000201",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4704,7 +4766,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000042"
+          "@id": "_:000066"
         }
       ],
       "name": "sub-14_task-mixedgamblestask_run-01_events.tsv",
@@ -4717,7 +4779,7 @@
       }
     },
     {
-      "@id": "_:000201",
+      "@id": "_:000202",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 14",
@@ -4727,7 +4789,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4738,7 +4800,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000042"
+          "@id": "_:000066"
         }
       ],
       "name": "sub-14_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -4750,11 +4812,11 @@
       }
     },
     {
-      "@id": "_:000202",
+      "@id": "_:000203",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4765,7 +4827,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000042"
+          "@id": "_:000066"
         }
       ],
       "name": "sub-14_task-mixedgamblestask_run-02_events.tsv",
@@ -4778,7 +4840,7 @@
       }
     },
     {
-      "@id": "_:000203",
+      "@id": "_:000204",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 14",
@@ -4788,7 +4850,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4799,7 +4861,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000042"
+          "@id": "_:000066"
         }
       ],
       "name": "sub-14_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -4811,11 +4873,11 @@
       }
     },
     {
-      "@id": "_:000204",
+      "@id": "_:000205",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4826,7 +4888,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000042"
+          "@id": "_:000066"
         }
       ],
       "name": "sub-14_task-mixedgamblestask_run-03_events.tsv",
@@ -4839,7 +4901,7 @@
       }
     },
     {
-      "@id": "_:000205",
+      "@id": "_:000206",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/anat/sub-15_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 15",
@@ -4849,7 +4911,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4860,7 +4922,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000059"
+          "@id": "_:000085"
         }
       ],
       "name": "sub-15_T1w.nii.gz",
@@ -4872,7 +4934,7 @@
       }
     },
     {
-      "@id": "_:000206",
+      "@id": "_:000207",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/anat/sub-15_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 15",
@@ -4882,7 +4944,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4893,7 +4955,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000059"
+          "@id": "_:000085"
         }
       ],
       "name": "sub-15_inplaneT2.nii.gz",
@@ -4905,7 +4967,7 @@
       }
     },
     {
-      "@id": "_:000207",
+      "@id": "_:000208",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 15",
@@ -4915,7 +4977,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4926,7 +4988,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000057"
+          "@id": "_:000087"
         }
       ],
       "name": "sub-15_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -4938,11 +5000,11 @@
       }
     },
     {
-      "@id": "_:000208",
+      "@id": "_:000209",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4953,7 +5015,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000057"
+          "@id": "_:000087"
         }
       ],
       "name": "sub-15_task-mixedgamblestask_run-01_events.tsv",
@@ -4966,7 +5028,7 @@
       }
     },
     {
-      "@id": "_:000209",
+      "@id": "_:000210",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 15",
@@ -4976,7 +5038,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -4987,7 +5049,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000057"
+          "@id": "_:000087"
         }
       ],
       "name": "sub-15_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -4999,11 +5061,11 @@
       }
     },
     {
-      "@id": "_:000210",
+      "@id": "_:000211",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5014,7 +5076,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000057"
+          "@id": "_:000087"
         }
       ],
       "name": "sub-15_task-mixedgamblestask_run-02_events.tsv",
@@ -5027,7 +5089,7 @@
       }
     },
     {
-      "@id": "_:000211",
+      "@id": "_:000212",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 15",
@@ -5037,7 +5099,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5048,7 +5110,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000057"
+          "@id": "_:000087"
         }
       ],
       "name": "sub-15_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -5060,11 +5122,11 @@
       }
     },
     {
-      "@id": "_:000212",
+      "@id": "_:000213",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5075,7 +5137,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000057"
+          "@id": "_:000087"
         }
       ],
       "name": "sub-15_task-mixedgamblestask_run-03_events.tsv",
@@ -5088,7 +5150,7 @@
       }
     },
     {
-      "@id": "_:000213",
+      "@id": "_:000214",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/anat/sub-16_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 16",
@@ -5098,7 +5160,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5109,7 +5171,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000041"
+          "@id": "_:000046"
         }
       ],
       "name": "sub-16_T1w.nii.gz",
@@ -5121,7 +5183,7 @@
       }
     },
     {
-      "@id": "_:000214",
+      "@id": "_:000215",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/anat/sub-16_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 16",
@@ -5131,7 +5193,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5142,7 +5204,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000041"
+          "@id": "_:000046"
         }
       ],
       "name": "sub-16_inplaneT2.nii.gz",
@@ -5154,7 +5216,7 @@
       }
     },
     {
-      "@id": "_:000215",
+      "@id": "_:000216",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 16",
@@ -5164,7 +5226,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5175,7 +5237,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000036"
+          "@id": "_:000048"
         }
       ],
       "name": "sub-16_task-mixedgamblestask_run-01_bold.nii.gz",
@@ -5187,11 +5249,11 @@
       }
     },
     {
-      "@id": "_:000216",
+      "@id": "_:000217",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5202,7 +5264,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000036"
+          "@id": "_:000048"
         }
       ],
       "name": "sub-16_task-mixedgamblestask_run-01_events.tsv",
@@ -5215,7 +5277,7 @@
       }
     },
     {
-      "@id": "_:000217",
+      "@id": "_:000218",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 16",
@@ -5225,7 +5287,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5236,7 +5298,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000036"
+          "@id": "_:000048"
         }
       ],
       "name": "sub-16_task-mixedgamblestask_run-02_bold.nii.gz",
@@ -5248,11 +5310,11 @@
       }
     },
     {
-      "@id": "_:000218",
+      "@id": "_:000219",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5263,7 +5325,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000036"
+          "@id": "_:000048"
         }
       ],
       "name": "sub-16_task-mixedgamblestask_run-02_events.tsv",
@@ -5276,7 +5338,7 @@
       }
     },
     {
-      "@id": "_:000219",
+      "@id": "_:000220",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 16",
@@ -5286,7 +5348,7 @@
         }
       ],
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5297,7 +5359,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000036"
+          "@id": "_:000048"
         }
       ],
       "name": "sub-16_task-mixedgamblestask_run-03_bold.nii.gz",
@@ -5309,11 +5371,11 @@
       }
     },
     {
-      "@id": "_:000220",
+      "@id": "_:000221",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5324,7 +5386,7 @@
       ],
       "isPartOf": [
         {
-          "@id": "_:000036"
+          "@id": "_:000048"
         }
       ],
       "name": "sub-16_task-mixedgamblestask_run-03_events.tsv",
@@ -5337,11 +5399,11 @@
       }
     },
     {
-      "@id": "_:000221",
+      "@id": "_:000222",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXtask-mixedgamblestask_bold.json",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5360,34 +5422,11 @@
       }
     },
     {
-      "@id": "_:000222",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXREADME",
-      "fileRepository": {
-        "@id": "_:000038"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "3f16631d3dec0049d0d03d626be289bc"
-        }
-      ],
-      "name": "README",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 1019
-      }
-    },
-    {
       "@id": "_:000223",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXCHANGES",
       "fileRepository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "hash": [
         {
@@ -5407,35 +5446,55 @@
     },
     {
       "@id": "_:000224",
+      "@type": "https://openminds.ebrains.eu/core/File",
+      "IRI": "PREFIXREADME",
+      "fileRepository": {
+        "@id": "_:000039"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "algorithm": "MD5",
+          "digest": "3f16631d3dec0049d0d03d626be289bc"
+        }
+      ],
+      "name": "README",
+      "storageSize": {
+        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+        },
+        "value": 1019
+      }
+    },
+    {
+      "@id": "_:000225",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "S.M.",
       "givenName": "Tom"
     },
     {
-      "@id": "_:000225",
+      "@id": "_:000226",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "C.R.",
       "givenName": "Fox"
     },
     {
-      "@id": "_:000226",
+      "@id": "_:000227",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "C.",
       "givenName": "Trepel"
     },
     {
-      "@id": "_:000227",
+      "@id": "_:000228",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "R.A.",
       "givenName": "Poldrack"
     },
     {
-      "@id": "_:000228",
+      "@id": "_:000229",
       "@type": "https://openminds.ebrains.eu/core/DatasetVersion",
       "author": [
-        {
-          "@id": "_:000224"
-        },
         {
           "@id": "_:000225"
         },
@@ -5444,11 +5503,19 @@
         },
         {
           "@id": "_:000227"
+        },
+        {
+          "@id": "_:000228"
         }
       ],
       "behavioralProtocol": [
         {
-          "@id": "_:000035"
+          "@id": "_:000036"
+        }
+      ],
+      "dataType": [
+        {
+          "@id": "https://openminds.ebrains.eu/instances/semanticDataType/rawData"
         }
       ],
       "experimentalApproach": [
@@ -5459,8 +5526,9 @@
           "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"
         }
       ],
+      "fullName": "Mixed-gambles task",
       "repository": {
-        "@id": "_:000038"
+        "@id": "_:000039"
       },
       "shortName": "Mixed-gambles task",
       "studiedSpecimen": [
@@ -5468,51 +5536,61 @@
           "@id": "_:000002"
         },
         {
-          "@id": "_:000005"
+          "@id": "_:000006"
         },
         {
-          "@id": "_:000008"
+          "@id": "_:000009"
         },
         {
-          "@id": "_:000010"
+          "@id": "_:000011"
         },
         {
-          "@id": "_:000012"
+          "@id": "_:000013"
         },
         {
-          "@id": "_:000014"
+          "@id": "_:000015"
         },
         {
-          "@id": "_:000016"
+          "@id": "_:000017"
         },
         {
-          "@id": "_:000018"
+          "@id": "_:000019"
         },
         {
-          "@id": "_:000020"
+          "@id": "_:000021"
         },
         {
-          "@id": "_:000022"
+          "@id": "_:000023"
         },
         {
-          "@id": "_:000024"
+          "@id": "_:000025"
         },
         {
-          "@id": "_:000026"
+          "@id": "_:000027"
         },
         {
-          "@id": "_:000028"
+          "@id": "_:000029"
         },
         {
-          "@id": "_:000030"
+          "@id": "_:000031"
         },
         {
-          "@id": "_:000032"
+          "@id": "_:000033"
         },
         {
-          "@id": "_:000034"
+          "@id": "_:000035"
+        }
+      ],
+      "technique": [
+        {
+          "@id": "https://openminds.ebrains.eu/instances/technique/T2PulseSequence"
         }
       ]
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/semanticDataType/rawData",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/SemanticDataType",
+      "name": "raw data"
     },
     {
       "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
@@ -5534,14 +5612,43 @@
       "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Neuroimaging"
     },
     {
-      "@id": "_:000231",
+      "@id": "https://openminds.ebrains.eu/instances/technique/T2PulseSequence",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
+      "definition": "In magnetic resonance imaging, a 'T2 pulse sequence' is a contrasting technique that allows the magnetization of the specimen or object to decay (spin-spin relaxation) before measuring the magnetic resonance signal by changing the echo time. [adapted from [wikipedia](https://en.wikipedia.org/wiki/MRI_sequence)]",
+      "name": "T2 pulse sequence",
+      "synonym": [
+        "T2 weighted imaging",
+        "T2 weighted magnetic resonance imaging",
+        "T2 weighted MRI",
+        "T2w imaging",
+        "T2w magnetic resonance imaging",
+        "T2w MRI"
+      ]
+    },
+    {
+      "@id": "_:000234",
       "@type": "https://openminds.ebrains.eu/core/Dataset",
-      "fullName": "Mixed-gambles task",
-      "hasVersion": [
+      "author": [
+        {
+          "@id": "_:000225"
+        },
+        {
+          "@id": "_:000226"
+        },
+        {
+          "@id": "_:000227"
+        },
         {
           "@id": "_:000228"
         }
-      ]
+      ],
+      "fullName": "Mixed-gambles task",
+      "hasVersion": [
+        {
+          "@id": "_:000229"
+        }
+      ],
+      "shortName": "Mixed-gambles task"
     }
   ]
 }

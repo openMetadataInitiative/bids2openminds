@@ -2,6 +2,9 @@ import bids2openminds.converter
 import os
 from openminds import Collection
 import pytest
+from tempfile import mkdtemp
+import shutil
+
 
 dataset_labels = ["eeg_rest_fmri", "ds005"]
 
@@ -9,6 +12,7 @@ dataset_labels = ["eeg_rest_fmri", "ds005"]
 @pytest.fixture(scope="session")
 def load_collections():
     collections = {}
+    tempdir = mkdtemp()
     for dataset_label in dataset_labels:
         test_standard_name = "bids_examples_" + dataset_label + ".jsonld"
         test_standard_path = os.path.join("test", test_standard_name)
@@ -17,15 +21,16 @@ def load_collections():
         absol_path = os.path.abspath(test_dataset)
         prefeix = f"file://{absol_path}/"
 
-        with open(test_standard_path, "r+") as file:
+        with open(test_standard_path, "r") as file:
             undeisred_data = file.read()
             desired_data = undeisred_data.replace(
                 "PREFIX", prefeix)
-            file.seek(0)
+
+        with open(tempdir+test_standard_name, "w") as file:
             file.write(desired_data)
 
         reference_collection = Collection()
-        reference_collection.load(test_standard_path)
+        reference_collection.load(tempdir+test_standard_name)
 
         bids2openminds.converter.convert(test_dataset, save_output=True)
         generated_collection = Collection()
@@ -35,6 +40,7 @@ def load_collections():
         collections[dataset_label] = (
             reference_collection, generated_collection)
 
+    shutil.rmtree(tempdir)
     return collections
 
 
