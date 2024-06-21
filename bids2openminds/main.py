@@ -17,7 +17,7 @@ from . import mapping
 def create_openminds_person(full_name):
     # Regex for detecting any unwanted characters.
     name_regex = re.compile(
-        "^[\w'\-, .][^0-9_!¡?÷?¿/\\+=@#$%^&*(){}|~<>;:[\]]{1,}$")
+        r"^[\w'\-, .][^0-9_!¡?÷?¿/\\+=@#$%^&*(){}|~<>;:[\]]{1,}$")
     alternate_names = []
     person = HumanName(full_name)
     given_name = person.first
@@ -110,12 +110,14 @@ def techniques_openminds(suffix):
     for item_openminds in items_openminds:
         for possible_type in possible_types:
             openminds_type = getattr(controlled_terms, possible_type)
+            openminds_obj = None
             try:
                 openminds_obj = openminds_type.by_name(item_openminds)
                 break
             except KeyError:
                 pass
-        openminds_techniques_list.append(openminds_obj)
+        if openminds_obj:
+            openminds_techniques_list.append(openminds_obj)
     return openminds_techniques_list
 
 
