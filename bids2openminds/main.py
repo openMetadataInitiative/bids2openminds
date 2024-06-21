@@ -25,7 +25,8 @@ def create_openminds_person(full_name):
 
     # Handle the situation in which there is no given name or the given name consists of unwanted characters.
     if not (given_name and name_regex.match(given_name)):
-        return None
+        if not (len(family_name) > 0 and len(given_name) == 1):
+            return None
 
     # Handle the situation in which the family name consists of unwanted characters.
     if not (name_regex.match(family_name)):
@@ -66,8 +67,9 @@ def create_persons(dataset_description, collection):
     openminds_list = []
     for person in person_list:
         openminds_person = create_openminds_person(person)
-        openminds_list.append(openminds_person)
-        collection.add(openminds_person)
+        if openminds_person is not None:
+            openminds_list.append(openminds_person)
+            collection.add(openminds_person)
 
     return openminds_list
 
@@ -172,6 +174,11 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     else:
         how_to_cite = None
 
+    if ("DatasetType" in dataset_description) and (dataset_description == "derivative"):
+        dataset_type = controlled_terms.SemanticDataType.derived_data
+    else:
+        dataset_type = controlled_terms.SemanticDataType.raw_data
+
     # TODO funding
     # if "Funding" in dataset_description:
     #   funding=funding_openMINDS(dataset_description["Funding"])
@@ -194,12 +201,14 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         digital_identifier=digital_identifier,
         experimental_approaches=experimental_approaches,
         short_name=dataset_description["Name"],
+        full_name=dataset_description["Name"],
         studied_specimens=studied_specimens,
         authors=authors,
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        behavioral_protocols=behavioral_protocols
+        behavioral_protocols=behavioral_protocols,
+        data_types=dataset_type
         # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
@@ -211,15 +220,12 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
 
 def create_dataset(dataset_description, dataset_version, collection):
 
-    if "DatasetDOI" in dataset_description:
-        digital_identifier = omcore.DOI(
-            identifier=dataset_description["DatasetDOI"])
-    else:
-        digital_identifier = None
-
     dataset = omcore.Dataset(
-        digital_identifier=digital_identifier, full_name=dataset_description[
-            "Name"], has_versions=dataset_version
+        digital_identifier=dataset_version.digital_identifier,
+        authors=dataset_version.authors,
+        full_name=dataset_version.full_name,
+        short_name=dataset_version.short_name,
+        has_versions=dataset_version
     )
 
     collection.add(dataset)
