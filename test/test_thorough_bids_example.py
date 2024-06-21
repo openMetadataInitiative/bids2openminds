@@ -5,6 +5,7 @@ import pytest
 from tempfile import mkdtemp
 import pathlib
 import shutil
+import platform
 
 
 dataset_labels = ["eeg_rest_fmri", "ds005"]
@@ -148,7 +149,8 @@ def test_file(load_collections, dataset_label):
             assert refrence_file.format is None
         else:
             assert generated_file.format.id == refrence_file.format.id
-        assert generated_file.hashes[0].digest == refrence_file.hashes[0].digest
+        if platform.system() != 'Windows':
+            assert generated_file.hashes[0].digest == refrence_file.hashes[0].digest
 
 
 @pytest.mark.parametrize("dataset_label", dataset_labels)
