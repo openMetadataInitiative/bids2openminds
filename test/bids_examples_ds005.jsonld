@@ -1248,7 +1248,7 @@
     {
       "@id": "_:000087",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/dataset_description.json",
+      "IRI": "PREFIXdataset_description.json",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1271,7 +1271,7 @@
     {
       "@id": "_:000088",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/participants.json",
+      "IRI": "PREFIXparticipants.json",
       "contentDescription": "A JSON metadata file of participants TSV.",
       "dataType": [
         {
@@ -1326,7 +1326,7 @@
     {
       "@id": "_:000091",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/participants.tsv",
+      "IRI": "PREFIXparticipants.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1349,7 +1349,7 @@
     {
       "@id": "_:000092",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/anat/sub-01_T1w.nii.gz",
+      "IRI": "PREFIXsub-01/anat/sub-01_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 01",
       "dataType": [
         {
@@ -1388,7 +1388,7 @@
     {
       "@id": "_:000094",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/anat/sub-01_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-01/anat/sub-01_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 01",
       "dataType": [
         {
@@ -1421,7 +1421,7 @@
     {
       "@id": "_:000095",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/func/sub-01_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 01",
       "dataType": [
         {
@@ -1454,7 +1454,7 @@
     {
       "@id": "_:000096",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/func/sub-01_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1482,7 +1482,7 @@
     {
       "@id": "_:000097",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/func/sub-01_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 01",
       "dataType": [
         {
@@ -1515,7 +1515,7 @@
     {
       "@id": "_:000098",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/func/sub-01_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1543,7 +1543,7 @@
     {
       "@id": "_:000099",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/func/sub-01_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 01",
       "dataType": [
         {
@@ -1576,7 +1576,7 @@
     {
       "@id": "_:000100",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-01/func/sub-01_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-01/func/sub-01_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1604,7 +1604,7 @@
     {
       "@id": "_:000101",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/anat/sub-02_T1w.nii.gz",
+      "IRI": "PREFIXsub-02/anat/sub-02_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 02",
       "dataType": [
         {
@@ -1637,7 +1637,7 @@
     {
       "@id": "_:000102",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/anat/sub-02_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-02/anat/sub-02_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 02",
       "dataType": [
         {
@@ -1670,7 +1670,7 @@
     {
       "@id": "_:000103",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/func/sub-02_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 02",
       "dataType": [
         {
@@ -1703,7 +1703,7 @@
     {
       "@id": "_:000104",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/func/sub-02_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1731,7 +1731,7 @@
     {
       "@id": "_:000105",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/func/sub-02_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 02",
       "dataType": [
         {
@@ -1764,7 +1764,7 @@
     {
       "@id": "_:000106",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/func/sub-02_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1792,7 +1792,7 @@
     {
       "@id": "_:000107",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/func/sub-02_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 02",
       "dataType": [
         {
@@ -1825,7 +1825,7 @@
     {
       "@id": "_:000108",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-02/func/sub-02_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-02/func/sub-02_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1853,7 +1853,7 @@
     {
       "@id": "_:000109",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/anat/sub-03_T1w.nii.gz",
+      "IRI": "PREFIXsub-03/anat/sub-03_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 03",
       "dataType": [
         {
@@ -1886,7 +1886,7 @@
     {
       "@id": "_:000110",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/anat/sub-03_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-03/anat/sub-03_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 03",
       "dataType": [
         {
@@ -1919,7 +1919,7 @@
     {
       "@id": "_:000111",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 03",
       "dataType": [
         {
@@ -1952,7 +1952,7 @@
     {
       "@id": "_:000112",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -1980,7 +1980,7 @@
     {
       "@id": "_:000113",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 03",
       "dataType": [
         {
@@ -2013,7 +2013,7 @@
     {
       "@id": "_:000114",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2041,7 +2041,7 @@
     {
       "@id": "_:000115",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 03",
       "dataType": [
         {
@@ -2074,7 +2074,7 @@
     {
       "@id": "_:000116",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-03/func/sub-03_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-03/func/sub-03_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2102,7 +2102,7 @@
     {
       "@id": "_:000117",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/anat/sub-04_T1w.nii.gz",
+      "IRI": "PREFIXsub-04/anat/sub-04_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 04",
       "dataType": [
         {
@@ -2135,7 +2135,7 @@
     {
       "@id": "_:000118",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/anat/sub-04_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-04/anat/sub-04_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 04",
       "dataType": [
         {
@@ -2168,7 +2168,7 @@
     {
       "@id": "_:000119",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/func/sub-04_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 04",
       "dataType": [
         {
@@ -2201,7 +2201,7 @@
     {
       "@id": "_:000120",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/func/sub-04_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2229,7 +2229,7 @@
     {
       "@id": "_:000121",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/func/sub-04_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 04",
       "dataType": [
         {
@@ -2262,7 +2262,7 @@
     {
       "@id": "_:000122",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/func/sub-04_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2290,7 +2290,7 @@
     {
       "@id": "_:000123",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/func/sub-04_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 04",
       "dataType": [
         {
@@ -2323,7 +2323,7 @@
     {
       "@id": "_:000124",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-04/func/sub-04_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-04/func/sub-04_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2351,7 +2351,7 @@
     {
       "@id": "_:000125",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/anat/sub-05_T1w.nii.gz",
+      "IRI": "PREFIXsub-05/anat/sub-05_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 05",
       "dataType": [
         {
@@ -2384,7 +2384,7 @@
     {
       "@id": "_:000126",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/anat/sub-05_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-05/anat/sub-05_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 05",
       "dataType": [
         {
@@ -2417,7 +2417,7 @@
     {
       "@id": "_:000127",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/func/sub-05_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 05",
       "dataType": [
         {
@@ -2450,7 +2450,7 @@
     {
       "@id": "_:000128",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/func/sub-05_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2478,7 +2478,7 @@
     {
       "@id": "_:000129",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/func/sub-05_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 05",
       "dataType": [
         {
@@ -2511,7 +2511,7 @@
     {
       "@id": "_:000130",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/func/sub-05_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2539,7 +2539,7 @@
     {
       "@id": "_:000131",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/func/sub-05_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 05",
       "dataType": [
         {
@@ -2572,7 +2572,7 @@
     {
       "@id": "_:000132",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-05/func/sub-05_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-05/func/sub-05_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2600,7 +2600,7 @@
     {
       "@id": "_:000133",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/anat/sub-06_T1w.nii.gz",
+      "IRI": "PREFIXsub-06/anat/sub-06_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 06",
       "dataType": [
         {
@@ -2633,7 +2633,7 @@
     {
       "@id": "_:000134",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/anat/sub-06_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-06/anat/sub-06_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 06",
       "dataType": [
         {
@@ -2666,7 +2666,7 @@
     {
       "@id": "_:000135",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/func/sub-06_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 06",
       "dataType": [
         {
@@ -2699,7 +2699,7 @@
     {
       "@id": "_:000136",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/func/sub-06_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2727,7 +2727,7 @@
     {
       "@id": "_:000137",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/func/sub-06_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 06",
       "dataType": [
         {
@@ -2760,7 +2760,7 @@
     {
       "@id": "_:000138",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/func/sub-06_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2788,7 +2788,7 @@
     {
       "@id": "_:000139",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/func/sub-06_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 06",
       "dataType": [
         {
@@ -2821,7 +2821,7 @@
     {
       "@id": "_:000140",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-06/func/sub-06_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-06/func/sub-06_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2849,7 +2849,7 @@
     {
       "@id": "_:000141",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/anat/sub-07_T1w.nii.gz",
+      "IRI": "PREFIXsub-07/anat/sub-07_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 07",
       "dataType": [
         {
@@ -2882,7 +2882,7 @@
     {
       "@id": "_:000142",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/anat/sub-07_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-07/anat/sub-07_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 07",
       "dataType": [
         {
@@ -2915,7 +2915,7 @@
     {
       "@id": "_:000143",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/func/sub-07_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 07",
       "dataType": [
         {
@@ -2948,7 +2948,7 @@
     {
       "@id": "_:000144",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/func/sub-07_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -2976,7 +2976,7 @@
     {
       "@id": "_:000145",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/func/sub-07_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 07",
       "dataType": [
         {
@@ -3009,7 +3009,7 @@
     {
       "@id": "_:000146",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/func/sub-07_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3037,7 +3037,7 @@
     {
       "@id": "_:000147",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/func/sub-07_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 07",
       "dataType": [
         {
@@ -3070,7 +3070,7 @@
     {
       "@id": "_:000148",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-07/func/sub-07_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-07/func/sub-07_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3098,7 +3098,7 @@
     {
       "@id": "_:000149",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/anat/sub-08_T1w.nii.gz",
+      "IRI": "PREFIXsub-08/anat/sub-08_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 08",
       "dataType": [
         {
@@ -3131,7 +3131,7 @@
     {
       "@id": "_:000150",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/anat/sub-08_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-08/anat/sub-08_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 08",
       "dataType": [
         {
@@ -3164,7 +3164,7 @@
     {
       "@id": "_:000151",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/func/sub-08_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 08",
       "dataType": [
         {
@@ -3197,7 +3197,7 @@
     {
       "@id": "_:000152",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/func/sub-08_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3225,7 +3225,7 @@
     {
       "@id": "_:000153",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/func/sub-08_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 08",
       "dataType": [
         {
@@ -3258,7 +3258,7 @@
     {
       "@id": "_:000154",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/func/sub-08_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3286,7 +3286,7 @@
     {
       "@id": "_:000155",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/func/sub-08_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 08",
       "dataType": [
         {
@@ -3319,7 +3319,7 @@
     {
       "@id": "_:000156",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-08/func/sub-08_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-08/func/sub-08_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3347,7 +3347,7 @@
     {
       "@id": "_:000157",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/anat/sub-09_T1w.nii.gz",
+      "IRI": "PREFIXsub-09/anat/sub-09_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 09",
       "dataType": [
         {
@@ -3380,7 +3380,7 @@
     {
       "@id": "_:000158",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/anat/sub-09_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-09/anat/sub-09_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 09",
       "dataType": [
         {
@@ -3413,7 +3413,7 @@
     {
       "@id": "_:000159",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/func/sub-09_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 09",
       "dataType": [
         {
@@ -3446,7 +3446,7 @@
     {
       "@id": "_:000160",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/func/sub-09_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3474,7 +3474,7 @@
     {
       "@id": "_:000161",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/func/sub-09_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 09",
       "dataType": [
         {
@@ -3507,7 +3507,7 @@
     {
       "@id": "_:000162",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/func/sub-09_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3535,7 +3535,7 @@
     {
       "@id": "_:000163",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/func/sub-09_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 09",
       "dataType": [
         {
@@ -3568,7 +3568,7 @@
     {
       "@id": "_:000164",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-09/func/sub-09_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-09/func/sub-09_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3596,7 +3596,7 @@
     {
       "@id": "_:000165",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/anat/sub-10_T1w.nii.gz",
+      "IRI": "PREFIXsub-10/anat/sub-10_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 10",
       "dataType": [
         {
@@ -3629,7 +3629,7 @@
     {
       "@id": "_:000166",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/anat/sub-10_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-10/anat/sub-10_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 10",
       "dataType": [
         {
@@ -3662,7 +3662,7 @@
     {
       "@id": "_:000167",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/func/sub-10_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 10",
       "dataType": [
         {
@@ -3695,7 +3695,7 @@
     {
       "@id": "_:000168",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/func/sub-10_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3723,7 +3723,7 @@
     {
       "@id": "_:000169",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/func/sub-10_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 10",
       "dataType": [
         {
@@ -3756,7 +3756,7 @@
     {
       "@id": "_:000170",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/func/sub-10_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3784,7 +3784,7 @@
     {
       "@id": "_:000171",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/func/sub-10_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 10",
       "dataType": [
         {
@@ -3817,7 +3817,7 @@
     {
       "@id": "_:000172",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-10/func/sub-10_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-10/func/sub-10_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3845,7 +3845,7 @@
     {
       "@id": "_:000173",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/anat/sub-11_T1w.nii.gz",
+      "IRI": "PREFIXsub-11/anat/sub-11_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 11",
       "dataType": [
         {
@@ -3878,7 +3878,7 @@
     {
       "@id": "_:000174",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/anat/sub-11_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-11/anat/sub-11_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 11",
       "dataType": [
         {
@@ -3911,7 +3911,7 @@
     {
       "@id": "_:000175",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/func/sub-11_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 11",
       "dataType": [
         {
@@ -3944,7 +3944,7 @@
     {
       "@id": "_:000176",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/func/sub-11_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -3972,7 +3972,7 @@
     {
       "@id": "_:000177",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/func/sub-11_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 11",
       "dataType": [
         {
@@ -4005,7 +4005,7 @@
     {
       "@id": "_:000178",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/func/sub-11_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4033,7 +4033,7 @@
     {
       "@id": "_:000179",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/func/sub-11_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 11",
       "dataType": [
         {
@@ -4066,7 +4066,7 @@
     {
       "@id": "_:000180",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-11/func/sub-11_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-11/func/sub-11_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4094,7 +4094,7 @@
     {
       "@id": "_:000181",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/anat/sub-12_T1w.nii.gz",
+      "IRI": "PREFIXsub-12/anat/sub-12_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 12",
       "dataType": [
         {
@@ -4127,7 +4127,7 @@
     {
       "@id": "_:000182",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/anat/sub-12_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-12/anat/sub-12_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 12",
       "dataType": [
         {
@@ -4160,7 +4160,7 @@
     {
       "@id": "_:000183",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/func/sub-12_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 12",
       "dataType": [
         {
@@ -4193,7 +4193,7 @@
     {
       "@id": "_:000184",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/func/sub-12_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4221,7 +4221,7 @@
     {
       "@id": "_:000185",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/func/sub-12_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 12",
       "dataType": [
         {
@@ -4254,7 +4254,7 @@
     {
       "@id": "_:000186",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/func/sub-12_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4282,7 +4282,7 @@
     {
       "@id": "_:000187",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/func/sub-12_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 12",
       "dataType": [
         {
@@ -4315,7 +4315,7 @@
     {
       "@id": "_:000188",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-12/func/sub-12_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-12/func/sub-12_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4343,7 +4343,7 @@
     {
       "@id": "_:000189",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/anat/sub-13_T1w.nii.gz",
+      "IRI": "PREFIXsub-13/anat/sub-13_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 13",
       "dataType": [
         {
@@ -4376,7 +4376,7 @@
     {
       "@id": "_:000190",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/anat/sub-13_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-13/anat/sub-13_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 13",
       "dataType": [
         {
@@ -4409,7 +4409,7 @@
     {
       "@id": "_:000191",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/func/sub-13_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 13",
       "dataType": [
         {
@@ -4442,7 +4442,7 @@
     {
       "@id": "_:000192",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/func/sub-13_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4470,7 +4470,7 @@
     {
       "@id": "_:000193",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/func/sub-13_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 13",
       "dataType": [
         {
@@ -4503,7 +4503,7 @@
     {
       "@id": "_:000194",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/func/sub-13_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4531,7 +4531,7 @@
     {
       "@id": "_:000195",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/func/sub-13_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 13",
       "dataType": [
         {
@@ -4564,7 +4564,7 @@
     {
       "@id": "_:000196",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-13/func/sub-13_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-13/func/sub-13_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4592,7 +4592,7 @@
     {
       "@id": "_:000197",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/anat/sub-14_T1w.nii.gz",
+      "IRI": "PREFIXsub-14/anat/sub-14_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 14",
       "dataType": [
         {
@@ -4625,7 +4625,7 @@
     {
       "@id": "_:000198",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/anat/sub-14_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-14/anat/sub-14_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 14",
       "dataType": [
         {
@@ -4658,7 +4658,7 @@
     {
       "@id": "_:000199",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/func/sub-14_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 14",
       "dataType": [
         {
@@ -4691,7 +4691,7 @@
     {
       "@id": "_:000200",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/func/sub-14_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4719,7 +4719,7 @@
     {
       "@id": "_:000201",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/func/sub-14_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 14",
       "dataType": [
         {
@@ -4752,7 +4752,7 @@
     {
       "@id": "_:000202",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/func/sub-14_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4780,7 +4780,7 @@
     {
       "@id": "_:000203",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/func/sub-14_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 14",
       "dataType": [
         {
@@ -4813,7 +4813,7 @@
     {
       "@id": "_:000204",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-14/func/sub-14_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-14/func/sub-14_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4841,7 +4841,7 @@
     {
       "@id": "_:000205",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/anat/sub-15_T1w.nii.gz",
+      "IRI": "PREFIXsub-15/anat/sub-15_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 15",
       "dataType": [
         {
@@ -4874,7 +4874,7 @@
     {
       "@id": "_:000206",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/anat/sub-15_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-15/anat/sub-15_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 15",
       "dataType": [
         {
@@ -4907,7 +4907,7 @@
     {
       "@id": "_:000207",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/func/sub-15_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 15",
       "dataType": [
         {
@@ -4940,7 +4940,7 @@
     {
       "@id": "_:000208",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/func/sub-15_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -4968,7 +4968,7 @@
     {
       "@id": "_:000209",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/func/sub-15_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 15",
       "dataType": [
         {
@@ -5001,7 +5001,7 @@
     {
       "@id": "_:000210",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/func/sub-15_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5029,7 +5029,7 @@
     {
       "@id": "_:000211",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/func/sub-15_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 15",
       "dataType": [
         {
@@ -5062,7 +5062,7 @@
     {
       "@id": "_:000212",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-15/func/sub-15_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-15/func/sub-15_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5090,7 +5090,7 @@
     {
       "@id": "_:000213",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/anat/sub-16_T1w.nii.gz",
+      "IRI": "PREFIXsub-16/anat/sub-16_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 16",
       "dataType": [
         {
@@ -5123,7 +5123,7 @@
     {
       "@id": "_:000214",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/anat/sub-16_inplaneT2.nii.gz",
+      "IRI": "PREFIXsub-16/anat/sub-16_inplaneT2.nii.gz",
       "contentDescription": "Data file for inplaneT2 of subject 16",
       "dataType": [
         {
@@ -5156,7 +5156,7 @@
     {
       "@id": "_:000215",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/func/sub-16_task-mixedgamblestask_run-01_bold.nii.gz",
+      "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-01_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 16",
       "dataType": [
         {
@@ -5189,7 +5189,7 @@
     {
       "@id": "_:000216",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/func/sub-16_task-mixedgamblestask_run-01_events.tsv",
+      "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-01_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5217,7 +5217,7 @@
     {
       "@id": "_:000217",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/func/sub-16_task-mixedgamblestask_run-02_bold.nii.gz",
+      "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-02_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 16",
       "dataType": [
         {
@@ -5250,7 +5250,7 @@
     {
       "@id": "_:000218",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/func/sub-16_task-mixedgamblestask_run-02_events.tsv",
+      "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-02_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5278,7 +5278,7 @@
     {
       "@id": "_:000219",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/func/sub-16_task-mixedgamblestask_run-03_bold.nii.gz",
+      "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-03_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 16",
       "dataType": [
         {
@@ -5311,7 +5311,7 @@
     {
       "@id": "_:000220",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/sub-16/func/sub-16_task-mixedgamblestask_run-03_events.tsv",
+      "IRI": "PREFIXsub-16/func/sub-16_task-mixedgamblestask_run-03_events.tsv",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5339,7 +5339,7 @@
     {
       "@id": "_:000221",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/task-mixedgamblestask_bold.json",
+      "IRI": "PREFIXtask-mixedgamblestask_bold.json",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5362,7 +5362,7 @@
     {
       "@id": "_:000222",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/README",
+      "IRI": "PREFIXREADME",
       "fileRepository": {
         "@id": "_:000038"
       },
@@ -5385,7 +5385,7 @@
     {
       "@id": "_:000223",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/ds005/CHANGES",
+      "IRI": "PREFIXCHANGES",
       "fileRepository": {
         "@id": "_:000038"
       },

@@ -438,7 +438,7 @@
     {
       "@id": "_:000032",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/acq-NODDI10DIR_dwi.json",
+      "IRI": "PREFIXacq-NODDI10DIR_dwi.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -461,7 +461,7 @@
     {
       "@id": "_:000033",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/acq-NODDI33DIR_dwi.json",
+      "IRI": "PREFIXacq-NODDI33DIR_dwi.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -484,7 +484,7 @@
     {
       "@id": "_:000034",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/acq-NODDI66DIR_dwi.json",
+      "IRI": "PREFIXacq-NODDI66DIR_dwi.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -507,7 +507,7 @@
     {
       "@id": "_:000035",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/acq-y224_T1w.json",
+      "IRI": "PREFIXacq-y224_T1w.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -530,7 +530,7 @@
     {
       "@id": "_:000036",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/acq-y232_T1w.json",
+      "IRI": "PREFIXacq-y232_T1w.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -553,7 +553,7 @@
     {
       "@id": "_:000037",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/dataset_description.json",
+      "IRI": "PREFIXdataset_description.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -576,7 +576,7 @@
     {
       "@id": "_:000038",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/participants.tsv",
+      "IRI": "PREFIXparticipants.tsv",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -599,7 +599,7 @@
     {
       "@id": "_:000039",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/anat/sub-32_acq-y224_T1w.nii.gz",
+      "IRI": "PREFIXsub-32/anat/sub-32_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 32",
       "dataType": [
         {
@@ -638,7 +638,7 @@
     {
       "@id": "_:000041",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/anat/sub-32_acq-y232_T1w.nii.gz",
+      "IRI": "PREFIXsub-32/anat/sub-32_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 32",
       "dataType": [
         {
@@ -671,7 +671,7 @@
     {
       "@id": "_:000042",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bval",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -699,7 +699,7 @@
     {
       "@id": "_:000043",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bvec",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -727,7 +727,7 @@
     {
       "@id": "_:000044",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/dwi/sub-32_acq-NODDI10DIR_dwi.nii.gz",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 32",
       "dataType": [
         {
@@ -760,7 +760,7 @@
     {
       "@id": "_:000045",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bval",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -788,7 +788,7 @@
     {
       "@id": "_:000046",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bvec",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -816,7 +816,7 @@
     {
       "@id": "_:000047",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/dwi/sub-32_acq-NODDI33DIR_dwi.nii.gz",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 32",
       "dataType": [
         {
@@ -849,7 +849,7 @@
     {
       "@id": "_:000048",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/eeg/sub-32_task-rest_eeg.eeg",
+      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.eeg",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -876,7 +876,7 @@
     {
       "@id": "_:000049",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/eeg/sub-32_task-rest_eeg.vhdr",
+      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vhdr",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -904,7 +904,7 @@
     {
       "@id": "_:000050",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/eeg/sub-32_task-rest_eeg.vmrk",
+      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vmrk",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -932,7 +932,7 @@
     {
       "@id": "_:000051",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-32/func/sub-32_task-rest_bold.nii.gz",
+      "IRI": "PREFIXsub-32/func/sub-32_task-rest_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 32",
       "dataType": [
         {
@@ -965,7 +965,7 @@
     {
       "@id": "_:000052",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/anat/sub-35_acq-y224_T1w.nii.gz",
+      "IRI": "PREFIXsub-35/anat/sub-35_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 35",
       "dataType": [
         {
@@ -998,7 +998,7 @@
     {
       "@id": "_:000053",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/anat/sub-35_acq-y232_T1w.nii.gz",
+      "IRI": "PREFIXsub-35/anat/sub-35_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 35",
       "dataType": [
         {
@@ -1031,7 +1031,7 @@
     {
       "@id": "_:000054",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bval",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1059,7 +1059,7 @@
     {
       "@id": "_:000055",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bvec",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1087,7 +1087,7 @@
     {
       "@id": "_:000056",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/dwi/sub-35_acq-NODDI10DIR_dwi.nii.gz",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 35",
       "dataType": [
         {
@@ -1120,7 +1120,7 @@
     {
       "@id": "_:000057",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bval",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1148,7 +1148,7 @@
     {
       "@id": "_:000058",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bvec",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1176,7 +1176,7 @@
     {
       "@id": "_:000059",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/dwi/sub-35_acq-NODDI33DIR_dwi.nii.gz",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 35",
       "dataType": [
         {
@@ -1209,7 +1209,7 @@
     {
       "@id": "_:000060",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/eeg/sub-35_task-rest_eeg.eeg",
+      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.eeg",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1236,7 +1236,7 @@
     {
       "@id": "_:000061",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/eeg/sub-35_task-rest_eeg.vhdr",
+      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vhdr",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1264,7 +1264,7 @@
     {
       "@id": "_:000062",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/eeg/sub-35_task-rest_eeg.vmrk",
+      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vmrk",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1292,7 +1292,7 @@
     {
       "@id": "_:000063",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-35/func/sub-35_task-rest_bold.nii.gz",
+      "IRI": "PREFIXsub-35/func/sub-35_task-rest_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 35",
       "dataType": [
         {
@@ -1325,7 +1325,7 @@
     {
       "@id": "_:000064",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/anat/sub-36_acq-y224_T1w.nii.gz",
+      "IRI": "PREFIXsub-36/anat/sub-36_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 36",
       "dataType": [
         {
@@ -1358,7 +1358,7 @@
     {
       "@id": "_:000065",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/anat/sub-36_acq-y232_T1w.nii.gz",
+      "IRI": "PREFIXsub-36/anat/sub-36_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 36",
       "dataType": [
         {
@@ -1391,7 +1391,7 @@
     {
       "@id": "_:000066",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bval",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1419,7 +1419,7 @@
     {
       "@id": "_:000067",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bvec",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1447,7 +1447,7 @@
     {
       "@id": "_:000068",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/dwi/sub-36_acq-NODDI10DIR_dwi.nii.gz",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 36",
       "dataType": [
         {
@@ -1480,7 +1480,7 @@
     {
       "@id": "_:000069",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bval",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1508,7 +1508,7 @@
     {
       "@id": "_:000070",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bvec",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1536,7 +1536,7 @@
     {
       "@id": "_:000071",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/dwi/sub-36_acq-NODDI33DIR_dwi.nii.gz",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 36",
       "dataType": [
         {
@@ -1569,7 +1569,7 @@
     {
       "@id": "_:000072",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/eeg/sub-36_task-rest_eeg.eeg",
+      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.eeg",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1596,7 +1596,7 @@
     {
       "@id": "_:000073",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/eeg/sub-36_task-rest_eeg.vhdr",
+      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vhdr",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1624,7 +1624,7 @@
     {
       "@id": "_:000074",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/eeg/sub-36_task-rest_eeg.vmrk",
+      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vmrk",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1652,7 +1652,7 @@
     {
       "@id": "_:000075",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/sub-36/func/sub-36_task-rest_bold.nii.gz",
+      "IRI": "PREFIXsub-36/func/sub-36_task-rest_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 36",
       "dataType": [
         {
@@ -1685,7 +1685,7 @@
     {
       "@id": "_:000076",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/task-rest_bold.json",
+      "IRI": "PREFIXtask-rest_bold.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1708,7 +1708,7 @@
     {
       "@id": "_:000077",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/task-rest_eeg.json",
+      "IRI": "PREFIXtask-rest_eeg.json",
       "fileRepository": {
         "@id": "_:000009"
       },
@@ -1731,7 +1731,7 @@
     {
       "@id": "_:000078",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "file:///home/pnajafi/Desktop/Code/openMINDS-Peyman/bids2openminds/bids-examples/eeg_rest_fmri/README",
+      "IRI": "PREFIXREADME",
       "fileRepository": {
         "@id": "_:000009"
       },
