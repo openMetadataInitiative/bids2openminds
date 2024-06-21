@@ -12,7 +12,7 @@ requires-python = ">=3.9"
 authors = [
   {name = "Peyman Najafi", email = "peyman.najafi@cnrs.fr"},
   {name = "Andrew P. Davison", email = "andrew.davison@cnrs.fr"},
-  {name = "Lyuba Zyhl", email = "lyuba.zehl@ebrains.eu"}
+  {name = "Lyuba Zehl", email = "lyuba.zehl@ebrains.eu"}
 ]
 description = "Generates openMINDS metadata from a BIDS dataset"
 readme = "README.md"
