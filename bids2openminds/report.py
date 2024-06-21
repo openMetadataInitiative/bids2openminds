@@ -31,6 +31,11 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
         for approache in dataset_version.experimental_approaches:
             experimental_approaches_list += f"{approache.name}\n"
 
+    data_types_list = ""
+    if dataset_version.data_types is not None:
+        for data_type in dataset_version.data_types:
+            data_types_list += f"{data_type.name}\n"
+
     author_list = ""
     i = 1
     if dataset_version.authors is not None:
@@ -61,6 +66,9 @@ Experimental approaches detected:
 ------------------------------------------ 
 {experimental_approaches_list}
 
+Detected data types:
+------------------------------------------
+{data_types_list}
 
 The following elements were converted:  
 ------------------------------------------   
@@ -102,4 +110,4 @@ Behavioral protocols:
     if os.path.isdir(derivatives_path):
         report = report+"+ Dataset contains derivative, derivative data are ignored for now\n"
 
-    print(report)
+    return report

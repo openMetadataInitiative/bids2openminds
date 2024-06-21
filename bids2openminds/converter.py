@@ -61,8 +61,8 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
                         include_empty_properties=include_empty_properties)
 
     if not quiet:
-        report.create_report(dataset, dataset_version, collection,
-                             dataset_description, input_path, output_path)
+        print(report.create_report(dataset, dataset_version, collection,
+                                   dataset_description, input_path, output_path))
 
     else:
         print("Conversion was successful")
