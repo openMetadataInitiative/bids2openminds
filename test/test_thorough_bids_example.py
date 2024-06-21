@@ -3,6 +3,7 @@ import os
 from openminds import Collection
 import pytest
 from tempfile import mkdtemp
+import pathlib
 import shutil
 
 
@@ -18,16 +19,15 @@ def load_collections():
         test_standard_path = os.path.join("test", test_standard_name)
 
         test_dataset = os.path.join("bids-examples", dataset_label)
-        absol_path = os.path.abspath(test_dataset)
-        prefeix = f"file://{absol_path}/"
+        prefix = pathlib.Path(test_dataset).absolute().as_uri()+"/"
 
         with open(test_standard_path, "r") as file:
-            undeisred_data = file.read()
-            desired_data = undeisred_data.replace(
-                "PREFIX", prefeix)
+            template_data = file.read()
+            actual_data = template_data.replace(
+                "PREFIX", prefix)
 
         with open(tempdir+test_standard_name, "w") as file:
-            file.write(desired_data)
+            file.write(actual_data)
 
         reference_collection = Collection()
         reference_collection.load(tempdir+test_standard_name)
