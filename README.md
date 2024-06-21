@@ -32,5 +32,6 @@ Options:
 ## For developers
 
 To run tests:
-
+```
   $ pytest
+```
