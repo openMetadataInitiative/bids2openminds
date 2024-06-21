@@ -10,7 +10,7 @@ import openminds.latest.core as omcore
 import openminds.latest.controlled_terms as controlled_terms
 from openminds import IRI
 
-from .utility import table_filter, pd_table_value, file_hash, file_storage_size
+from .utility import table_filter, pd_table_value, file_hash, file_storage_size, detect_nifti_version
 from .mapping import bids2openminds_instance
 
 
@@ -72,6 +72,26 @@ def create_persons(dataset_description, collection):
     return openminds_list
 
 
+def create_behavioral_protocol(layout, collection):
+    behavioral_protocols_dict = {}
+    behavioral_protocols = []
+    tasks = layout.get_tasks()
+
+    if not tasks:
+        return None, None
+
+    for task in tasks:
+
+        behavioral_protocol = omcore.BehavioralProtocol(name=task,
+                                                        internal_identifier=task,
+                                                        description="To be defined")
+        behavioral_protocols.append(behavioral_protocol)
+        behavioral_protocols_dict[task] = behavioral_protocol
+        collection.add(behavioral_protocol)
+
+    return behavioral_protocols, behavioral_protocols_dict
+
+
 def create_techniques(layout_df):
     suffixs = layout_df["suffix"].unique().tolist()
     techniques = []
@@ -126,7 +146,7 @@ def create_openminds_age(data_subject):
         return None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, collection):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
 
     # Fetch the dataset type from dataset description file
 
@@ -179,6 +199,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
+        behavioral_protocols=behavioral_protocols
         # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
@@ -247,7 +268,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
             subject_state_dict[f"{subject}"] = state_cache_dict
             subject_cache = omcore.Subject(
                 lookup_label=f"{subject_name}",
-                internal_identifier=f"{subject_name}"
+                internal_identifier=f"{subject_name}",
+                studied_states=state_cache
             )
             subjects_dict[f"{subject}"] = subject_cache
             subjects_list.append(subject_cache)
@@ -312,11 +334,71 @@ def create_subjects(subject_id, layout_df, layout, collection):
     return subjects_dict, subject_state_dict, subjects_list
 
 
+def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_file_repository=False):
+
+    if is_file_repository:
+        openminds_file_bundle = omcore.FileRepository(format=omcore.ContentType.by_name("application/vnd.bids"),
+                                                      iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
+    else:
+        relative_path = os.path.relpath(path, BIDS_path)
+        name = str(relative_path).replace("\\", "/")
+        if name[0] == "_":
+            name = name[1:]
+        openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {relative_path}",
+                                                  name=name,
+                                                  is_part_of=parent_file_bundle)
+
+    files = {}
+    files_size = 0
+    all = os.listdir(path)
+
+    for item in all:
+
+        item_path = str(pathlib.PurePath(path, item))
+
+        if os.path.isfile(item_path) and os.path.basename(item_path) != "openminds.jsonld":
+
+            if is_file_repository:
+                files[item_path] = None
+            else:
+                files[item_path] = [openminds_file_bundle]
+
+            files_size += os.stat(item_path).st_size
+
+        if os.path.isdir(item_path) and os.path.basename(item_path) != "openminds":
+
+            child_files, child_filesizes, _ = create_file_bundle(
+                BIDS_path, item_path, collection, parent_file_bundle=openminds_file_bundle, is_file_repository=False)
+
+            for child_file_path in child_files.keys():
+                if child_file_path not in files:
+                    files[child_file_path] = []
+
+                files[child_file_path].extend(child_files[child_file_path])
+
+            files_size += child_filesizes
+
+    openminds_file_bundle.storage_size = omcore.QuantitativeValue(value=files_size,
+                                                                  unit=controlled_terms.UnitOfMeasurement.by_name(
+                                                                      "byte")
+                                                                  )
+    collection.add(openminds_file_bundle)
+
+    if is_file_repository:
+        openminds_file_repository = openminds_file_bundle
+    else:
+        openminds_file_repository = None
+
+    return files, files_size, openminds_file_repository
+
+
 def create_file(layout_df, BIDS_path, collection):
 
-    file_repository = omcore.FileRepository(
-        iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
-    collection.add(file_repository)
+    BIDS_path_absolute = pathlib.Path(BIDS_path).absolute()
+
+    file2file_bundle_dic, _, file_repository = create_file_bundle(
+        BIDS_path_absolute, BIDS_path_absolute, collection, is_file_repository=True)
+
     files_list = []
     for index, file in layout_df.iterrows():
         file_format = None
@@ -327,7 +409,7 @@ def create_file(layout_df, BIDS_path, collection):
         iri = IRI(pathlib.Path(path).absolute().as_uri())
         name = os.path.basename(path)
         hashes = file_hash(path)
-        storage_size = file_storage_size(path)
+        storage_size_obj, file_size = file_storage_size(path)
         if pd.isna(file["subject"]):
             if file["suffix"] == "participants":
                 if extension == ".json":
@@ -350,7 +432,7 @@ def create_file(layout_df, BIDS_path, collection):
             elif extension in [".nii", ".nii.gz"]:
                 content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
                 data_types = controlled_terms.DataType.by_name("voxel data")
-                # file_format=omcore.ContentType.by_name("nifti")
+                file_format = detect_nifti_version(path, extension, file_size)
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
                     content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
@@ -358,6 +440,7 @@ def create_file(layout_df, BIDS_path, collection):
                         "event sequence")
                     file_format = omcore.ContentType.by_name(
                         "text/tab-separated-values")
+
         file = omcore.File(
             iri=iri,
             content_description=content_description,
@@ -365,10 +448,11 @@ def create_file(layout_df, BIDS_path, collection):
             file_repository=file_repository,
             format=file_format,
             hashes=hashes,
-            # is_part_of=file_bundels
+            is_part_of=file2file_bundle_dic[str(
+                pathlib.Path(path))],
             name=name,
             # special_usage_role
-            storage_size=storage_size,
+            storage_size=storage_size_obj,
         )
         collection.add(file)
         files_list.append(file)

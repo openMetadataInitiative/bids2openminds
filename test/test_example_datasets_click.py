@@ -1,9 +1,10 @@
 import os
+import shutil
 from openminds import Collection
 from bids2openminds.converter import convert_click
 from click.testing import CliRunner
 
-(test_data_set, number_of_openminds_files) = ("ds003", 100)
+(test_data_set, number_of_openminds_files) = ("ds003", 141)
 
 
 def test_example_datasets_click():
@@ -17,10 +18,12 @@ def test_example_datasets_click():
 
 def test_example_datasets_click_seperate_files():
     test_dir = os.path.join("bids-examples", test_data_set)
+    path_openminds = os.path.join(test_dir, "openminds")
+    if os.path.isdir(path_openminds):
+        shutil.rmtree(path_openminds)
     runner = CliRunner()
     result = runner.invoke(convert_click, ["--multiple-files", test_dir])
     assert result.exit_code == 0
-    path_openminds = os.path.join(test_dir, "openminds")
     numer_of_files = len(os.listdir(path_openminds))
     assert numer_of_files == number_of_openminds_files
 
