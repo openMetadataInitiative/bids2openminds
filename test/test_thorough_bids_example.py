@@ -14,10 +14,13 @@ def load_collections():
         test_standard_path = os.path.join("test", test_standard_name)
 
         test_dataset = os.path.join("bids-examples", dataset_label)
+        absol_path = os.path.abspath(test_dataset)
+        prefeix = f"file://{absol_path}/"
 
         with open(test_standard_path, "r+") as file:
             undeisred_data = file.read()
-            desired_data = undeisred_data.replace("PREFIX", test_dataset)
+            desired_data = undeisred_data.replace(
+                "PREFIX", prefeix)
             file.seek(0)
             file.write(desired_data)
 
