@@ -1,19 +1,25 @@
-from warnings import warn
+import warnings
 from bids import BIDSLayout, BIDSValidator
 from openminds import Collection
 import os
 import click
 from . import main
 from . import utility
+from . import report
 
 
-def convert(input_path, save_output=False, output_path=None, multiple_files=False, include_empty_properties=False):
+def convert(input_path,  save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False):
     if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {input_path} which is not a directory."
         )
+    # TODO use BIDSValidator to check if input directory is a valid BIDS directory
     # if not(BIDSValidator().is_bids(input_path)):
     #  raise NotADirectoryError(f"The input directory is not valid, you have specified {input_path} which is not a BIDS directory.")
+
+    if quiet:
+        warnings.filterwarnings('ignore')
+
     collection = Collection()
     bids_layout = BIDSLayout(input_path)
 
@@ -53,12 +59,15 @@ def convert(input_path, save_output=False, output_path=None, multiple_files=Fals
 
         collection.save(output_path, individual_files=multiple_files,
                         include_empty_properties=include_empty_properties)
-        print(
-            f"Conversion was successful, the openMINDS file is in {output_path}")
-        return collection
+
+    if not quiet:
+        print(report.create_report(dataset, dataset_version, collection,
+                                   dataset_description, input_path, output_path))
+
     else:
         print("Conversion was successful")
-        return collection
+
+    return collection
 
 
 @click.command()
@@ -67,9 +76,10 @@ def convert(input_path, save_output=False, output_path=None, multiple_files=Fals
 @click.option("--single-file", "multiple_files", flag_value=False, default=False, help="Save the entire collection into a single file (default).")
 @click.option("--multiple-files", "multiple_files", flag_value=True, help="Each node is saved into a separate file within the specified directory. 'output-path' if specified, must be a directory.")
 @click.option("-e", "--include-empty-properties", is_flag=True, default=False, help="Whether to include empty properties in the final file.")
-def convert_click(input_path, output_path, multiple_files, include_empty_properties):
+@click.option("-q", "--quiet", is_flag=True, default=False, help="Not generate the final report and no warning.")
+def convert_click(input_path, output_path, multiple_files, include_empty_properties, quiet):
     convert(input_path, save_output=True, output_path=output_path,
-            multiple_files=multiple_files, include_empty_properties=include_empty_properties)
+            multiple_files=multiple_files, include_empty_properties=include_empty_properties, quiet=quiet)
 
 
 if __name__ == "__main__":

@@ -11,13 +11,13 @@ import openminds.latest.controlled_terms as controlled_terms
 from openminds import IRI
 
 from .utility import table_filter, pd_table_value, file_hash, file_storage_size, detect_nifti_version
-from .mapping import bids2openminds_instance
+from . import mapping
 
 
 def create_openminds_person(full_name):
     # Regex for detecting any unwanted characters.
     name_regex = re.compile(
-        "^[\w'\-, .][^0-9_!¡?÷?¿/\\+=@#$%^&*(){}|~<>;:[\]]{1,}$")
+        r"^[\w'\-, .][^0-9_!¡?÷?¿/\\+=@#$%^&*(){}|~<>;:[\]]{1,}$")
     alternate_names = []
     person = HumanName(full_name)
     given_name = person.first
@@ -25,7 +25,8 @@ def create_openminds_person(full_name):
 
     # Handle the situation in which there is no given name or the given name consists of unwanted characters.
     if not (given_name and name_regex.match(given_name)):
-        return None
+        if not (len(family_name) > 0 and len(given_name) == 1):
+            return None
 
     # Handle the situation in which the family name consists of unwanted characters.
     if not (name_regex.match(family_name)):
@@ -66,8 +67,9 @@ def create_persons(dataset_description, collection):
     openminds_list = []
     for person in person_list:
         openminds_person = create_openminds_person(person)
-        openminds_list.append(openminds_person)
-        collection.add(openminds_person)
+        if openminds_person is not None:
+            openminds_list.append(openminds_person)
+            collection.add(openminds_person)
 
     return openminds_list
 
@@ -92,32 +94,68 @@ def create_behavioral_protocol(layout, collection):
     return behavioral_protocols, behavioral_protocols_dict
 
 
+def techniques_openminds(suffix):
+    possible_types = ["Technique", "AnalysisTechnique", "StimulationApproach",
+                      "StimulationTechnique"]
+
+    if suffix in mapping.MAP_2_TECHNIQUES:
+        items_openminds = mapping.MAP_2_TECHNIQUES[suffix]
+    else:
+        return []
+
+    if items_openminds is None:
+        return []
+
+    openminds_techniques_list = []
+    for item_openminds in items_openminds:
+        for possible_type in possible_types:
+            openminds_type = getattr(controlled_terms, possible_type)
+            openminds_obj = None
+            try:
+                openminds_obj = openminds_type.by_name(item_openminds)
+                break
+            except KeyError:
+                pass
+        if openminds_obj:
+            openminds_techniques_list.append(openminds_obj)
+    return openminds_techniques_list
+
+
 def create_techniques(layout_df):
     suffixs = layout_df["suffix"].unique().tolist()
     techniques = []
     not_techniques_index = ["description", "participants", "events"]
     for suffix in suffixs:
         # excluding the None and non thechnique indexes
-        if not (pd.isna(suffix) or (suffix in not_techniques_index)):
-            openminds_techniques_cache = bids2openminds_instance(
-                suffix, "MAP_2_TECHNIQUES")
-            # Excluding the suffixs that are not in the library or flagged as non technique suffixes
-            if not pd.isna(openminds_techniques_cache):
-                techniques.extend(openminds_techniques_cache)
-            else:
-                warn(
-                    f"The {suffix} suffix is currently considered an auxiliary file for already existing techniques or a non technique file.")
+        if not (pd.isnull(suffix) or (suffix in not_techniques_index)):
+            openminds_techniques_cache = techniques_openminds(suffix)
+            techniques.extend(openminds_techniques_cache)
 
-    return techniques or None
+    techniques_set = set(techniques)
+    techniques_list = list(techniques_set)
+    return techniques_list or None
+
+
+def approaches_openminds(datatype):
+
+    if datatype in mapping.MAP_2_EXPERIMENTAL_APPROACHES:
+        items_openminds = mapping.MAP_2_EXPERIMENTAL_APPROACHES[datatype]
+
+    approches_list = []
+
+    for item in items_openminds:
+        approches_list.append(
+            controlled_terms.ExperimentalApproach.by_name(item))
+
+    return approches_list
 
 
 def create_approaches(layout_df):
     datatypes = layout_df["datatype"].unique().tolist()
     approaches = set([])
     for datatype in datatypes:
-        if not (pd.isna(datatype)):
-            approaches.update(bids2openminds_instance(
-                datatype, "MAP_2_EXPERIMENTAL_APPROACHES"))
+        if not (pd.isnull(datatype)):
+            approaches.update(approaches_openminds(datatype))
 
     return list(approaches) or None
 
@@ -172,6 +210,11 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     else:
         how_to_cite = None
 
+    if ("DatasetType" in dataset_description) and (dataset_description == "derivative"):
+        dataset_type = controlled_terms.SemanticDataType.derived_data
+    else:
+        dataset_type = controlled_terms.SemanticDataType.raw_data
+
     # TODO funding
     # if "Funding" in dataset_description:
     #   funding=funding_openMINDS(dataset_description["Funding"])
@@ -194,12 +237,14 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         digital_identifier=digital_identifier,
         experimental_approaches=experimental_approaches,
         short_name=dataset_description["Name"],
+        full_name=dataset_description["Name"],
         studied_specimens=studied_specimens,
         authors=authors,
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        behavioral_protocols=behavioral_protocols
+        behavioral_protocols=behavioral_protocols,
+        data_types=dataset_type
         # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
@@ -211,20 +256,63 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
 
 def create_dataset(dataset_description, dataset_version, collection):
 
-    if "DatasetDOI" in dataset_description:
-        digital_identifier = omcore.DOI(
-            identifier=dataset_description["DatasetDOI"])
-    else:
-        digital_identifier = None
-
     dataset = omcore.Dataset(
-        digital_identifier=digital_identifier, full_name=dataset_description[
-            "Name"], has_versions=dataset_version
+        digital_identifier=dataset_version.digital_identifier,
+        authors=dataset_version.authors,
+        full_name=dataset_version.full_name,
+        short_name=dataset_version.short_name,
+        has_versions=dataset_version
     )
 
     collection.add(dataset)
 
     return dataset
+
+
+def spices_openminds(data_subject: pd.DataFrame):
+    bids_species = pd_table_value(data_subject, "species")
+    if bids_species is None:
+        # In BIDS the default species is homo sapiens.
+        return controlled_terms.Species.homo_sapiens
+    if bids_species in mapping.MAP_2_SPECIES:
+        openminds_species = mapping.MAP_2_SPECIES[bids_species]
+        return controlled_terms.Species.by_name(openminds_species[0])
+    else:
+        try:
+            openminds_species = controlled_terms.Species.by_name(bids_species)
+            warn(
+                f"You have specified {bids_species} as species, we have autodetected {openminds_species.name}, please verify it.")
+            return openminds_species
+        except KeyError:
+            warn(
+                f"You have specified {bids_species} we currently don't support this species.")
+        return None
+
+
+def handedness_openminds(data_subject: pd.DataFrame):
+    bids_handedness = pd_table_value(data_subject, "handedness")
+    if bids_handedness is None:
+        return None
+    if bids_handedness in mapping.MAP_2_HANDEDNESS:
+        openminds_handedness = mapping.MAP_2_HANDEDNESS[bids_handedness]
+        return controlled_terms.Handedness.by_name(openminds_handedness[0])
+    else:
+        warn(
+            f"You have specified {bids_handedness} which is not a allowed value for handedness defined by BIDS standard.")
+        return None
+
+
+def sex_openminds(data_subject: pd.DataFrame):
+    bids_sex = pd_table_value(data_subject, "sex")
+    if bids_sex is None:
+        return None
+    if bids_sex in mapping.MAP_2_BIOLOGICALSEX:
+        bids_sex = mapping.MAP_2_BIOLOGICALSEX[bids_sex]
+        return controlled_terms.BiologicalSex.by_name(bids_sex[0])
+    else:
+        warn(
+            f"You have specified {bids_sex} which is not a allowed value for handedness defined by BIDS standard.")
+        return None
 
 
 def create_subjects(subject_id, layout_df, layout, collection):
@@ -280,8 +368,6 @@ def create_subjects(subject_id, layout_df, layout, collection):
     # Select the tsv file of the table
     participants_path_tsv = pd_table_value(table_filter(
         participants_paths, ".tsv", "extension"), "path")
-    participants_path_json = pd_table_value(table_filter(
-        participants_paths, ".json", "extension"), "path")
 
     participants_table = pd.read_csv(participants_path_tsv, sep="\t", header=0)
     for subject in subject_id:
@@ -293,8 +379,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
         if not sessions:
             state = omcore.SubjectState(
                 age=create_openminds_age(data_subject),
-                handedness=bids2openminds_instance(pd_table_value(
-                    data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
+                handedness=handedness_openminds(data_subject),
                 internal_identifier=f"Studied state {subject_name}".strip(),
                 lookup_label=f"Studied state {subject_name}".strip()
             )
@@ -306,8 +391,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
                 if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                     state = omcore.SubjectState(
                         age=create_openminds_age(data_subject),
-                        handedness=bids2openminds_instance(pd_table_value(
-                            data_subject, "handedness"), "MAP_2_HANDEDNESS", is_list=False),
+                        handedness=handedness_openminds(data_subject),
                         internal_identifier=f"Studied state {subject_name} {session}".strip(
                         ),
                         lookup_label=f"Studied state {subject_name} {session}".strip(
@@ -318,13 +402,11 @@ def create_subjects(subject_id, layout_df, layout, collection):
                     state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
         subject_cache = omcore.Subject(
-            biological_sex=bids2openminds_instance(pd_table_value(
-                data_subject, "sex"), "MAP_2_SEX", is_list=False),
+            biological_sex=sex_openminds(data_subject),
             lookup_label=f"{subject_name}",
             internal_identifier=f"{subject_name}",
             # TODO species should default to homo sapiens
-            species=bids2openminds_instance(pd_table_value(
-                data_subject, "species"), "MAP_2_SPECIES", is_list=False),
+            species=spices_openminds(data_subject),
             studied_states=state_cache
         )
         subjects_dict[f"{subject}"] = subject_cache
