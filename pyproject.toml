@@ -1,9 +1,9 @@
 [project]
 name = "bids2openminds"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
   "bids",
-  "openminds >= 0.2.2",
+  "openminds >= 0.2.3",
   "click>=8.1",
   "pandas",
   "nameparser >= 1.1.3"
@@ -12,6 +12,7 @@ requires-python = ">=3.9"
 authors = [
   {name = "Peyman Najafi", email = "peyman.najafi@cnrs.fr"},
   {name = "Andrew P. Davison", email = "andrew.davison@cnrs.fr"},
+  {name = "Lyuba Zyhl", email = "lyuba.zehl@ebrains.eu"}
 ]
 description = "Generates openMINDS metadata from a BIDS dataset"
 readme = "README.md"
