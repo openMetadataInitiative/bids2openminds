@@ -33,8 +33,8 @@ MAP_2_EXPERIMENTAL_APPROACHES = {
 MAP_2_TECHNIQUES = {
     "angio": ["angiography"],
     "M0map": ["equilibrium magnetization mapping"],
-    "FLASH": ["fast-low-angle-shot pulse sequence"], #TODO instance TBD
-    "FLAIR": ["fluid attenuated inversion recovery pulse sequence"], #TODO instance TBD
+    "FLASH": ["fast-low-angle-shot pulse sequence"],
+    "FLAIR": ["fluid attenuated inversion recovery pulse sequence"],
     "UNIT1": None, #TODO instance TBD
     "inplaneT1": [
         "T1 pulse sequence", 
