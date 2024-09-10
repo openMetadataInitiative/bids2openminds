@@ -12,7 +12,7 @@ A tool to generate `openMINDS metadata <https://openminds-documentation.readthed
    This project is under active development, please try the first alpha release and send us feedback by creating an issue.
 
 
-We are curentlly suporting linux, windows and mac os.
+We are curentlly supporting linux, windows and mac os.
 
 .. toctree::
    installation

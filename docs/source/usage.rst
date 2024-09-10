@@ -34,7 +34,7 @@ Example Usage
 >>> input_path = "/path/to/BIDS/dataset"
 >>> collection = converter.convert(input_path, save_output=True, output_path="/path/to/output", multiple_files=False, include_empty_properties=False, quiet=False)
 
-Or one can chose the deafult parmetrs as following:
+Or one can chose the default parmetrs as following:
 
 >>> import bids2openminds.converter as converter
 >>> collection = converter.convert("/path/to/BIDS/dataset")
