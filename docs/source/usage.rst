@@ -46,13 +46,13 @@ This function is also accessible via a command-line interface using the `click` 
 
 .. code-block:: console
 
-    Usage: script.py [OPTIONS] INPUT_PATH
+    Usage: bids2openminds [OPTIONS] INPUT_PATH
 
     Arguments:
         input-path   Path to the BIDS directory.
 
     Options:
-        -o, --output-path TEXT      The output path or filename for OpenMINDS file/files.
+        -o, --output-path PATH      The output path or filename for OpenMINDS file/files.
         --single-file               Save the entire collection into a single file (default).
         --multiple-files            Save each node into a separate file within the specified directory.
         -e, --include-empty-properties
