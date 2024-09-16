@@ -2,7 +2,7 @@
 name = "bids2openminds"
 version = "0.1.0"
 dependencies = [
-  "bids-validator"== 1.14.6
+  "bids-validator" == 1.14.6,
   "bids",
   "openminds >= 0.2.3",
   "click>=8.1",
