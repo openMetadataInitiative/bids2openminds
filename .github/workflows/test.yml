@@ -24,6 +24,8 @@ jobs:
       with:
         repository: bids-standard/bids-examples
         path: bids-examples
+      #Ties down to the current version of bids-examples as of 2024-09-16. If updated, please update the tests accordingly.
+        ref: 7c18d6840982518a0251cfeb59fe5c4610099ea1
 
     - name: Set up Python 3.11
       uses: actions/setup-python@v5

@@ -11,7 +11,7 @@ example_dataset = [("ds003", 13, 13, 2, 58, 39, 1),
                    ("eeg_cbm", 20, 20, 2, 104, 40, 1),
                    ("asl001", 1, 1, 2, 8, 3, 0),
                    # Number of files in 'eeg_rest_fmri' is not correct as it doesn't contain files in derivated (issue raied #42)
-                   ("eeg_rest_fmri", 3, 3, 6, 46, 22, 1)]
+                   ("eeg_rest_fmri", 3, 3, 6, 45, 22, 1)]
 
 
 @pytest.mark.parametrize("dataset_label, dataset_subject_number, dataset_subject_state_number, dataset_person_number, dataset_files_number, dataset_file_bundles_number, dataset_behavioral_protocol_number", example_dataset)
