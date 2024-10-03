@@ -40,3 +40,6 @@ test = [
 
 [tool.black]
 line-length = 119
+
+[tool.setuptools]
+py-modules = []
