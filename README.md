@@ -1,8 +1,8 @@
-<a href="/img/light_openMINDS-bids2openminds-logo.png">
+<a href="/logo/light_openMINDS-bids2openminds-logo.png">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="/img/dark_openMINDS-bids2openminds-logo.png">
-    <source media="(prefers-color-scheme: light)" srcset="/img/light_openMINDS-bids2openminds-logo.png">
-    <img alt="bids2openminds logo: created by S Pieschnik, U. Schlegel, L. Zehl, P. Najafi, A. Davison and C. Hagen Blixhavn" src="/img/light_openMINDS-bids2openminds-logo.png" title="openMINDS instances" align="right" height="70">
+    <source media="(prefers-color-scheme: dark)" srcset="/logo/dark_openMINDS-bids2openminds-logo.png">
+    <source media="(prefers-color-scheme: light)" srcset="/logo/light_openMINDS-bids2openminds-logo.png">
+    <img alt="bids2openminds logo: created by S Pieschnik, U. Schlegel, L. Zehl, P. Najafi, A. Davison and C. Hagen Blixhavn" src="/logo/light_openMINDS-bids2openminds-logo.png" title="openMINDS instances" align="right" height="70">
   </picture>
 </a>
 
