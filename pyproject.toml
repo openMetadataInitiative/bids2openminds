@@ -42,4 +42,4 @@ test = [
 line-length = 119
 
 [tool.setuptools]
-py-modules = []
+packages = ["bids2openminds"]
