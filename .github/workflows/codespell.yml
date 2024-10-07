@@ -20,3 +20,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Codespell
         uses: codespell-project/actions-codespell@v2
+        with:
+          skip: light_openMINDS-bids2openminds-logo.svg, dark_openMINDS-bids2openminds-logo.svg
