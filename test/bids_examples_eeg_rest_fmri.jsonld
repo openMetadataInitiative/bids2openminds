@@ -1,21 +1,21 @@
 {
   "@context": {
-    "@vocab": "https://openminds.ebrains.eu/vocab/"
+    "@vocab": "https://openminds.om-i.org/props/"
   },
   "@graph": [
     {
       "@id": "_:000000",
-      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "@type": "https://openminds.om-i.org/types/SubjectState",
       "internalIdentifier": "Studied state sub-32",
       "lookupLabel": "Studied state sub-32"
     },
     {
       "@id": "_:000001",
-      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "@type": "https://openminds.om-i.org/types/Subject",
       "internalIdentifier": "sub-32",
       "lookupLabel": "sub-32",
       "species": {
-        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+        "@id": "https://openminds.om-i.org/instances/species/homoSapiens"
       },
       "studiedState": [
         {
@@ -24,32 +24,18 @@
       ]
     },
     {
-      "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/Species",
-      "definition": "The species *Homo sapiens* (humans) belongs to the family of *hominidae* (great apes).",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0105114",
-      "knowledgeSpaceLink": "https://knowledge-space.org/wiki/NCBITaxon:9606#human",
-      "name": "Homo sapiens",
-      "preferredOntologyIdentifier": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
-      "synonym": [
-        "homo sapien",
-        "human",
-        "man"
-      ]
-    },
-    {
       "@id": "_:000003",
-      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "@type": "https://openminds.om-i.org/types/SubjectState",
       "internalIdentifier": "Studied state sub-35",
       "lookupLabel": "Studied state sub-35"
     },
     {
       "@id": "_:000004",
-      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "@type": "https://openminds.om-i.org/types/Subject",
       "internalIdentifier": "sub-35",
       "lookupLabel": "sub-35",
       "species": {
-        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+        "@id": "https://openminds.om-i.org/instances/species/homoSapiens"
       },
       "studiedState": [
         {
@@ -59,17 +45,17 @@
     },
     {
       "@id": "_:000005",
-      "@type": "https://openminds.ebrains.eu/core/SubjectState",
+      "@type": "https://openminds.om-i.org/types/SubjectState",
       "internalIdentifier": "Studied state sub-36",
       "lookupLabel": "Studied state sub-36"
     },
     {
       "@id": "_:000006",
-      "@type": "https://openminds.ebrains.eu/core/Subject",
+      "@type": "https://openminds.om-i.org/types/Subject",
       "internalIdentifier": "sub-36",
       "lookupLabel": "sub-36",
       "species": {
-        "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
+        "@id": "https://openminds.om-i.org/instances/species/homoSapiens"
       },
       "studiedState": [
         {
@@ -79,554 +65,518 @@
     },
     {
       "@id": "_:000007",
-      "@type": "https://openminds.ebrains.eu/core/BehavioralProtocol",
+      "@type": "https://openminds.om-i.org/types/BehavioralProtocol",
       "description": "To be defined",
       "internalIdentifier": "rest",
       "name": "rest"
     },
     {
       "@id": "_:000008",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-36/anat",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-32/eeg",
       "isPartOf": {
         "@id": "_:000009"
       },
-      "name": "sub-36/anat",
+      "name": "sub-32/eeg",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 24067
       }
     },
     {
       "@id": "_:000009",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-36",
-      "isPartOf": {
-        "@id": "_:000010"
-      },
-      "name": "sub-36",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 26126
-      }
-    },
-    {
-      "@id": "_:000010",
-      "@type": "https://openminds.ebrains.eu/core/FileRepository",
-      "IRI": "file:///home/peyman-user/Desktop/data/bids_test/bids-examples/eeg_rest_fmri",
-      "format": {
-        "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids"
-      },
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 1209081
-      }
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids",
-      "@type": "https://openminds.ebrains.eu/core/ContentType",
-      "name": "application/vnd.bids",
-      "synonym": [
-        "BIDS"
-      ]
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/UnitOfMeasurement",
-      "name": "byte"
-    },
-    {
-      "@id": "_:000013",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-36/dwi",
-      "isPartOf": {
-        "@id": "_:000009"
-      },
-      "name": "sub-36/dwi",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 3354
-      }
-    },
-    {
-      "@id": "_:000014",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-36/func",
-      "isPartOf": {
-        "@id": "_:000009"
-      },
-      "name": "sub-36/func",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000015",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-36/eeg",
-      "isPartOf": {
-        "@id": "_:000009"
-      },
-      "name": "sub-36/eeg",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 22772
-      }
-    },
-    {
-      "@id": "_:000016",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-32/anat",
-      "isPartOf": {
-        "@id": "_:000017"
-      },
-      "name": "sub-32/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000017",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
       "contentDescription": "File bundle created for sub-32",
       "isPartOf": {
         "@id": "_:000010"
       },
       "name": "sub-32",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 27421
       }
     },
     {
-      "@id": "_:000018",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-32/dwi",
-      "isPartOf": {
-        "@id": "_:000017"
+      "@id": "_:000010",
+      "@type": "https://openminds.om-i.org/types/FileRepository",
+      "IRI": "PREFIX",
+      "format": {
+        "@id": "https://openminds.om-i.org/instances/contentTypes/application_vnd.bids"
       },
-      "name": "sub-32/dwi",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
-        "value": 3354
+        "value": 1208812
       }
     },
     {
-      "@id": "_:000019",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "@id": "_:000013",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
       "contentDescription": "File bundle created for sub-32/func",
       "isPartOf": {
-        "@id": "_:000017"
+        "@id": "_:000009"
       },
       "name": "sub-32/func",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         }
       }
     },
     {
-      "@id": "_:000020",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-32/eeg",
+      "@id": "_:000014",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-32/dwi",
       "isPartOf": {
-        "@id": "_:000017"
+        "@id": "_:000009"
       },
-      "name": "sub-32/eeg",
+      "name": "sub-32/dwi",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 24067
-      }
-    },
-    {
-      "@id": "_:000021",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-35/anat",
-      "isPartOf": {
-        "@id": "_:000022"
-      },
-      "name": "sub-35/anat",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000022",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-35",
-      "isPartOf": {
-        "@id": "_:000010"
-      },
-      "name": "sub-35",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 27286
-      }
-    },
-    {
-      "@id": "_:000023",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-35/dwi",
-      "isPartOf": {
-        "@id": "_:000022"
-      },
-      "name": "sub-35/dwi",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 3354
       }
     },
     {
-      "@id": "_:000024",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-35/func",
+      "@id": "_:000015",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-32/anat",
       "isPartOf": {
-        "@id": "_:000022"
+        "@id": "_:000009"
       },
-      "name": "sub-35/func",
+      "name": "sub-32/anat",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         }
       }
     },
     {
-      "@id": "_:000025",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for sub-35/eeg",
+      "@id": "_:000016",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for derivatives/sub-32/eeg",
       "isPartOf": {
-        "@id": "_:000022"
+        "@id": "_:000017"
       },
-      "name": "sub-35/eeg",
+      "name": "derivatives/sub-32/eeg",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
-        "value": 23932
+        "value": 371026
       }
     },
     {
-      "@id": "_:000026",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for derivatives/sub-36/eeg",
+      "@id": "_:000017",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for derivatives/sub-32",
       "isPartOf": {
-        "@id": "_:000027"
+        "@id": "_:000018"
       },
-      "name": "derivatives/sub-36/eeg",
+      "name": "derivatives/sub-32",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
-        "value": 377833
+        "value": 371026
       }
     },
     {
-      "@id": "_:000027",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for derivatives/sub-36",
-      "isPartOf": {
-        "@id": "_:000028"
-      },
-      "name": "derivatives/sub-36",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 377833
-      }
-    },
-    {
-      "@id": "_:000028",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
+      "@id": "_:000018",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
       "contentDescription": "File bundle created for derivatives",
       "isPartOf": {
         "@id": "_:000010"
       },
       "name": "derivatives",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 1124703
       }
     },
     {
-      "@id": "_:000029",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for derivatives/sub-32/eeg",
+      "@id": "_:000019",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for derivatives/sub-35/eeg",
       "isPartOf": {
-        "@id": "_:000030"
+        "@id": "_:000020"
       },
-      "name": "derivatives/sub-32/eeg",
+      "name": "derivatives/sub-35/eeg",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
-        "value": 371026
+        "value": 375844
+      }
+    },
+    {
+      "@id": "_:000020",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for derivatives/sub-35",
+      "isPartOf": {
+        "@id": "_:000018"
+      },
+      "name": "derivatives/sub-35",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 375844
+      }
+    },
+    {
+      "@id": "_:000021",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for derivatives/sub-36/eeg",
+      "isPartOf": {
+        "@id": "_:000022"
+      },
+      "name": "derivatives/sub-36/eeg",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 377833
+      }
+    },
+    {
+      "@id": "_:000022",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for derivatives/sub-36",
+      "isPartOf": {
+        "@id": "_:000018"
+      },
+      "name": "derivatives/sub-36",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 377833
+      }
+    },
+    {
+      "@id": "_:000023",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-35/eeg",
+      "isPartOf": {
+        "@id": "_:000024"
+      },
+      "name": "sub-35/eeg",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 23932
+      }
+    },
+    {
+      "@id": "_:000024",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-35",
+      "isPartOf": {
+        "@id": "_:000010"
+      },
+      "name": "sub-35",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 27286
+      }
+    },
+    {
+      "@id": "_:000025",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-35/func",
+      "isPartOf": {
+        "@id": "_:000024"
+      },
+      "name": "sub-35/func",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000026",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-35/dwi",
+      "isPartOf": {
+        "@id": "_:000024"
+      },
+      "name": "sub-35/dwi",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 3354
+      }
+    },
+    {
+      "@id": "_:000027",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-35/anat",
+      "isPartOf": {
+        "@id": "_:000024"
+      },
+      "name": "sub-35/anat",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000028",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-36/eeg",
+      "isPartOf": {
+        "@id": "_:000029"
+      },
+      "name": "sub-36/eeg",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 22772
+      }
+    },
+    {
+      "@id": "_:000029",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-36",
+      "isPartOf": {
+        "@id": "_:000010"
+      },
+      "name": "sub-36",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 26126
       }
     },
     {
       "@id": "_:000030",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for derivatives/sub-32",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-36/func",
       "isPartOf": {
-        "@id": "_:000028"
+        "@id": "_:000029"
       },
-      "name": "derivatives/sub-32",
+      "name": "sub-36/func",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 371026
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
       }
     },
     {
       "@id": "_:000031",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for derivatives/sub-35/eeg",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-36/dwi",
       "isPartOf": {
-        "@id": "_:000032"
+        "@id": "_:000029"
       },
-      "name": "derivatives/sub-35/eeg",
+      "name": "sub-36/dwi",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
-        "value": 375844
+        "value": 3354
       }
     },
     {
       "@id": "_:000032",
-      "@type": "https://openminds.ebrains.eu/core/FileBundle",
-      "contentDescription": "File bundle created for derivatives/sub-35",
+      "@type": "https://openminds.om-i.org/types/FileBundle",
+      "contentDescription": "File bundle created for sub-36/anat",
       "isPartOf": {
-        "@id": "_:000028"
+        "@id": "_:000029"
       },
-      "name": "derivatives/sub-35",
+      "name": "sub-36/anat",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 375844
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
       }
     },
     {
       "@id": "_:000033",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXacq-NODDI10DIR_dwi.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "593d08dc55d628832edf906948d06638"
         }
       ],
       "name": "acq-NODDI10DIR_dwi.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 271
       }
     },
     {
       "@id": "_:000034",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXacq-NODDI33DIR_dwi.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "d5bfe26e13e1c579ddc7436e34696202"
         }
       ],
       "name": "acq-NODDI33DIR_dwi.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 269
       }
     },
     {
       "@id": "_:000035",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXacq-NODDI66DIR_dwi.json",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d5bfe26e13e1c579ddc7436e34696202"
-        }
-      ],
-      "name": "acq-NODDI66DIR_dwi.json",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 269
-      }
-    },
-    {
-      "@id": "_:000036",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXacq-y224_T1w.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "20487c084ce56d29d32d73b8456ab7f1"
         }
       ],
       "name": "acq-y224_T1w.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 291
       }
     },
     {
-      "@id": "_:000037",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000036",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXacq-y232_T1w.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "0ca1dcc9bf05b7744befb1458d82517a"
         }
       ],
       "name": "acq-y232_T1w.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 292
       }
     },
     {
-      "@id": "_:000038",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000037",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXdataset_description.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "af4cfd0dc3fc6290b26910d2515b2907"
         }
       ],
       "name": "dataset_description.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 797
       }
     },
     {
-      "@id": "_:000039",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000038",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXparticipants.tsv",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "3e95fd1a03d52c3b4a28c3a31dc97ec2"
         }
       ],
       "name": "participants.tsv",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 36
       }
     },
     {
-      "@id": "_:000040",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000039",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXsub-32/anat/sub-32_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 32",
       "dataType": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
         }
       ],
       "fileRepository": {
@@ -634,38 +584,32 @@
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "d41d8cd98f00b204e9800998ecf8427e"
         }
       ],
       "isPartOf": [
         {
-          "@id": "_:000016"
+          "@id": "_:000015"
         }
       ],
       "name": "sub-32_acq-y224_T1w.nii.gz",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         }
       }
     },
     {
-      "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/DataType",
-      "definition": "'Voxel data' is a matrix defining values (scalars, lists, or matrices) on a grid in a three dimensional space, which can be rendered to raster graphic.",
-      "name": "voxel data"
-    },
-    {
-      "@id": "_:000042",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000041",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXsub-32/anat/sub-32_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 32",
       "dataType": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
         }
       ],
       "fileRepository": {
@@ -673,88 +617,88 @@
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "d41d8cd98f00b204e9800998ecf8427e"
         }
       ],
       "isPartOf": [
         {
-          "@id": "_:000016"
+          "@id": "_:000015"
         }
       ],
       "name": "sub-32_acq-y232_T1w.nii.gz",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         }
       }
     },
     {
-      "@id": "_:000043",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000042",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "7a53a28c159b4040a4926be4f4b958dd"
         }
       ],
       "isPartOf": [
         {
-          "@id": "_:000018"
+          "@id": "_:000014"
         }
       ],
       "name": "sub-32_acq-NODDI10DIR_dwi.bval",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 312
       }
     },
     {
-      "@id": "_:000044",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000043",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "0500182c4be4a6bc7a07cc103bc5b490"
         }
       ],
       "isPartOf": [
         {
-          "@id": "_:000018"
+          "@id": "_:000014"
         }
       ],
       "name": "sub-32_acq-NODDI10DIR_dwi.bvec",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 1955
       }
     },
     {
-      "@id": "_:000045",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000044",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 32",
       "dataType": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
         }
       ],
       "fileRepository": {
@@ -762,932 +706,7 @@
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000018"
-        }
-      ],
-      "name": "sub-32_acq-NODDI10DIR_dwi.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000046",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bval",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "eb27b25c7ec1760573fed3022bd52883"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000018"
-        }
-      ],
-      "name": "sub-32_acq-NODDI33DIR_dwi.bval",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 126
-      }
-    },
-    {
-      "@id": "_:000047",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bvec",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "cd9829e1c06bb69a07b39cf07bf3784a"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000018"
-        }
-      ],
-      "name": "sub-32_acq-NODDI33DIR_dwi.bvec",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 961
-      }
-    },
-    {
-      "@id": "_:000048",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.nii.gz",
-      "contentDescription": "Data file for dwi of subject 32",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000018"
-        }
-      ],
-      "name": "sub-32_acq-NODDI33DIR_dwi.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000049",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.eeg",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000020"
-        }
-      ],
-      "name": "sub-32_task-rest_eeg.eeg",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000050",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vhdr",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "18e2fc3e80737f814eff9ea4102a9b56"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000020"
-        }
-      ],
-      "name": "sub-32_task-rest_eeg.vhdr",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 9091
-      }
-    },
-    {
-      "@id": "_:000051",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vmrk",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "ed05ff43016d854033d4a5c6e1e9e3b6"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000020"
-        }
-      ],
-      "name": "sub-32_task-rest_eeg.vmrk",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 14976
-      }
-    },
-    {
-      "@id": "_:000052",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-32/func/sub-32_task-rest_bold.nii.gz",
-      "contentDescription": "Data file for bold of subject 32",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000019"
-        }
-      ],
-      "name": "sub-32_task-rest_bold.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000053",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/anat/sub-35_acq-y224_T1w.nii.gz",
-      "contentDescription": "Data file for T1w of subject 35",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000021"
-        }
-      ],
-      "name": "sub-35_acq-y224_T1w.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000054",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/anat/sub-35_acq-y232_T1w.nii.gz",
-      "contentDescription": "Data file for T1w of subject 35",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000021"
-        }
-      ],
-      "name": "sub-35_acq-y232_T1w.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000055",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bval",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "7a53a28c159b4040a4926be4f4b958dd"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000023"
-        }
-      ],
-      "name": "sub-35_acq-NODDI10DIR_dwi.bval",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 312
-      }
-    },
-    {
-      "@id": "_:000056",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bvec",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "0500182c4be4a6bc7a07cc103bc5b490"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000023"
-        }
-      ],
-      "name": "sub-35_acq-NODDI10DIR_dwi.bvec",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 1955
-      }
-    },
-    {
-      "@id": "_:000057",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.nii.gz",
-      "contentDescription": "Data file for dwi of subject 35",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000023"
-        }
-      ],
-      "name": "sub-35_acq-NODDI10DIR_dwi.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000058",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bval",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "eb27b25c7ec1760573fed3022bd52883"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000023"
-        }
-      ],
-      "name": "sub-35_acq-NODDI33DIR_dwi.bval",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 126
-      }
-    },
-    {
-      "@id": "_:000059",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bvec",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "cd9829e1c06bb69a07b39cf07bf3784a"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000023"
-        }
-      ],
-      "name": "sub-35_acq-NODDI33DIR_dwi.bvec",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 961
-      }
-    },
-    {
-      "@id": "_:000060",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.nii.gz",
-      "contentDescription": "Data file for dwi of subject 35",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000023"
-        }
-      ],
-      "name": "sub-35_acq-NODDI33DIR_dwi.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000061",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.eeg",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000025"
-        }
-      ],
-      "name": "sub-35_task-rest_eeg.eeg",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000062",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vhdr",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d716b77e43db1e133dce24c678ddb1cd"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000025"
-        }
-      ],
-      "name": "sub-35_task-rest_eeg.vhdr",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 9104
-      }
-    },
-    {
-      "@id": "_:000063",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vmrk",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "c6d46448ce88354318adea49cbe279a1"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000025"
-        }
-      ],
-      "name": "sub-35_task-rest_eeg.vmrk",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 14828
-      }
-    },
-    {
-      "@id": "_:000064",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-35/func/sub-35_task-rest_bold.nii.gz",
-      "contentDescription": "Data file for bold of subject 35",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000024"
-        }
-      ],
-      "name": "sub-35_task-rest_bold.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000065",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/anat/sub-36_acq-y224_T1w.nii.gz",
-      "contentDescription": "Data file for T1w of subject 36",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000008"
-        }
-      ],
-      "name": "sub-36_acq-y224_T1w.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000066",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/anat/sub-36_acq-y232_T1w.nii.gz",
-      "contentDescription": "Data file for T1w of subject 36",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000008"
-        }
-      ],
-      "name": "sub-36_acq-y232_T1w.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000067",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bval",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "7a53a28c159b4040a4926be4f4b958dd"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000013"
-        }
-      ],
-      "name": "sub-36_acq-NODDI10DIR_dwi.bval",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 312
-      }
-    },
-    {
-      "@id": "_:000068",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bvec",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "0500182c4be4a6bc7a07cc103bc5b490"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000013"
-        }
-      ],
-      "name": "sub-36_acq-NODDI10DIR_dwi.bvec",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 1955
-      }
-    },
-    {
-      "@id": "_:000069",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.nii.gz",
-      "contentDescription": "Data file for dwi of subject 36",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000013"
-        }
-      ],
-      "name": "sub-36_acq-NODDI10DIR_dwi.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000070",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bval",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "eb27b25c7ec1760573fed3022bd52883"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000013"
-        }
-      ],
-      "name": "sub-36_acq-NODDI33DIR_dwi.bval",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 126
-      }
-    },
-    {
-      "@id": "_:000071",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bvec",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "cd9829e1c06bb69a07b39cf07bf3784a"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000013"
-        }
-      ],
-      "name": "sub-36_acq-NODDI33DIR_dwi.bvec",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 961
-      }
-    },
-    {
-      "@id": "_:000072",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.nii.gz",
-      "contentDescription": "Data file for dwi of subject 36",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000013"
-        }
-      ],
-      "name": "sub-36_acq-NODDI33DIR_dwi.nii.gz",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000073",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.eeg",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d41d8cd98f00b204e9800998ecf8427e"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000015"
-        }
-      ],
-      "name": "sub-36_task-rest_eeg.eeg",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        }
-      }
-    },
-    {
-      "@id": "_:000074",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vhdr",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "8386437d1878f8585ae6d50c5d931c6a"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000015"
-        }
-      ],
-      "name": "sub-36_task-rest_eeg.vhdr",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 9091
-      }
-    },
-    {
-      "@id": "_:000075",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vmrk",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "8ec29017240c4d67972cb160dabf2270"
-        }
-      ],
-      "isPartOf": [
-        {
-          "@id": "_:000015"
-        }
-      ],
-      "name": "sub-36_task-rest_eeg.vmrk",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 13681
-      }
-    },
-    {
-      "@id": "_:000076",
-      "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXsub-36/func/sub-36_task-rest_bold.nii.gz",
-      "contentDescription": "Data file for bold of subject 36",
-      "dataType": [
-        {
-          "@id": "https://openminds.ebrains.eu/instances/dataType/voxelData"
-        }
-      ],
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "d41d8cd98f00b204e9800998ecf8427e"
         }
@@ -1697,123 +716,1051 @@
           "@id": "_:000014"
         }
       ],
-      "name": "sub-36_task-rest_bold.nii.gz",
+      "name": "sub-32_acq-NODDI10DIR_dwi.nii.gz",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         }
       }
     },
     {
-      "@id": "_:000077",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000045",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bval",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "eb27b25c7ec1760573fed3022bd52883"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000014"
+        }
+      ],
+      "name": "sub-32_acq-NODDI33DIR_dwi.bval",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 126
+      }
+    },
+    {
+      "@id": "_:000046",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bvec",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "cd9829e1c06bb69a07b39cf07bf3784a"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000014"
+        }
+      ],
+      "name": "sub-32_acq-NODDI33DIR_dwi.bvec",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 961
+      }
+    },
+    {
+      "@id": "_:000047",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.nii.gz",
+      "contentDescription": "Data file for dwi of subject 32",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000014"
+        }
+      ],
+      "name": "sub-32_acq-NODDI33DIR_dwi.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000048",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.eeg",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000008"
+        }
+      ],
+      "name": "sub-32_task-rest_eeg.eeg",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000049",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vhdr",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "18e2fc3e80737f814eff9ea4102a9b56"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000008"
+        }
+      ],
+      "name": "sub-32_task-rest_eeg.vhdr",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 9091
+      }
+    },
+    {
+      "@id": "_:000050",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vmrk",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "ed05ff43016d854033d4a5c6e1e9e3b6"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000008"
+        }
+      ],
+      "name": "sub-32_task-rest_eeg.vmrk",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 14976
+      }
+    },
+    {
+      "@id": "_:000051",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-32/func/sub-32_task-rest_bold.nii.gz",
+      "contentDescription": "Data file for bold of subject 32",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000013"
+        }
+      ],
+      "name": "sub-32_task-rest_bold.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000052",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/anat/sub-35_acq-y224_T1w.nii.gz",
+      "contentDescription": "Data file for T1w of subject 35",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000027"
+        }
+      ],
+      "name": "sub-35_acq-y224_T1w.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000053",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/anat/sub-35_acq-y232_T1w.nii.gz",
+      "contentDescription": "Data file for T1w of subject 35",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000027"
+        }
+      ],
+      "name": "sub-35_acq-y232_T1w.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000054",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bval",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "7a53a28c159b4040a4926be4f4b958dd"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000026"
+        }
+      ],
+      "name": "sub-35_acq-NODDI10DIR_dwi.bval",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 312
+      }
+    },
+    {
+      "@id": "_:000055",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bvec",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "0500182c4be4a6bc7a07cc103bc5b490"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000026"
+        }
+      ],
+      "name": "sub-35_acq-NODDI10DIR_dwi.bvec",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 1955
+      }
+    },
+    {
+      "@id": "_:000056",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.nii.gz",
+      "contentDescription": "Data file for dwi of subject 35",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000026"
+        }
+      ],
+      "name": "sub-35_acq-NODDI10DIR_dwi.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000057",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bval",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "eb27b25c7ec1760573fed3022bd52883"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000026"
+        }
+      ],
+      "name": "sub-35_acq-NODDI33DIR_dwi.bval",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 126
+      }
+    },
+    {
+      "@id": "_:000058",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bvec",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "cd9829e1c06bb69a07b39cf07bf3784a"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000026"
+        }
+      ],
+      "name": "sub-35_acq-NODDI33DIR_dwi.bvec",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 961
+      }
+    },
+    {
+      "@id": "_:000059",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.nii.gz",
+      "contentDescription": "Data file for dwi of subject 35",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000026"
+        }
+      ],
+      "name": "sub-35_acq-NODDI33DIR_dwi.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000060",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.eeg",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000023"
+        }
+      ],
+      "name": "sub-35_task-rest_eeg.eeg",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000061",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vhdr",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d716b77e43db1e133dce24c678ddb1cd"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000023"
+        }
+      ],
+      "name": "sub-35_task-rest_eeg.vhdr",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 9104
+      }
+    },
+    {
+      "@id": "_:000062",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vmrk",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "c6d46448ce88354318adea49cbe279a1"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000023"
+        }
+      ],
+      "name": "sub-35_task-rest_eeg.vmrk",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 14828
+      }
+    },
+    {
+      "@id": "_:000063",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-35/func/sub-35_task-rest_bold.nii.gz",
+      "contentDescription": "Data file for bold of subject 35",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000025"
+        }
+      ],
+      "name": "sub-35_task-rest_bold.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000064",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/anat/sub-36_acq-y224_T1w.nii.gz",
+      "contentDescription": "Data file for T1w of subject 36",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000032"
+        }
+      ],
+      "name": "sub-36_acq-y224_T1w.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000065",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/anat/sub-36_acq-y232_T1w.nii.gz",
+      "contentDescription": "Data file for T1w of subject 36",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000032"
+        }
+      ],
+      "name": "sub-36_acq-y232_T1w.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000066",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bval",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "7a53a28c159b4040a4926be4f4b958dd"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000031"
+        }
+      ],
+      "name": "sub-36_acq-NODDI10DIR_dwi.bval",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 312
+      }
+    },
+    {
+      "@id": "_:000067",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bvec",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "0500182c4be4a6bc7a07cc103bc5b490"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000031"
+        }
+      ],
+      "name": "sub-36_acq-NODDI10DIR_dwi.bvec",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 1955
+      }
+    },
+    {
+      "@id": "_:000068",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.nii.gz",
+      "contentDescription": "Data file for dwi of subject 36",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000031"
+        }
+      ],
+      "name": "sub-36_acq-NODDI10DIR_dwi.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000069",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bval",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "eb27b25c7ec1760573fed3022bd52883"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000031"
+        }
+      ],
+      "name": "sub-36_acq-NODDI33DIR_dwi.bval",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 126
+      }
+    },
+    {
+      "@id": "_:000070",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bvec",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "cd9829e1c06bb69a07b39cf07bf3784a"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000031"
+        }
+      ],
+      "name": "sub-36_acq-NODDI33DIR_dwi.bvec",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 961
+      }
+    },
+    {
+      "@id": "_:000071",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.nii.gz",
+      "contentDescription": "Data file for dwi of subject 36",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000031"
+        }
+      ],
+      "name": "sub-36_acq-NODDI33DIR_dwi.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000072",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.eeg",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000028"
+        }
+      ],
+      "name": "sub-36_task-rest_eeg.eeg",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000073",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vhdr",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "8386437d1878f8585ae6d50c5d931c6a"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000028"
+        }
+      ],
+      "name": "sub-36_task-rest_eeg.vhdr",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 9091
+      }
+    },
+    {
+      "@id": "_:000074",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vmrk",
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "8ec29017240c4d67972cb160dabf2270"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000028"
+        }
+      ],
+      "name": "sub-36_task-rest_eeg.vmrk",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        },
+        "value": 13681
+      }
+    },
+    {
+      "@id": "_:000075",
+      "@type": "https://openminds.om-i.org/types/File",
+      "IRI": "PREFIXsub-36/func/sub-36_task-rest_bold.nii.gz",
+      "contentDescription": "Data file for bold of subject 36",
+      "dataType": [
+        {
+          "@id": "https://openminds.om-i.org/instances/dataType/voxelData"
+        }
+      ],
+      "fileRepository": {
+        "@id": "_:000010"
+      },
+      "hash": [
+        {
+          "@type": "https://openminds.om-i.org/types/Hash",
+          "algorithm": "MD5",
+          "digest": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      ],
+      "isPartOf": [
+        {
+          "@id": "_:000030"
+        }
+      ],
+      "name": "sub-36_task-rest_bold.nii.gz",
+      "storageSize": {
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
+        "unit": {
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
+        }
+      }
+    },
+    {
+      "@id": "_:000076",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXtask-rest_bold.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "9890c2521e2b4f3225615f14a3432557"
         }
       ],
       "name": "task-rest_bold.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 609
       }
     },
     {
-      "@id": "_:000078",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000077",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXtask-rest_eeg.json",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "51a6fe4d025f6f90da8ef37fb0d06b02"
         }
       ],
       "name": "task-rest_eeg.json",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 457
       }
     },
     {
-      "@id": "_:000079",
-      "@type": "https://openminds.ebrains.eu/core/File",
+      "@id": "_:000078",
+      "@type": "https://openminds.om-i.org/types/File",
       "IRI": "PREFIXREADME",
       "fileRepository": {
         "@id": "_:000010"
       },
       "hash": [
         {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
+          "@type": "https://openminds.om-i.org/types/Hash",
           "algorithm": "MD5",
           "digest": "920ae0482860f26318cc75a014512842"
         }
       ],
       "name": "README",
       "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
+        "@type": "https://openminds.om-i.org/types/QuantitativeValue",
         "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
+          "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte"
         },
         "value": 254
       }
     },
     {
-      "@id": "_:000080",
-      "@type": "https://openminds.ebrains.eu/core/Person",
+      "@id": "_:000079",
+      "@type": "https://openminds.om-i.org/types/Person",
       "familyName": "Deligianni",
       "givenName": "F."
     },
     {
-      "@id": "_:000081",
-      "@type": "https://openminds.ebrains.eu/core/Person",
+      "@id": "_:000080",
+      "@type": "https://openminds.om-i.org/types/Person",
       "familyName": "Centeno",
       "givenName": "M."
     },
     {
-      "@id": "_:000082",
-      "@type": "https://openminds.ebrains.eu/core/Person",
+      "@id": "_:000081",
+      "@type": "https://openminds.om-i.org/types/Person",
       "familyName": "Carmichael",
       "givenName": "D.W."
     },
     {
-      "@id": "_:000083",
-      "@type": "https://openminds.ebrains.eu/core/Person",
+      "@id": "_:000082",
+      "@type": "https://openminds.om-i.org/types/Person",
       "familyName": "Zhang",
       "givenName": "G.H."
     },
     {
-      "@id": "_:000084",
-      "@type": "https://openminds.ebrains.eu/core/Person",
+      "@id": "_:000083",
+      "@type": "https://openminds.om-i.org/types/Person",
       "familyName": "Clark",
       "givenName": "C.A."
     },
     {
-      "@id": "_:000085",
-      "@type": "https://openminds.ebrains.eu/core/Person",
+      "@id": "_:000084",
+      "@type": "https://openminds.om-i.org/types/Person",
       "familyName": "Clayden",
       "givenName": "J.D."
     },
     {
-      "@id": "_:000086",
-      "@type": "https://openminds.ebrains.eu/core/DatasetVersion",
+      "@id": "_:000085",
+      "@type": "https://openminds.om-i.org/types/DatasetVersion",
       "author": [
+        {
+          "@id": "_:000079"
+        },
         {
           "@id": "_:000080"
         },
@@ -1828,9 +1775,6 @@
         },
         {
           "@id": "_:000084"
-        },
-        {
-          "@id": "_:000085"
         }
       ],
       "behavioralProtocol": [
@@ -1840,21 +1784,21 @@
       ],
       "dataType": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/semanticDataType/rawData"
+          "@id": "https://openminds.om-i.org/instances/semanticDataType/rawData"
         }
       ],
       "experimentalApproach": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy"
+          "@id": "https://openminds.om-i.org/instances/experimentalApproach/electrophysiology"
         },
         {
-          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"
+          "@id": "https://openminds.om-i.org/instances/experimentalApproach/neuralConnectivity"
         },
         {
-          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"
+          "@id": "https://openminds.om-i.org/instances/experimentalApproach/neuroimaging"
         },
         {
-          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity"
+          "@id": "https://openminds.om-i.org/instances/experimentalApproach/anatomy"
         }
       ],
       "fullName": "EEG, fMRI and NODDI at rest'",
@@ -1875,67 +1819,20 @@
       ],
       "technique": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging"
+          "@id": "https://openminds.om-i.org/instances/technique/diffusionWeightedImaging"
         },
         {
-          "@id": "https://openminds.ebrains.eu/instances/technique/electroencephalography"
+          "@id": "https://openminds.om-i.org/instances/technique/electroencephalography"
         }
       ]
     },
     {
-      "@id": "https://openminds.ebrains.eu/instances/semanticDataType/rawData",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/SemanticDataType",
-      "name": "raw data"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
-      "definition": "Any experimental approach focused on the bodily structure of living organisms.",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739411",
-      "name": "anatomy",
-      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Anatomy",
-      "synonym": [
-        "anatomical approach"
-      ]
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
-      "definition": "Any experimental approach focused on electrical phenomena associated with living systems, most notably the nervous system, cardiac system, and musculoskeletal system.",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741202",
-      "name": "electrophysiology",
-      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Electrophysiology"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
-      "definition": "Any experimental approach focused on the non-invasive direct or indirect imaging of the structure, function, or pharmacology of the nervous system.",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741206",
-      "name": "neuroimaging",
-      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Neuroimaging"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
-      "definition": "Any experimental approach focused on functional or anatomical connections between single neurons or populations of neurons in defined anatomical regions.",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739393",
-      "name": "neural connectivity",
-      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Connectivity"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
-      "name": "diffusion-weighted imaging"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/technique/electroencephalography",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
-      "name": "electroencephalography"
-    },
-    {
-      "@id": "_:000094",
-      "@type": "https://openminds.ebrains.eu/core/Dataset",
+      "@id": "_:000093",
+      "@type": "https://openminds.om-i.org/types/Dataset",
       "author": [
+        {
+          "@id": "_:000079"
+        },
         {
           "@id": "_:000080"
         },
@@ -1950,18 +1847,98 @@
         },
         {
           "@id": "_:000084"
-        },
-        {
-          "@id": "_:000085"
         }
       ],
       "fullName": "EEG, fMRI and NODDI at rest'",
       "hasVersion": [
         {
-          "@id": "_:000086"
+          "@id": "_:000085"
         }
       ],
       "shortName": "EEG, fMRI and NODDI at rest'"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/contentTypes/application_vnd.bids",
+      "@type": "https://openminds.om-i.org/types/ContentType",
+      "name": "application/vnd.bids",
+      "synonym": [
+        "BIDS"
+      ]
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/dataType/voxelData",
+      "@type": "https://openminds.om-i.org/types/DataType",
+      "definition": "'Voxel data' is a matrix defining values (scalars, lists, or matrices) on a grid in a three dimensional space, which can be rendered to raster graphic.",
+      "name": "voxel data"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/experimentalApproach/anatomy",
+      "@type": "https://openminds.om-i.org/types/ExperimentalApproach",
+      "definition": "Any experimental approach focused on the bodily structure of living organisms.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739411",
+      "name": "anatomy",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Anatomy",
+      "synonym": [
+        "anatomical approach"
+      ]
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/experimentalApproach/electrophysiology",
+      "@type": "https://openminds.om-i.org/types/ExperimentalApproach",
+      "definition": "Any experimental approach focused on electrical phenomena associated with living systems, most notably the nervous system, cardiac system, and musculoskeletal system.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741202",
+      "name": "electrophysiology",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Electrophysiology"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/experimentalApproach/neuralConnectivity",
+      "@type": "https://openminds.om-i.org/types/ExperimentalApproach",
+      "definition": "Any experimental approach focused on functional or anatomical connections between single neurons or populations of neurons in defined anatomical regions.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739393",
+      "name": "neural connectivity",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Connectivity"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/experimentalApproach/neuroimaging",
+      "@type": "https://openminds.om-i.org/types/ExperimentalApproach",
+      "definition": "Any experimental approach focused on the non-invasive direct or indirect imaging of the structure, function, or pharmacology of the nervous system.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741206",
+      "name": "neuroimaging",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Neuroimaging"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/semanticDataType/rawData",
+      "@type": "https://openminds.om-i.org/types/SemanticDataType",
+      "name": "raw data"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/species/homoSapiens",
+      "@type": "https://openminds.om-i.org/types/Species",
+      "definition": "The species *Homo sapiens* (humans) belongs to the family of *hominidae* (great apes).",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0105114",
+      "knowledgeSpaceLink": "https://knowledge-space.org/wiki/NCBITaxon:9606#human",
+      "name": "Homo sapiens",
+      "preferredOntologyIdentifier": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "synonym": [
+        "homo sapien",
+        "human",
+        "man"
+      ]
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/technique/diffusionWeightedImaging",
+      "@type": "https://openminds.om-i.org/types/Technique",
+      "name": "diffusion-weighted imaging"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/technique/electroencephalography",
+      "@type": "https://openminds.om-i.org/types/Technique",
+      "name": "electroencephalography"
+    },
+    {
+      "@id": "https://openminds.om-i.org/instances/unitOfMeasurement/byte",
+      "@type": "https://openminds.om-i.org/types/UnitOfMeasurement",
+      "name": "byte"
     }
   ]
 }

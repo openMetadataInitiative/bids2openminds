@@ -46,7 +46,7 @@ def load_collections():
 
 
 def detect_type(collection, type):
-    type_IRI = "https://openminds.ebrains.eu/core/" + type
+    type_IRI = "https://openminds.om-i.org/types/" + type
     items_list = []
     for item in collection:
         if item.type_ == type_IRI:
@@ -164,6 +164,6 @@ def test_file_bundle(load_collections, dataset_label):
         generated_file_bundle = find_name(
             refrence_file_bundle.name, generated_file_bundles)
         assert generated_file_bundle is not None
-        if refrence_file_bundle.is_part_of.type_ == "https://openminds.ebrains.eu/core/FileBundle":
-            assert generated_file_bundle.is_part_of.type_ == "https://openminds.ebrains.eu/core/FileBundle"
+        if refrence_file_bundle.is_part_of.type_ == "https://openminds.om-i.org/types/FileBundle":
+            assert generated_file_bundle.is_part_of.type_ == "https://openminds.om-i.org/types/FileBundle"
             assert refrence_file_bundle.is_part_of.name == generated_file_bundle.is_part_of.name
