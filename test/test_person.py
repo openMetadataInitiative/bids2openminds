@@ -1,7 +1,7 @@
 # test for create_openminds_person function in the main
 import pytest
 from bids2openminds.main import create_openminds_person
-import openminds.latest.core as omcore
+import openminds.v3.core as omcore
 
 # Test data: (full_name, given_name, family_name)
 example_names = [("John Ronald Reuel Tolkien", "John Ronald Reuel", "Tolkien"),
