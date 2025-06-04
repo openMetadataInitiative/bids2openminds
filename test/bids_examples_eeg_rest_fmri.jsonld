@@ -118,7 +118,7 @@
     {
       "@id": "_:000010",
       "@type": "https://openminds.ebrains.eu/core/FileRepository",
-      "IRI": "file:///home/peyman-user/Desktop/data/bids_test/bids-examples/eeg_rest_fmri",
+      "IRI": "file:///home/peyman-user/Desktop/Code/bids-examples/eeg_rest_fmri",
       "format": {
         "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids"
       },
@@ -127,7 +127,7 @@
         "unit": {
           "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
         },
-        "value": 1209081
+        "value": 1208812
       }
     },
     {
@@ -507,29 +507,6 @@
     {
       "@id": "_:000035",
       "@type": "https://openminds.ebrains.eu/core/File",
-      "IRI": "PREFIXacq-NODDI66DIR_dwi.json",
-      "fileRepository": {
-        "@id": "_:000010"
-      },
-      "hash": [
-        {
-          "@type": "https://openminds.ebrains.eu/core/Hash",
-          "algorithm": "MD5",
-          "digest": "d5bfe26e13e1c579ddc7436e34696202"
-        }
-      ],
-      "name": "acq-NODDI66DIR_dwi.json",
-      "storageSize": {
-        "@type": "https://openminds.ebrains.eu/core/QuantitativeValue",
-        "unit": {
-          "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/byte"
-        },
-        "value": 269
-      }
-    },
-    {
-      "@id": "_:000036",
-      "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXacq-y224_T1w.json",
       "fileRepository": {
         "@id": "_:000010"
@@ -551,7 +528,7 @@
       }
     },
     {
-      "@id": "_:000037",
+      "@id": "_:000036",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXacq-y232_T1w.json",
       "fileRepository": {
@@ -574,7 +551,7 @@
       }
     },
     {
-      "@id": "_:000038",
+      "@id": "_:000037",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXdataset_description.json",
       "fileRepository": {
@@ -597,7 +574,7 @@
       }
     },
     {
-      "@id": "_:000039",
+      "@id": "_:000038",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXparticipants.tsv",
       "fileRepository": {
@@ -620,7 +597,7 @@
       }
     },
     {
-      "@id": "_:000040",
+      "@id": "_:000039",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/anat/sub-32_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 32",
@@ -659,7 +636,7 @@
       "name": "voxel data"
     },
     {
-      "@id": "_:000042",
+      "@id": "_:000041",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/anat/sub-32_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 32",
@@ -692,7 +669,7 @@
       }
     },
     {
-      "@id": "_:000043",
+      "@id": "_:000042",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
@@ -720,7 +697,7 @@
       }
     },
     {
-      "@id": "_:000044",
+      "@id": "_:000043",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
@@ -748,7 +725,7 @@
       }
     },
     {
-      "@id": "_:000045",
+      "@id": "_:000044",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 32",
@@ -781,7 +758,7 @@
       }
     },
     {
-      "@id": "_:000046",
+      "@id": "_:000045",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bval",
       "fileRepository": {
@@ -809,7 +786,7 @@
       }
     },
     {
-      "@id": "_:000047",
+      "@id": "_:000046",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.bvec",
       "fileRepository": {
@@ -837,7 +814,7 @@
       }
     },
     {
-      "@id": "_:000048",
+      "@id": "_:000047",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/dwi/sub-32_acq-NODDI33DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 32",
@@ -870,7 +847,7 @@
       }
     },
     {
-      "@id": "_:000049",
+      "@id": "_:000048",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.eeg",
       "fileRepository": {
@@ -897,7 +874,7 @@
       }
     },
     {
-      "@id": "_:000050",
+      "@id": "_:000049",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vhdr",
       "fileRepository": {
@@ -925,7 +902,7 @@
       }
     },
     {
-      "@id": "_:000051",
+      "@id": "_:000050",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/eeg/sub-32_task-rest_eeg.vmrk",
       "fileRepository": {
@@ -953,7 +930,7 @@
       }
     },
     {
-      "@id": "_:000052",
+      "@id": "_:000051",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-32/func/sub-32_task-rest_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 32",
@@ -986,7 +963,7 @@
       }
     },
     {
-      "@id": "_:000053",
+      "@id": "_:000052",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/anat/sub-35_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 35",
@@ -1019,7 +996,7 @@
       }
     },
     {
-      "@id": "_:000054",
+      "@id": "_:000053",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/anat/sub-35_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 35",
@@ -1052,7 +1029,7 @@
       }
     },
     {
-      "@id": "_:000055",
+      "@id": "_:000054",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
@@ -1080,7 +1057,7 @@
       }
     },
     {
-      "@id": "_:000056",
+      "@id": "_:000055",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
@@ -1108,7 +1085,7 @@
       }
     },
     {
-      "@id": "_:000057",
+      "@id": "_:000056",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 35",
@@ -1141,7 +1118,7 @@
       }
     },
     {
-      "@id": "_:000058",
+      "@id": "_:000057",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bval",
       "fileRepository": {
@@ -1169,7 +1146,7 @@
       }
     },
     {
-      "@id": "_:000059",
+      "@id": "_:000058",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.bvec",
       "fileRepository": {
@@ -1197,7 +1174,7 @@
       }
     },
     {
-      "@id": "_:000060",
+      "@id": "_:000059",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/dwi/sub-35_acq-NODDI33DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 35",
@@ -1230,7 +1207,7 @@
       }
     },
     {
-      "@id": "_:000061",
+      "@id": "_:000060",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.eeg",
       "fileRepository": {
@@ -1257,7 +1234,7 @@
       }
     },
     {
-      "@id": "_:000062",
+      "@id": "_:000061",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vhdr",
       "fileRepository": {
@@ -1285,7 +1262,7 @@
       }
     },
     {
-      "@id": "_:000063",
+      "@id": "_:000062",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/eeg/sub-35_task-rest_eeg.vmrk",
       "fileRepository": {
@@ -1313,7 +1290,7 @@
       }
     },
     {
-      "@id": "_:000064",
+      "@id": "_:000063",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-35/func/sub-35_task-rest_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 35",
@@ -1346,7 +1323,7 @@
       }
     },
     {
-      "@id": "_:000065",
+      "@id": "_:000064",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/anat/sub-36_acq-y224_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 36",
@@ -1379,7 +1356,7 @@
       }
     },
     {
-      "@id": "_:000066",
+      "@id": "_:000065",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/anat/sub-36_acq-y232_T1w.nii.gz",
       "contentDescription": "Data file for T1w of subject 36",
@@ -1412,7 +1389,7 @@
       }
     },
     {
-      "@id": "_:000067",
+      "@id": "_:000066",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bval",
       "fileRepository": {
@@ -1440,7 +1417,7 @@
       }
     },
     {
-      "@id": "_:000068",
+      "@id": "_:000067",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.bvec",
       "fileRepository": {
@@ -1468,7 +1445,7 @@
       }
     },
     {
-      "@id": "_:000069",
+      "@id": "_:000068",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI10DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 36",
@@ -1501,7 +1478,7 @@
       }
     },
     {
-      "@id": "_:000070",
+      "@id": "_:000069",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bval",
       "fileRepository": {
@@ -1529,7 +1506,7 @@
       }
     },
     {
-      "@id": "_:000071",
+      "@id": "_:000070",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.bvec",
       "fileRepository": {
@@ -1557,7 +1534,7 @@
       }
     },
     {
-      "@id": "_:000072",
+      "@id": "_:000071",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/dwi/sub-36_acq-NODDI33DIR_dwi.nii.gz",
       "contentDescription": "Data file for dwi of subject 36",
@@ -1590,7 +1567,7 @@
       }
     },
     {
-      "@id": "_:000073",
+      "@id": "_:000072",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.eeg",
       "fileRepository": {
@@ -1617,7 +1594,7 @@
       }
     },
     {
-      "@id": "_:000074",
+      "@id": "_:000073",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vhdr",
       "fileRepository": {
@@ -1645,7 +1622,7 @@
       }
     },
     {
-      "@id": "_:000075",
+      "@id": "_:000074",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/eeg/sub-36_task-rest_eeg.vmrk",
       "fileRepository": {
@@ -1673,7 +1650,7 @@
       }
     },
     {
-      "@id": "_:000076",
+      "@id": "_:000075",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXsub-36/func/sub-36_task-rest_bold.nii.gz",
       "contentDescription": "Data file for bold of subject 36",
@@ -1706,7 +1683,7 @@
       }
     },
     {
-      "@id": "_:000077",
+      "@id": "_:000076",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXtask-rest_bold.json",
       "fileRepository": {
@@ -1729,7 +1706,7 @@
       }
     },
     {
-      "@id": "_:000078",
+      "@id": "_:000077",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXtask-rest_eeg.json",
       "fileRepository": {
@@ -1752,7 +1729,7 @@
       }
     },
     {
-      "@id": "_:000079",
+      "@id": "_:000078",
       "@type": "https://openminds.ebrains.eu/core/File",
       "IRI": "PREFIXREADME",
       "fileRepository": {
@@ -1775,45 +1752,48 @@
       }
     },
     {
-      "@id": "_:000080",
+      "@id": "_:000079",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "Deligianni",
       "givenName": "F."
     },
     {
-      "@id": "_:000081",
+      "@id": "_:000080",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "Centeno",
       "givenName": "M."
     },
     {
-      "@id": "_:000082",
+      "@id": "_:000081",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "Carmichael",
       "givenName": "D.W."
     },
     {
-      "@id": "_:000083",
+      "@id": "_:000082",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "Zhang",
       "givenName": "G.H."
     },
     {
-      "@id": "_:000084",
+      "@id": "_:000083",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "Clark",
       "givenName": "C.A."
     },
     {
-      "@id": "_:000085",
+      "@id": "_:000084",
       "@type": "https://openminds.ebrains.eu/core/Person",
       "familyName": "Clayden",
       "givenName": "J.D."
     },
     {
-      "@id": "_:000086",
+      "@id": "_:000085",
       "@type": "https://openminds.ebrains.eu/core/DatasetVersion",
       "author": [
+        {
+          "@id": "_:000079"
+        },
         {
           "@id": "_:000080"
         },
@@ -1828,9 +1808,6 @@
         },
         {
           "@id": "_:000084"
-        },
-        {
-          "@id": "_:000085"
         }
       ],
       "behavioralProtocol": [
@@ -1845,16 +1822,16 @@
       ],
       "experimentalApproach": [
         {
-          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy"
-        },
-        {
-          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"
-        },
-        {
           "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging"
         },
         {
           "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity"
+        },
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy"
+        },
+        {
+          "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/electrophysiology"
         }
       ],
       "fullName": "EEG, fMRI and NODDI at rest'",
@@ -1888,6 +1865,22 @@
       "name": "raw data"
     },
     {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on the non-invasive direct or indirect imaging of the structure, function, or pharmacology of the nervous system.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741206",
+      "name": "neuroimaging",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Neuroimaging"
+    },
+    {
+      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity",
+      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
+      "definition": "Any experimental approach focused on functional or anatomical connections between single neurons or populations of neurons in defined anatomical regions.",
+      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739393",
+      "name": "neural connectivity",
+      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Connectivity"
+    },
+    {
       "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/anatomy",
       "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
       "definition": "Any experimental approach focused on the bodily structure of living organisms.",
@@ -1907,22 +1900,6 @@
       "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Electrophysiology"
     },
     {
-      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuroimaging",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
-      "definition": "Any experimental approach focused on the non-invasive direct or indirect imaging of the structure, function, or pharmacology of the nervous system.",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0741206",
-      "name": "neuroimaging",
-      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Neuroimaging"
-    },
-    {
-      "@id": "https://openminds.ebrains.eu/instances/experimentalApproach/neuralConnectivity",
-      "@type": "https://openminds.ebrains.eu/controlledTerms/ExperimentalApproach",
-      "definition": "Any experimental approach focused on functional or anatomical connections between single neurons or populations of neurons in defined anatomical regions.",
-      "interlexIdentifier": "http://uri.interlex.org/base/ilx_0739393",
-      "name": "neural connectivity",
-      "preferredOntologyIdentifier": "http://uri.interlex.org/tgbugs/uris/readable/modality/Connectivity"
-    },
-    {
       "@id": "https://openminds.ebrains.eu/instances/technique/diffusionWeightedImaging",
       "@type": "https://openminds.ebrains.eu/controlledTerms/Technique",
       "name": "diffusion-weighted imaging"
@@ -1933,9 +1910,12 @@
       "name": "electroencephalography"
     },
     {
-      "@id": "_:000094",
+      "@id": "_:000093",
       "@type": "https://openminds.ebrains.eu/core/Dataset",
       "author": [
+        {
+          "@id": "_:000079"
+        },
         {
           "@id": "_:000080"
         },
@@ -1950,15 +1930,12 @@
         },
         {
           "@id": "_:000084"
-        },
-        {
-          "@id": "_:000085"
         }
       ],
       "fullName": "EEG, fMRI and NODDI at rest'",
       "hasVersion": [
         {
-          "@id": "_:000086"
+          "@id": "_:000085"
         }
       ],
       "shortName": "EEG, fMRI and NODDI at rest'"
