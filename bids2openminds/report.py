@@ -9,20 +9,20 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
     behavioral_protocols_numbers = 0
 
     for item in collection:
-        if item.type_ == "https://openminds.ebrains.eu/core/Subject":
+        if item.type_.endswith("Subject"):
 
             subject_number += 1
             subject_state_numbers.append(len(item.studied_states))
 
-        if item.type_ == "https://openminds.ebrains.eu/core/File":
+        if item.type_.endswith("File"):
 
             files_number += 1
 
-        if item.type_ == "https://openminds.ebrains.eu/core/FileBundle":
+        if item.type_.endswith("FileBundle"):
 
             file_bundle_number += 1
 
-        if item.type_ == "https://openminds.ebrains.eu/core/BehavioralProtocol":
+        if item.type_.endswith("BehavioralProtocol"):
 
             behavioral_protocols_numbers += 1
 
