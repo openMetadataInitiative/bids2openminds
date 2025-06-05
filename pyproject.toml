@@ -1,6 +1,6 @@
 [project]
 name = "bids2openminds"
-version = "0.1.0"
+version = "0.1.1.dev.0"
 dependencies = [
   "bids-validator == 1.14.6" ,
   "bids",

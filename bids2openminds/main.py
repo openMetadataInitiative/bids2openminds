@@ -6,8 +6,8 @@ from warnings import warn
 import pandas as pd
 from nameparser import HumanName
 
-import openminds.latest.core as omcore
-import openminds.latest.controlled_terms as controlled_terms
+import openminds.v3.core as omcore
+import openminds.v3.controlled_terms as controlled_terms
 from openminds import IRI
 
 from .utility import table_filter, pd_table_value, file_hash, file_storage_size, detect_nifti_version

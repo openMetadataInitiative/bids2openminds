@@ -7,9 +7,9 @@ from warnings import warn
 
 import pandas as pd
 
-import openminds.latest.controlled_terms as controlled_terms
-from openminds.latest.core import Hash, QuantitativeValue, ContentType
-from openminds.latest.controlled_terms import UnitOfMeasurement
+import openminds.v3.controlled_terms as controlled_terms
+from openminds.v3.core import Hash, QuantitativeValue, ContentType
+from openminds.v3.controlled_terms import UnitOfMeasurement
 
 
 def read_json(file_path: str) -> dict:
