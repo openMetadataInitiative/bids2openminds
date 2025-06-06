@@ -4,30 +4,30 @@
     "applicationCategory": "neuroscience",
     "author": [
         {
+            "@id": "https://orcid.org/0000-0003-1746-3995",
             "@type": "Person",
             "email": "peyman.najafi@cnrs.fr",
             "familyName": "Najafi",
-            "givenName": "Peyman",
-            "@id": "https://orcid.org/0000-0003-1746-3995"
+            "givenName": "Peyman"
         },
         {
+            "@id": "https://orcid.org/0000-0002-4793-7541",
             "@type": "Person",
             "email": "andrew.davison@cnrs.fr",
             "familyName": "Davison",
-            "givenName": "Andrew",
-            "@id": "https://orcid.org/0000-0002-4793-7541"
+            "givenName": "Andrew"
         },
         {
+            "@id": "https://orcid.org/0000-0002-5947-9939",
             "@type": "Person",
             "familyName": "Zehl",
-            "givenName": "Lyuba",
-            "@id": "https://orcid.org/0000-0002-5947-9939"
+            "givenName": "Lyuba"
         },
         {
+            "@id": "https://orcid.org/0000-0001-8536-322X",
             "@type": "Person",
             "familyName": "Pieschnik",
-            "givenName": "Sophia",
-            "@id": "https://orcid.org/0000-0001-8536-322X"
+            "givenName": "Sophia"
         }
     ],
     "codeRepository": "https://github.com/openMetadataInitiative/bids2openminds",
