@@ -37,7 +37,7 @@
     "datePublished": "2024-06-21",
     "description": "A tool to generate openMINDS metadata from BIDS datasets",
     "developmentStatus": "active",
-    "downloadUrl": "https://github.com/openMetadataInitiative/bids2openminds/archive/refs/tags/v0.1.1.zip",
+    "downloadUrl": "https://files.pythonhosted.org/packages/28/7b/eeedbb1d40eb92dd87d9cd566f2301d31f2cf69a2a96c8f37f150af8a83c/bids2openminds-0.1.1.tar.gz",
     "funder": {
         "@type": "Organization",
         "name": "European Commission"
