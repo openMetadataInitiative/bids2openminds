@@ -1,0 +1,65 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "@type": "SoftwareSourceCode",
+    "applicationCategory": "neuroscience",
+    "author": [
+        {
+            "@id": "https://orcid.org/0000-0003-1746-3995",
+            "@type": "Person",
+            "email": "peyman.najafi@cnrs.fr",
+            "familyName": "Najafi",
+            "givenName": "Peyman"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-4793-7541",
+            "@type": "Person",
+            "email": "andrew.davison@cnrs.fr",
+            "familyName": "Davison",
+            "givenName": "Andrew"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-5947-9939",
+            "@type": "Person",
+            "familyName": "Zehl",
+            "givenName": "Lyuba"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-8536-322X",
+            "@type": "Person",
+            "familyName": "Pieschnik",
+            "givenName": "Sophia"
+        }
+    ],
+    "codeRepository": "https://github.com/openMetadataInitiative/bids2openminds",
+    "contIntegration": "https://github.com/openMetadataInitiative/bids2openminds/actions",
+    "dateCreated": "2024-02-02",
+    "dateModified": "2025-06-05",
+    "datePublished": "2024-06-21",
+    "description": "A tool to generate openMINDS metadata from BIDS datasets",
+    "developmentStatus": "active",
+    "downloadUrl": "https://files.pythonhosted.org/packages/28/7b/eeedbb1d40eb92dd87d9cd566f2301d31f2cf69a2a96c8f37f150af8a83c/bids2openminds-0.1.1.tar.gz",
+    "funder": {
+        "@type": "Organization",
+        "name": "European Commission"
+    },
+    "funding": "https://doi.org/10.3030/101147319",
+    "issueTracker": "https://github.com/openMetadataInitiative/bids2openminds/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "name": "bids2openminds",
+    "operatingSystem": [
+        "Linux",
+        "Windows",
+        "macOS"
+    ],
+    "programmingLanguage": "Python 3",
+    "relatedLink": [
+        "https://bids2openminds.readthedocs.io/"
+    ],
+    "softwareRequirements": [
+        "https://pypi.org/project/openMINDS/",
+        "https://pypi.org/project/pybids/",
+        "https://pypi.org/project/click/",
+        "https://pypi.org/project/nameparser/"
+    ],
+    "version": "0.1.1"
+}
