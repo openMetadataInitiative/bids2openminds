@@ -1,39 +1,49 @@
 {
     "@context": "https://w3id.org/codemeta/3.0",
-    "type": "SoftwareSourceCode",
+    "@type": "SoftwareSourceCode",
+    "applicationCategory": "neuroscience",
     "author": [
         {
-            "id": "https://orcid.org/0000-0003-1746-3995",
-            "type": "Person",
+            "@type": "Person",
             "email": "peyman.najafi@cnrs.fr",
             "familyName": "Najafi",
-            "givenName": "Peyman"
+            "givenName": "Peyman",
+            "@id": "https://orcid.org/0000-0003-1746-3995"
         },
         {
-            "id": "https://orcid.org/0000-0002-4793-7541",
-            "type": "Person",
+            "@type": "Person",
             "email": "andrew.davison@cnrs.fr",
             "familyName": "Davison",
-            "givenName": "Andrew"
+            "givenName": "Andrew",
+            "@id": "https://orcid.org/0000-0002-4793-7541"
         },
         {
-            "id": "https://orcid.org/0000-0002-5947-9939",
-            "type": "Person",
+            "@type": "Person",
             "familyName": "Zehl",
-            "givenName": "Lyuba"
+            "givenName": "Lyuba",
+            "@id": "https://orcid.org/0000-0002-5947-9939"
         },
         {
-            "id": "https://orcid.org/0000-0001-8536-322X",
-            "type": "Person",
+            "@type": "Person",
             "familyName": "Pieschnik",
-            "givenName": "Sophia"
+            "givenName": "Sophia",
+            "@id": "https://orcid.org/0000-0001-8536-322X"
         }
     ],
+    "codeRepository": "https://github.com/openMetadataInitiative/bids2openminds",
+    "contIntegration": "https://github.com/openMetadataInitiative/bids2openminds/actions",
     "dateCreated": "2024-02-02",
     "dateModified": "2025-06-05",
     "datePublished": "2024-06-21",
     "description": "A tool to generate openMINDS metadata from BIDS datasets",
+    "developmentStatus": "active",
     "downloadUrl": "https://github.com/openMetadataInitiative/bids2openminds/archive/refs/tags/v0.1.1.zip",
+    "funder": {
+        "@type": "Organization",
+        "name": "European Commission"
+    },
+    "funding": "https://doi.org/10.3030/101147319",
+    "issueTracker": "https://github.com/openMetadataInitiative/bids2openminds/issues",
     "license": "https://spdx.org/licenses/MIT",
     "name": "bids2openminds",
     "operatingSystem": [
