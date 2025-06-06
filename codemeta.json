@@ -1,0 +1,52 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "author": [
+        {
+            "id": "https://orcid.org/0000-0003-1746-3995",
+            "type": "Person",
+            "email": "peyman.najafi@cnrs.fr",
+            "familyName": "Najafi",
+            "givenName": "Peyman"
+        },
+        {
+            "id": "https://orcid.org/0000-0002-4793-7541",
+            "type": "Person",
+            "email": "andrew.davison@cnrs.fr",
+            "familyName": "Davison",
+            "givenName": "Andrew"
+        },
+        {
+            "id": "https://orcid.org/0000-0002-5947-9939",
+            "type": "Person",
+            "familyName": "Zehl",
+            "givenName": "Lyuba"
+        },
+        {
+            "id": "https://orcid.org/0000-0001-8536-322X",
+            "type": "Person",
+            "familyName": "Pieschnik",
+            "givenName": "Sophia"
+        }
+    ],
+    "dateCreated": "2024-02-02",
+    "dateModified": "2025-06-05",
+    "datePublished": "2024-06-21",
+    "description": "A tool to generate openMINDS metadata from BIDS datasets",
+    "downloadUrl": "https://github.com/openMetadataInitiative/bids2openminds/archive/refs/tags/v0.1.1.zip",
+    "license": "https://spdx.org/licenses/MIT",
+    "name": "bids2openminds",
+    "operatingSystem": [
+        "Linux",
+        "Windows",
+        "macOS"
+    ],
+    "programmingLanguage": "Python 3",
+    "softwareRequirements": [
+        "https://github.com/openMetadataInitiative/openMINDS_Python",
+        "https://github.com/bids-standard/pybids",
+        "https://github.com/pallets/click/",
+        "https://github.com/derek73/python-nameparser"
+    ],
+    "version": "0.1.1"
+}
