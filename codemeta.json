@@ -52,6 +52,9 @@
         "macOS"
     ],
     "programmingLanguage": "Python 3",
+    "relatedLink": [
+        "https://bids2openminds.readthedocs.io/"
+    ],
     "softwareRequirements": [
         "https://github.com/openMetadataInitiative/openMINDS_Python",
         "https://github.com/bids-standard/pybids",
