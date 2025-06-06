@@ -26,6 +26,9 @@ classifiers = [
 [project.scripts]
 bids2openminds="bids2openminds.converter:convert_click"
 
+[project.urls]
+Documentation = "https://bids2openminds.readthedocs.io/"
+
 [build-system]
 requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"

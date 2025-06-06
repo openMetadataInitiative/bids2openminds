@@ -56,10 +56,10 @@
         "https://bids2openminds.readthedocs.io/"
     ],
     "softwareRequirements": [
-        "https://github.com/openMetadataInitiative/openMINDS_Python",
-        "https://github.com/bids-standard/pybids",
-        "https://github.com/pallets/click/",
-        "https://github.com/derek73/python-nameparser"
+        "https://pypi.org/project/openMINDS/",
+        "https://pypi.org/project/pybids/",
+        "https://pypi.org/project/click/",
+        "https://pypi.org/project/nameparser/"
     ],
     "version": "0.1.1"
 }
