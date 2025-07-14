@@ -32,8 +32,10 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
 
+    dataset_name_snake_case = dataset_description["Name"].replace(" ", "-")
+
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(
-        subjects_id, layout_df, bids_layout, collection)
+        subjects_id, layout_df, bids_layout, collection, dataset_name_snake_case)
 
     behavioral_protocols, behavioral_protocols_dict = main.create_behavioral_protocol(
         bids_layout, collection)

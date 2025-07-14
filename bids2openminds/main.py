@@ -315,7 +315,7 @@ def sex_openminds(data_subject: pd.DataFrame):
         return None
 
 
-def create_subjects(subject_id, layout_df, layout, collection):
+def create_subjects(subject_id, layout_df, layout, collection, dataset_name):
 
     sessions = layout.get_sessions()
     subjects_dict = {}
@@ -333,9 +333,9 @@ def create_subjects(subject_id, layout_df, layout, collection):
             # dealing with condition that have no seasion
             if not sessions:
                 state = omcore.SubjectState(
-                    internal_identifier=f"Studied state {subject_name}".strip(
-                    ),
-                    lookup_label=f"Studied state {subject_name}".strip()
+                    lookup_label=f"{dataset_name}_{subject_name}_state-01".strip(),
+                    internal_identifier=f"{subject_name}_state-01".strip(
+                    )
                 )
                 collection.add(state)
                 state_cache_dict[""] = state
@@ -345,9 +345,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
                 for session in sessions:
                     if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                         state = omcore.SubjectState(
-                            internal_identifier=f"Studied state {subject_name} {session}".strip(
-                            ),
-                            lookup_label=f"Studied state {subject_name} {session}".strip(
+                            lookup_label=f"{dataset_name}_{subject_name}_state-{session}".strip(),
+                            internal_identifier=f"{subject_name}_state-{session}".strip(
                             )
                         )
                         collection.add(state)
@@ -355,7 +354,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
                         state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
             subject_cache = omcore.Subject(
-                lookup_label=f"{subject_name}",
+                lookup_label=f"{dataset_name}_{subject_name}",
                 internal_identifier=f"{subject_name}",
                 studied_states=state_cache
             )
@@ -380,8 +379,9 @@ def create_subjects(subject_id, layout_df, layout, collection):
             state = omcore.SubjectState(
                 age=create_openminds_age(data_subject),
                 handedness=handedness_openminds(data_subject),
-                internal_identifier=f"Studied state {subject_name}".strip(),
-                lookup_label=f"Studied state {subject_name}".strip()
+                internal_identifier=f"{subject_name}_state-01".strip(
+                ),
+                lookup_label=f"{dataset_name}_{subject_name}_state-01".strip()
             )
             collection.add(state)
             state_cache_dict[""] = state
@@ -392,10 +392,8 @@ def create_subjects(subject_id, layout_df, layout, collection):
                     state = omcore.SubjectState(
                         age=create_openminds_age(data_subject),
                         handedness=handedness_openminds(data_subject),
-                        internal_identifier=f"Studied state {subject_name} {session}".strip(
-                        ),
-                        lookup_label=f"Studied state {subject_name} {session}".strip(
-                        )
+                        internal_identifier=f"{subject_name}_state-{session}".strip(),
+                        lookup_label=f"{dataset_name}_{subject_name}_state-{session}".strip()
                     )
                     collection.add(state)
                     state_cache_dict[f"{session}"] = state
@@ -403,7 +401,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
             subject_state_dict[f"{subject}"] = state_cache_dict
         subject_cache = omcore.Subject(
             biological_sex=sex_openminds(data_subject),
-            lookup_label=f"{subject_name}",
+            lookup_label=f"{dataset_name}_{subject_name}",
             internal_identifier=f"{subject_name}",
             # TODO species should default to homo sapiens
             species=spices_openminds(data_subject),
