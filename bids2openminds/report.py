@@ -49,7 +49,7 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
     behavioral_protocols_list = ""
     if dataset_version.behavioral_protocols is not None:
         for behavioral_protocol in dataset_version.behavioral_protocols:
-            behavioral_protocols_list += f"{technique.behavioral_protocol}\n"
+            behavioral_protocols_list += f"{behavioral_protocol.name}\n"
     else:
         behavioral_protocols_list = "No behavioral protocols were detected. Please follow the BIDS recommendations for task labels, as bids2openminds detects behavioral protocols based on task labels."
 

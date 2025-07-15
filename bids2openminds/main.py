@@ -95,8 +95,9 @@ def create_behavioral_protocol(layout, collection):
 
 
 def techniques_openminds(suffix):
+    # TODO "MRIPulseSequence" and "MRIWeighting" should be added as soon as openMINDS v4 becomes available.
     possible_types = ["Technique", "AnalysisTechnique", "StimulationApproach",
-                      "StimulationTechnique", "MRIPulseSequence", "MRIWeighting"]
+                      "StimulationTechnique"]
 
     if suffix in mapping.MAP_2_TECHNIQUES:
         items_openminds = mapping.MAP_2_TECHNIQUES[suffix]
