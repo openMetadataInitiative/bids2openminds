@@ -96,7 +96,7 @@ def create_behavioral_protocol(layout, collection):
 
 def techniques_openminds(suffix):
     possible_types = ["Technique", "AnalysisTechnique", "StimulationApproach",
-                      "StimulationTechnique"]
+                      "StimulationTechnique", "MRIPulseSequence", "MRIWeighting"]
 
     if suffix in mapping.MAP_2_TECHNIQUES:
         items_openminds = mapping.MAP_2_TECHNIQUES[suffix]
