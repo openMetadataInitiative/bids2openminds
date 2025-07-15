@@ -561,7 +561,7 @@
     {
       "@id": "_:000039",
       "@type": "https://openminds.ebrains.eu/core/FileRepository",
-      "IRI": "file:///home/peyman-user/Desktop/data/bids_test/bids-examples/ds005",
+      "IRI": "PREFIX",
       "format": {
         "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids"
       },

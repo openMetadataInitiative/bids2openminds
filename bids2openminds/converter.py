@@ -3,6 +3,7 @@ from bids import BIDSLayout, BIDSValidator
 from openminds import Collection
 import os
 import click
+import re
 from . import main
 from . import utility
 from . import report
@@ -32,7 +33,10 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
 
-    dataset_name_snake_case = dataset_description["Name"].replace(" ", "-")
+    dataset_name_snake_case = re.sub(
+        r'[^a-zA-Z]+', '-', dataset_description["Name"])
+    if dataset_name_snake_case[-1] == "-":
+        dataset_name_snake_case = dataset_name_snake_case[0:-1]
 
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(
         subjects_id, layout_df, bids_layout, collection, dataset_name_snake_case)
