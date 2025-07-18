@@ -174,4 +174,4 @@ def detect_nifti_version(file_name, extension, file_size):
             elif sizeof_hdr == nii2_sizeof_hdr:
                 return ContentType.by_name("application/vnd.nifti.2")
 
-    return None
+    return ContentType.by_name("application/vnd.nifti.1")
