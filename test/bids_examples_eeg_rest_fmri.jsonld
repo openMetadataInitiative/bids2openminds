@@ -7,13 +7,13 @@
       "@id": "_:000000",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "internalIdentifier": "sub-32_state-01",
-      "lookupLabel": "EEG-fMRI-and-NODDI-at-rest_sub-32_state-01"
+      "lookupLabel": "EEG-fMRI-&-NODDI-@R_sub-32_state-01"
     },
     {
       "@id": "_:000001",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "internalIdentifier": "sub-32",
-      "lookupLabel": "EEG-fMRI-and-NODDI-at-rest_sub-32",
+      "lookupLabel": "EEG-fMRI-&-NODDI-@R_sub-32",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -41,13 +41,13 @@
       "@id": "_:000003",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "internalIdentifier": "sub-35_state-01",
-      "lookupLabel": "EEG-fMRI-and-NODDI-at-rest_sub-35_state-01"
+      "lookupLabel": "EEG-fMRI-&-NODDI-@R_sub-35_state-01"
     },
     {
       "@id": "_:000004",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "internalIdentifier": "sub-35",
-      "lookupLabel": "EEG-fMRI-and-NODDI-at-rest_sub-35",
+      "lookupLabel": "EEG-fMRI-&-NODDI-@R_sub-35",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -61,13 +61,13 @@
       "@id": "_:000005",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
       "internalIdentifier": "sub-36_state-01",
-      "lookupLabel": "EEG-fMRI-and-NODDI-at-rest_sub-36_state-01"
+      "lookupLabel": "EEG-fMRI-&-NODDI-@R_sub-36_state-01"
     },
     {
       "@id": "_:000006",
       "@type": "https://openminds.ebrains.eu/core/Subject",
       "internalIdentifier": "sub-36",
-      "lookupLabel": "EEG-fMRI-and-NODDI-at-rest_sub-36",
+      "lookupLabel": "EEG-fMRI-&-NODDI-@R_sub-36",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -1838,7 +1838,7 @@
       "repository": {
         "@id": "_:000010"
       },
-      "shortName": "EEG, fMRI and NODDI at rest'",
+      "shortName": "EEG-fMRI-&-NODDI-@R",
       "studiedSpecimen": [
         {
           "@id": "_:000001"

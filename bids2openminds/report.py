@@ -62,7 +62,8 @@ Conversion Report
 =================  
 Conversion was successful, the openMINDS file is in {output_path}
 
-Dataset title : {dataset.full_name}
+Dataset full name : {dataset.full_name}
+Dataset short name: {dataset.short_name}
 
 
 Experimental approaches detected:

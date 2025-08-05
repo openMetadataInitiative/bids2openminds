@@ -13,7 +13,7 @@ The ``convert`` function processes a Brain Imaging Data Structure (BIDS) directo
 
 Function Signature
 ##################
->>> def convert(input_path, save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False):
+>>> def convert(input_path, save_output=False, output_path=None, short_name=None, multiple_files=False, include_empty_properties=False, quiet=False):
 
 Parameters
 ##########
@@ -23,6 +23,7 @@ Parameters
 - ``multiple_files`` (bool, default=False): If True, the OpenMINDS data will be saved into multiple files within the specified output_path.
 - ``include_empty_properties`` (bool, default=False): If True, includes all the openMINDS properties with empty values in the final output. Otherwise includes only properties that have a non `None` value.
 - ``quiet`` (bool, default=False): If True, suppresses warnings and the final report output. Only prints success messages.
+- ``short_name`` (str or bool, default=None): A short name for this dataset. If set to a string, it will be used as the dataset's short name. If set to False, a short name will be assigned automatically. If None, the user will be prompted to enter one during conversion.
 
 Returns
 #######
@@ -32,7 +33,7 @@ Example Usage
 #############
 >>> import bids2openminds.converter as converter
 >>> input_path = "/path/to/BIDS/dataset"
->>> collection = converter.convert(input_path, save_output=True, output_path="/path/to/output", multiple_files=False, include_empty_properties=False, quiet=False)
+>>> collection = converter.convert(input_path, save_output=True, short_name=False, output_path="/path/to/output", multiple_files=False, include_empty_properties=False, quiet=False)
 
 Or one can chose the default parmetrs as following:
 
@@ -48,14 +49,20 @@ This function is also accessible via a command-line interface using the `click` 
 
     Usage: bids2openminds [OPTIONS] INPUT_PATH
 
-    Arguments:
-        input-path   Path to the BIDS directory.
-
     Options:
-        -o, --output-path PATH      The output path or filename for OpenMINDS file/files.
-        --single-file               Save the entire collection into a single file (default).
-        --multiple-files            Save each node into a separate file within the specified directory.
-        -e, --include-empty-properties
-                                    Include empty properties in the final file.
-        -q, --quiet                 Suppress warnings and reports.
+    -o, --output-path PATH          The output path or filename for OpenMINDS
+                                    file/files.
+    --single-file                   Save the entire collection into a single
+                                    file (default).
+    --multiple-files                Each node is saved into a separate file
+                                    within the specified directory. 'output-
+                                    path' if specified, must be a directory.
+    -e, --include-empty-properties  Whether to include empty properties in the
+                                    final file.
+    -q, --quiet                     Not generate the final report and no
+                                    warning.
+    -n, --short-name TEXT           Short name for the dataset. Set to False to
+                                    auto-generate.
+    --help                          Show this message and exit.
+
 

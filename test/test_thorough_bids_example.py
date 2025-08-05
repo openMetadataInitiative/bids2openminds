@@ -33,7 +33,8 @@ def load_collections():
         reference_collection = Collection()
         reference_collection.load(tempdir+test_standard_name)
 
-        bids2openminds.converter.convert(test_dataset, save_output=True)
+        bids2openminds.converter.convert(
+            test_dataset, save_output=True, short_name=False)
         generated_collection = Collection()
         generated_collection.load(os.path.join(
             test_dataset, "openminds.jsonld"))

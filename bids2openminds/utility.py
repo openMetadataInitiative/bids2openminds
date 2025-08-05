@@ -175,3 +175,74 @@ def detect_nifti_version(file_name, extension, file_size):
                 return ContentType.by_name("application/vnd.nifti.2")
 
     return None
+
+
+def create_short_name(full_name: str) -> str:
+    """
+    Generate short name from a full name.
+
+    Args:
+        full_name (str): A full name like "EEG, fMRI and NODDI at rest"
+
+    Returns:
+        str: Either the full name or a shortened version "EEG-fMRI-&-NODDI-@R"
+    """
+    substitutions = {
+        "and": "&",
+        "plus": "+",
+        "vs": "vs",
+        "versus": "vs",
+        "to": "→",
+        "from": "←",
+        "with": "+",
+        "without": "w/o",
+        "between": "↔",
+        "greater": ">",
+        "less": "<",
+        "equals": "=",
+        "equal": "=",
+        "not": "!",
+        "no": "!",
+        "or": "|",
+        "of": "",
+        "in": "@",
+        "at": "@",
+        "for": "4",
+        "by": "/",
+        "per": "/"
+    }
+
+    # Return the full name as the short name, since shortening an already short dataset is not useful.
+    if len(full_name) < 10:
+        return full_name
+
+    parts = re.split(r"[ \-\']+", full_name.strip())
+    short_name = []
+    if not parts:
+        return None
+    else:
+        for word in parts:
+            clean_word = word.strip(",.()")  # Remove punctuation
+            if not clean_word:
+                continue
+
+            word_lc = clean_word.lower()
+
+            # 1. Substitution first
+            if word_lc in substitutions:
+                symbol = substitutions[word_lc]
+                if symbol:  # Skip empty substitution like "of"
+                    short_name.append(symbol)
+                continue
+
+            # 2. Keep full word if it has ≥2 uppercase letters
+            num_upper = sum(1 for c in clean_word if c.isupper())
+            if num_upper >= 2:
+                short_name.append(f"-{clean_word}-")
+                continue
+
+            # 3. Default: First capital letter
+            short_name.append(clean_word[0].upper())
+
+        # Join, then clean up multiple dashes (e.g., in case of start/end)
+        return re.sub(r"-{2,}", "-", "".join(short_name)).strip("-")

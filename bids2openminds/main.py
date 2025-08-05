@@ -184,7 +184,7 @@ def create_openminds_age(data_subject):
         return None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
+def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, short_name, collection):
 
     # Fetch the dataset type from dataset description file
 
@@ -236,7 +236,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     dataset_version = omcore.DatasetVersion(
         digital_identifier=digital_identifier,
         experimental_approaches=experimental_approaches,
-        short_name=dataset_description["Name"],
+        short_name=short_name,
         full_name=dataset_description["Name"],
         studied_specimens=studied_specimens,
         authors=authors,
@@ -254,13 +254,13 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     return dataset_version
 
 
-def create_dataset(dataset_description, dataset_version, collection):
+def create_dataset(dataset_description, dataset_version, short_name, collection):
 
     dataset = omcore.Dataset(
         digital_identifier=dataset_version.digital_identifier,
         authors=dataset_version.authors,
         full_name=dataset_version.full_name,
-        short_name=dataset_version.short_name,
+        short_name=short_name,
         has_versions=dataset_version
     )
 
