@@ -49,6 +49,9 @@ This function is also accessible via a command-line interface using the `click` 
 
     Usage: bids2openminds [OPTIONS] INPUT_PATH
 
+    Arguments:
+        input-path   Path to the BIDS directory.
+
     Options:
     -o, --output-path PATH          The output path or filename for OpenMINDS
                                     file/files.
