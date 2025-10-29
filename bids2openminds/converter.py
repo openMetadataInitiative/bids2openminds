@@ -2,6 +2,7 @@ import warnings
 from bids import BIDSLayout, BIDSValidator
 from openminds import Collection
 import os
+import yaml
 import click
 from . import main
 from . import utility
@@ -27,10 +28,11 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
     subjects_id = bids_layout.get_subjects()
 
-    # imprting the dataset description file containing some of the
+    # importing the dataset description file containing some of the metadata
     dataset_description_path = utility.table_filter(layout_df, "description")
-
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
+    citation_path = utility.table_filter(layout_df, "CITATION")
+    citation = yaml.safe_load(open(citation_path.iat[0, 0], encoding="utf-8")) if not citation_path.empty else None
 
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(
         subjects_id, layout_df, bids_layout, collection)
@@ -42,7 +44,7 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
         layout_df, input_path, collection)
 
     dataset_version = main.create_dataset_version(
-        bids_layout, dataset_description, layout_df, subjects_list, file_repository, behavioral_protocols, collection)
+        bids_layout, citation, dataset_description, layout_df, subjects_list, file_repository, behavioral_protocols, collection)
 
     dataset = main.create_dataset(
         dataset_description, dataset_version, collection)
