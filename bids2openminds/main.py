@@ -217,6 +217,7 @@ def create_dataset_version(bids_layout, citation, dataset_description, layout_df
             for lic in omcore.License.instances():
                 if citation['license'] == getattr(lic, "short_name", None):
                     license = lic
+                    break
         if 'title' in citation:
             name = citation['title']
         if 'version' in citation:
