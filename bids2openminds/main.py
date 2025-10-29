@@ -59,7 +59,6 @@ def create_persons(dataset_description, collection):
                 person_orcid = omcore.ORCID(identifier=person['orcid'])
             if 'affiliation' in person:
                 person_affiliation = omcore.Affiliation(person['affiliation'])
-            print(person)
             openminds_person = omcore.Person(
                 affiliations=person_affiliation, digital_identifiers=person_orcid, given_name=person['given-names'], family_name=person['family-names'])
             openminds_list.append(openminds_person),
