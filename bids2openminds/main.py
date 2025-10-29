@@ -55,12 +55,17 @@ def create_persons(dataset_description, collection):
         for person in person_list:
             person_orcid = None
             person_affiliation = None
+            person_contact_information = None
             if 'orcid' in person:
                 person_orcid = omcore.ORCID(identifier=person['orcid'])
+            if 'email' in person:
+                person_contact_information = omcore.ContactInformation(email=person['email'])
             if 'affiliation' in person:
-                person_affiliation = omcore.Affiliation(person['affiliation'])
+                person_affiliation = omcore.Affiliation(
+                    member_of=omcore.Organization(full_name=person['affiliation']))
             openminds_person = omcore.Person(
-                affiliations=person_affiliation, digital_identifiers=person_orcid, given_name=person['given-names'], family_name=person['family-names'])
+                affiliations=person_affiliation, digital_identifiers=person_orcid, given_name=person['given-names'],
+                family_name=person['family-names'], contact_information=person_contact_information)
             openminds_list.append(openminds_person),
             collection.add(openminds_person)
         return openminds_list
