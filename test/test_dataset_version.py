@@ -35,3 +35,4 @@ def test_create_dataset_version_citation():
 
     for field in ["full_name", "short_name", "version_identifier", "license"]:
         assert getattr(citation_dataset_version, field) == getattr(expected, field)
+    assert citation_dataset_version.digital_identifier.identifier == expected.digital_identifier.identifier
