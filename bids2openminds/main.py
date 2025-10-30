@@ -62,12 +62,12 @@ def create_persons(dataset_description, collection):
                 person_contact_information = omcore.ContactInformation(email=person['email'])
             if 'affiliation' in person:
                 # Handle multiple affiliations separated by semicolon
-                affiliations = [item.strip() for item in person['affiliation'].split(';')]
+                affiliation_list = [item.strip() for item in person['affiliation'].split(';')]
                 person_affiliation = []
-                for aff in affiliations:
+                for affiliation in affiliation_list:
                     person_affiliation.append(omcore.Affiliation(
-                        member_of=omcore.Organization(full_name=aff)))
-
+                        member_of=omcore.Organization(full_name=affiliation)))
+                person_affiliation = person_affiliation if len(person_affiliation) > 1 else person_affiliation[0]
             openminds_person = omcore.Person(
                 affiliations=person_affiliation, digital_identifiers=person_orcid, given_name=person['given-names'],
                 family_name=person['family-names'], contact_information=person_contact_information)
