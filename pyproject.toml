@@ -47,3 +47,10 @@ line-length = 119
 
 [tool.setuptools]
 packages = ["bids2openminds"]
+
+[tool.codespell]
+# Ref: https://github.com/codespell-project/codespell#using-a-config-file
+skip = '.git*,*.svg'
+check-hidden = true
+# ignore-regex = ''
+# ignore-words-list = ''
