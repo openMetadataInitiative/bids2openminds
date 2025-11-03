@@ -339,9 +339,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
             # dealing with condition that have no seasion
             if not sessions:
                 state = omcore.SubjectState(
-                    lookup_label=f"{dataset_short_name_}{subject_name}".strip(),
-                    internal_identifier=f"{subject_name}".strip(
-                    )
+                    lookup_label=f"{dataset_short_name_}{subject_name}_ses-01".strip(),
+                    internal_identifier=None
                 )
                 collection.add(state)
                 state_cache_dict[""] = state
@@ -351,8 +350,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
                 for session in sessions:
                     if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                         state = omcore.SubjectState(
-                            lookup_label=f"{dataset_short_name_}{subject_name}_session-{session}".strip(),
-                            internal_identifier=f"{subject_name}_session-{session}".strip(
+                            lookup_label=f"{dataset_short_name_}{subject_name}_ses-{session}".strip(),
+                            internal_identifier=f"{subject_name}_ses-{session}".strip(
                             )
                         )
                         collection.add(state)
@@ -385,9 +384,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
             state = omcore.SubjectState(
                 age=create_openminds_age(data_subject),
                 handedness=handedness_openminds(data_subject),
-                internal_identifier=f"{subject_name}".strip(
-                ),
-                lookup_label=f"{dataset_short_name_}{subject_name}".strip()
+                internal_identifier=None,
+                lookup_label=f"{dataset_short_name_}{subject_name}_ses-01".strip()
             )
             collection.add(state)
             state_cache_dict[""] = state
@@ -398,8 +396,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
                     state = omcore.SubjectState(
                         age=create_openminds_age(data_subject),
                         handedness=handedness_openminds(data_subject),
-                        internal_identifier=f"{subject_name}_session-{session}".strip(),
-                        lookup_label=f"{dataset_short_name_}{subject_name}_session-{session}".strip()
+                        internal_identifier=f"{subject_name}_ses-{session}".strip(),
+                        lookup_label=f"{dataset_short_name_}{subject_name}_ses-{session}".strip()
                     )
                     collection.add(state)
                     state_cache_dict[f"{session}"] = state

@@ -13,8 +13,7 @@
         },
         "value": 28
       },
-      "internalIdentifier": "sub-01_state-01",
-      "lookupLabel": "MGT_sub-01_state-01"
+      "lookupLabel": "sub-01_ses-01"
     },
     {
       "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year",
@@ -28,7 +27,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-01",
-      "lookupLabel": "MGT_sub-01",
+      "lookupLabel": "sub-01",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -71,8 +70,7 @@
         },
         "value": 21
       },
-      "internalIdentifier": "sub-02_state-01",
-      "lookupLabel": "MGT_sub-02_state-01"
+      "lookupLabel": "sub-02_ses-01"
     },
     {
       "@id": "_:000006",
@@ -81,7 +79,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-02",
-      "lookupLabel": "MGT_sub-02",
+      "lookupLabel": "sub-02",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -110,8 +108,7 @@
         },
         "value": 27
       },
-      "internalIdentifier": "sub-03_state-01",
-      "lookupLabel": "MGT_sub-03_state-01"
+      "lookupLabel": "sub-03_ses-01"
     },
     {
       "@id": "_:000009",
@@ -120,7 +117,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-03",
-      "lookupLabel": "MGT_sub-03",
+      "lookupLabel": "sub-03",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -140,8 +137,7 @@
         },
         "value": 25
       },
-      "internalIdentifier": "sub-04_state-01",
-      "lookupLabel": "MGT_sub-04_state-01"
+      "lookupLabel": "sub-04_ses-01"
     },
     {
       "@id": "_:000011",
@@ -150,7 +146,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-04",
-      "lookupLabel": "MGT_sub-04",
+      "lookupLabel": "sub-04",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -170,8 +166,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "sub-05_state-01",
-      "lookupLabel": "MGT_sub-05_state-01"
+      "lookupLabel": "sub-05_ses-01"
     },
     {
       "@id": "_:000013",
@@ -180,7 +175,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-05",
-      "lookupLabel": "MGT_sub-05",
+      "lookupLabel": "sub-05",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -200,8 +195,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "sub-06_state-01",
-      "lookupLabel": "MGT_sub-06_state-01"
+      "lookupLabel": "sub-06_ses-01"
     },
     {
       "@id": "_:000015",
@@ -210,7 +204,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-06",
-      "lookupLabel": "MGT_sub-06",
+      "lookupLabel": "sub-06",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -230,8 +224,7 @@
         },
         "value": 24
       },
-      "internalIdentifier": "sub-07_state-01",
-      "lookupLabel": "MGT_sub-07_state-01"
+      "lookupLabel": "sub-07_ses-01"
     },
     {
       "@id": "_:000017",
@@ -240,7 +233,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-07",
-      "lookupLabel": "MGT_sub-07",
+      "lookupLabel": "sub-07",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -260,8 +253,7 @@
         },
         "value": 25
       },
-      "internalIdentifier": "sub-08_state-01",
-      "lookupLabel": "MGT_sub-08_state-01"
+      "lookupLabel": "sub-08_ses-01"
     },
     {
       "@id": "_:000019",
@@ -270,7 +262,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-08",
-      "lookupLabel": "MGT_sub-08",
+      "lookupLabel": "sub-08",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -290,8 +282,7 @@
         },
         "value": 19
       },
-      "internalIdentifier": "sub-09_state-01",
-      "lookupLabel": "MGT_sub-09_state-01"
+      "lookupLabel": "sub-09_ses-01"
     },
     {
       "@id": "_:000021",
@@ -300,7 +291,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-09",
-      "lookupLabel": "MGT_sub-09",
+      "lookupLabel": "sub-09",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -320,8 +311,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "sub-10_state-01",
-      "lookupLabel": "MGT_sub-10_state-01"
+      "lookupLabel": "sub-10_ses-01"
     },
     {
       "@id": "_:000023",
@@ -330,7 +320,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-10",
-      "lookupLabel": "MGT_sub-10",
+      "lookupLabel": "sub-10",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -350,8 +340,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "sub-11_state-01",
-      "lookupLabel": "MGT_sub-11_state-01"
+      "lookupLabel": "sub-11_ses-01"
     },
     {
       "@id": "_:000025",
@@ -360,7 +349,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-11",
-      "lookupLabel": "MGT_sub-11",
+      "lookupLabel": "sub-11",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -380,8 +369,7 @@
         },
         "value": 21
       },
-      "internalIdentifier": "sub-12_state-01",
-      "lookupLabel": "MGT_sub-12_state-01"
+      "lookupLabel": "sub-12_ses-01"
     },
     {
       "@id": "_:000027",
@@ -390,7 +378,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-12",
-      "lookupLabel": "MGT_sub-12",
+      "lookupLabel": "sub-12",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -410,8 +398,7 @@
         },
         "value": 22
       },
-      "internalIdentifier": "sub-13_state-01",
-      "lookupLabel": "MGT_sub-13_state-01"
+      "lookupLabel": "sub-13_ses-01"
     },
     {
       "@id": "_:000029",
@@ -420,7 +407,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-13",
-      "lookupLabel": "MGT_sub-13",
+      "lookupLabel": "sub-13",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -440,8 +427,7 @@
         },
         "value": 19
       },
-      "internalIdentifier": "sub-14_state-01",
-      "lookupLabel": "MGT_sub-14_state-01"
+      "lookupLabel": "sub-14_ses-01"
     },
     {
       "@id": "_:000031",
@@ -450,7 +436,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-14",
-      "lookupLabel": "MGT_sub-14",
+      "lookupLabel": "sub-14",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -470,8 +456,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "sub-15_state-01",
-      "lookupLabel": "MGT_sub-15_state-01"
+      "lookupLabel": "sub-15_ses-01"
     },
     {
       "@id": "_:000033",
@@ -480,7 +465,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/female"
       },
       "internalIdentifier": "sub-15",
-      "lookupLabel": "MGT_sub-15",
+      "lookupLabel": "sub-15",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -500,8 +485,7 @@
         },
         "value": 22
       },
-      "internalIdentifier": "sub-16_state-01",
-      "lookupLabel": "MGT_sub-16_state-01"
+      "lookupLabel": "sub-16_ses-01"
     },
     {
       "@id": "_:000035",
@@ -510,7 +494,7 @@
         "@id": "https://openminds.ebrains.eu/instances/biologicalSex/male"
       },
       "internalIdentifier": "sub-16",
-      "lookupLabel": "MGT_sub-16",
+      "lookupLabel": "sub-16",
       "species": {
         "@id": "https://openminds.ebrains.eu/instances/species/homoSapiens"
       },
@@ -5530,7 +5514,6 @@
       "repository": {
         "@id": "_:000039"
       },
-      "shortName": "MGT",
       "studiedSpecimen": [
         {
           "@id": "_:000002"
@@ -5647,8 +5630,7 @@
         {
           "@id": "_:000229"
         }
-      ],
-      "shortName": "MGT"
+      ]
     }
   ]
 }
