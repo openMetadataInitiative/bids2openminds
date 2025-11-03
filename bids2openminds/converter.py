@@ -33,20 +33,39 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
 
-    # Handle if short_name is explicitly set to False (i.e., wants auto-generation)
-    if short_name is False:
-        short_name = utility.create_short_name(dataset_description["Name"])
-
-    # If no short_name provided (i.e., None), prompt the user
     if short_name is None:
-        short_name = utility.create_short_name(dataset_description["Name"])
-        print(short_name)
-        input_name = input(
-            f"To convert this dataset, a short name is required. Currently, '{short_name}' was automatically assigned to your dataset.\n"
-            f"Please enter a more informative short name, or press Enter to keep the current one:\n"
-        )
-        if input_name.strip():
-            short_name = input_name.strip()
+        while True:
+            input_name = input(
+                "To convert this dataset, a short name is required.\n"
+                "Please enter an informative short name (less than 10 characters).\n"
+                "If you don't want to assign one now, press Enter, "
+                "lookup labels and internal identifiers will be the same.\n> "
+            ).strip()
+
+            # User pressed Enter → skip assigning
+            if not input_name:
+                short_name = None
+                break
+
+            # Check length
+            if len(input_name) < 10:
+                short_name = input_name
+                break
+            else:
+                print(
+                    "The short name must be fewer than 10 characters. Please try again.\n")
+
+    elif short_name is False:
+        # Explicit opt-out — skip prompt
+        short_name = None
+
+    else:
+        # Ensure the short name has no spaces and is under 10 characters
+        short_name = short_name.replace(" ", "")
+        if len(short_name) > 10:
+            while len(short_name) > 10:
+                short_name = input(
+                    "The short name must be fewer than 10 characters. Please try again.").strip()
 
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(
         subjects_id, layout_df, bids_layout, collection, short_name)
@@ -76,9 +95,13 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
         collection.save(output_path, individual_files=multiple_files,
                         include_empty_properties=include_empty_properties)
 
+        save_text = f"the openMINDS file is in {output_path}"
+    else:
+        save_text = save_text = "No files were saved; the function returned the output collection instead."
+
     if not quiet:
         print(report.create_report(dataset, dataset_version, collection,
-                                   dataset_description, input_path, output_path))
+                                   dataset_description, input_path, save_text))
 
     else:
         print("Conversion was successful")
@@ -93,7 +116,7 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 @click.option("--multiple-files", "multiple_files", flag_value=True, help="Each node is saved into a separate file within the specified directory. 'output-path' if specified, must be a directory.")
 @click.option("-e", "--include-empty-properties", is_flag=True, default=False, help="Whether to include empty properties in the final file.")
 @click.option("-q", "--quiet", is_flag=True, default=False, help="Not generate the final report and no warning.")
-@click.option("-n", "--short-name", default=None, help="Short name for the dataset. Set to False to auto-generate.")
+@click.option("-n", "--short-name", default=None, help="Short name for the dataset (less than 10 characters). If None, you'll be prompted (default); if False, no short name will be assigned.")
 def convert_click(input_path, output_path, multiple_files, include_empty_properties, quiet, short_name):
     convert(input_path, save_output=True, output_path=output_path,
             multiple_files=multiple_files, include_empty_properties=include_empty_properties, quiet=quiet, short_name=short_name)

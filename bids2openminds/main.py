@@ -317,6 +317,12 @@ def sex_openminds(data_subject: pd.DataFrame):
 
 def create_subjects(subject_id, layout_df, layout, collection, dataset_short_name):
 
+    if dataset_short_name:
+        dataset_short_name_ = dataset_short_name + "_"
+    else:
+        # If there is no short name, assign an empty string so lookup labels don’t include it
+        dataset_short_name_ = ""
+
     sessions = layout.get_sessions()
     subjects_dict = {}
     subjects_list = []
@@ -333,8 +339,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
             # dealing with condition that have no seasion
             if not sessions:
                 state = omcore.SubjectState(
-                    lookup_label=f"{dataset_short_name}_{subject_name}_state-01".strip(),
-                    internal_identifier=f"{subject_name}_state-01".strip(
+                    lookup_label=f"{dataset_short_name_}{subject_name}".strip(),
+                    internal_identifier=f"{subject_name}".strip(
                     )
                 )
                 collection.add(state)
@@ -345,8 +351,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
                 for session in sessions:
                     if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
                         state = omcore.SubjectState(
-                            lookup_label=f"{dataset_short_name}_{subject_name}_state-{session}".strip(),
-                            internal_identifier=f"{subject_name}_state-{session}".strip(
+                            lookup_label=f"{dataset_short_name_}{subject_name}_session-{session}".strip(),
+                            internal_identifier=f"{subject_name}_session-{session}".strip(
                             )
                         )
                         collection.add(state)
@@ -354,7 +360,7 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
                         state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
             subject_cache = omcore.Subject(
-                lookup_label=f"{dataset_short_name}_{subject_name}",
+                lookup_label=f"{dataset_short_name_}{subject_name}",
                 internal_identifier=f"{subject_name}",
                 studied_states=state_cache
             )
@@ -379,9 +385,9 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
             state = omcore.SubjectState(
                 age=create_openminds_age(data_subject),
                 handedness=handedness_openminds(data_subject),
-                internal_identifier=f"{subject_name}_state-01".strip(
+                internal_identifier=f"{subject_name}".strip(
                 ),
-                lookup_label=f"{dataset_short_name}_{subject_name}_state-01".strip()
+                lookup_label=f"{dataset_short_name_}{subject_name}".strip()
             )
             collection.add(state)
             state_cache_dict[""] = state
@@ -392,8 +398,8 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
                     state = omcore.SubjectState(
                         age=create_openminds_age(data_subject),
                         handedness=handedness_openminds(data_subject),
-                        internal_identifier=f"{subject_name}_state-{session}".strip(),
-                        lookup_label=f"{dataset_short_name}_{subject_name}_state-{session}".strip()
+                        internal_identifier=f"{subject_name}_session-{session}".strip(),
+                        lookup_label=f"{dataset_short_name_}{subject_name}_session-{session}".strip()
                     )
                     collection.add(state)
                     state_cache_dict[f"{session}"] = state
@@ -401,7 +407,7 @@ def create_subjects(subject_id, layout_df, layout, collection, dataset_short_nam
             subject_state_dict[f"{subject}"] = state_cache_dict
         subject_cache = omcore.Subject(
             biological_sex=sex_openminds(data_subject),
-            lookup_label=f"{dataset_short_name}_{subject_name}",
+            lookup_label=f"{dataset_short_name_}{subject_name}",
             internal_identifier=f"{subject_name}",
             # TODO species should default to homo sapiens
             species=spices_openminds(data_subject),

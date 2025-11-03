@@ -1,7 +1,7 @@
 import os
 
 
-def create_report(dataset, dataset_version, collection, dataset_description, input_path, output_path):
+def create_report(dataset, dataset_version, collection, dataset_description, input_path, save_text):
     subject_number = 0
     subject_state_numbers = []
     file_bundle_number = 0
@@ -60,7 +60,7 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
     report = f"""
 Conversion Report
 =================  
-Conversion was successful, the openMINDS file is in {output_path}
+Conversion was successful, {save_text}
 
 Dataset full name : {dataset.full_name}
 Dataset short name: {dataset.short_name}

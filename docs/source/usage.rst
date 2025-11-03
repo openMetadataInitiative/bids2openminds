@@ -23,7 +23,7 @@ Parameters
 - ``multiple_files`` (bool, default=False): If True, the OpenMINDS data will be saved into multiple files within the specified output_path.
 - ``include_empty_properties`` (bool, default=False): If True, includes all the openMINDS properties with empty values in the final output. Otherwise includes only properties that have a non `None` value.
 - ``quiet`` (bool, default=False): If True, suppresses warnings and the final report output. Only prints success messages.
-- ``short_name`` (str or bool, default=None): A short name for this dataset. If set to a string, it will be used as the dataset's short name. If set to ``False``, a short name will be assigned automatically. If ``None``, the user will be prompted to enter one during conversion.
+- ``short_name`` (str or bool, default=None): A short name for the dataset (less than 10 characters). If None, you'll be prompted (default); if False, no short name will be assigned.
 
 Returns
 #######
@@ -33,7 +33,7 @@ Example Usage
 #############
 >>> import bids2openminds.converter as converter
 >>> input_path = "/path/to/BIDS/dataset"
->>> collection = converter.convert(input_path, save_output=True, short_name=False, output_path="/path/to/output", multiple_files=False, include_empty_properties=False, quiet=False)
+>>> collection = converter.convert(input_path, save_output=True, short_name=ShortName, output_path="/path/to/output", multiple_files=False, include_empty_properties=False, quiet=False)
 
 Or one can chose the default parmetrs as following:
 
@@ -47,10 +47,7 @@ This function is also accessible via a command-line interface using the `click` 
 
 .. code-block:: console
 
-    Usage: bids2openminds INPUT_PATH [OPTIONS]
-
-    Arguments:
-        input-path   Path to the BIDS directory.
+    Usage: bids2openminds [OPTIONS] INPUT_PATH
 
     Options:
     -o, --output-path PATH          The output path or filename for OpenMINDS
@@ -64,8 +61,11 @@ This function is also accessible via a command-line interface using the `click` 
                                     final file.
     -q, --quiet                     Not generate the final report and no
                                     warning.
-    -n, --short-name TEXT           Short name for the dataset. Set to False to
-                                    auto-generate.
+    -n, --short-name TEXT           Short name for the dataset (less than 10
+                                    characters). If None, you'll be prompted
+                                    (default); if False, no short name will be
+                                    assigned.
     --help                          Show this message and exit.
+
 
 
