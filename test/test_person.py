@@ -56,10 +56,10 @@ def test_create_openminds_person_citation_explicit():
     expected_author1 = omcore.Person(
         given_name="Peter",
         family_name="Awart",
-        affiliations=omcore.Affiliation(
-            member_of=omcore.Organization(full_name="Place1")
-        ),
-        digital_identifiers=omcore.ORCID(identifier="https://orcid.org/1234-5678-9123-4567")
+        affiliations=[
+            omcore.Affiliation(member_of=omcore.Organization(full_name="Place1"))
+        ],
+        digital_identifiers=[omcore.ORCID(identifier="https://orcid.org/1234-5678-9123-4567")]
     )
 
     expected_author2 = omcore.Person(
@@ -73,12 +73,12 @@ def test_create_openminds_person_citation_explicit():
 
     assert author1.given_name == expected_author1.given_name
     assert author1.family_name == expected_author1.family_name
-    assert author1.digital_identifiers.identifier == expected_author1.digital_identifiers.identifier
+    assert author1.digital_identifiers[0].identifier == expected_author1.digital_identifiers[0].identifier
     assert author2.given_name == expected_author2.given_name
     assert author2.family_name == expected_author2.family_name
 
     # Single affiliation
-    assert author1.affiliations.member_of.full_name == expected_author1.affiliations.member_of.full_name
+    assert author1.affiliations[0].member_of.full_name == expected_author1.affiliations[0].member_of.full_name
 
     # Multiple affiliations
     assert author2.affiliations[0].member_of.full_name == expected_author2.affiliations[0].member_of.full_name
