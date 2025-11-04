@@ -6,8 +6,7 @@
     {
       "@id": "_:000000",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
-      "internalIdentifier": "Studied state sub-32",
-      "lookupLabel": "Studied state sub-32"
+      "lookupLabel": "sub-32_ses-01"
     },
     {
       "@id": "_:000001",
@@ -40,8 +39,7 @@
     {
       "@id": "_:000003",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
-      "internalIdentifier": "Studied state sub-35",
-      "lookupLabel": "Studied state sub-35"
+      "lookupLabel": "sub-35_ses-01"
     },
     {
       "@id": "_:000004",
@@ -60,8 +58,7 @@
     {
       "@id": "_:000005",
       "@type": "https://openminds.ebrains.eu/core/SubjectState",
-      "internalIdentifier": "Studied state sub-36",
-      "lookupLabel": "Studied state sub-36"
+      "lookupLabel": "sub-36_ses-01"
     },
     {
       "@id": "_:000006",
@@ -118,7 +115,7 @@
     {
       "@id": "_:000010",
       "@type": "https://openminds.ebrains.eu/core/FileRepository",
-      "IRI": "file:///home/peyman-user/Desktop/Code/bids-examples/eeg_rest_fmri",
+      "IRI": "PREFIX",
       "format": {
         "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids"
       },
@@ -1838,7 +1835,6 @@
       "repository": {
         "@id": "_:000010"
       },
-      "shortName": "EEG, fMRI and NODDI at rest'",
       "studiedSpecimen": [
         {
           "@id": "_:000001"
@@ -1937,8 +1933,7 @@
         {
           "@id": "_:000085"
         }
-      ],
-      "shortName": "EEG, fMRI and NODDI at rest'"
+      ]
     }
   ]
 }

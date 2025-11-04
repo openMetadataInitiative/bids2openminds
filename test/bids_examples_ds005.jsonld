@@ -13,8 +13,7 @@
         },
         "value": 28
       },
-      "internalIdentifier": "Studied state sub-01",
-      "lookupLabel": "Studied state sub-01"
+      "lookupLabel": "sub-01_ses-01"
     },
     {
       "@id": "https://openminds.ebrains.eu/instances/unitOfMeasurement/year",
@@ -71,8 +70,7 @@
         },
         "value": 21
       },
-      "internalIdentifier": "Studied state sub-02",
-      "lookupLabel": "Studied state sub-02"
+      "lookupLabel": "sub-02_ses-01"
     },
     {
       "@id": "_:000006",
@@ -110,8 +108,7 @@
         },
         "value": 27
       },
-      "internalIdentifier": "Studied state sub-03",
-      "lookupLabel": "Studied state sub-03"
+      "lookupLabel": "sub-03_ses-01"
     },
     {
       "@id": "_:000009",
@@ -140,8 +137,7 @@
         },
         "value": 25
       },
-      "internalIdentifier": "Studied state sub-04",
-      "lookupLabel": "Studied state sub-04"
+      "lookupLabel": "sub-04_ses-01"
     },
     {
       "@id": "_:000011",
@@ -170,8 +166,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "Studied state sub-05",
-      "lookupLabel": "Studied state sub-05"
+      "lookupLabel": "sub-05_ses-01"
     },
     {
       "@id": "_:000013",
@@ -200,8 +195,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "Studied state sub-06",
-      "lookupLabel": "Studied state sub-06"
+      "lookupLabel": "sub-06_ses-01"
     },
     {
       "@id": "_:000015",
@@ -230,8 +224,7 @@
         },
         "value": 24
       },
-      "internalIdentifier": "Studied state sub-07",
-      "lookupLabel": "Studied state sub-07"
+      "lookupLabel": "sub-07_ses-01"
     },
     {
       "@id": "_:000017",
@@ -260,8 +253,7 @@
         },
         "value": 25
       },
-      "internalIdentifier": "Studied state sub-08",
-      "lookupLabel": "Studied state sub-08"
+      "lookupLabel": "sub-08_ses-01"
     },
     {
       "@id": "_:000019",
@@ -290,8 +282,7 @@
         },
         "value": 19
       },
-      "internalIdentifier": "Studied state sub-09",
-      "lookupLabel": "Studied state sub-09"
+      "lookupLabel": "sub-09_ses-01"
     },
     {
       "@id": "_:000021",
@@ -320,8 +311,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "Studied state sub-10",
-      "lookupLabel": "Studied state sub-10"
+      "lookupLabel": "sub-10_ses-01"
     },
     {
       "@id": "_:000023",
@@ -350,8 +340,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "Studied state sub-11",
-      "lookupLabel": "Studied state sub-11"
+      "lookupLabel": "sub-11_ses-01"
     },
     {
       "@id": "_:000025",
@@ -380,8 +369,7 @@
         },
         "value": 21
       },
-      "internalIdentifier": "Studied state sub-12",
-      "lookupLabel": "Studied state sub-12"
+      "lookupLabel": "sub-12_ses-01"
     },
     {
       "@id": "_:000027",
@@ -410,8 +398,7 @@
         },
         "value": 22
       },
-      "internalIdentifier": "Studied state sub-13",
-      "lookupLabel": "Studied state sub-13"
+      "lookupLabel": "sub-13_ses-01"
     },
     {
       "@id": "_:000029",
@@ -440,8 +427,7 @@
         },
         "value": 19
       },
-      "internalIdentifier": "Studied state sub-14",
-      "lookupLabel": "Studied state sub-14"
+      "lookupLabel": "sub-14_ses-01"
     },
     {
       "@id": "_:000031",
@@ -470,8 +456,7 @@
         },
         "value": 20
       },
-      "internalIdentifier": "Studied state sub-15",
-      "lookupLabel": "Studied state sub-15"
+      "lookupLabel": "sub-15_ses-01"
     },
     {
       "@id": "_:000033",
@@ -500,8 +485,7 @@
         },
         "value": 22
       },
-      "internalIdentifier": "Studied state sub-16",
-      "lookupLabel": "Studied state sub-16"
+      "lookupLabel": "sub-16_ses-01"
     },
     {
       "@id": "_:000035",
@@ -561,7 +545,7 @@
     {
       "@id": "_:000039",
       "@type": "https://openminds.ebrains.eu/core/FileRepository",
-      "IRI": "file:///home/peyman-user/Desktop/data/bids_test/bids-examples/ds005",
+      "IRI": "PREFIX",
       "format": {
         "@id": "https://openminds.ebrains.eu/instances/contentTypes/application_vnd.bids"
       },
@@ -5530,7 +5514,6 @@
       "repository": {
         "@id": "_:000039"
       },
-      "shortName": "Mixed-gambles task",
       "studiedSpecimen": [
         {
           "@id": "_:000002"
@@ -5647,8 +5630,7 @@
         {
           "@id": "_:000229"
         }
-      ],
-      "shortName": "Mixed-gambles task"
+      ]
     }
   ]
 }

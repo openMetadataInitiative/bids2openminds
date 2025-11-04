@@ -17,7 +17,8 @@ example_dataset = [("ds003", 13, 13, 2, 58, 39, 1),
 @pytest.mark.parametrize("dataset_label, dataset_subject_number, dataset_subject_state_number, dataset_person_number, dataset_files_number, dataset_file_bundles_number, dataset_behavioral_protocol_number", example_dataset)
 def test_example_datasets(dataset_label, dataset_subject_number, dataset_subject_state_number, dataset_person_number, dataset_files_number, dataset_file_bundles_number, dataset_behavioral_protocol_number):
     test_dir = os.path.join("bids-examples", dataset_label)
-    bids2openminds.converter.convert(test_dir, save_output=True)
+    bids2openminds.converter.convert(
+        test_dir, save_output=True, short_name=False)
     c = Collection()
     c.load(os.path.join(test_dir, "openminds.jsonld"))
 
