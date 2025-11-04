@@ -7,6 +7,7 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
     file_bundle_number = 0
     files_number = 0
     behavioral_protocols_numbers = 0
+    content_type_list = ""
 
     for item in collection:
         if item.type_.endswith("Subject"):
@@ -25,6 +26,10 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
         if item.type_.endswith("BehavioralProtocol"):
 
             behavioral_protocols_numbers += 1
+
+        if item.type_.endswith("ContentType"):
+
+            content_type_list += f"{item.name}\n"
 
     experimental_approaches_list = ""
     if dataset_version.experimental_approaches is not None:
@@ -97,6 +102,10 @@ Experimental approaches detected:
 Detected data types:
 ------------------------------------------
 {data_types_list}
+
+Detected content types:
+------------------------------------------
+{content_type_list}
 
 Detected techniques:
 ------------------------------------------
