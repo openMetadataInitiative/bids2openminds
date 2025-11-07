@@ -7,6 +7,7 @@ import openminds.v3.core as omcore
 from bids2openminds.main import create_dataset_version
 
 def test_create_dataset_version_citation():
+    # Mock loaded CITATION.cff
     citation = {
         "title": "My Dataset",
         "version": "1.05.9",
