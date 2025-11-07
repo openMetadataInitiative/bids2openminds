@@ -2,12 +2,13 @@
 name = "bids2openminds"
 version = "0.1.1"
 dependencies = [
-  "bids-validator == 1.14.6" ,
+  "bids-validator == 1.14.6",
   "bids",
   "openminds >= 0.2.3",
   "click>=8.1",
   "pandas",
-  "nameparser >= 1.1.3"
+  "nameparser >= 1.1.3",
+  "PyYAML"
 ]
 requires-python = ">=3.9"
 authors = [
