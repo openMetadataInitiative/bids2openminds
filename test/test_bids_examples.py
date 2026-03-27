@@ -19,7 +19,7 @@ def test_example_datasets(dataset_label, dataset_subject_number, dataset_subject
     test_dir = os.path.join("bids-examples", dataset_label)
     bids2openminds.converter.convert(test_dir, save_output=True)
     c = Collection()
-    c.load(os.path.join(test_dir, "openminds.jsonld"), version="v3")
+    c.load(os.path.join(test_dir, "openminds.jsonld"), version="v4")
 
     subject_number = 0
     subject_state_number = 0
@@ -30,18 +30,18 @@ def test_example_datasets(dataset_label, dataset_subject_number, dataset_subject
     subject_state_number_besed_on_subject = 0
 
     for item in c:
-        if item.type_ == "https://openminds.ebrains.eu/core/Subject":
+        if item.type_ == "https://openminds.om-i.org/types/Subject":
             subject_number += 1
             subject_state_number_besed_on_subject += len(item.studied_states)
-        if item.type_ == "https://openminds.ebrains.eu/core/SubjectState":
+        if item.type_ == "https://openminds.om-i.org/types/SubjectState":
             subject_state_number += 1
-        if item.type_ == "https://openminds.ebrains.eu/core/Person":
+        if item.type_ == "https://openminds.om-i.org/types/Person":
             person_number += 1
-        if item.type_ == "https://openminds.ebrains.eu/core/File":
+        if item.type_ == "https://openminds.om-i.org/types/File":
             files_number += 1
-        if item.type_ == "https://openminds.ebrains.eu/core/FileBundle":
+        if item.type_ == "https://openminds.om-i.org/types/FileBundle":
             file_bundles_number += 1
-        if item.type_ == "https://openminds.ebrains.eu/core/BehavioralProtocol":
+        if item.type_ == "https://openminds.om-i.org/types/BehavioralProtocol":
             behavioral_protocol_number += 1
 
     assert dataset_subject_number == subject_number
