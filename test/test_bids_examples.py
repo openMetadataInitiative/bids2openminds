@@ -19,7 +19,7 @@ def test_example_datasets(dataset_label, dataset_subject_number, dataset_subject
     test_dir = os.path.join("bids-examples", dataset_label)
     bids2openminds.converter.convert(test_dir, save_output=True)
     c = Collection()
-    c.load(os.path.join(test_dir, "openminds.jsonld"))
+    c.load(os.path.join(test_dir, "openminds.jsonld"), version="v3")
 
     subject_number = 0
     subject_state_number = 0
