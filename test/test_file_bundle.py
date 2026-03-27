@@ -50,7 +50,7 @@ def test_number_file_bundle(generate_file_bundle_collection):
     _, collection, _ = generate_file_bundle_collection
     m = 0
     for item in collection:
-        if item.type_ == "https://openminds.ebrains.eu/core/FileBundle":
+        if item.type_ == "https://openminds.om-i.org/types/FileBundle":
             m += 1
     assert m == number_of_openminds_bundle
 
@@ -82,7 +82,7 @@ def test_random_folder(test_dir, path_list, bundle, parent_bundle, generate_file
     dataset_bundle = None
 
     for item in collection:
-        if item.type_ == "https://openminds.ebrains.eu/core/FileBundle" and item.name == folder_name:
+        if item.type_ == "https://openminds.om-i.org/types/FileBundle" and item.name == folder_name:
             # detects only one file bundle have this name
             assert dataset_bundle is None
             dataset_bundle = item
@@ -94,5 +94,5 @@ def test_random_folder(test_dir, path_list, bundle, parent_bundle, generate_file
     if parent_bundle is not None:
         assert dataset_bundle.is_part_of.name == parent_bundle[0]
     else:
-        assert dataset_bundle.is_part_of.type_ == "https://openminds.ebrains.eu/core/FileRepository"
+        assert dataset_bundle.is_part_of.type_ == "https://openminds.om-i.org/types/FileRepository"
         assert dataset_bundle.is_part_of.iri.value == file_repository_iri

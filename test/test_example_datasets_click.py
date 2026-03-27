@@ -13,7 +13,7 @@ def test_example_datasets_click():
     result = runner.invoke(convert_click, [test_dir])
     assert result.exit_code == 0
     c = Collection()
-    c.load(os.path.join(test_dir, "openminds.jsonld"), version="v3")
+    c.load(os.path.join(test_dir, "openminds.jsonld"), version="v4")
 
 
 def test_example_datasets_click_seperate_files():
@@ -36,4 +36,4 @@ def test_example_datasets_click_output_location():
         convert_click, ["-o", openminds_file, test_dir])
     assert result.exit_code == 0
     c = Collection()
-    c.load(openminds_file, version="v3")
+    c.load(openminds_file, version="v4")
