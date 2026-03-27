@@ -34,7 +34,7 @@ jobs:
 
     - name: Install package with test dependencies
       run: |
-        pip install .[test]
+        pip install -e .[test]
 
     - name: Test installed package
       run: |
