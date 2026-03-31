@@ -48,8 +48,35 @@ def create_openminds_person(full_name):
 
 
 def create_persons(dataset_description, collection):
+    # citation.cff case
+    if "authors" in dataset_description:
+        person_list = dataset_description["authors"]
+        openminds_list=[]
+        for person in person_list:
+            person_orcid = None
+            person_affiliation = None
+            person_contact_information = None
+            if 'orcid' in person:
+                person_orcid = [omcore.ORCID(identifier=person['orcid'])]
+            if 'email' in person:
+                person_contact_information = omcore.ContactInformation(email=person['email'])
+            if 'affiliation' in person:
+                # Handle multiple affiliations separated by semicolon
+                affiliation_list = [item.strip() for item in person['affiliation'].split(';')]
+                person_affiliation = []
+                for affiliation in affiliation_list:
+                    person_affiliation.append(omcore.Affiliation(
+                        member_of=omcore.Organization(full_name=affiliation)))
 
-    if "Authors" in dataset_description:
+            openminds_person = omcore.Person(
+                affiliations=person_affiliation, digital_identifiers=person_orcid, given_name=person['given-names'],
+                family_name=person['family-names'], contact_information=person_contact_information)
+            openminds_list.append(openminds_person)
+            collection.add(openminds_person)
+        return openminds_list
+
+    # dataset_description.json case
+    elif "Authors" in dataset_description:
         person_list = dataset_description["Authors"]
     else:
         return None
@@ -185,21 +212,37 @@ def create_openminds_age(data_subject):
         return None
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
+def create_dataset_version(bids_layout, citation, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
 
     # Fetch the dataset type from dataset description file
 
     # dataset_type=bids2openminds_instance(dataset_description.get("DatasetType",None))
+    license = None
+    digital_identifier = None
+    name = None
+    version_identifier = None
+    if citation:
+        if 'doi' in citation:
+            digital_identifier = omcore.DOI(identifier=citation['doi'])
+        if 'license' in citation:
+            for lic in omcore.License.instances():
+                if citation['license'] == getattr(lic, "short_name", None):
+                    license = lic
+                    break
+        if 'title' in citation:
+            name = citation['title']
+        if 'version' in citation:
+            version_identifier = citation['version']
+        authors = create_persons(citation, collection)
 
-    # Fetch the digitalIdentifier from dataset description file
-
-    if "DatasetDOI" in dataset_description:
-        digital_identifier = omcore.DOI(
-            identifier=dataset_description["DatasetDOI"])
     else:
-        digital_identifier = None
+        name = dataset_description["Name"]
+        # Fetch the digitalIdentifier from dataset description file
+        if "DatasetDOI" in dataset_description:
+            digital_identifier = omcore.DOI(
+                identifier=dataset_description["DatasetDOI"])
 
-    authors = create_persons(dataset_description, collection)
+        authors = create_persons(dataset_description, collection)
 
     if "Acknowledgements" in dataset_description:
         other_contribution = dataset_description["Acknowledgements"]
@@ -235,19 +278,20 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     experimental_approaches = create_approaches(layout_df)
 
     dataset_version = omcore.DatasetVersion(
+        authors=authors,
+        behavioral_protocols=behavioral_protocols,
+        data_types=dataset_type,
         digital_identifier=digital_identifier,
         experimental_approaches=experimental_approaches,
-        short_name=dataset_description["Name"],
-        full_name=dataset_description["Name"],
-        studied_specimens=studied_specimens,
-        authors=authors,
-        techniques=techniques,
+        full_name=name,
         how_to_cite=how_to_cite,
+        license=license,
         repository=file_repository,
-        behavioral_protocols=behavioral_protocols,
-        data_types=dataset_type
+        short_name=name,
+        studied_specimens=studied_specimens,
+        techniques=techniques,
+        version_identifier=version_identifier,
         # other_contributions=other_contribution  # needs to be a Contribution object
-        # version_identifier
     )
 
     collection.add(dataset_version)
