@@ -9,7 +9,7 @@
 # bids2openminds
 A tool to generate openMINDS metadata from BIDS datasets
 
-In active development, please try the first alpha release and send us feedback by creating an issue.  
+In active development, please send us feedback by creating an issue.
 
 ## Installation
 
@@ -23,7 +23,7 @@ pip install bids2openminds
 Usage: bids2openminds [OPTIONS] INPUT_PATH
 
 Options:
-  -o, --output-path PATH          The output path or filename for OpenMINDS
+  -o, --output-path PATH          The output path or filename for openMINDS
                                   file/files.
   --single-file                   Save the entire collection into a single
                                   file (default).
