@@ -1,11 +1,61 @@
 import warnings
-from bids import BIDSLayout, BIDSValidator
-from openminds import Collection
 import os
+import pandas as pd
+from ancpbids import BIDSLayout
+from ancpbids.query import Artifact
+from ancpbids.model_base import DatatypeFolder
+from openminds import Collection
 import click
 from . import main
 from . import utility
 from . import report
+
+_ENTITY_RENAMES = {"sub": "subject", "ses": "session"}
+
+# Root-level BIDS files that ancpBIDS does not expose as Artifacts
+_ROOT_BIDS_FILES = [
+    ("dataset_description.json", "description", ".json"),
+    ("participants.tsv", "participants", ".tsv"),
+    ("participants.json", "participants", ".json"),
+    ("CHANGES", None, None),
+    ("README", None, None),
+    ("README.md", None, None),
+]
+
+
+def layout_to_df(layout):
+    dataset = layout.get_dataset()
+    rows = []
+
+    for obj in layout.get(return_type='object', scope='raw'):
+        if not isinstance(obj, Artifact):
+            continue
+        parent = obj.get_parent()
+        datatype = parent.name if isinstance(parent, DatatypeFolder) else None
+        row = {
+            "path": obj.get_absolute_path(),
+            "suffix": obj.suffix,
+            "datatype": datatype,
+            "extension": obj.extension,
+        }
+        for entity in obj.entities:
+            key = _ENTITY_RENAMES.get(entity.key, entity.key)
+            row[key] = entity.value
+        rows.append(row)
+
+    base_dir = os.path.abspath(dataset.base_dir_)
+    for fname, suffix, extension in _ROOT_BIDS_FILES:
+        path = os.path.join(base_dir, fname)
+        if not os.path.exists(path):
+            continue
+        row = {"path": path, "datatype": None}
+        if suffix is not None:
+            row["suffix"] = suffix
+        if extension is not None:
+            row["extension"] = extension
+        rows.append(row)
+
+    return pd.DataFrame(rows)
 
 
 def convert(input_path,  save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False):
@@ -23,7 +73,7 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
     collection = Collection()
     bids_layout = BIDSLayout(input_path)
 
-    layout_df = bids_layout.to_df()
+    layout_df = layout_to_df(bids_layout)
 
     subjects_id = bids_layout.get_subjects()
 
