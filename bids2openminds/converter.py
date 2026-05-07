@@ -122,7 +122,7 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
 @click.command()
 @click.argument("input-path", type=click.Path(file_okay=False, exists=True))
-@click.option("-o", "--output-path", default=None, type=click.Path(file_okay=True, writable=True), help="The output path or filename for OpenMINDS file/files.")
+@click.option("-o", "--output-path", default=None, type=click.Path(file_okay=True, writable=True), help="The output path or filename for openMINDS file/files.")
 @click.option("--single-file", "multiple_files", flag_value=False, default=False, help="Save the entire collection into a single file (default).")
 @click.option("--multiple-files", "multiple_files", flag_value=True, help="Each node is saved into a separate file within the specified directory. 'output-path' if specified, must be a directory.")
 @click.option("-e", "--include-empty-properties", is_flag=True, default=False, help="Whether to include empty properties in the final file.")

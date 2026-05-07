@@ -1,6 +1,6 @@
 [project]
 name = "bids2openminds"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
   "ancpbids",
   "openminds >= 0.2.3",
@@ -16,7 +16,8 @@ authors = [
 ]
 description = "Generates openMINDS metadata from a BIDS dataset"
 readme = "README.md"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Programming Language :: Python"
