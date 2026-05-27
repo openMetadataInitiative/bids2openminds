@@ -6,7 +6,9 @@ import bids2openminds.converter
 
 # Dataset information in following order dataset_label, dataset_subject_number, dataset_subject_state_number, dataset_person_number, dataset_files_number, dataset_file_bundles_number, dataset_behavioral_protocol_number
 example_dataset = [("ds003", 13, 13, 2, 58, 39, 1),
-                   ("ds000247", 6, 10, 5, 202, 41, 2),
+                   # ancpBIDS treats CTF MEG .ds directories as single artifacts (not their internal files),
+                   # so file count is lower than with pybids (which listed each file inside .ds separately)
+                   ("ds000247", 6, 10, 5, 120, 41, 2),
                    # The authors list in 'eeg_cbm' contains non person entities 2 is not correct name (issue raied #43)
                    ("eeg_cbm", 20, 20, 2, 104, 40, 1),
                    ("asl001", 1, 1, 2, 8, 3, 0),

@@ -1,5 +1,5 @@
 import pytest
-from bids import BIDSLayout
+from ancpbids import BIDSLayout
 from openminds import Collection
 import os
 from bids2openminds.main import create_behavioral_protocol
