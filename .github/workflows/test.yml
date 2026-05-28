@@ -34,8 +34,15 @@ jobs:
 
     - name: Install package with test dependencies
       run: |
-        pip install .[test]
+        pip install -e .[test]
 
     - name: Test installed package
       run: |
-        pytest -v
+        pytest -v --cov=bids2openminds --cov-report=lcov
+
+    - name: Upload coverage to Coveralls
+      if: matrix.os == 'ubuntu-latest'
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: coverage.lcov

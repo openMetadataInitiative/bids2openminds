@@ -33,11 +33,11 @@
     "codeRepository": "https://github.com/openMetadataInitiative/bids2openminds",
     "contIntegration": "https://github.com/openMetadataInitiative/bids2openminds/actions",
     "dateCreated": "2024-02-02",
-    "dateModified": "2025-06-05",
+    "dateModified": "2026-05-07",
     "datePublished": "2024-06-21",
     "description": "A tool to generate openMINDS metadata from BIDS datasets",
     "developmentStatus": "active",
-    "downloadUrl": "https://files.pythonhosted.org/packages/28/7b/eeedbb1d40eb92dd87d9cd566f2301d31f2cf69a2a96c8f37f150af8a83c/bids2openminds-0.1.1.tar.gz",
+    "downloadUrl": "https://files.pythonhosted.org/packages/bd/54/a5edea82cf22de4d956b4992cd837f4db7220fd44533eb59e36c7b4bc867/bids2openminds-0.2.0.tar.gz",
     "funder": {
         "@type": "Organization",
         "name": "European Commission"
@@ -61,5 +61,5 @@
         "https://pypi.org/project/click/",
         "https://pypi.org/project/nameparser/"
     ],
-    "version": "0.1.1"
+    "version": "0.2.0"
 }

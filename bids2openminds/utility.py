@@ -7,9 +7,9 @@ from warnings import warn
 
 import pandas as pd
 
-import openminds.v3.controlled_terms as controlled_terms
-from openminds.v3.core import Hash, QuantitativeValue, ContentType
-from openminds.v3.controlled_terms import UnitOfMeasurement
+import openminds.v4.controlled_terms as controlled_terms
+from openminds.v4.core import Hash, QuantitativeValue, ContentType
+from openminds.v4.controlled_terms import UnitOfMeasurement
 
 
 def read_json(file_path: str) -> dict:
@@ -174,4 +174,4 @@ def detect_nifti_version(file_name, extension, file_size):
             elif sizeof_hdr == nii2_sizeof_hdr:
                 return ContentType.by_name("application/vnd.nifti.2")
 
-    return None
+    return ContentType.by_name("application/vnd.nifti.1")

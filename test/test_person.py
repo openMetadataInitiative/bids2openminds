@@ -2,7 +2,7 @@
 import pytest
 
 from openminds import Collection
-import openminds.v3.core as omcore
+import openminds.v4.core as omcore
 
 from bids2openminds.main import create_openminds_person, create_persons
 

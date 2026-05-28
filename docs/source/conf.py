@@ -9,7 +9,7 @@
 project = 'bids2openminds'
 copyright = '2024, open Metadata Initiative'
 author = 'Peyman Najafi'
-release = '0.01'
+release = '0.2.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

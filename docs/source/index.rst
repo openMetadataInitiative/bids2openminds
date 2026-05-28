@@ -9,11 +9,12 @@ bids2openminds documentation
 A tool to generate `openMINDS metadata <https://openminds-documentation.readthedocs.io/en/latest/>`_ from `BIDS datasets <https://bids.neuroimaging.io/>`_
 
 .. note::
-   This project is under active development, please try the first alpha release and send us feedback by creating an issue.
+   This project is under active development, please send us feedback by creating an issue.
 
 
-We are curentlly supporting linux, windows and mac os.
+We are currently supporting Linux, Windows and Mac OS.
 
 .. toctree::
    installation
    usage
+   changelog
