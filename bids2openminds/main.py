@@ -225,10 +225,7 @@ def create_dataset_version(bids_layout, citation, dataset_description, layout_df
         if 'doi' in citation:
             digital_identifier = omcore.DOI(identifier=citation['doi'])
         if 'license' in citation:
-            for lic in omcore.License.instances():
-                if citation['license'] == getattr(lic, "short_name", None):
-                    license = lic
-                    break
+            license = omcore.License.by_name(citation['license'])
         if 'title' in citation:
             name = citation['title']
         if 'version' in citation:

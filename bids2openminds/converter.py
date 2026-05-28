@@ -21,6 +21,8 @@ _ROOT_BIDS_FILES = [
     ("CHANGES", None, None),
     ("README", None, None),
     ("README.md", None, None),
+    ("CITATION", "CITATION", None),
+    ("CITATION.cff", "CITATION", None),
 ]
 
 
