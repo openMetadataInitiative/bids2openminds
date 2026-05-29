@@ -17,4 +17,7 @@ We are currently supporting Linux, Windows and Mac OS.
 .. toctree::
    installation
    usage
+   architecture
+   contributing
+   maintenance
    changelog

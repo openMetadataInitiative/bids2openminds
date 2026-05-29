@@ -4,7 +4,7 @@ Installation
 Dependencies
 ############
 
-- `pybids` : Python tools for querying and manipulating BIDS datasets.
+- `ancpbids` : Python tools for querying BIDS datasets.
 - `openminds` : Python package for the openMINDS metadata models. The package contains all openMINDS schemas as Python classes in addition to schema base classes and utility methods.
 - `pandas` : Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more
 - `click` : Used to create a command-line interface for this function.
