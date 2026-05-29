@@ -9,6 +9,7 @@ import click
 from . import main
 from . import utility
 from . import report
+from . import openminds_version as om
 
 _ENTITY_RENAMES = {"sub": "subject", "ses": "session"}
 
@@ -58,11 +59,14 @@ def layout_to_df(layout):
     return pd.DataFrame(rows)
 
 
-def convert(input_path,  save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False):
+def convert(input_path,  save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False, openminds_version="v4"):
     if not (os.path.isdir(input_path)):
         raise NotADirectoryError(
             f"The input directory is not valid, you have specified {input_path} which is not a directory."
         )
+
+    # Select the openMINDS schema version for all objects created below.
+    om.configure(openminds_version)
     # TODO use BIDSValidator to check if input directory is a valid BIDS directory
     # if not(BIDSValidator().is_bids(input_path)):
     #  raise NotADirectoryError(f"The input directory is not valid, you have specified {input_path} which is not a BIDS directory.")
@@ -112,7 +116,7 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 
     if not quiet:
         print(report.create_report(dataset, dataset_version, collection,
-                                   dataset_description, input_path, output_path))
+                                   dataset_description, input_path, output_path, openminds_version))
 
     else:
         print("Conversion was successful")
@@ -127,9 +131,11 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
 @click.option("--multiple-files", "multiple_files", flag_value=True, help="Each node is saved into a separate file within the specified directory. 'output-path' if specified, must be a directory.")
 @click.option("-e", "--include-empty-properties", is_flag=True, default=False, help="Whether to include empty properties in the final file.")
 @click.option("-q", "--quiet", is_flag=True, default=False, help="Not generate the final report and no warning.")
-def convert_click(input_path, output_path, multiple_files, include_empty_properties, quiet):
+@click.option("--openminds-version", type=click.Choice(["v4", "v5"]), default="v4", show_default=True, help="openMINDS schema version to use for the output.")
+def convert_click(input_path, output_path, multiple_files, include_empty_properties, quiet, openminds_version):
     convert(input_path, save_output=True, output_path=output_path,
-            multiple_files=multiple_files, include_empty_properties=include_empty_properties, quiet=quiet)
+            multiple_files=multiple_files, include_empty_properties=include_empty_properties, quiet=quiet,
+            openminds_version=openminds_version)
 
 
 if __name__ == "__main__":

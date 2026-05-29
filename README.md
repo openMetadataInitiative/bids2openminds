@@ -34,6 +34,8 @@ Options:
                                   final file.
   -q, --quiet                     Not generate the final report and no
                                   warning.
+  --openminds-version [v4|v5]     openMINDS schema version to use for the
+                                  output.  [default: v4]
   --help                          Show this message and exit.
 ```
 

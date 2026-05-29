@@ -6,12 +6,11 @@ from warnings import warn
 import pandas as pd
 from nameparser import HumanName
 
-import openminds.v4.core as omcore
-import openminds.v4.controlled_terms as controlled_terms
 from openminds import IRI
 
 from .utility import table_filter, pd_table_value, file_hash, file_storage_size, detect_nifti_version
 from . import mapping
+from . import openminds_version as om
 
 
 def create_openminds_person(full_name):
@@ -41,8 +40,13 @@ def create_openminds_person(full_name):
     if not alternate_names:
         alternate_names = None
 
-    openminds_person = omcore.Person(
+    person_kwargs = dict(
         alternate_names=alternate_names, given_name=given_name, family_name=family_name)
+    if om.version == "v5":
+        # In v5 `preferred_name` is the required identifying property of a Person;
+        # use the original full name string as supplied in the BIDS metadata.
+        person_kwargs["preferred_name"] = full_name
+    openminds_person = om.core.Person(**person_kwargs)
 
     return openminds_person
 
@@ -84,7 +88,7 @@ def create_behavioral_protocol(layout, collection):
 
     for task in tasks:
 
-        behavioral_protocol = omcore.BehavioralProtocol(name=task,
+        behavioral_protocol = om.core.BehavioralProtocol(name=task,
                                                         internal_identifier=task,
                                                         description="To be defined")
         behavioral_protocols.append(behavioral_protocol)
@@ -110,7 +114,7 @@ def techniques_openminds(suffix):
     openminds_techniques_list = []
     for item_openminds in items_openminds:
         for possible_type in possible_types:
-            openminds_type = getattr(controlled_terms, possible_type)
+            openminds_type = getattr(om.controlled_terms, possible_type)
             openminds_obj = None
             try:
                 openminds_obj = openminds_type.by_name(item_openminds)
@@ -146,7 +150,7 @@ def approaches_openminds(datatype):
 
     for item in items_openminds:
         approches_list.append(
-            controlled_terms.ExperimentalApproach.by_name(item))
+            om.controlled_terms.ExperimentalApproach.by_name(item))
 
     return approches_list
 
@@ -171,18 +175,27 @@ def create_openminds_age(data_subject):
     if age is None or pd.isna(age):
         return None
     elif isinstance(age, float) or isinstance(age, int) or age.isnumeric():
-        return omcore.QuantitativeValue(
+        age_value = om.core.QuantitativeValue(
             value=age,
-            unit=controlled_terms.UnitOfMeasurement.year
+            unit=om.controlled_terms.UnitOfMeasurement.year
         )
     elif age == "89+":
-        return omcore.QuantitativeValueRange(
+        age_value = om.core.QuantitativeValueRange(
             max_value=None,
             min_value=89,
-            min_value_unit=controlled_terms.UnitOfMeasurement.year
+            min_value_unit=om.controlled_terms.UnitOfMeasurement.year
         )
     else:
         return None
+
+    if om.version == "v4":
+        return age_value
+    # In v5, SubjectState.age expects a SpecimenAge wrapping the quantitative value;
+    # BIDS records age since birth.
+    return om.core.SpecimenAge(
+        age=age_value,
+        reference=om.controlled_terms.AgeReference.by_name("birth")
+    )
 
 
 def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
@@ -194,7 +207,7 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     # Fetch the digitalIdentifier from dataset description file
 
     if "DatasetDOI" in dataset_description:
-        digital_identifier = omcore.DOI(
+        digital_identifier = om.core.DOI(
             identifier=dataset_description["DatasetDOI"])
     else:
         digital_identifier = None
@@ -212,9 +225,9 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         how_to_cite = None
 
     if ("DatasetType" in dataset_description) and (dataset_description == "derivative"):
-        dataset_type = controlled_terms.SemanticDataType.derived_data
+        dataset_type = om.controlled_terms.SemanticDataType.derived_data
     else:
-        dataset_type = controlled_terms.SemanticDataType.raw_data
+        dataset_type = om.controlled_terms.SemanticDataType.raw_data
 
     # TODO funding
     # if "Funding" in dataset_description:
@@ -234,36 +247,89 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
 
     experimental_approaches = create_approaches(layout_df)
 
-    dataset_version = omcore.DatasetVersion(
+    common_properties = dict(
         digital_identifier=digital_identifier,
         experimental_approaches=experimental_approaches,
         short_name=dataset_description["Name"],
         full_name=dataset_description["Name"],
         studied_specimens=studied_specimens,
-        authors=authors,
         techniques=techniques,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        behavioral_protocols=behavioral_protocols,
         data_types=dataset_type
         # other_contributions=other_contribution  # needs to be a Contribution object
         # version_identifier
     )
+    if om.version == "v4":
+        dataset_version = om.core.DatasetVersion(
+            authors=authors,
+            behavioral_protocols=behavioral_protocols,
+            **common_properties
+        )
+    else:
+        # v5 replaced `authors` with `contributions` and merged the v4
+        # `behavioral_protocols` property into the general `protocols` property
+        # (openMINDS_core #377), which now accepts both BehavioralProtocol and Protocol.
+        # `or None` avoids passing an empty list, which would trip the schema's
+        # minItems=1 constraint on `protocols` for datasets with no task labels.
+        dataset_version = om.core.DatasetVersion(
+            contributions=_authors_to_contributions(authors),
+            protocols=behavioral_protocols or None,
+            **common_properties
+        )
 
     collection.add(dataset_version)
 
     return dataset_version
 
 
+def _authors_to_contributions(authors):
+    """Wrap author Persons in an openMINDS v5 Contribution with the "authoring" role.
+
+    In v5 the `DatasetVersion`/`Dataset` `authors` property was replaced by
+    `contributions`, a list of `Contribution` objects each pairing one or more
+    contributors with a `ContributionType`. BIDS only records who the authors are,
+    so they are all mapped to a single contribution of type "authoring".
+
+    Parameters:
+    - authors: a list of Person objects, a single Person, or None (as returned by
+      :func:`create_persons`).
+
+    Returns:
+    - list[Contribution] or None: None when there are no authors.
+    """
+    if not authors:
+        return None
+    if not isinstance(authors, list):
+        authors = [authors]
+    return [
+        om.core.Contribution(
+            contributors=authors,
+            type=om.controlled_terms.ContributionType.by_name("authoring")
+        )
+    ]
+
+
 def create_dataset(dataset_description, dataset_version, collection):
 
-    dataset = omcore.Dataset(
-        digital_identifier=dataset_version.digital_identifier,
-        authors=dataset_version.authors,
-        full_name=dataset_version.full_name,
-        short_name=dataset_version.short_name,
-        has_versions=dataset_version
-    )
+    if om.version == "v4":
+        dataset = om.core.Dataset(
+            digital_identifier=dataset_version.digital_identifier,
+            authors=dataset_version.authors,
+            full_name=dataset_version.full_name,
+            short_name=dataset_version.short_name,
+            has_versions=dataset_version
+        )
+    else:
+        # v5 replaced `authors` with `contributions` and removed `has_versions`;
+        # the version-to-dataset link is expressed on the DatasetVersion instead.
+        dataset = om.core.Dataset(
+            digital_identifier=dataset_version.digital_identifier,
+            contributions=dataset_version.contributions,
+            full_name=dataset_version.full_name,
+            short_name=dataset_version.short_name
+        )
+        dataset_version.is_version_of = dataset
 
     collection.add(dataset)
 
@@ -274,13 +340,13 @@ def spices_openminds(data_subject: pd.DataFrame):
     bids_species = pd_table_value(data_subject, "species")
     if bids_species is None:
         # In BIDS the default species is homo sapiens.
-        return controlled_terms.Species.homo_sapiens
+        return om.controlled_terms.Species.homo_sapiens
     if bids_species in mapping.MAP_2_SPECIES:
         openminds_species = mapping.MAP_2_SPECIES[bids_species]
-        return controlled_terms.Species.by_name(openminds_species[0])
+        return om.controlled_terms.Species.by_name(openminds_species[0])
     else:
         try:
-            openminds_species = controlled_terms.Species.by_name(bids_species)
+            openminds_species = om.controlled_terms.Species.by_name(bids_species)
             warn(
                 f"You have specified {bids_species} as species, we have autodetected {openminds_species.name}, please verify it.")
             return openminds_species
@@ -296,7 +362,7 @@ def handedness_openminds(data_subject: pd.DataFrame):
         return None
     if bids_handedness in mapping.MAP_2_HANDEDNESS:
         openminds_handedness = mapping.MAP_2_HANDEDNESS[bids_handedness]
-        return controlled_terms.Handedness.by_name(openminds_handedness[0])
+        return om.controlled_terms.Handedness.by_name(openminds_handedness[0])
     else:
         warn(
             f"You have specified {bids_handedness} which is not a allowed value for handedness defined by BIDS standard.")
@@ -309,7 +375,7 @@ def sex_openminds(data_subject: pd.DataFrame):
         return None
     if bids_sex in mapping.MAP_2_BIOLOGICALSEX:
         bids_sex = mapping.MAP_2_BIOLOGICALSEX[bids_sex]
-        return controlled_terms.BiologicalSex.by_name(bids_sex[0])
+        return om.controlled_terms.BiologicalSex.by_name(bids_sex[0])
     else:
         warn(
             f"You have specified {bids_sex} which is not a allowed value for handedness defined by BIDS standard.")
@@ -333,7 +399,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
             state_cache = []
             # dealing with condition that have no seasion
             if not sessions:
-                state = omcore.SubjectState(
+                state = om.core.SubjectState(
                     internal_identifier=f"Studied state {subject_name}".strip(
                     ),
                     lookup_label=f"Studied state {subject_name}".strip()
@@ -345,7 +411,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
                 # create a subject state for each state
                 for session in sessions:
                     if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
-                        state = omcore.SubjectState(
+                        state = om.core.SubjectState(
                             internal_identifier=f"Studied state {subject_name} {session}".strip(
                             ),
                             lookup_label=f"Studied state {subject_name} {session}".strip(
@@ -355,7 +421,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
                         state_cache_dict[f"{session}"] = state
                         state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
-            subject_cache = omcore.Subject(
+            subject_cache = om.core.Subject(
                 lookup_label=f"{subject_name}",
                 internal_identifier=f"{subject_name}",
                 studied_states=state_cache
@@ -378,7 +444,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
         state_cache_dict = {}
         state_cache = []
         if not sessions:
-            state = omcore.SubjectState(
+            state = om.core.SubjectState(
                 age=create_openminds_age(data_subject),
                 handedness=handedness_openminds(data_subject),
                 internal_identifier=f"Studied state {subject_name}".strip(),
@@ -390,7 +456,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
         else:
             for session in sessions:
                 if not (table_filter(table_filter(layout_df, session, "session"), subject, "subject").empty):
-                    state = omcore.SubjectState(
+                    state = om.core.SubjectState(
                         age=create_openminds_age(data_subject),
                         handedness=handedness_openminds(data_subject),
                         internal_identifier=f"Studied state {subject_name} {session}".strip(
@@ -402,7 +468,7 @@ def create_subjects(subject_id, layout_df, layout, collection):
                     state_cache_dict[f"{session}"] = state
                     state_cache.append(state)
             subject_state_dict[f"{subject}"] = state_cache_dict
-        subject_cache = omcore.Subject(
+        subject_cache = om.core.Subject(
             biological_sex=sex_openminds(data_subject),
             lookup_label=f"{subject_name}",
             internal_identifier=f"{subject_name}",
@@ -420,14 +486,14 @@ def create_subjects(subject_id, layout_df, layout, collection):
 def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_file_repository=False):
 
     if is_file_repository:
-        openminds_file_bundle = omcore.FileRepository(format=omcore.ContentType.by_name("application/vnd.bids"),
+        openminds_file_bundle = om.core.FileRepository(format=om.core.ContentType.by_name("application/vnd.bids"),
                                                       iri=IRI(pathlib.Path(BIDS_path).absolute().as_uri()))
     else:
         relative_path = os.path.relpath(path, BIDS_path)
         name = str(relative_path).replace("\\", "/")
         if name[0] == "_":
             name = name[1:]
-        openminds_file_bundle = omcore.FileBundle(content_description=f"File bundle created for {relative_path}",
+        openminds_file_bundle = om.core.FileBundle(content_description=f"File bundle created for {relative_path}",
                                                   name=name,
                                                   is_part_of=parent_file_bundle)
 
@@ -461,8 +527,8 @@ def create_file_bundle(BIDS_path, path, collection, parent_file_bundle=None, is_
 
             files_size += child_filesizes
 
-    openminds_file_bundle.storage_size = omcore.QuantitativeValue(value=files_size,
-                                                                  unit=controlled_terms.UnitOfMeasurement.by_name(
+    openminds_file_bundle.storage_size = om.core.QuantitativeValue(value=files_size,
+                                                                  unit=om.controlled_terms.UnitOfMeasurement.by_name(
                                                                       "byte")
                                                                   )
     collection.add(openminds_file_bundle)
@@ -497,34 +563,34 @@ def create_file(layout_df, BIDS_path, collection):
             if file["suffix"] == "participants":
                 if extension == ".json":
                     content_description = f"A JSON metadata file of participants TSV."
-                    data_types = controlled_terms.DataType.by_name(
+                    data_types = om.controlled_terms.DataType.by_name(
                         "associative array")
-                    file_format = omcore.ContentType.by_name(
+                    file_format = om.core.ContentType.by_name(
                         "application/json")
                 elif extension == [".tsv"]:
                     content_description = f"A metadata table for participants."
-                    data_types = controlled_terms.DataType.by_name("table")
-                    file_format = omcore.ContentType.by_name(
+                    data_types = om.controlled_terms.DataType.by_name("table")
+                    file_format = om.core.ContentType.by_name(
                         "text/tab-separated-values")
         else:
             if extension == ".json":
                 content_description = f"A JSON metadata file for {file['suffix']} of subject {file['subject']}"
-                data_types = controlled_terms.DataType.by_name(
+                data_types = om.controlled_terms.DataType.by_name(
                     "associative array")
-                file_format = omcore.ContentType.by_name("application/json")
+                file_format = om.core.ContentType.by_name("application/json")
             elif extension in [".nii", ".nii.gz"]:
                 content_description = f"Data file for {file['suffix']} of subject {file['subject']}"
-                data_types = controlled_terms.DataType.by_name("voxel data")
+                data_types = om.controlled_terms.DataType.by_name("voxel data")
                 file_format = detect_nifti_version(path, extension, file_size)
             elif extension == [".tsv"]:
                 if file["suffix"] == "events":
                     content_description = f"Event file for {file['suffix']} of subject {file['subject']}"
-                    data_types = controlled_terms.DataType.by_name(
+                    data_types = om.controlled_terms.DataType.by_name(
                         "event sequence")
-                    file_format = omcore.ContentType.by_name(
+                    file_format = om.core.ContentType.by_name(
                         "text/tab-separated-values")
 
-        file = omcore.File(
+        file = om.core.File(
             iri=iri,
             content_description=content_description,
             data_types=data_types,

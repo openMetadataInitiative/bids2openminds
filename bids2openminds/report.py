@@ -1,12 +1,11 @@
 import os
 
 
-def create_report(dataset, dataset_version, collection, dataset_description, input_path, output_path):
+def create_report(dataset, dataset_version, collection, dataset_description, input_path, output_path, openminds_version="v4"):
     subject_number = 0
     subject_state_numbers = []
     file_bundle_number = 0
     files_number = 0
-    behavioral_protocols_numbers = 0
     content_type_list = ""
 
     for item in collection:
@@ -23,13 +22,29 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
 
             file_bundle_number += 1
 
-        if item.type_.endswith("BehavioralProtocol"):
-
-            behavioral_protocols_numbers += 1
-
         if item.type_.endswith("ContentType"):
 
             content_type_list += f"{item.name}\n"
+
+    # In v5, DatasetVersion no longer carries `authors`: they live inside
+    # `contributions`. Derive them version-agnostically.
+    authors = getattr(dataset_version, "authors", None)
+    if authors is None and getattr(dataset_version, "contributions", None):
+        authors = []
+        for contribution in dataset_version.contributions:
+            authors.extend(contribution.contributors or [])
+
+    # Behavioral protocols are linked on the DatasetVersion: in v4 via the dedicated
+    # `behavioral_protocols` property, in v5 merged into the general `protocols`
+    # property (which may also hold non-behavioral Protocols), see openMINDS_core #377.
+    behavioral_protocols = getattr(dataset_version, "behavioral_protocols", None)
+    if not behavioral_protocols:
+        protocols = getattr(dataset_version, "protocols", None) or []
+        behavioral_protocols = [
+            p for p in protocols if p.type_.endswith("BehavioralProtocol")
+        ]
+    behavioral_protocols = behavioral_protocols or None
+    behavioral_protocols_numbers = len(behavioral_protocols or [])
 
     experimental_approaches_list = ""
     if dataset_version.experimental_approaches is not None:
@@ -52,16 +67,16 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
         techniques_list = "No techniques were detected. Please follow the BIDS recommendations for suffixes, as bids2openminds detects techniques based on suffixes."
 
     behavioral_protocols_list = ""
-    if dataset_version.behavioral_protocols is not None:
-        for behavioral_protocol in dataset_version.behavioral_protocols:
+    if behavioral_protocols is not None:
+        for behavioral_protocol in behavioral_protocols:
             behavioral_protocols_list += f"{behavioral_protocol.name}\n"
     else:
         behavioral_protocols_list = "No behavioral protocols were detected. Please follow the BIDS recommendations for task labels, as bids2openminds detects behavioral protocols based on task labels."
 
     author_list = ""
     i = 1
-    if dataset_version.authors is not None:
-        for author in dataset_version.authors:
+    if authors is not None:
+        for author in authors:
             if author.family_name is not None:
                 author_list += f"  {i}. {author.family_name}, {author.given_name}\n"
                 i += 1
@@ -78,15 +93,16 @@ def create_report(dataset, dataset_version, collection, dataset_description, inp
 
     report = f"""
 Conversion Report
-=================  
+=================
 Conversion was successful, the openMINDS file is in {output_path}
+openMINDS schema version: {openminds_version} (load it back with Collection.load(..., version="{openminds_version}"))
 
 Dataset title : {dataset.full_name}
 
 
-The following elements were converted:  
-------------------------------------------   
-+ number of authors : {len(dataset_version.authors or [])}
+The following elements were converted:
+------------------------------------------
++ number of authors : {len(authors or [])}
 + number of converted subjects: {subject_number}  
 + number of states per subject: {text_subject_state_numbers}
 + number of files: {files_number} 
