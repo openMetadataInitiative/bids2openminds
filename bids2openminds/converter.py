@@ -84,7 +84,10 @@ def convert(input_path,  save_output=False, output_path=None, multiple_files=Fal
     dataset_description_path = utility.table_filter(layout_df, "description")
     dataset_description = utility.read_json(dataset_description_path.iat[0, 0])
     citation_path = utility.table_filter(layout_df, "CITATION")
-    citation = yaml.safe_load(open(citation_path.iat[0, 0], encoding="utf-8")) if not citation_path.empty else None
+    citation = None
+    if not citation_path.empty:
+        with open(citation_path.iat[0, 0], encoding="utf-8") as fp:
+            citation = yaml.safe_load(fp) 
 
     [subjects_dict, subject_state_dict, subjects_list] = main.create_subjects(
         subjects_id, layout_df, bids_layout, collection)
