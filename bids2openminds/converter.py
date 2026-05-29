@@ -19,7 +19,6 @@ _ROOT_BIDS_FILES = [
     ("participants.tsv", "participants", ".tsv"),
     ("participants.json", "participants", ".json"),
     ("CHANGES", None, None),
-    ("CITATION", "CITATION", None),
     ("CITATION.cff", "CITATION", None),
     ("README", None, None),
     ("README.md", None, None),

@@ -221,25 +221,30 @@ def create_dataset_version(bids_layout, citation, dataset_description, layout_df
     digital_identifier = None
     name = None
     version_identifier = None
+    # General rules on the usage of CITATION.cff and dataset_description.json
+    # https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#citationcff
     if citation:
         if 'doi' in citation:
             digital_identifier = omcore.DOI(identifier=citation['doi'])
         if 'license' in citation:
             license = omcore.License.by_name(citation['license'])
+            if license is None:
+                warn(f"Could not resolve license '{citation['license']}' "
+                    "to an openMINDS License."
+                )
         if 'title' in citation:
             name = citation['title']
         if 'version' in citation:
             version_identifier = citation['version']
         authors = create_persons(citation, collection)
-
     else:
-        name = dataset_description["Name"]
-        # Fetch the digitalIdentifier from dataset description file
-        if "DatasetDOI" in dataset_description:
-            digital_identifier = omcore.DOI(
-                identifier=dataset_description["DatasetDOI"])
-
+        # if CITATION.cff is present, the "Authors" field of dataset_description.json MUST be omitted
         authors = create_persons(dataset_description, collection)
+
+    name = dataset_description["Name"] if name is None else name
+    # Fetch the digitalIdentifier from dataset description file
+    if digital_identifier is None and "DatasetDOI" in dataset_description:
+        digital_identifier = omcore.DOI(identifier=dataset_description["DatasetDOI"])
 
     if "Acknowledgements" in dataset_description:
         other_contribution = dataset_description["Acknowledgements"]
