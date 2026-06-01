@@ -91,7 +91,7 @@ Test structure
 ``test/test_thorough_bids_example.py``
     Deep validation on a more complex BIDS dataset.
 
-``test/test_person.py``, ``test/test_task.py``, ``test/test_subject_age.py``, ``test/test_file_bundle.py``, ``test/test_mapping_completeness.py``
+``test_dataset_version.py``, ``test_example_datasets_click.py``, ``test/test_person.py``, ``test/test_task.py``, ``test/test_subject_age.py``, ``test/test_file_bundle.py``, ``test/test_mapping_completeness.py``
     Unit tests for individual mapping and utility functions.
 
 The ``bids-examples`` submodule must be initialised before running the full test suite::
