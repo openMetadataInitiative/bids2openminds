@@ -39,6 +39,36 @@ def test_create_dataset_version_citation():
     assert citation_dataset_version.digital_identifier.identifier == expected.digital_identifier.identifier
 
 
+def test_create_dataset_version_citation_v5():
+    om.configure("v5")
+    citation = {
+        "title": "My Dataset",
+        "version": "1.05.9",
+        "doi": "10.5281/zenodo.123456",
+        "license": "Apache-2.0"
+    }
+
+    citation_dataset_version = create_dataset_version(
+        "", citation, {}, layout_df, [], [], [], Collection()
+    )
+
+    assert citation_dataset_version.usage_conditions is not None
+    assert len(citation_dataset_version.usage_conditions) == 1
+    assert citation_dataset_version.usage_conditions[0].id == om.core.License.apache_2_0.id
+    assert not hasattr(citation_dataset_version, "license")
+
+
+def test_create_dataset_version_no_license_v5():
+    om.configure("v5")
+    citation = {"title": "My Dataset"}
+
+    dataset_version = create_dataset_version(
+        "", citation, {}, layout_df, [], [], [], Collection()
+    )
+
+    assert dataset_version.usage_conditions is None
+
+
 def test_create_dataset_version_without_citation():
     # Mock missing CITATION.cff
     citation = None
