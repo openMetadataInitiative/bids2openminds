@@ -58,7 +58,7 @@ corresponding openMINDS instance are marked ``None`` with a ``# TODO`` comment.
 
 Helper functions: JSON reading, Pandas DataFrame filtering and value extraction,
 file hashing (returns an openMINDS ``Hash`` object), file size (returns an
-openMINDS ``QuantitativeValue``), and NIfTI version detection.
+openMINDS ``QuantitativeValue`` object), and NIfTI version detection.
 
 ``report.py``
 ~~~~~~~~~~~~~
