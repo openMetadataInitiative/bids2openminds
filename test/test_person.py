@@ -2,8 +2,8 @@
 import pytest
 
 from openminds import Collection
-import openminds.v4.core as omcore
 
+import bids2openminds.openminds_version as om
 from bids2openminds.main import create_openminds_person, create_persons
 
 # Test data: (full_name, given_name, family_name)
@@ -19,7 +19,7 @@ example_not_names = ["42", "#", "", "A34 hajb"]
 
 @pytest.mark.parametrize("full_name, given_name, family_name", example_names)
 def test_create_openminds_person(full_name, given_name, family_name):
-    openminds_person_object = omcore.Person(given_name=given_name,
+    openminds_person_object = om.core.Person(given_name=given_name,
                                             family_name=family_name)
     bids2openminds_person_object = create_openminds_person(full_name)
     assert openminds_person_object.given_name == bids2openminds_person_object.given_name, \
@@ -53,21 +53,21 @@ def test_create_openminds_person_citation_explicit():
     author2 = persons[1]
 
     # Expected objects
-    expected_author1 = omcore.Person(
+    expected_author1 = om.core.Person(
         given_name="Peter",
         family_name="Awart",
         affiliations=[
-            omcore.Affiliation(member_of=omcore.Organization(full_name="Place1"))
+            om.core.Affiliation(member_of=om.core.Organization(full_name="Place1"))
         ],
-        digital_identifiers=[omcore.ORCID(identifier="https://orcid.org/1234-5678-9123-4567")]
+        digital_identifiers=[om.core.ORCID(identifier="https://orcid.org/1234-5678-9123-4567")]
     )
 
-    expected_author2 = omcore.Person(
+    expected_author2 = om.core.Person(
         given_name="Franck",
         family_name="Detienne",
         affiliations=[
-            omcore.Affiliation(member_of=omcore.Organization(full_name="Place1")),
-            omcore.Affiliation(member_of=omcore.Organization(full_name="Place2"))
+            om.core.Affiliation(member_of=om.core.Organization(full_name="Place1")),
+            om.core.Affiliation(member_of=om.core.Organization(full_name="Place2"))
         ]
     )
 

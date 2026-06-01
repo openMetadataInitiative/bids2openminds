@@ -7,9 +7,7 @@ from warnings import warn
 
 import pandas as pd
 
-import openminds.v4.controlled_terms as controlled_terms
-from openminds.v4.core import Hash, QuantitativeValue, ContentType
-from openminds.v4.controlled_terms import UnitOfMeasurement
+from . import openminds_version as om
 
 
 def read_json(file_path: str) -> dict:
@@ -115,7 +113,7 @@ def file_hash(file_path: str, algorithm: str = "MD5"):
         hash_value = hash_object.hexdigest()
 
     # Create a openMINDS Hash object with the algorithm and digest
-    openminds_hash = Hash(algorithm=algorithm, digest=hash_value)
+    openminds_hash = om.core.Hash(algorithm=algorithm, digest=hash_value)
 
     return openminds_hash
 
@@ -131,8 +129,8 @@ def file_storage_size(file_path: str):
       as an openMINDS object and the int is the raw byte count.
     """
     file_stats = os.stat(file_path)
-    file_size = QuantitativeValue(
-        value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
+    file_size = om.core.QuantitativeValue(
+        value=file_stats.st_size, unit=om.controlled_terms.UnitOfMeasurement.by_name("byte"))
     return file_size, file_stats.st_size
 
 
@@ -162,19 +160,19 @@ def detect_nifti_version(file_name, extension, file_size):
             return None
 
         if sizeof_hdr == nii1_sizeof_hdr:
-            return ContentType.by_name("application/vnd.nifti.1")
+            return om.core.ContentType.by_name("application/vnd.nifti.1")
 
         elif sizeof_hdr == nii2_sizeof_hdr:
-            return ContentType.by_name("application/vnd.nifti.2")
+            return om.core.ContentType.by_name("application/vnd.nifti.2")
 
         else:  # big endian
             sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
 
             if sizeof_hdr == nii1_sizeof_hdr:
-                return ContentType.by_name("application/vnd.nifti.1")
+                return om.core.ContentType.by_name("application/vnd.nifti.1")
 
             elif sizeof_hdr == nii2_sizeof_hdr:
-                return ContentType.by_name("application/vnd.nifti.2")
+                return om.core.ContentType.by_name("application/vnd.nifti.2")
 
     if extension == ".nii.gz":
         try:
@@ -189,18 +187,18 @@ def detect_nifti_version(file_name, extension, file_size):
             return None
 
         if sizeof_hdr == nii1_sizeof_hdr:
-            return ContentType.by_name("application/vnd.nifti.1")
+            return om.core.ContentType.by_name("application/vnd.nifti.1")
 
         elif sizeof_hdr == nii2_sizeof_hdr:
-            return ContentType.by_name("application/vnd.nifti.2")
+            return om.core.ContentType.by_name("application/vnd.nifti.2")
 
         else:  # big endian
             sizeof_hdr = int.from_bytes(byte_data, byteorder='big')
 
             if sizeof_hdr == nii1_sizeof_hdr:
-                return ContentType.by_name("application/vnd.nifti.1")
+                return om.core.ContentType.by_name("application/vnd.nifti.1")
 
             elif sizeof_hdr == nii2_sizeof_hdr:
-                return ContentType.by_name("application/vnd.nifti.2")
+                return om.core.ContentType.by_name("application/vnd.nifti.2")
 
-    return ContentType.by_name("application/vnd.nifti.1")
+    return om.core.ContentType.by_name("application/vnd.nifti.1")

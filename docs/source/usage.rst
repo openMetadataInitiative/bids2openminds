@@ -13,7 +13,7 @@ The ``convert`` function processes a Brain Imaging Data Structure (BIDS) directo
 
 Function Signature
 ##################
->>> def convert(input_path, save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False):
+>>> def convert(input_path, save_output=False, output_path=None, multiple_files=False, include_empty_properties=False, quiet=False, openminds_version="v4"):
 
 Parameters
 ##########
@@ -23,6 +23,7 @@ Parameters
 - ``multiple_files`` (bool, default=False): If True, the openMINDS data will be saved into multiple files within the specified output_path.
 - ``include_empty_properties`` (bool, default=False): If True, includes all the openMINDS properties with empty values in the final output. Otherwise includes only properties that have a non `None` value.
 - ``quiet`` (bool, default=False): If True, suppresses warnings and the final report output. Only prints success messages.
+- ``openminds_version`` (str, default="v4"): The openMINDS schema version to use for the output, either ``"v4"`` or ``"v5"``. The chosen version is not recorded in the output, so pass the same value to ``Collection.load(..., version=...)`` when reloading.
 
 Returns
 #######
@@ -65,3 +66,5 @@ This function is also accessible via a command-line interface using the `click` 
         -e, --include-empty-properties
                                     Include empty properties in the final file.
         -q, --quiet                 Suppress warnings and reports.
+        --openminds-version [v4|v5]
+                                    openMINDS schema version to use for the output (default: v4).

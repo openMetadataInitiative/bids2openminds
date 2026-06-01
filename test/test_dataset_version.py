@@ -2,8 +2,7 @@ import pytest
 
 import pandas as pd
 from openminds import Collection
-import openminds.v4.core as omcore
-
+import bids2openminds.openminds_version as om
 from bids2openminds.main import create_dataset_version
 
 # Mock BIDS layout DataFrame
@@ -27,17 +26,47 @@ def test_create_dataset_version_citation():
         "", citation, {}, layout_df, [], [], [], Collection()
     )
 
-    expected = omcore.DatasetVersion(
-        digital_identifier=omcore.DOI(identifier="10.5281/zenodo.123456"),
+    expected = om.core.DatasetVersion(
+        digital_identifier=om.core.DOI(identifier="10.5281/zenodo.123456"),
         full_name="My Dataset",
         short_name="My Dataset",
-        license=omcore.License.apache_2_0,
+        license=om.core.License.apache_2_0,
         version_identifier="1.05.9"
     )
 
     for field in ["full_name", "short_name", "version_identifier", "license"]:
         assert getattr(citation_dataset_version, field) == getattr(expected, field)
     assert citation_dataset_version.digital_identifier.identifier == expected.digital_identifier.identifier
+
+
+def test_create_dataset_version_citation_v5():
+    om.configure("v5")
+    citation = {
+        "title": "My Dataset",
+        "version": "1.05.9",
+        "doi": "10.5281/zenodo.123456",
+        "license": "Apache-2.0"
+    }
+
+    citation_dataset_version = create_dataset_version(
+        "", citation, {}, layout_df, [], [], [], Collection()
+    )
+
+    assert citation_dataset_version.usage_conditions is not None
+    assert len(citation_dataset_version.usage_conditions) == 1
+    assert citation_dataset_version.usage_conditions[0].id == om.core.License.apache_2_0.id
+    assert not hasattr(citation_dataset_version, "license")
+
+
+def test_create_dataset_version_no_license_v5():
+    om.configure("v5")
+    citation = {"title": "My Dataset"}
+
+    dataset_version = create_dataset_version(
+        "", citation, {}, layout_df, [], [], [], Collection()
+    )
+
+    assert dataset_version.usage_conditions is None
 
 
 def test_create_dataset_version_without_citation():
@@ -52,8 +81,8 @@ def test_create_dataset_version_without_citation():
         "", citation, dataset_description, layout_df, [], [], [], Collection()
     )
 
-    expected = omcore.DatasetVersion(
-        digital_identifier=omcore.DOI(identifier="10.5281/zenodo.123456"),
+    expected = om.core.DatasetVersion(
+        digital_identifier=om.core.DOI(identifier="10.5281/zenodo.123456"),
         full_name="My Dataset",
         short_name="My Dataset"
     )
