@@ -34,11 +34,18 @@ Example Usage
 >>> input_path = "/path/to/BIDS/dataset"
 >>> collection = converter.convert(input_path, save_output=True, output_path="/path/to/output", multiple_files=False, include_empty_properties=False, quiet=False)
 
-Or one can chose the default parmetrs as following:
+Or one can choose the default parameters as follows:
 
 >>> import bids2openminds.converter as converter
 >>> collection = converter.convert("/path/to/BIDS/dataset")
 
+.. note::
+
+   BIDS datasets may contain quasi-identifying information such as participant
+   demographics in ``participants.tsv``.  bids2openminds propagates these fields
+   into the openMINDS output without modification.  Users are responsible for
+   ensuring that the output is appropriately anonymised before uploading to a
+   public repository or sharing outside their institution.
 
 Command-Line Interface (CLI)
 ============================

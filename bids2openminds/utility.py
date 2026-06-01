@@ -65,6 +65,16 @@ def table_filter(dataframe: pd.DataFrame, filter_str: str, column: str = "suffix
 
 
 def pd_table_value(data_frame, column_name, not_list: bool = True):
+    """Extract a value from a single-row DataFrame column.
+
+    Parameters:
+    - data_frame (pd.DataFrame): A DataFrame expected to contain a single row.
+    - column_name (str): The column to read.
+    - not_list (bool, optional): If True (default), return the scalar value; if False, return a list.
+
+    Returns:
+    - The column value as a scalar (not_list=True) or list (not_list=False), or None if the column is absent.
+    """
     try:
         if column_name in data_frame.columns:
             value = data_frame[column_name].to_list()
@@ -111,6 +121,15 @@ def file_hash(file_path: str, algorithm: str = "MD5"):
 
 
 def file_storage_size(file_path: str):
+    """Return the storage size of a file as an openMINDS QuantitativeValue and a raw byte count.
+
+    Parameters:
+    - file_path (str): The path to the file.
+
+    Returns:
+    - tuple: A (QuantitativeValue, int) pair where the QuantitativeValue expresses the size in bytes
+      as an openMINDS object and the int is the raw byte count.
+    """
     file_stats = os.stat(file_path)
     file_size = QuantitativeValue(
         value=file_stats.st_size, unit=UnitOfMeasurement.by_name("byte"))
@@ -118,7 +137,17 @@ def file_storage_size(file_path: str):
 
 
 def detect_nifti_version(file_name, extension, file_size):
+    """Detect the NIfTI format version of a file by inspecting its header bytes.
 
+    Parameters:
+    - file_name (str): Path to the NIfTI file.
+    - extension (str): File extension, either ``".nii"`` or ``".nii.gz"``.
+    - file_size (int): Size of the file in bytes (unused; reserved for future use).
+
+    Returns:
+    - ContentType or None: The openMINDS ContentType for NIfTI-1 or NIfTI-2, or None if the
+      header cannot be read or the format is unrecognised.
+    """
     nii1_sizeof_hdr = 348
     nii2_sizeof_hdr = 540
 
