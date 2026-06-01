@@ -52,8 +52,35 @@ def create_openminds_person(full_name):
 
 
 def create_persons(dataset_description, collection):
+    # citation.cff case
+    if "authors" in dataset_description:
+        person_list = dataset_description["authors"]
+        openminds_list=[]
+        for person in person_list:
+            person_orcid = None
+            person_affiliation = None
+            person_contact_information = None
+            if 'orcid' in person:
+                person_orcid = [om.core.ORCID(identifier=person['orcid'])]
+            if 'email' in person:
+                person_contact_information = om.core.ContactInformation(email=person['email'])
+            if 'affiliation' in person:
+                # Handle multiple affiliations separated by semicolon
+                affiliation_list = [item.strip() for item in person['affiliation'].split(';')]
+                person_affiliation = []
+                for affiliation in affiliation_list:
+                    person_affiliation.append(om.core.Affiliation(
+                        member_of=om.core.Organization(full_name=affiliation)))
 
-    if "Authors" in dataset_description:
+            openminds_person = om.core.Person(
+                affiliations=person_affiliation, digital_identifiers=person_orcid, given_name=person['given-names'],
+                family_name=person['family-names'], contact_information=person_contact_information)
+            openminds_list.append(openminds_person)
+            collection.add(openminds_person)
+        return openminds_list
+
+    # dataset_description.json case
+    elif "Authors" in dataset_description:
         person_list = dataset_description["Authors"]
     else:
         return None
@@ -198,21 +225,39 @@ def create_openminds_age(data_subject):
     )
 
 
-def create_dataset_version(bids_layout, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
+def create_dataset_version(bids_layout, citation, dataset_description, layout_df, studied_specimens, file_repository, behavioral_protocols, collection):
 
     # Fetch the dataset type from dataset description file
 
     # dataset_type=bids2openminds_instance(dataset_description.get("DatasetType",None))
-
-    # Fetch the digitalIdentifier from dataset description file
-
-    if "DatasetDOI" in dataset_description:
-        digital_identifier = om.core.DOI(
-            identifier=dataset_description["DatasetDOI"])
+    license = None
+    digital_identifier = None
+    name = None
+    version_identifier = None
+    # General rules on the usage of CITATION.cff and dataset_description.json
+    # https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files/dataset-description.html#citationcff
+    if citation:
+        if 'doi' in citation:
+            digital_identifier = om.core.DOI(identifier=citation['doi'])
+        if 'license' in citation:
+            license = om.core.License.by_name(citation['license'])
+            if license is None:
+                warn(f"Could not resolve license '{citation['license']}' "
+                    "to an openMINDS License."
+                )
+        if 'title' in citation:
+            name = citation['title']
+        if 'version' in citation:
+            version_identifier = citation['version']
+        authors = create_persons(citation, collection)
     else:
-        digital_identifier = None
+        # if CITATION.cff is present, the "Authors" field of dataset_description.json MUST be omitted
+        authors = create_persons(dataset_description, collection)
 
-    authors = create_persons(dataset_description, collection)
+    name = dataset_description["Name"] if name is None else name
+    # Fetch the digitalIdentifier from dataset description file
+    if digital_identifier is None and "DatasetDOI" in dataset_description:
+        digital_identifier = om.core.DOI(identifier=dataset_description["DatasetDOI"])
 
     if "Acknowledgements" in dataset_description:
         other_contribution = dataset_description["Acknowledgements"]
@@ -248,22 +293,23 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
     experimental_approaches = create_approaches(layout_df)
 
     common_properties = dict(
+        data_types=dataset_type,
         digital_identifier=digital_identifier,
         experimental_approaches=experimental_approaches,
-        short_name=dataset_description["Name"],
-        full_name=dataset_description["Name"],
-        studied_specimens=studied_specimens,
-        techniques=techniques,
+        full_name=name,
         how_to_cite=how_to_cite,
         repository=file_repository,
-        data_types=dataset_type
+        short_name=name,
+        studied_specimens=studied_specimens,
+        techniques=techniques,
+        version_identifier=version_identifier,
         # other_contributions=other_contribution  # needs to be a Contribution object
-        # version_identifier
     )
     if om.version == "v4":
         dataset_version = om.core.DatasetVersion(
             authors=authors,
             behavioral_protocols=behavioral_protocols,
+            license=license,
             **common_properties
         )
     else:
@@ -272,9 +318,11 @@ def create_dataset_version(bids_layout, dataset_description, layout_df, studied_
         # (openMINDS_core #377), which now accepts both BehavioralProtocol and Protocol.
         # `or None` avoids passing an empty list, which would trip the schema's
         # minItems=1 constraint on `protocols` for datasets with no task labels.
+        # v5 replaced `license` (single value) with `usage_conditions` (list).
         dataset_version = om.core.DatasetVersion(
             contributions=_authors_to_contributions(authors),
             protocols=behavioral_protocols or None,
+            usage_conditions=[license] if license else None,
             **common_properties
         )
 
